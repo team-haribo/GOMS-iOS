@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
-class IntroViewController: BaseViewController<> {
+class IntroViewController: BaseViewController<IntroViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func addView() {
+        [].forEach{
+            view.addSubview($0)
+        }
+    }
+    
+    override func setLayout() {
+        
     }
 
 
