@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
-		77F0739529ED29CF00EE1FC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* ViewController.swift */; };
+		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
 		77F0739A29ED29D000EE1FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F0739929ED29D000EE1FC9 /* Assets.xcassets */; };
 		77F0739D29ED29D000EE1FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */; };
 		77F073A629ED377800EE1FC9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073A529ED377800EE1FC9 /* Then */; };
@@ -20,10 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		77F0738D29ED29CF00EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOMS-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F0738D29ED29CF00EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GOMS-iOS.app"; path = "/Users/seonminjae/Desktop/Project/GOMS-iOS/build/Debug-iphoneos/GOMS-iOS.app"; sourceTree = "<absolute>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77F0739429ED29CF00EE1FC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		77F0739929ED29D000EE1FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77F0739C29ED29D000EE1FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77F0739E29ED29D000EE1FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,27 +49,16 @@
 			isa = PBXGroup;
 			children = (
 				77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */,
-				77F0738E29ED29CF00EE1FC9 /* Products */,
 				77F073B229ED37D600EE1FC9 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		77F0738E29ED29CF00EE1FC9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				77F0738D29ED29CF00EE1FC9 /* GOMS-iOS.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */,
-				77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */,
-				77F0739429ED29CF00EE1FC9 /* ViewController.swift */,
-				77F0739929ED29D000EE1FC9 /* Assets.xcassets */,
-				77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */,
+				77F073BD29ED67A400EE1FC9 /* DesignSystem */,
+				77F073BC29ED678900EE1FC9 /* Resources */,
+				77F073B729ED675100EE1FC9 /* Sources */,
 				77F0739E29ED29D000EE1FC9 /* Info.plist */,
 			);
 			path = "GOMS-iOS";
@@ -80,6 +69,88 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77F073B729ED675100EE1FC9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				77F073BB29ED677B00EE1FC9 /* Application */,
+				77F073BA29ED677600EE1FC9 /* Domain */,
+				77F073B929ED676D00EE1FC9 /* Data */,
+				77F073B829ED676000EE1FC9 /* Presentation */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		77F073B829ED676000EE1FC9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				77F073BF29ED67E200EE1FC9 /* Auth */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		77F073B929ED676D00EE1FC9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		77F073BA29ED677600EE1FC9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		77F073BB29ED677B00EE1FC9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				77F073BE29ED67C000EE1FC9 /* Flow */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		77F073BC29ED678900EE1FC9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77F0739929ED29D000EE1FC9 /* Assets.xcassets */,
+				77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		77F073BD29ED67A400EE1FC9 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		77F073BE29ED67C000EE1FC9 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */,
+				77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		77F073BF29ED67E200EE1FC9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77F073C029ED67E600EE1FC9 /* Intro */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		77F073C029ED67E600EE1FC9 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +210,7 @@
 				77F073AA29ED379400EE1FC9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
-			productRefGroup = 77F0738E29ED29CF00EE1FC9 /* Products */;
+			productRefGroup = 77F0738429ED29CF00EE1FC9;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -165,7 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F0739529ED29CF00EE1FC9 /* ViewController.swift in Sources */,
+				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 			);
