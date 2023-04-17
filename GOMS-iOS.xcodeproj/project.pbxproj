@@ -17,6 +17,9 @@
 		77F073B129ED37AB00EE1FC9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B029ED37AB00EE1FC9 /* RxSwift */; };
 		77F073B429ED37D600EE1FC9 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B329ED37D600EE1FC9 /* RxFlow */; };
 		77F073B629ED37EB00EE1FC9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B529ED37EB00EE1FC9 /* RxCocoa */; };
+		77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C229ED898F00EE1FC9 /* BaseViewController.swift */; };
+		77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */; };
+		77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		77F0739929ED29D000EE1FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77F0739C29ED29D000EE1FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77F0739E29ED29D000EE1FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F073C229ED898F00EE1FC9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSColor.swift; sourceTree = "<group>"; };
+		77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		77F073B829ED676000EE1FC9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				77F073C129ED893100EE1FC9 /* Base */,
 				77F073BF29ED67E200EE1FC9 /* Auth */,
 			);
 			path = Presentation;
@@ -115,6 +122,7 @@
 		77F073BC29ED678900EE1FC9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				77F073C429ED8A0800EE1FC9 /* Extension */,
 				77F0739929ED29D000EE1FC9 /* Assets.xcassets */,
 				77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */,
 			);
@@ -151,6 +159,23 @@
 				77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		77F073C129ED893100EE1FC9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				77F073C229ED898F00EE1FC9 /* BaseViewController.swift */,
+				77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		77F073C429ED8A0800EE1FC9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
+				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
+				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
+				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
