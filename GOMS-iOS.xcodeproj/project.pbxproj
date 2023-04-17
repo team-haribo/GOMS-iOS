@@ -22,6 +22,9 @@
 		77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */; };
 		77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073CF29ED8E0B00EE1FC9 /* IntroViewModel.swift */; };
 		77F073D329ED923700EE1FC9 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073D229ED923700EE1FC9 /* GAuthSignin */; };
+		77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073D529ED970200EE1FC9 /* GOMSStep.swift */; };
+		77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073D729ED9A6000EE1FC9 /* AppFlow.swift */; };
+		77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		77F073CE29ED8D8100EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GOMS-iOS.app"; path = "/Users/seonminjae/Desktop/Project/GOMS-iOS/build/Debug-iphoneos/GOMS-iOS.app"; sourceTree = "<absolute>"; };
 		77F073CF29ED8E0B00EE1FC9 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
+		77F073D529ED970200EE1FC9 /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
+		77F073D729ED9A6000EE1FC9 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,9 @@
 			children = (
 				77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */,
 				77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */,
+				77F073D729ED9A6000EE1FC9 /* AppFlow.swift */,
+				77F073D429ED96EE00EE1FC9 /* Step */,
+				77F073D929ED9AE900EE1FC9 /* Flows */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -197,6 +206,30 @@
 				77F073CF29ED8E0B00EE1FC9 /* IntroViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77F073D429ED96EE00EE1FC9 /* Step */ = {
+			isa = PBXGroup;
+			children = (
+				77F073D529ED970200EE1FC9 /* GOMSStep.swift */,
+			);
+			path = Step;
+			sourceTree = "<group>";
+		};
+		77F073D929ED9AE900EE1FC9 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				77F073DA29ED9AFA00EE1FC9 /* Auth */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		77F073DA29ED9AFA00EE1FC9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,12 +318,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
+				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
+				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
+				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
