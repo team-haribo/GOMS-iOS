@@ -15,14 +15,21 @@ class IntroViewController: BaseViewController<IntroViewModel> {
         super.viewDidLoad()
     }
     
+    private let logoImage = UIImageView().then {
+        $0.image = UIImage(named: "colorLogo.svg")
+    }
+    
     override func addView() {
-        [].forEach{
+        [logoImage].forEach{
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
-        
+        logoImage.snp.makeConstraints {
+            $0.top.equalToSuperview().offset((bounds.height) / 7.31)
+            $0.centerX.equalToSuperview()
+        }
     }
 
 
