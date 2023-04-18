@@ -37,6 +37,10 @@
 		77F0740529EE8A0200EE1FC9 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740429EE8A0200EE1FC9 /* RequestViewController.swift */; };
 		77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */; };
 		77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */; };
+		77F0741129EE8B1300EE1FC9 /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741029EE8B1300EE1FC9 /* TabBarFlow.swift */; };
+		77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */; };
+		77F0741529EE8B2D00EE1FC9 /* RequestFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741429EE8B2D00EE1FC9 /* RequestFlow.swift */; };
+		77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +70,10 @@
 		77F0740429EE8A0200EE1FC9 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
 		77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewModel.swift; sourceTree = "<group>"; };
+		77F0741029EE8B1300EE1FC9 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
+		77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		77F0741429EE8B2D00EE1FC9 /* RequestFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFlow.swift; sourceTree = "<group>"; };
+		77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +256,7 @@
 		77F073D929ED9AE900EE1FC9 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				77F0740D29EE8AF100EE1FC9 /* Main */,
 				77F073DA29ED9AFA00EE1FC9 /* Auth */,
 			);
 			path = Flows;
@@ -357,6 +366,33 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		77F0740D29EE8AF100EE1FC9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				77F0740F29EE8B0600EE1FC9 /* Items */,
+				77F0740E29EE8AF600EE1FC9 /* TabBar */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		77F0740E29EE8AF600EE1FC9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				77F0741029EE8B1300EE1FC9 /* TabBarFlow.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		77F0740F29EE8B0600EE1FC9 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */,
+				77F0741429EE8B2D00EE1FC9 /* RequestFlow.swift */,
+				77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -448,14 +484,18 @@
 			files = (
 				77F0740329EE89F100EE1FC9 /* RequestViewModel.swift in Sources */,
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
+				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
+				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
+				77F0741529EE8B2D00EE1FC9 /* RequestFlow.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
+				77F0741129EE8B1300EE1FC9 /* TabBarFlow.swift in Sources */,
 				77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
