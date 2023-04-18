@@ -9,4 +9,5 @@ import UIKit
 
 extension UIColor {
     static var background = UIColor(named: "background")
+    static var mainColor = UIColor(named: "mainColor")
 }

@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxFlow
 
-class IntroViewModel: BaseViewModel {
+class IntroViewModel: BaseViewModel, Stepper{
     
 }
