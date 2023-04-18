@@ -32,8 +32,8 @@ class AuthFlow: Flow {
     }
     
     private func coordinateToIntro() -> FlowContributors {
-        let vm = IntroViewModel()
-        let vc = IntroViewController(vm)
+        let vm = HomeViewModel()
+        let vc = HomeViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

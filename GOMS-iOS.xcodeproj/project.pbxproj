@@ -32,6 +32,7 @@
 		77F073F029EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */; };
 		77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */; };
 		77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */; };
+		77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		77F073F229EE31DA00EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GOMS-iOS.app"; path = "/Users/seonminjae/Desktop/Project/GOMS-iOS/build/Debug-iphoneos/GOMS-iOS.app"; sourceTree = "<absolute>"; };
 		77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			children = (
 				77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */,
 				77F073E029EE172200EE1FC9 /* GOMSFont.swift */,
+				77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
 				77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */,
+				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

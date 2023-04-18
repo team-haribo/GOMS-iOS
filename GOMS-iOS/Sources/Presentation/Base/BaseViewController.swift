@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Then
 
 class BaseViewController<T>: UIViewController {
     let viewModel: T

@@ -6,18 +6,23 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItems()
+        self.navigationItem.leftLogoImage()
     }
     
     override func addView() {
-        <#code#>
+        [].forEach {
+            
+        }
     }
     
     override func setLayout() {
-        <#code#>
+        
     }
 }
