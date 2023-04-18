@@ -17,6 +17,13 @@ extension UIFont {
     }
     
     static func GOMSFont(size: CGFloat = 10, family: Family = .Regular) -> UIFont {
-        return UIFont(name: "SFProText-\(family)", size: size) ?? systemFont(ofSize: 20, weight: .thin)
+        return UIFont(
+            name: "SFProText-\(family)",
+            size: size
+        ) ??
+        systemFont(
+            ofSize: 20,
+            weight: .thin
+        )
     }
 }
