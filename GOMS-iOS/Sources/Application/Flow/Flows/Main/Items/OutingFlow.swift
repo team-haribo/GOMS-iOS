@@ -5,4 +5,48 @@
 //  Created by 선민재 on 2023/04/18.
 //
 
-import Foundation
+import RxFlow
+import UIKit
+import RxCocoa
+import RxSwift
+
+struct OutingStepper: Stepper{
+    var steps = PublishRelay<Step>()
+
+    var initialStep: Step{
+        return GOMSStep.outingIsRequired
+    }
+}
+
+class OutingFlow: Flow {
+
+    var root: Presentable {
+        return self.rootViewController
+    }
+    
+    var stepper = OutingStepper()
+    
+    private lazy var rootViewController: UINavigationController = {
+        let viewController = UINavigationController()
+        return viewController
+    }()
+
+    init(){}
+    
+    func navigate(to step: Step) -> FlowContributors {
+        guard let step = step as? GOMSStep else { return .none }
+        switch step {
+        case .outingIsRequired:
+            return coordinateToOuting()
+        default:
+            return .none
+        }
+    }
+    
+    private func coordinateToOuting() -> FlowContributors {
+        let vm = OutingViewModel()
+        let vc = OutingViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+}

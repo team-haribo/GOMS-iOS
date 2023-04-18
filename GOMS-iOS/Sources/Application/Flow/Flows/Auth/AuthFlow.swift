@@ -26,14 +26,16 @@ class AuthFlow: Flow {
         switch step {
         case .introIsRequired:
             return coordinateToIntro()
+        case .tabBarIsRequired:
+            return .end(forwardToParentFlowWithStep: GOMSStep.tabBarIsRequired)
         default:
             return .none
         }
     }
     
     private func coordinateToIntro() -> FlowContributors {
-        let vm = HomeViewModel()
-        let vc = HomeViewController(vm)
+        let vm = IntroViewModel()
+        let vc = IntroViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
