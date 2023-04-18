@@ -11,13 +11,16 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItems()
     }
     
     override func addView() {
-        <#code#>
+        [].forEach {
+            
+        }
     }
     
     override func setLayout() {
-        <#code#>
+        
     }
 }
