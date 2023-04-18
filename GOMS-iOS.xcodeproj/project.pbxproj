@@ -33,6 +33,10 @@
 		77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */; };
 		77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */; };
 		77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */; };
+		77F0740329EE89F100EE1FC9 /* RequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740229EE89F100EE1FC9 /* RequestViewModel.swift */; };
+		77F0740529EE8A0200EE1FC9 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740429EE8A0200EE1FC9 /* RequestViewController.swift */; };
+		77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */; };
+		77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +58,14 @@
 		77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Medium.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
-		77F073F229EE31DA00EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GOMS-iOS.app"; path = "/Users/seonminjae/Desktop/Project/GOMS-iOS/build/Debug-iphoneos/GOMS-iOS.app"; sourceTree = "<absolute>"; };
 		77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		77F073FE29EE881600EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOMS-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F0740229EE89F100EE1FC9 /* RequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewModel.swift; sourceTree = "<group>"; };
+		77F0740429EE8A0200EE1FC9 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
+		77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 			children = (
 				77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */,
 				77F073B229ED37D600EE1FC9 /* Frameworks */,
+				77F073FE29EE881600EE1FC9 /* GOMS-iOS.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,6 +275,8 @@
 		77F073F329EE3D3200EE1FC9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				77F0740629EE8A5E00EE1FC9 /* Outing */,
+				77F073FF29EE89B700EE1FC9 /* Request */,
 				77F073F429EE3D3B00EE1FC9 /* Home */,
 			);
 			path = Main;
@@ -296,6 +307,56 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		77F073FF29EE89B700EE1FC9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				77F0740129EE89E000EE1FC9 /* ViewModel */,
+				77F0740029EE89DC00EE1FC9 /* View */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		77F0740029EE89DC00EE1FC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F0740429EE8A0200EE1FC9 /* RequestViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77F0740129EE89E000EE1FC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F0740229EE89F100EE1FC9 /* RequestViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77F0740629EE8A5E00EE1FC9 /* Outing */ = {
+			isa = PBXGroup;
+			children = (
+				77F0740829EE8A6F00EE1FC9 /* ViewModel */,
+				77F0740729EE8A6A00EE1FC9 /* View */,
+			);
+			path = Outing;
+			sourceTree = "<group>";
+		};
+		77F0740729EE8A6A00EE1FC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77F0740829EE8A6F00EE1FC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,7 +382,7 @@
 				77F073D229ED923700EE1FC9 /* GAuthSignin */,
 			);
 			productName = "GOMS-iOS";
-			productReference = 77F073F229EE31DA00EE1FC9 /* GOMS-iOS.app */;
+			productReference = 77F073FE29EE881600EE1FC9 /* GOMS-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -385,9 +446,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F0740329EE89F100EE1FC9 /* RequestViewModel.swift in Sources */,
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
+				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
@@ -398,6 +461,8 @@
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
 				77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */,
+				77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */,
+				77F0740529EE8A0200EE1FC9 /* RequestViewController.swift in Sources */,
 				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
