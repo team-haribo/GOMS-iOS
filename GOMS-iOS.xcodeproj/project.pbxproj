@@ -25,6 +25,10 @@
 		77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073D529ED970200EE1FC9 /* GOMSStep.swift */; };
 		77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073D729ED9A6000EE1FC9 /* AppFlow.swift */; };
 		77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */; };
+		77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073E029EE172200EE1FC9 /* GOMSFont.swift */; };
+		77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */; };
+		77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */; };
+		77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		77F073D529ED970200EE1FC9 /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
 		77F073D729ED9A6000EE1FC9 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
+		77F073E029EE172200EE1FC9 /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
+		77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Semibold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Medium.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,7 @@
 		77F073BC29ED678900EE1FC9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				77F073DF29EE170A00EE1FC9 /* Font */,
 				77F073C429ED8A0800EE1FC9 /* Extension */,
 				77F0739929ED29D000EE1FC9 /* Assets.xcassets */,
 				77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */,
@@ -188,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */,
+				77F073E029EE172200EE1FC9 /* GOMSFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -230,6 +240,16 @@
 				77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		77F073DF29EE170A00EE1FC9 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */,
+				77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */,
+				77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +325,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */,
 				77F0739D29ED29D000EE1FC9 /* LaunchScreen.storyboard in Resources */,
+				77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */,
+				77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */,
 				77F0739A29ED29D000EE1FC9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +345,7 @@
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
+				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
