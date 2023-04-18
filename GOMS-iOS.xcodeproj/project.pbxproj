@@ -29,6 +29,7 @@
 		77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */; };
 		77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */; };
 		77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */; };
+		77F073F029EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Semibold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Medium.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */,
 				77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */,
 				77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */,
+				77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */,
 				77F0739D29ED29D000EE1FC9 /* LaunchScreen.storyboard in Resources */,
+				77F073F029EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf in Resources */,
 				77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */,
 				77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */,
 				77F0739A29ED29D000EE1FC9 /* Assets.xcassets in Resources */,

@@ -13,6 +13,7 @@ extension UIFont {
         case SemiBold
         case Medium
         case Regular
+        case Bold
     }
     
     static func GOMSFont(size: CGFloat = 10, family: Family = .Regular) -> UIFont {
