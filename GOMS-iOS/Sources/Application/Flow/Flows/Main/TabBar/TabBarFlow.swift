@@ -45,7 +45,7 @@ final class TabBarFlow: Flow {
 private extension TabBarFlow {
     func coordinateToTabbar() -> FlowContributors {
         Flows.use(
-            requestFlow, homeFlow, outingFlow,
+            homeFlow, requestFlow, outingFlow,
             when: .ready
         ) { [unowned self] (root1: UINavigationController,
                             root2: UINavigationController,
