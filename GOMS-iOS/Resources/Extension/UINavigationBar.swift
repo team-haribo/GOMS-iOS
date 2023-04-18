@@ -24,4 +24,12 @@ extension UINavigationItem {
         }
         self.setRightBarButtonItems([noticeButton,qrCodeButton], animated: true)
     }
+    
+    func leftLogoImage() {
+        var customFont = UIFont.GOMSFont(size: 20,family: .Bold)
+        self.leftBarButtonItem = UIBarButtonItem(title: "GOMS", style: .plain, target: nil, action: nil).then {
+            $0.tintColor = .mainColor
+            $0.setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
+        }
+    }
 }
