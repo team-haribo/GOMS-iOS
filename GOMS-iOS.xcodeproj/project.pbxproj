@@ -41,6 +41,7 @@
 		77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */; };
 		77F0741529EE8B2D00EE1FC9 /* RequestFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741429EE8B2D00EE1FC9 /* RequestFlow.swift */; };
 		77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */; };
+		77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741B29EE8B8A00EE1FC9 /* GOMSTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +66,7 @@
 		77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
-		77F073FE29EE881600EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOMS-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F073FE29EE881600EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GOMS-iOS.app"; path = "/Users/seonminjae/Desktop/Project/GOMS-iOS/build/Debug-iphoneos/GOMS-iOS.app"; sourceTree = "<absolute>"; };
 		77F0740229EE89F100EE1FC9 /* RequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewModel.swift; sourceTree = "<group>"; };
 		77F0740429EE8A0200EE1FC9 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
 		77F0741429EE8B2D00EE1FC9 /* RequestFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFlow.swift; sourceTree = "<group>"; };
 		77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
+		77F0741B29EE8B8A00EE1FC9 /* GOMSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,6 @@
 			children = (
 				77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */,
 				77F073B229ED37D600EE1FC9 /* Frameworks */,
-				77F073FE29EE881600EE1FC9 /* GOMS-iOS.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +135,7 @@
 		77F073B829ED676000EE1FC9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				77F0741829EE8B5800EE1FC9 /* TabBar */,
 				77F073F329EE3D3200EE1FC9 /* Main */,
 				77F073C129ED893100EE1FC9 /* Base */,
 				77F073BF29ED67E200EE1FC9 /* Auth */,
@@ -393,6 +395,14 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		77F0741829EE8B5800EE1FC9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				77F0741B29EE8B8A00EE1FC9 /* GOMSTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +495,7 @@
 				77F0740329EE89F100EE1FC9 /* RequestViewModel.swift in Sources */,
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
 				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
+				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
