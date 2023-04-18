@@ -1,5 +1,5 @@
 //
-//  AuthFlow.swift
+//  RequestFlow.swift
 //  GOMS-iOS
 //
 //  Created by 선민재 on 2023/04/18.
@@ -7,12 +7,24 @@
 
 import RxFlow
 import UIKit
+import RxSwift
+import RxCocoa
 
-class AuthFlow: Flow {
+struct RequestStepper: Stepper{
+    var steps = PublishRelay<Step>()
+
+    var initialStep: Step{
+        return GOMSStep.requestIsRequired
+    }
+}
+
+class RequestFlow: Flow {
 
     var root: Presentable {
         return self.rootViewController
     }
+    
+    var stepper = RequestStepper()
     
     private lazy var rootViewController: UINavigationController = {
         let viewController = UINavigationController()
@@ -20,23 +32,21 @@ class AuthFlow: Flow {
     }()
 
     init(){}
-
+    
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? GOMSStep else { return .none }
         switch step {
-        case .introIsRequired:
-            return coordinateToIntro()
-        case .tabBarIsRequired:
-            return .end(forwardToParentFlowWithStep: GOMSStep.tabBarIsRequired)
+        case .requestIsRequired:
+            return coordinateToRequset()
         default:
             return .none
         }
     }
     
-    private func coordinateToIntro() -> FlowContributors {
-        let vm = IntroViewModel()
-        let vc = IntroViewController(vm)
-        self.rootViewController.setViewControllers([vc], animated: false)
+    private func coordinateToRequset() -> FlowContributors {
+        let vm = RequsetViewModel()
+        let vc = RequestViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }

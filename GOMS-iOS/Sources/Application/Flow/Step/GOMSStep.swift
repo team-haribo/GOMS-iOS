@@ -11,4 +11,16 @@ enum GOMSStep: Step {
     
     // MARK: Intro
     case introIsRequired
+    
+    // MARK: TabBar
+    case tabBarIsRequired
+    
+    // MARK: Profile
+    case requestIsRequired
+    
+    // MARK: Theme
+    case outingIsRequired
+    
+    // MARK: Home
+    case homeIsRequired
 }
