@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RequestViewController: BaseViewController<RequsetViewModel> {
+class QRCodeViewController: BaseViewController<QRCodeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()

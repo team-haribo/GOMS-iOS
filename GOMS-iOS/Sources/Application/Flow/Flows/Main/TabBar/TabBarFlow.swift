@@ -12,7 +12,7 @@ final class TabBarFlow: Flow {
     
     enum TabIndex: Int {
         case home = 0
-        case request = 1
+        case qrCode = 1
         case outing = 2
     }
     
@@ -24,7 +24,7 @@ final class TabBarFlow: Flow {
     private let rootVC = GOMSTabBarViewController()
     
     private var homeFlow = HomeFlow()
-    private var requestFlow = RequestFlow()
+    private var qrCodeFlow = QRCodeFlow()
     private var outingFlow = OutingFlow()
     
     init() {}
@@ -45,7 +45,7 @@ final class TabBarFlow: Flow {
 private extension TabBarFlow {
     func coordinateToTabbar() -> FlowContributors {
         Flows.use(
-            homeFlow, requestFlow, outingFlow,
+            homeFlow, qrCodeFlow, outingFlow,
             when: .ready
         ) { [unowned self] (root1: UINavigationController,
                             root2: UINavigationController,
@@ -56,10 +56,10 @@ private extension TabBarFlow {
                 selectedImage: UIImage(named: "selectedHome.svg")
             )
             
-            let requestItem = UITabBarItem(
-                title: "의뢰하기",
-                image: UIImage(named: "unRequest.svg"),
-                selectedImage: UIImage(named: "selectedRequest.svg")
+            let qrCodeItem = UITabBarItem(
+                title: "외출하기",
+                image: UIImage(named: "unQRCode.svg"),
+                selectedImage: UIImage(named: "selectedQRcode.svg")
             )
             
             let outingItem = UITabBarItem(
@@ -68,7 +68,7 @@ private extension TabBarFlow {
                 selectedImage: UIImage(named: "selectedOuting.svg")
             )
             root1.tabBarItem = homeItem
-            root2.tabBarItem = requestItem
+            root2.tabBarItem = qrCodeItem
             root3.tabBarItem = outingItem
             
             self.rootVC.setViewControllers([root1,root2,root3], animated: true)
@@ -76,7 +76,7 @@ private extension TabBarFlow {
         }
         return .multiple(flowContributors: [
             .contribute(withNextPresentable: homeFlow, withNextStepper: homeFlow.stepper),
-            .contribute(withNextPresentable: requestFlow, withNextStepper: requestFlow.stepper),
+            .contribute(withNextPresentable: qrCodeFlow, withNextStepper: qrCodeFlow.stepper),
             .contribute(withNextPresentable: outingFlow, withNextStepper: outingFlow.stepper)
         ])
     }

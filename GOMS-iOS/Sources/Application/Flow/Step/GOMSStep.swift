@@ -15,10 +15,10 @@ enum GOMSStep: Step {
     // MARK: TabBar
     case tabBarIsRequired
     
-    // MARK: Profile
-    case requestIsRequired
+    // MARK: QRCode
+    case qrocdeIsRequired
     
-    // MARK: Theme
+    // MARK: Outing
     case outingIsRequired
     
     // MARK: Home
