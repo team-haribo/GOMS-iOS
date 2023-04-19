@@ -9,6 +9,6 @@ import Foundation
 import RxFlow
 
 
-class RequsetViewModel: BaseViewModel, Stepper{
+class QRCodeViewModel: BaseViewModel, Stepper{
     
 }

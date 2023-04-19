@@ -11,18 +11,12 @@ import Then
 
 extension UINavigationItem {
     func rightBarButtonItems() {
-        let qrCodeButton = UIBarButtonItem().then {
-            $0.image = UIImage(named: "qrCode.svg")
-            $0.image?.withRenderingMode(.alwaysOriginal)
-            $0.tintColor = .mainColor
-        }
-        
         let noticeButton = UIBarButtonItem().then {
             $0.image = UIImage(named: "notice.svg")
             $0.image?.withRenderingMode(.alwaysOriginal)
             $0.tintColor = .mainColor
         }
-        self.setRightBarButtonItems([noticeButton,qrCodeButton], animated: true)
+        self.setRightBarButton(noticeButton, animated: true)
     }
     
     func leftLogoImage() {
