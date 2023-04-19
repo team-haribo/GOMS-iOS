@@ -47,7 +47,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.backgroundColor = .mainColor
     }
     
-    private let outingBackView = UIView().then {
+    private let outingButton = UIButton().then {
         $0.backgroundColor = .white
         $0.layer.applySketchShadow(
             color: UIColor.black,
@@ -109,7 +109,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.backgroundColor = .background
     }
     
-    private let requestBackView = UIView().then {
+    private let requestButton = UIButton().then {
         $0.backgroundColor = .white
         $0.layer.applySketchShadow(
             color: UIColor.black,
@@ -135,7 +135,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     override func addView() {
-        [homeMainImage, homeMainText, useQRCodeButton, outingBackView, totalStudentText, outingStudentText, tardyText, tardyCollectionView, requestBackView, requestText, requestSubText].forEach {
+        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, tardyText, tardyCollectionView, requestButton, requestText, requestSubText].forEach {
             view.addSubview($0)
         }
     }
@@ -155,21 +155,21 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.height.equalTo(38)
             $0.trailing.equalTo(homeMainImage.snp.leading).inset(23)
         }
-        outingBackView.snp.makeConstraints {
+        outingButton.snp.makeConstraints {
             $0.top.equalTo(homeMainImage.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(70)
         }
         totalStudentText.snp.makeConstraints {
-            $0.top.equalTo(outingBackView.snp.top).offset(14)
-            $0.leading.equalTo(outingBackView.snp.leading).offset(16)
+            $0.top.equalTo(outingButton.snp.top).offset(14)
+            $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
         outingStudentText.snp.makeConstraints {
             $0.top.equalTo(totalStudentText.snp.bottom).offset(8)
-            $0.leading.equalTo(outingBackView.snp.leading).offset(16)
+            $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
         tardyText.snp.makeConstraints {
-            $0.top.equalTo(outingBackView.snp.bottom).offset(32)
+            $0.top.equalTo(outingButton.snp.bottom).offset(32)
             $0.leading.equalToSuperview().offset(26)
         }
         tardyCollectionView.snp.makeConstraints {
@@ -177,18 +177,18 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.bottom.equalTo(view.snp.bottom).inset((bounds.height) / 3.5)
         }
-        requestBackView.snp.makeConstraints {
+        requestButton.snp.makeConstraints {
             $0.top.equalTo(tardyCollectionView.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(70)
         }
         requestText.snp.makeConstraints {
-            $0.top.equalTo(requestBackView.snp.top).offset(14)
-            $0.leading.equalTo(requestBackView.snp.leading).offset(16)
+            $0.top.equalTo(requestButton.snp.top).offset(14)
+            $0.leading.equalTo(requestButton.snp.leading).offset(16)
         }
         requestSubText.snp.makeConstraints {
             $0.top.equalTo(requestText.snp.bottom).offset(8)
-            $0.leading.equalTo(requestBackView.snp.leading).offset(16)
+            $0.leading.equalTo(requestButton.snp.leading).offset(16)
         }
     }
 }
