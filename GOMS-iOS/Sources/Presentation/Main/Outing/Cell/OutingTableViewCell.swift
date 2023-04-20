@@ -9,7 +9,8 @@ import UIKit
 import Then
 import SnapKit
 
-class OutingTableViewCell: UITableViewCell {
+class OutingCollectionViewCell: UICollectionViewCell {
+    static let identifier = "outingCell"
     
     let userProfile = UIImageView()
     
@@ -23,12 +24,12 @@ class OutingTableViewCell: UITableViewCell {
         $0.textColor = .subColor
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addView()
-        setLayout()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addView()
+        self.setLayout()
     }
-    
+        
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
