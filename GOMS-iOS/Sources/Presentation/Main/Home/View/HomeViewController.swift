@@ -92,7 +92,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.font = UIFont.GOMSFont(size: 20, family: .SemiBold)
     }
     
-    let layout = UICollectionViewFlowLayout().then {
+    private let layout = UICollectionViewFlowLayout().then {
         $0.itemSize = CGSize(
             width: (
                 (UIScreen.main.bounds.width) / 3.87
@@ -104,7 +104,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5) //아이템 상하좌우 사이값 초기화
     }
     
-    let tardyCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private let tardyCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.isScrollEnabled = false
         $0.backgroundColor = .background
     }
