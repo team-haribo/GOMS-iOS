@@ -15,10 +15,13 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
-        outingTableView.delegate = self
-        outingTableView.dataSource = self
-        outingTableView.layer.cornerRadius = 10
-        outingTableView.layer.masksToBounds = true
+        outingCollectionView.dataSource = self
+        outingCollectionView.delegate = self
+        outingCollectionView.register(
+            OutingCollectionViewCell.self,
+            forCellWithReuseIdentifier: OutingCollectionViewCell.identifier
+        )
+        outingCollectionView.collectionViewLayout = layout
     }
     
     private let outingMainText = UILabel().then {
@@ -31,21 +34,25 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         $0.textColor = .black
     }
     
-    private let outingTableView = UITableView().then {
-        $0.register(OutingTableViewCell.self, forCellReuseIdentifier: "OutingTableViewCell")
-        $0.separatorStyle = .none
-        $0.layer.applySketchShadow(
-            color: UIColor.black,
-            alpha: 0.1,
-            x: 0,
-            y: 2,
-            blur: 8,
-            spread: 0
+    private let layout = UICollectionViewFlowLayout().then {
+        $0.itemSize = CGSize(
+            width: (
+                (UIScreen.main.bounds.width) - 52
+            ),
+            height: (
+                90
+            )
         )
+        $0.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0) //아이템 상하좌우 사이값 초기화
+    }
+    
+    private let outingCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        $0.isScrollEnabled = true
+        $0.backgroundColor = .background
     }
     
     override func addView() {
-        [outingMainText, outingTableView].forEach {
+        [outingMainText, outingCollectionView].forEach {
             view.addSubview($0)
         }
     }
@@ -55,7 +62,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 7.73)
             $0.leading.equalToSuperview().offset(26)
         }
-        outingTableView.snp.makeConstraints {
+        outingCollectionView.snp.makeConstraints {
             $0.top.equalTo(outingMainText.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.bottom.equalToSuperview()
@@ -64,22 +71,44 @@ class OutingViewController: BaseViewController<OutingViewModel> {
 
 }
 
-extension OutingViewController: UITableViewDelegate, UITableViewDataSource {
+extension OutingViewController:
+    UICollectionViewDelegate,
+    UICollectionViewDelegateFlowLayout,
+    UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = outingTableView.dequeueReusableCell(withIdentifier: "OutingTableViewCell", for: indexPath) as! OutingTableViewCell
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OutingCollectionViewCell.identifier, for: indexPath) as? OutingCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 10
+        cell.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
         cell.userProfile.image = UIImage(named: "userProfile.svg")
         cell.userName.text = "선민재"
         cell.userNum.text = "3학년 1반 11번"
         return cell
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
-    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(
+            width: (
+                (UIScreen.main.bounds.width) - 52
+            ),
+            height: (
+                90
+            )
+        )
+    }
 }
