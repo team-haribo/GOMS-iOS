@@ -10,6 +10,15 @@ import UIKit
 import Then
 
 extension UINavigationItem {
+    func rightBarButtonItem() {
+        let profileButton = UIBarButtonItem().then {
+            $0.image = UIImage(named: "profileIcon.svg")
+            $0.image?.withRenderingMode(.alwaysOriginal)
+            $0.tintColor = .mainColor
+        }
+        self.setRightBarButton(profileButton, animated: true)
+    }
+    
     func leftLogoImage() {
         var customFont = UIFont.GOMSFont(size: 20,family: .Bold)
         self.leftBarButtonItem = UIBarButtonItem(

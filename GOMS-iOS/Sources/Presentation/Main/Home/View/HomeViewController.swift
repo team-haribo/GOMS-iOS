@@ -14,7 +14,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationItem.leftLogoImage()
+        self.navigationItem.rightBarButtonItem()
+        self.navigationItem.leftLogoImage()
         tardyCollectionView.dataSource = self
         tardyCollectionView.delegate = self
         tardyCollectionView.register(
