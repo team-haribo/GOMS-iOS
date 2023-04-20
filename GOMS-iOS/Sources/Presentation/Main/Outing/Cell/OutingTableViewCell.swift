@@ -11,18 +11,14 @@ import SnapKit
 
 class OutingTableViewCell: UITableViewCell {
     
-    let userProfile = UIImageView().then {
-        $0.image = UIImage(named: "userProfile.svg")
-    }
+    let userProfile = UIImageView()
     
     let userName = UILabel().then {
-        $0.text = "선민재"
         $0.font = UIFont.GOMSFont(size: 16, family:.Regular)
         $0.textColor = .black
     }
     
     let userNum = UILabel().then {
-        $0.text = "3학년 1반 11번"
         $0.font = UIFont.GOMSFont(size: 14, family:.Regular)
         $0.textColor = .subColor
     }
