@@ -46,6 +46,8 @@
 		77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */; };
 		77F0742929F00A7D00EE1FC9 /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0742829F00A7D00EE1FC9 /* QRCodeReader */; };
 		77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */; };
+		77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */; };
+		77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSShadow.swift; sourceTree = "<group>"; };
 		77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
+		77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +300,7 @@
 		77F073F329EE3D3200EE1FC9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				77F0743729F1A6F100EE1FC9 /* Profile */,
 				77F0740629EE8A5E00EE1FC9 /* Outing */,
 				77F073FF29EE89B700EE1FC9 /* QRCode */,
 				77F073F429EE3D3B00EE1FC9 /* Home */,
@@ -431,6 +436,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		77F0743729F1A6F100EE1FC9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				77F0743929F1A6FD00EE1FC9 /* ViewModel */,
+				77F0743829F1A6F700EE1FC9 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		77F0743829F1A6F700EE1FC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		77F0743929F1A6FD00EE1FC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -528,6 +558,8 @@
 				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
 				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,
+				77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */,
+				77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
