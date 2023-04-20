@@ -109,7 +109,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.backgroundColor = .background
     }
     
-    private let requestButton = UIButton().then {
+    private let profileButton = UIButton().then {
         $0.backgroundColor = .white
         $0.layer.applySketchShadow(
             color: UIColor.black,
@@ -122,20 +122,28 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.layer.cornerRadius = 10
     }
     
-    private let requestText = UILabel().then {
-        $0.text = "의뢰하기"
+    private let profileImg = UIImageView().then {
+        $0.image = UIImage(named: "dummyImage.svg")
+    }
+    
+    private let userNameText = UILabel().then {
+        $0.text = "선민재"
         $0.textColor = UIColor.black
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
     
-    private var requestSubText = UILabel().then {
-        $0.text = "직접 나가지 않고 요청해 보세요!"
+    private let navigationButton = UIImageView().then {
+        $0.image = UIImage(named: "navigationButton.svg")
+    }
+    
+    private var userNumText = UILabel().then {
+        $0.text = "3학년 1반 11번"
         $0.textColor = UIColor.subColor
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     
     override func addView() {
-        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, tardyText, tardyCollectionView, requestButton, requestText, requestSubText].forEach {
+        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, navigationButton].forEach {
             view.addSubview($0)
         }
     }
@@ -177,18 +185,26 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.bottom.equalTo(view.snp.bottom).inset((bounds.height) / 3.5)
         }
-        requestButton.snp.makeConstraints {
+        profileButton.snp.makeConstraints {
             $0.top.equalTo(tardyCollectionView.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(70)
         }
-        requestText.snp.makeConstraints {
-            $0.top.equalTo(requestButton.snp.top).offset(14)
-            $0.leading.equalTo(requestButton.snp.leading).offset(16)
+        profileImg.snp.makeConstraints {
+            $0.top.equalTo(profileButton.snp.top).offset(15)
+            $0.leading.equalTo(profileButton.snp.leading).offset(16)
         }
-        requestSubText.snp.makeConstraints {
-            $0.top.equalTo(requestText.snp.bottom).offset(8)
-            $0.leading.equalTo(requestButton.snp.leading).offset(16)
+        userNameText.snp.makeConstraints {
+            $0.top.equalTo(profileButton.snp.top).offset(18)
+            $0.leading.equalTo(profileImg.snp.trailing).offset(14)
+        }
+        userNumText.snp.makeConstraints {
+            $0.top.equalTo(userNameText.snp.bottom).offset(4)
+            $0.leading.equalTo(profileImg.snp.trailing).offset(14)
+        }
+        navigationButton.snp.makeConstraints {
+            $0.centerY.equalTo(profileButton.snp.centerY).offset(0)
+            $0.trailing.equalTo(profileButton.snp.trailing).inset(23)
         }
     }
 }
