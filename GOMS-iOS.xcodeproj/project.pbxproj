@@ -45,6 +45,7 @@
 		77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */; };
 		77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */; };
 		77F0742929F00A7D00EE1FC9 /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0742829F00A7D00EE1FC9 /* QRCodeReader */; };
+		77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		77F0741E29EE949B00EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOMS-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSShadow.swift; sourceTree = "<group>"; };
 		77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 		77F0740629EE8A5E00EE1FC9 /* Outing */ = {
 			isa = PBXGroup;
 			children = (
+				77F0742F29F15AAB00EE1FC9 /* Cell */,
 				77F0740829EE8A6F00EE1FC9 /* ViewModel */,
 				77F0740729EE8A6A00EE1FC9 /* View */,
 			);
@@ -416,6 +419,14 @@
 			isa = PBXGroup;
 			children = (
 				77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		77F0742F29F15AAB00EE1FC9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -516,6 +527,7 @@
 				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
 				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
+				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
