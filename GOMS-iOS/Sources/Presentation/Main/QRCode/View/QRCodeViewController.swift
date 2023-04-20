@@ -11,7 +11,6 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItems()
         self.navigationItem.leftLogoImage()
     }
     

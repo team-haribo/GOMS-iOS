@@ -13,7 +13,6 @@ class OutingViewController: BaseViewController<OutingViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItems()
         self.navigationItem.leftLogoImage()
     }
     

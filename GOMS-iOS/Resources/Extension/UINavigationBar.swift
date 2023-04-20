@@ -10,15 +10,6 @@ import UIKit
 import Then
 
 extension UINavigationItem {
-    func rightBarButtonItems() {
-        let noticeButton = UIBarButtonItem().then {
-            $0.image = UIImage(named: "notice.svg")
-            $0.image?.withRenderingMode(.alwaysOriginal)
-            $0.tintColor = .mainColor
-        }
-        self.setRightBarButton(noticeButton, animated: true)
-    }
-    
     func leftLogoImage() {
         var customFont = UIFont.GOMSFont(size: 20,family: .Bold)
         self.leftBarButtonItem = UIBarButtonItem(
