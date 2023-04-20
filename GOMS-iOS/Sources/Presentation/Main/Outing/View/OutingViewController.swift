@@ -47,7 +47,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
     }
     
     private let outingCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
-        $0.isScrollEnabled = false
+        $0.isScrollEnabled = true
         $0.backgroundColor = .background
     }
     
