@@ -8,7 +8,7 @@ import UIKit
 import Then
 import SnapKit
 
-class ProfileCollectionViewCell: UITableViewCell {
+class ProfileTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,30 +20,30 @@ class ProfileCollectionViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private let cellName = UILabel().then {
+    let cellName = UILabel().then {
         $0.textColor = .black
         $0.font = UIFont.GOMSFont(size: 16,family: .Medium)
     }
     
-    private let cellResult = UILabel().then {
+    let cellDetail = UILabel().then {
         $0.textColor = .subColor
         $0.font = UIFont.GOMSFont(size: 14,family: .Regular)
     }
     
     func addView() {
-        [cellName, cellResult].forEach {
+        [cellName, cellDetail].forEach {
             contentView.addSubview($0)
         }
     }
     
     func setLayout() {
         cellName.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(24)
             $0.leading.equalToSuperview().offset(24)
         }
         
-        cellResult.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
+        cellDetail.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(24)
             $0.trailing.equalToSuperview().inset(24)
         }
     }

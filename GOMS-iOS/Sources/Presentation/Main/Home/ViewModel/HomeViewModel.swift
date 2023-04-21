@@ -27,7 +27,6 @@ class HomeViewModel: BaseViewModel, Stepper{
     }
     
     private func pushProfileVC() {
-        print("ad")
         self.steps.accept(GOMSStep.profileIsRequired)
     }
 }
