@@ -47,6 +47,7 @@ class ProfileViewController: BaseViewController<BaseViewModel> {
         $0.separatorStyle = .singleLine
         $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         $0.rowHeight = 67
+        $0.isScrollEnabled = false
         $0.layer.applySketchShadow(
             color: UIColor.black,
             alpha: 0.1,
@@ -95,6 +96,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = userInfoTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         cell.cellName.text = cellName[indexPath.row]
         cell.cellDetail.text = cellDetail[indexPath.row]
+        cell.selectionStyle = .none
         return cell
     }
     
