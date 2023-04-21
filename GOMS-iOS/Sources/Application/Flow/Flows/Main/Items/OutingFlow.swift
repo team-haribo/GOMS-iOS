@@ -38,6 +38,10 @@ class OutingFlow: Flow {
         switch step {
         case .outingIsRequired:
             return coordinateToOuting()
+            
+        case .profileIsRequired:
+            return coordinateToProfile()
+            
         default:
             return .none
         }
@@ -46,6 +50,13 @@ class OutingFlow: Flow {
     private func coordinateToOuting() -> FlowContributors {
         let vm = OutingViewModel()
         let vc = OutingViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToProfile() -> FlowContributors {
+        let vm = ProfileViewModel()
+        let vc = ProfileViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

@@ -45,6 +45,9 @@ class HomeFlow: Flow {
         case .homeIsRequired:
             return coordinateToHome()
             
+        case .profileIsRequired:
+            return coordinateToProfile()
+            
         default:
             return .none
         }
@@ -53,6 +56,12 @@ class HomeFlow: Flow {
     private func coordinateToHome() -> FlowContributors {
         let vm = HomeViewModel()
         let vc = HomeViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    private func coordinateToProfile() -> FlowContributors {
+        let vm = ProfileViewModel()
+        let vc = ProfileViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
