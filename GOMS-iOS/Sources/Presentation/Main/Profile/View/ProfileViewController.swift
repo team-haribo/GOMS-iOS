@@ -14,11 +14,16 @@ class ProfileViewController: BaseViewController<BaseViewModel> {
     private let cellDetail = ["선민재","3","1","11","11"]
     
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         userInfoTableView.delegate = self
         userInfoTableView.dataSource = self
         userInfoTableView.layer.cornerRadius = 20
         userInfoTableView.layer.masksToBounds = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private let profileImage = UIImageView().then {
