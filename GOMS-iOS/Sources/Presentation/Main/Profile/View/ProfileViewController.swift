@@ -10,9 +10,15 @@ import Then
 import SnapKit
 
 class ProfileViewController: BaseViewController<BaseViewModel> {
-
+    private let cellName = ["이름","학년","반","번호","지각횟수"]
+    private let cellDetail = ["선민재","3","1","11","11"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userInfoTableView.delegate = self
+        userInfoTableView.dataSource = self
+        userInfoTableView.layer.cornerRadius = 20
+        userInfoTableView.layer.masksToBounds = true
     }
     
     private let profileImage = UIImageView().then {
@@ -31,8 +37,23 @@ class ProfileViewController: BaseViewController<BaseViewModel> {
         $0.textColor = .subColor
     }
     
+    private let userInfoTableView = UITableView().then {
+        $0.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileTableViewCell")
+        $0.separatorStyle = .singleLine
+        $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        $0.rowHeight = 67
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+            )
+        }
+    
     override func addView() {
-        [profileImage, userName, userNum].forEach {
+        [profileImage, userName, userNum, userInfoTableView].forEach {
             view.addSubview($0)
         }
     }
@@ -50,5 +71,29 @@ class ProfileViewController: BaseViewController<BaseViewModel> {
             $0.top.equalTo(userName.snp.bottom).offset(0)
             $0.centerX.equalToSuperview()
         }
+        userInfoTableView.snp.makeConstraints {
+            $0.top.equalTo(userNum.snp.bottom).offset(32)
+            $0.leading.equalToSuperview().offset(26)
+            $0.trailing.equalToSuperview().offset(-26)
+            $0.bottom.equalToSuperview().inset(190)
+        }
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellName.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = userInfoTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
+        cell.cellName.text = cellName[indexPath.row]
+        cell.cellDetail.text = cellDetail[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 67
     }
 }

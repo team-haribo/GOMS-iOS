@@ -48,6 +48,7 @@
 		77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */; };
 		77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */; };
 		77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */; };
+		77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
 		77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +441,7 @@
 		77F0743729F1A6F100EE1FC9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				77F0744129F2175C00EE1FC9 /* Cell */,
 				77F0743929F1A6FD00EE1FC9 /* ViewModel */,
 				77F0743829F1A6F700EE1FC9 /* View */,
 			);
@@ -459,6 +462,14 @@
 				77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77F0744129F2175C00EE1FC9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,6 +585,7 @@
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
+				77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */,
 				77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */,
 				77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */,
 				77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */,
