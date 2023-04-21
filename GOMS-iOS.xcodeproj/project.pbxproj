@@ -48,6 +48,7 @@
 		77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */; };
 		77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */; };
 		77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */; };
+		77F0744029F208C500EE1FC9 /* ProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743F29F208C500EE1FC9 /* ProfileFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
 		77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		77F0743F29F208C500EE1FC9 /* ProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +390,7 @@
 		77F0740D29EE8AF100EE1FC9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				77F0743E29F2088D00EE1FC9 /* Profile */,
 				77F0740F29EE8B0600EE1FC9 /* Items */,
 				77F0740E29EE8AF600EE1FC9 /* TabBar */,
 			);
@@ -459,6 +462,14 @@
 				77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		77F0743E29F2088D00EE1FC9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				77F0743F29F208C500EE1FC9 /* ProfileFlow.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -564,6 +575,7 @@
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
+				77F0744029F208C500EE1FC9 /* ProfileFlow.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,

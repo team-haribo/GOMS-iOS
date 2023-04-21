@@ -23,4 +23,7 @@ enum GOMSStep: Step {
     
     // MARK: Home
     case homeIsRequired
+    
+    // MARK: Profile
+    case profileIsRequired
 }

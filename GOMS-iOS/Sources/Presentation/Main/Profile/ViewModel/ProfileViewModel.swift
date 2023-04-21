@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import RxFlow
 
-class ProfileViewModel: BaseViewModel {
+class ProfileViewModel: BaseViewModel, Stepper {
     
 }
