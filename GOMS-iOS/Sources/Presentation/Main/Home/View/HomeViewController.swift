@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Then
 import SnapKit
+import RxSwift
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
@@ -23,6 +24,14 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             forCellWithReuseIdentifier: HomeCollectionViewCell.identifier
         )
         tardyCollectionView.collectionViewLayout = layout
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = HomeViewModel.Input(
+            profileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private let homeMainImage = UIImageView().then {

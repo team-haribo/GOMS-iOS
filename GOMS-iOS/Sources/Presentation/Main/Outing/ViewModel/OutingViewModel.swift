@@ -7,8 +7,25 @@
 
 import Foundation
 import RxFlow
-
+import RxSwift
+import RxCocoa
 
 class OutingViewModel: BaseViewModel, Stepper{
+    struct Input {
+        let profileButtonTap: Observable<Void>
+    }
     
+    struct Output {
+        
+    }
+    
+    func transVC(input: Input) {
+        input.profileButtonTap.subscribe(
+            onNext: pushProfileVC
+        ) .disposed(by: disposeBag)
+    }
+    
+    private func pushProfileVC() {
+        self.steps.accept(GOMSStep.profileIsRequired)
+    }
 }

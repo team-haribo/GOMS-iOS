@@ -29,6 +29,7 @@ class BaseViewController<T>: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .black
         view.backgroundColor = .background
+        self.navigationItem.backButtonTitle = ""
         addView()
         setLayout()
     }

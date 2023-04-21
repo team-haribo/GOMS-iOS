@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import SnapKit
+import RxSwift
 
 class OutingViewController: BaseViewController<OutingViewModel> {
 
@@ -22,6 +23,14 @@ class OutingViewController: BaseViewController<OutingViewModel> {
             forCellWithReuseIdentifier: OutingCollectionViewCell.identifier
         )
         outingCollectionView.collectionViewLayout = layout
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = OutingViewModel.Input(
+            profileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private let outingMainText = UILabel().then {
