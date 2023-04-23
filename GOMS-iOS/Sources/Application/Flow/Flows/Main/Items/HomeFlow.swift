@@ -42,6 +42,12 @@ class HomeFlow: Flow {
         case .introIsRequired:
             return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
             
+        case .outingIsRequired:
+            return .end(forwardToParentFlowWithStep: GOMSStep.outingIsRequired)
+            
+        case .qrocdeIsRequired:
+            return .end(forwardToParentFlowWithStep: GOMSStep.qrocdeIsRequired)
+            
         case .homeIsRequired:
             return coordinateToHome()
             
@@ -59,6 +65,7 @@ class HomeFlow: Flow {
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
+    
     private func coordinateToProfile() -> FlowContributors {
         let vm = ProfileViewModel()
         let vc = ProfileViewController(vm)

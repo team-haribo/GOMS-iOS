@@ -29,7 +29,10 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     private func bindViewModel() {
         let input = HomeViewModel.Input(
-            profileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
+            navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
+            outingButtonTap: outingButton.rx.tap.asObservable(),
+            profileButtonTap: profileButton.rx.tap.asObservable(),
+            useQRCodeButtonTap: useQRCodeButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }
