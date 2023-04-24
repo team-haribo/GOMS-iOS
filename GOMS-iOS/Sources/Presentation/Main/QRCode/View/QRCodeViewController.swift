@@ -169,6 +169,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         useQRCodeButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(qrCodeBackImg.snp.bottom).offset(32)
+            $0.leading.trailing.equalToSuperview().inset(117)
+            $0.height.equalTo(38)
         }
     }
 
