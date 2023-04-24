@@ -37,15 +37,6 @@ class OutingFlow: Flow {
         guard let step = step as? GOMSStep else { return .none }
         switch step {
             
-        case .tabBarIsRequired:
-            return .end(forwardToParentFlowWithStep: GOMSStep.tabBarIsRequired)
-            
-        case .introIsRequired:
-            return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
-            
-        case .homeIsRequired:
-            return .end(forwardToParentFlowWithStep: GOMSStep.homeIsRequired)
-            
         case .outingIsRequired:
             return coordinateToOuting()
             
@@ -58,6 +49,7 @@ class OutingFlow: Flow {
     }
     
     private func coordinateToOuting() -> FlowContributors {
+        print("Outing")
         let vm = OutingViewModel()
         let vc = OutingViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)

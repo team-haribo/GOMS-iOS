@@ -10,16 +10,20 @@ import UIKit
 
 final class TabBarFlow: Flow {
     
-    enum TabIndex: Int {
-        case home = 0
-        case qrCode = 1
-        case outing = 2
-    }
+//    enum TabIndex: Int {
+//        case home = 0
+//        case qrCode = 1
+//        case outing = 2
+//    }
     
     var root: Presentable {
         return self.rootVC
     }
     
+    private lazy var rootViewController: UINavigationController = {
+        let viewController = UINavigationController()
+        return viewController
+    }()
     
     private let rootVC = GOMSTabBarViewController()
     
@@ -34,7 +38,11 @@ final class TabBarFlow: Flow {
         
         switch step {
         case .tabBarIsRequired:
-            return coordinateToTabbar()
+            return coordinateToTabbar(index: 0)
+        case .qrocdeIsRequired:
+            return coordinateToTabbar(index: 1)
+        case .outingIsRequired:
+            return coordinateToTabbar(index: 2)
         default:
             return .none
         }
@@ -43,7 +51,7 @@ final class TabBarFlow: Flow {
 }
 
 private extension TabBarFlow {
-    func coordinateToTabbar() -> FlowContributors {
+    func coordinateToTabbar(index: Int) -> FlowContributors {
         Flows.use(
             homeFlow, qrCodeFlow, outingFlow,
             when: .ready
@@ -72,6 +80,7 @@ private extension TabBarFlow {
             root3.tabBarItem = outingItem
             
             self.rootVC.setViewControllers([root1,root2,root3], animated: true)
+            self.rootVC.selectedIndex = index
 
         }
         return .multiple(flowContributors: [
