@@ -13,7 +13,10 @@ import RxCocoa
 class HomeViewModel: BaseViewModel, Stepper{
     
     struct Input {
+        let navProfileButtonTap: Observable<Void>
+        let outingButtonTap: Observable<Void>
         let profileButtonTap: Observable<Void>
+        let useQRCodeButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -21,12 +24,32 @@ class HomeViewModel: BaseViewModel, Stepper{
     }
     
     func transVC(input: Input) {
+        input.navProfileButtonTap.subscribe(
+            onNext: pushProfileVC
+        ) .disposed(by: disposeBag)
+        
         input.profileButtonTap.subscribe(
             onNext: pushProfileVC
+        ) .disposed(by: disposeBag)
+        
+        input.outingButtonTap.subscribe(
+            onNext: pushOutingVC
+        ) .disposed(by: disposeBag)
+        
+        input.useQRCodeButtonTap.subscribe(
+            onNext: pushQRCodeVC
         ) .disposed(by: disposeBag)
     }
     
     private func pushProfileVC() {
         self.steps.accept(GOMSStep.profileIsRequired)
+    }
+    
+    private func pushOutingVC() {
+        self.steps.accept(GOMSStep.outingIsRequired)
+    }
+    
+    private func pushQRCodeVC() {
+        self.steps.accept(GOMSStep.qrocdeIsRequired)
     }
 }

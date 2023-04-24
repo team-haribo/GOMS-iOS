@@ -36,6 +36,7 @@ class OutingFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? GOMSStep else { return .none }
         switch step {
+            
         case .outingIsRequired:
             return coordinateToOuting()
             
@@ -48,6 +49,7 @@ class OutingFlow: Flow {
     }
     
     private func coordinateToOuting() -> FlowContributors {
+        print("Outing")
         let vm = OutingViewModel()
         let vc = OutingViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
