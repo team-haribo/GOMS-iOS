@@ -49,7 +49,6 @@ class OutingFlow: Flow {
     }
     
     private func coordinateToOuting() -> FlowContributors {
-        print("Outing")
         let vm = OutingViewModel()
         let vc = OutingViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
