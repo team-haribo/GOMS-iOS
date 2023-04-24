@@ -9,6 +9,7 @@ import UIKit
 import QRCodeReader
 import SnapKit
 import AVFoundation
+import Then
 
 class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate{
     override func viewDidLoad() {
@@ -141,6 +142,34 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         // [alert 팝업창 활성 실시]
         present(alert, animated: false, completion: nil)
     }
-
+    
+    private let qrCodeBackImg = UIImageView().then {
+        $0.image = UIImage(named: "qrCodeImage.svg")
+    }
+    
+    private var useQRCodeButton = UIButton().then {
+        $0.setTitle("외출하기", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
+        $0.layer.cornerRadius = 10
+        $0.backgroundColor = .mainColor
+    }
+    
+    override func addView() {
+        [qrCodeBackImg, useQRCodeButton].forEach {
+            view.addSubview($0)
+        }
+    }
+    
+    override func setLayout() {
+        qrCodeBackImg.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(view.snp.top).offset((bounds.height) / 2.55)
+        }
+        useQRCodeButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(qrCodeBackImg.snp.bottom).offset(32)
+        }
+    }
 
 }
