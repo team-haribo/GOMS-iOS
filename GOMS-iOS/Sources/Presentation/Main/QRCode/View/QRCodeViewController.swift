@@ -10,26 +10,33 @@ import QRCodeReader
 import SnapKit
 import AVFoundation
 import Then
+import RxFlow
+import RxCocoa
+import RxSwift
 
-class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate{
+class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate, Stepper {
+    var steps = PublishRelay<Step>()
+    
     override func viewDidLoad() {
+        self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
-        // [카메라 권한 부여 확인 실시]
-        self.checkCameraPermission()
-     }
-     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         if permissionNoArray.count > 0 && permissionNoArray.isEmpty == false {
-            showAlert(tittle: "[알림]", content: "카메라 권한이 비활성 상태입니다.", okBtb: "확인", noBtn: "")
+            showAlert(tittle: "[알림]", content: "카메라 권한이 비활성 상태입니다.", okBtb: "확인", noBtn: "취소")
             permissionNoArray.removeAll()
         }
-        
         else {
             self.callQrScanStart()
         }
+        bindViewModel()
+     }
+    
+    private func bindViewModel() {
+        useQRCodeButton.rx.tap
+            .bind{
+                self.callQrScanStart()
+            }.disposed(by: disposeBag)
     }
+    
      
     var permissionNoArray : Array<String> = []
      
@@ -47,7 +54,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
      
      
      // MARK: [QR 객체 초기화 수행 실시]
-    lazy var readerVC: QRCodeReaderViewController = {
+    var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
             
@@ -77,12 +84,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             print("===============================")
             print("")
         }
-         
-        // [readerVC를 모달 양식 시트로 표시]
         self.readerVC.modalPresentationStyle = .fullScreen
-    
-        self.present(self.readerVC, animated: true, completion: nil)
-        
+        self.present(readerVC, animated: true)
     }
      
      
@@ -90,7 +93,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
      // MARK: [QRCodeReaderViewController 대리자 메소드]
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning() // 스캔 중지
-        self.dismiss(animated: true, completion: nil) // 카메라 팝업창 없앰
+        self.dismiss(animated: true, completion: nil)// 카메라 팝업창 없앰
     }
 
      
@@ -110,36 +113,23 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
      // MARK: [QR 스캔 종료 실시]
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
         reader.stopScanning() // 스캔 중지
-        self.dismiss(animated: true, completion: nil) // 카메라 팝업창 없앰
+        self.dismiss(animated: true, completion: nil)// 카메라 팝업창 없앰
     }
-     
-     
-     
-    // MARK: [alert 팝업창 호출 메소드 정의 실시 : 이벤트 호출 시]
-    // 호출 방법 : showAlert(tittle: "title", content: "content", okBtb: "확인", noBtn: "취소")
+    
     func showAlert(tittle:String, content:String, okBtb:String, noBtn:String) {
-        // [UIAlertController 객체 정의 실시]
         let alert = UIAlertController(title: tittle, message: content, preferredStyle: UIAlertController.Style.alert)
-        
-        // [인풋으로 들어온 확인 버튼이 nil 아닌 경우]
         if(okBtb != "" && okBtb.count>0){
             let okAction = UIAlertAction(title: okBtb, style: .default) { (action) in
-                // [확인 버튼 클릭 이벤트 내용 정의 실시]
                 return
             }
-            alert.addAction(okAction) // 버튼 클릭 이벤트 객체 연결
+            alert.addAction(okAction)
         }
-         
-        // [인풋으로 들어온 취소 버튼이 nil 아닌 경우]
         if(noBtn != "" && noBtn.count>0){
             let noAction = UIAlertAction(title: noBtn, style: .default) { (action) in
-                // [취소 버튼 클릭 이벤트 내용 정의 실시]
                 return
             }
-            alert.addAction(noAction) // 버튼 클릭 이벤트 객체 연결
+            alert.addAction(noAction)
         }
-         
-        // [alert 팝업창 활성 실시]
         present(alert, animated: false, completion: nil)
     }
     

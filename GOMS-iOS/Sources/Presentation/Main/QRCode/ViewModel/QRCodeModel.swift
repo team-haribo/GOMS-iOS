@@ -7,8 +7,28 @@
 
 import Foundation
 import RxFlow
+import RxCocoa
+import RxSwift
 
 
 class QRCodeViewModel: BaseViewModel, Stepper{
+    struct Input {
+        let useQRCodeButtonTap: Observable<Void>
+    }
     
+    struct Output {
+        
+    }
+    
+    func transVC(input: Input) {
+        input.useQRCodeButtonTap.subscribe(
+            onNext: pushQRCodeVC
+        ) .disposed(by: disposeBag)
+    }
+    
+    private func pushQRCodeVC() {
+        let vm = QRCodeViewModel()
+        let vc = QRCodeViewController(vm)
+        vc.callQrScanStart()
+    }
 }

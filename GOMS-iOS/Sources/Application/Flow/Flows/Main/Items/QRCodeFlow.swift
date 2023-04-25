@@ -38,6 +38,8 @@ class QRCodeFlow: Flow {
         switch step {
         case .qrocdeIsRequired:
             return coordinateToQRCode()
+        case .homeIsRequired:
+            return .one(flowContributor: .forwardToParentFlow(withStep: GOMSStep.homeIsRequired))
         default:
             return .none
         }
