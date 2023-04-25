@@ -52,6 +52,8 @@
 		77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744829F7B08B00EE1FC9 /* Bundle.swift */; };
 		77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */; };
 		77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */; };
+		77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745329F7B55600EE1FC9 /* AuthServices.swift */; };
+		77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745729F7B59900EE1FC9 /* BaseURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		77F0744829F7B08B00EE1FC9 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		77F0745329F7B55600EE1FC9 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		77F0745729F7B59900EE1FC9 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				77F073BB29ED677B00EE1FC9 /* Application */,
-				77F073BA29ED677600EE1FC9 /* Domain */,
 				77F073B929ED676D00EE1FC9 /* Data */,
 				77F073B829ED676000EE1FC9 /* Presentation */,
 			);
@@ -167,18 +170,12 @@
 		77F073B929ED676D00EE1FC9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				77F0745529F7B58600EE1FC9 /* General */,
 				77F0744629F7A4C500EE1FC9 /* Model */,
 				77F0744729F7A4CB00EE1FC9 /* Request */,
 				77F0744529F7A4B200EE1FC9 /* Services */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		77F073BA29ED677600EE1FC9 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		77F073BB29ED677B00EE1FC9 /* Application */ = {
@@ -485,6 +482,7 @@
 		77F0744529F7A4B200EE1FC9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				77F0745229F7B54100EE1FC9 /* Auth */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -535,6 +533,23 @@
 				77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		77F0745229F7B54100EE1FC9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77F0745329F7B55600EE1FC9 /* AuthServices.swift */,
+			);
+			name = Auth;
+			path = "며소";
+			sourceTree = "<group>";
+		};
+		77F0745529F7B58600EE1FC9 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				77F0745729F7B59900EE1FC9 /* BaseURL.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -642,6 +657,7 @@
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
+				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
@@ -649,6 +665,7 @@
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
 				77F0741129EE8B1300EE1FC9 /* TabBarFlow.swift in Sources */,
 				77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */,
+				77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
