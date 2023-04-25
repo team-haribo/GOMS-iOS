@@ -51,6 +51,7 @@
 		77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */; };
 		77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744829F7B08B00EE1FC9 /* Bundle.swift */; };
 		77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */; };
+		77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		77F0744829F7B08B00EE1FC9 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +500,7 @@
 		77F0744729F7A4CB00EE1FC9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				77F0744E29F7B3D400EE1FC9 /* Auth */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -514,6 +517,22 @@
 			isa = PBXGroup;
 			children = (
 				77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		77F0744E29F7B3D400EE1FC9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77F0744F29F7B3EE00EE1FC9 /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		77F0744F29F7B3EE00EE1FC9 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -640,6 +659,7 @@
 				77F0740529EE8A0200EE1FC9 /* QRCodeViewController.swift in Sources */,
 				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
 				77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */,
+				77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
