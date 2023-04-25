@@ -54,6 +54,7 @@
 		77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */; };
 		77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745329F7B55600EE1FC9 /* AuthServices.swift */; };
 		77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745729F7B59900EE1FC9 /* BaseURL.swift */; };
+		77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0745A29F7BC7600EE1FC9 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 			files = (
 				77F073B429ED37D600EE1FC9 /* RxFlow in Frameworks */,
 				77F073AC29ED379400EE1FC9 /* SnapKit in Frameworks */,
+				77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */,
 				77F073D329ED923700EE1FC9 /* GAuthSignin in Frameworks */,
 				77F073B629ED37EB00EE1FC9 /* RxCocoa in Frameworks */,
 				77F073B129ED37AB00EE1FC9 /* RxSwift in Frameworks */,
@@ -576,6 +578,7 @@
 				77F073B529ED37EB00EE1FC9 /* RxCocoa */,
 				77F073D229ED923700EE1FC9 /* GAuthSignin */,
 				77F0742829F00A7D00EE1FC9 /* QRCodeReader */,
+				77F0745A29F7BC7600EE1FC9 /* Moya */,
 			);
 			productName = "GOMS-iOS";
 			productReference = 77F0741E29EE949B00EE1FC9 /* GOMS-iOS.app */;
@@ -612,6 +615,7 @@
 				77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				77F073D129ED923700EE1FC9 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
 				77F0742729F00A7D00EE1FC9 /* XCRemoteSwiftPackageReference "QRCodeReader" */,
+				77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 77F0738429ED29CF00EE1FC9;
 			projectDirPath = "";
@@ -936,6 +940,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -973,6 +985,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77F0742729F00A7D00EE1FC9 /* XCRemoteSwiftPackageReference "QRCodeReader" */;
 			productName = QRCodeReader;
+		};
+		77F0745A29F7BC7600EE1FC9 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
