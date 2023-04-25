@@ -50,6 +50,7 @@
 		77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */; };
 		77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */; };
 		77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744829F7B08B00EE1FC9 /* Bundle.swift */; };
+		77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		77F0744829F7B08B00EE1FC9 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +490,7 @@
 		77F0744629F7A4C500EE1FC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				77F0744A29F7B29700EE1FC9 /* Auth */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,6 +500,22 @@
 			children = (
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		77F0744A29F7B29700EE1FC9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				77F0744B29F7B2A100EE1FC9 /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		77F0744B29F7B2A100EE1FC9 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -596,6 +615,7 @@
 				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
 				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,
+				77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */,
 				77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */,
 				77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
