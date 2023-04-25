@@ -10,11 +10,11 @@ import UIKit
 
 final class TabBarFlow: Flow {
     
-//    enum TabIndex: Int {
-//        case home = 0
-//        case qrCode = 1
-//        case outing = 2
-//    }
+    enum TabIndex: Int {
+        case home = 0
+        case qrCode = 1
+        case outing = 2
+    }
     
     var root: Presentable {
         return self.rootVC

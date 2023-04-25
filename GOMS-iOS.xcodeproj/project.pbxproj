@@ -49,6 +49,7 @@
 		77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */; };
 		77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */; };
 		77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */; };
+		77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744829F7B08B00EE1FC9 /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		77F0744829F7B08B00EE1FC9 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,9 @@
 		77F073B929ED676D00EE1FC9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				77F0744629F7A4C500EE1FC9 /* Model */,
+				77F0744729F7A4CB00EE1FC9 /* Request */,
+				77F0744529F7A4B200EE1FC9 /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				77F073E029EE172200EE1FC9 /* GOMSFont.swift */,
 				77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */,
 				77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */,
+				77F0744829F7B08B00EE1FC9 /* Bundle.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -472,6 +478,27 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		77F0744529F7A4B200EE1FC9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		77F0744629F7A4C500EE1FC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77F0744729F7A4CB00EE1FC9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -576,6 +603,7 @@
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
+				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
