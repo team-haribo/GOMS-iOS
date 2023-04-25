@@ -56,8 +56,8 @@ class IntroViewController: BaseViewController<IntroViewModel> {
     
     private func gauthButtonSetUp() {
         gauthSignInButton.prepare(
-            clientID: "",
-            redirectURI: "",
+            clientID: "c6731e83059f4decaaa5b6a79c75320c306471f896da4284811f02bdcfeb7f94",
+            redirectURI: "https://port-0-goms-backend-nx562olfamh7iw.sel3.cloudtype.app/",
             presenting: self
         ) { code in
             // 코드(String)
