@@ -17,7 +17,7 @@ struct AppStepper: Stepper {
     init() {}
     
     var initialStep: Step {
-        return GOMSStep.tabBarIsRequired
+        return GOMSStep.introIsRequired
     }
 }
 

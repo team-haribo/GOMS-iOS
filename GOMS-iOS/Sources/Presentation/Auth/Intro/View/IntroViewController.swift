@@ -14,6 +14,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        gauthButtonSetUp()
     }
     
     private let logoImage = UIImageView().then {
@@ -51,7 +52,17 @@ class IntroViewController: BaseViewController<IntroViewModel> {
         )
     }
     
-    private let gauthSignInButton = GAuthButton(auth: .signin, color: .colored, rounded: .default)
+    private let gauthSignInButton = GAuthButton(auth: .continue, color: .colored, rounded: .default)
+    
+    private func gauthButtonSetUp() {
+        gauthSignInButton.prepare(
+            clientID: "",
+            redirectURI: "",
+            presenting: self
+        ) { code in
+            // 코드(String)
+        }
+    }
     
     override func addView() {
         [logoImage, explainText, subExplainText, gauthSignInButton].forEach{
