@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum AccountServices {
-    case profile(param: AccountRequest)
+    case account(authorization: String)
 }
 
 
@@ -13,14 +13,14 @@ extension AccountServices: TargetType {
     
     var path: String {
         switch self {
-        case .profile:
+        case .account:
             return "/account/profile"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .profile:
+        case .account:
             return .get
         }
     }
@@ -31,13 +31,15 @@ extension AccountServices: TargetType {
     
     var task: Task {
         switch self {
-        case .profile(let param):
-            return .requestJSONEncodable(param)
+        case .account:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
+        case .account(let authorization):
+            return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
         }

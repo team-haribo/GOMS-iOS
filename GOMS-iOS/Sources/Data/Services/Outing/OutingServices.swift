@@ -2,7 +2,8 @@ import Foundation
 import Moya
 
 enum OutingServices {
-    case outing(param: OutingRequest)
+    case outing(authorization: String)
+    case outingList(authorization: String)
 }
 
 
@@ -13,7 +14,7 @@ extension OutingServices: TargetType {
     
     var path: String {
         switch self {
-        case .outing:
+        case .outing, .outingList:
             return "/outing/"
         }
     }
@@ -21,6 +22,8 @@ extension OutingServices: TargetType {
     var method: Moya.Method {
         switch self {
         case .outing:
+            return .post
+        case .outingList:
             return .get
         }
     }
@@ -31,13 +34,15 @@ extension OutingServices: TargetType {
     
     var task: Task {
         switch self {
-        case .outing(let param):
-            return .requestJSONEncodable(param)
+        case .outing, .outingList:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
+        case .outing(let authorization), .outingList(let authorization):
+            return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
         }

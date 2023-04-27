@@ -60,6 +60,8 @@
 		77F0746829FA720700EE1FC9 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746729FA720600EE1FC9 /* AccountServices.swift */; };
 		77F0746E29FABD1400EE1FC9 /* OutingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */; };
 		77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747029FABD7500EE1FC9 /* OutingServices.swift */; };
+		77F0747329FAC13100EE1FC9 /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747229FAC13100EE1FC9 /* OutingListModel.swift */; };
+		77F0747529FAC2CF00EE1FC9 /* OutingListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		77F0746729FA720600EE1FC9 /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
 		77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingRequest.swift; sourceTree = "<group>"; };
 		77F0747029FABD7500EE1FC9 /* OutingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingServices.swift; sourceTree = "<group>"; };
+		77F0747229FAC13100EE1FC9 /* OutingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListModel.swift; sourceTree = "<group>"; };
+		77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -597,6 +601,7 @@
 		77F0746929FABC9500EE1FC9 /* Outing */ = {
 			isa = PBXGroup;
 			children = (
+				77F0747229FAC13100EE1FC9 /* OutingListModel.swift */,
 			);
 			path = Outing;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */,
+				77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */,
 			);
 			path = Outing;
 			sourceTree = "<group>";
@@ -710,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F0747529FAC2CF00EE1FC9 /* OutingListRequest.swift in Sources */,
 				77F0740329EE89F100EE1FC9 /* QRCodeModel.swift in Sources */,
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
 				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
@@ -745,6 +752,7 @@
 				77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */,
 				77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */,
 				77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */,
+				77F0747329FAC13100EE1FC9 /* OutingListModel.swift in Sources */,
 				77F0740529EE8A0200EE1FC9 /* QRCodeViewController.swift in Sources */,
 				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
 				77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */,
