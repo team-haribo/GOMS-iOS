@@ -14,7 +14,7 @@ import Moya
 class IntroViewModel: BaseViewModel, Stepper{
     
     private let authProvider = MoyaProvider<AuthServices>(plugins: [NetworkLoggerPlugin()])
-    private var userData: SignInModel!
+    private var userData: SignInResponse!
     
     struct Input {
         
@@ -36,15 +36,19 @@ extension IntroViewModel {
             switch response {
             case let .success(result):
                 do {
-                    self.userData = try result.map(SignInModel.self)
-                    print(self.userData ?? "error")
-                    self.steps.accept(GOMSStep.tabBarIsRequired)
+                    self.userData = try result.map(SignInResponse.self)
                 }catch(let err) {
-                    print(err.localizedDescription)
+                    print(String(describing: err))
                 }
-                
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                   self.steps.accept(GOMSStep.tabBarIsRequired)
+                default:
+                    print("ERROR")
+                }
             case .failure(let err):
-                print(err.localizedDescription)
+                print(String(describing: err))
             }
         }
     }

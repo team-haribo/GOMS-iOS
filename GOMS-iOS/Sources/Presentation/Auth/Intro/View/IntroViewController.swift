@@ -60,9 +60,6 @@ class IntroViewController: BaseViewController<IntroViewModel> {
             redirectURI: Bundle.module.object(forInfoDictionaryKey: "REDIREDCT_URI") as? String ?? "",
             presenting: self
         ) { code in
-            print("___________________________")
-            print(code)
-            print("___________________________")
             self.viewModel.gauthSignInCompleted(code: code)
         }
     }

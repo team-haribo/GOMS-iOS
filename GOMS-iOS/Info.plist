@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>REVERSED_CLIENT_ID</key>
+	<key>REDIREDCT_URI</key>
 	<string>https://port-0-goms-backend-nx562olfamh7iw.sel3.cloudtype.app/</string>
 	<key>CLIENT_ID</key>
 	<string>c6731e83059f4decaaa5b6a79c75320c306471f896da4284811f02bdcfeb7f94</string>
