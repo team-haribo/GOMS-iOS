@@ -1,26 +1,26 @@
 import Foundation
 import Moya
 
-enum AccountServices {
-    case profile(param: AccountRequest)
+enum OutingServices {
+    case outing(param: OutingRequest)
 }
 
 
-extension AccountServices: TargetType {
+extension OutingServices: TargetType {
     public var baseURL: URL {
         return URL(string: BaseURL.baseURL)!
     }
     
     var path: String {
         switch self {
-        case .profile:
-            return "/account/profile"
+        case .outing:
+            return "/outing/"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .profile:
+        case .outing:
             return .get
         }
     }
@@ -31,7 +31,7 @@ extension AccountServices: TargetType {
     
     var task: Task {
         switch self {
-        case .profile(let param):
+        case .outing(let param):
             return .requestJSONEncodable(param)
         }
     }
