@@ -62,6 +62,8 @@
 		77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747029FABD7500EE1FC9 /* OutingServices.swift */; };
 		77F0747329FAC13100EE1FC9 /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747229FAC13100EE1FC9 /* OutingListModel.swift */; };
 		77F0747529FAC2CF00EE1FC9 /* OutingListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */; };
+		77F0747729FAC51F00EE1FC9 /* OutingCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */; };
+		77F0747929FAC55B00EE1FC9 /* OutingCountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747829FAC55B00EE1FC9 /* OutingCountRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,8 @@
 		77F0747029FABD7500EE1FC9 /* OutingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingServices.swift; sourceTree = "<group>"; };
 		77F0747229FAC13100EE1FC9 /* OutingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListModel.swift; sourceTree = "<group>"; };
 		77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListRequest.swift; sourceTree = "<group>"; };
+		77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingCountModel.swift; sourceTree = "<group>"; };
+		77F0747829FAC55B00EE1FC9 /* OutingCountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingCountRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -602,6 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				77F0747229FAC13100EE1FC9 /* OutingListModel.swift */,
+				77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */,
 			);
 			path = Outing;
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 			children = (
 				77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */,
 				77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */,
+				77F0747829FAC55B00EE1FC9 /* OutingCountRequest.swift */,
 			);
 			path = Outing;
 			sourceTree = "<group>";
@@ -744,6 +750,7 @@
 				77F0741129EE8B1300EE1FC9 /* TabBarFlow.swift in Sources */,
 				77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */,
 				77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */,
+				77F0747929FAC55B00EE1FC9 /* OutingCountRequest.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
@@ -757,6 +764,7 @@
 				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
 				77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */,
 				77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */,
+				77F0747729FAC51F00EE1FC9 /* OutingCountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

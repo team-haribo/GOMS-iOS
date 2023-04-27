@@ -4,6 +4,7 @@ import Moya
 enum OutingServices {
     case outing(authorization: String)
     case outingList(authorization: String)
+    case outingCount(authorization: String)
 }
 
 
@@ -16,6 +17,8 @@ extension OutingServices: TargetType {
         switch self {
         case .outing, .outingList:
             return "/outing/"
+        case .outingCount:
+            return "/outing/count"
         }
     }
     
@@ -23,7 +26,7 @@ extension OutingServices: TargetType {
         switch self {
         case .outing:
             return .post
-        case .outingList:
+        case .outingList, .outingCount:
             return .get
         }
     }
@@ -34,14 +37,14 @@ extension OutingServices: TargetType {
     
     var task: Task {
         switch self {
-        case .outing, .outingList:
+        case .outing, .outingList, .outingCount:
             return .requestPlain
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .outing(let authorization), .outingList(let authorization):
+        case .outing(let authorization), .outingList(let authorization), .outingCount(let authorization):
             return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
