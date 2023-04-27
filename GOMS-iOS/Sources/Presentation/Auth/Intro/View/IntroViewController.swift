@@ -52,7 +52,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
         )
     }
     
-    private let gauthSignInButton = GAuthButton(auth: .continue, color: .colored, rounded: .default)
+    private let gauthSignInButton = GAuthButton(auth: .signin, color: .colored, rounded: .default)
     
     private func gauthButtonSetUp() {
         gauthSignInButton.prepare(
@@ -63,6 +63,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
             print("___________________________")
             print(code)
             print("___________________________")
+            self.viewModel.gauthSignInCompleted(code: code)
         }
     }
     
