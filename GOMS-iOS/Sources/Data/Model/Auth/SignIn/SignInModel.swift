@@ -14,7 +14,7 @@ struct SignInModel: Codable {
 struct SignInResponse: Codable {
     let accessToken: String
     let refreshToken: String
-    let accessTokenExpiredAt: String
-    let refreshTokenExpiredAt: String
+    let accessTokenExp: String
+    let refreshTokenExp: String
     let authority: String
 }
