@@ -56,6 +56,8 @@
 		77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745729F7B59900EE1FC9 /* BaseURL.swift */; };
 		77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0745A29F7BC7600EE1FC9 /* Moya */; };
 		77F0745F29FA67E800EE1FC9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745E29FA67E800EE1FC9 /* ProfileModel.swift */; };
+		77F0746429FA6FAE00EE1FC9 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746329FA6FAE00EE1FC9 /* ProfileRequest.swift */; };
+		77F0746829FA720700EE1FC9 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746729FA720600EE1FC9 /* AccountServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +104,8 @@
 		77F0745329F7B55600EE1FC9 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		77F0745729F7B59900EE1FC9 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		77F0745E29FA67E800EE1FC9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		77F0746329FA6FAE00EE1FC9 /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
+		77F0746729FA720600EE1FC9 /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +490,7 @@
 		77F0744529F7A4B200EE1FC9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				77F0746529FA717400EE1FC9 /* Main */,
 				77F0745229F7B54100EE1FC9 /* Auth */,
 			);
 			path = Services;
@@ -503,6 +508,7 @@
 		77F0744729F7A4CB00EE1FC9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				77F0746129FA6F9D00EE1FC9 /* Home */,
 				77F0744E29F7B3D400EE1FC9 /* Auth */,
 			);
 			path = Request;
@@ -571,6 +577,30 @@
 				77F0745E29FA67E800EE1FC9 /* ProfileModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		77F0746129FA6F9D00EE1FC9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				77F0746229FA6FA200EE1FC9 /* Profile */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77F0746229FA6FA200EE1FC9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				77F0746329FA6FAE00EE1FC9 /* ProfileRequest.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		77F0746529FA717400EE1FC9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				77F0746729FA720600EE1FC9 /* AccountServices.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -671,6 +701,7 @@
 				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
 				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
+				77F0746429FA6FAE00EE1FC9 /* ProfileRequest.swift in Sources */,
 				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,
 				77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */,
 				77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */,
@@ -694,6 +725,7 @@
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
 				77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */,
+				77F0746829FA720700EE1FC9 /* AccountServices.swift in Sources */,
 				77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */,
 				77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */,
 				77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */,
