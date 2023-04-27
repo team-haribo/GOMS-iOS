@@ -55,9 +55,11 @@
 		77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745329F7B55600EE1FC9 /* AuthServices.swift */; };
 		77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745729F7B59900EE1FC9 /* BaseURL.swift */; };
 		77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0745A29F7BC7600EE1FC9 /* Moya */; };
-		77F0745F29FA67E800EE1FC9 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745E29FA67E800EE1FC9 /* ProfileModel.swift */; };
-		77F0746429FA6FAE00EE1FC9 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746329FA6FAE00EE1FC9 /* ProfileRequest.swift */; };
+		77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745E29FA67E800EE1FC9 /* AccountModel.swift */; };
+		77F0746429FA6FAE00EE1FC9 /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746329FA6FAE00EE1FC9 /* AccountRequest.swift */; };
 		77F0746829FA720700EE1FC9 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746729FA720600EE1FC9 /* AccountServices.swift */; };
+		77F0746E29FABD1400EE1FC9 /* OutingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */; };
+		77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747029FABD7500EE1FC9 /* OutingServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,9 +105,11 @@
 		77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		77F0745329F7B55600EE1FC9 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		77F0745729F7B59900EE1FC9 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
-		77F0745E29FA67E800EE1FC9 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		77F0746329FA6FAE00EE1FC9 /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
+		77F0745E29FA67E800EE1FC9 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		77F0746329FA6FAE00EE1FC9 /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
 		77F0746729FA720600EE1FC9 /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
+		77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingRequest.swift; sourceTree = "<group>"; };
+		77F0747029FABD7500EE1FC9 /* OutingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -490,6 +494,7 @@
 		77F0744529F7A4B200EE1FC9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				77F0746F29FABD5200EE1FC9 /* Outing */,
 				77F0746529FA717400EE1FC9 /* Main */,
 				77F0745229F7B54100EE1FC9 /* Auth */,
 			);
@@ -499,7 +504,8 @@
 		77F0744629F7A4C500EE1FC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				77F0745C29FA67D200EE1FC9 /* Main */,
+				77F0746929FABC9500EE1FC9 /* Outing */,
+				77F0745D29FA67D800EE1FC9 /* Account */,
 				77F0744A29F7B29700EE1FC9 /* Auth */,
 			);
 			path = Model;
@@ -508,7 +514,8 @@
 		77F0744729F7A4CB00EE1FC9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				77F0746129FA6F9D00EE1FC9 /* Home */,
+				77F0746C29FABD0300EE1FC9 /* Outing */,
+				77F0746229FA6FA200EE1FC9 /* Account */,
 				77F0744E29F7B3D400EE1FC9 /* Auth */,
 			);
 			path = Request;
@@ -563,36 +570,20 @@
 			path = General;
 			sourceTree = "<group>";
 		};
-		77F0745C29FA67D200EE1FC9 /* Main */ = {
+		77F0745D29FA67D800EE1FC9 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				77F0745D29FA67D800EE1FC9 /* Profile */,
+				77F0745E29FA67E800EE1FC9 /* AccountModel.swift */,
 			);
-			path = Main;
+			path = Account;
 			sourceTree = "<group>";
 		};
-		77F0745D29FA67D800EE1FC9 /* Profile */ = {
+		77F0746229FA6FA200EE1FC9 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				77F0745E29FA67E800EE1FC9 /* ProfileModel.swift */,
+				77F0746329FA6FAE00EE1FC9 /* AccountRequest.swift */,
 			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		77F0746129FA6F9D00EE1FC9 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				77F0746229FA6FA200EE1FC9 /* Profile */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		77F0746229FA6FA200EE1FC9 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				77F0746329FA6FAE00EE1FC9 /* ProfileRequest.swift */,
-			);
-			path = Profile;
+			path = Account;
 			sourceTree = "<group>";
 		};
 		77F0746529FA717400EE1FC9 /* Main */ = {
@@ -601,6 +592,29 @@
 				77F0746729FA720600EE1FC9 /* AccountServices.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		77F0746929FABC9500EE1FC9 /* Outing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Outing;
+			sourceTree = "<group>";
+		};
+		77F0746C29FABD0300EE1FC9 /* Outing */ = {
+			isa = PBXGroup;
+			children = (
+				77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */,
+			);
+			path = Outing;
+			sourceTree = "<group>";
+		};
+		77F0746F29FABD5200EE1FC9 /* Outing */ = {
+			isa = PBXGroup;
+			children = (
+				77F0747029FABD7500EE1FC9 /* OutingServices.swift */,
+			);
+			path = Outing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -701,18 +715,20 @@
 				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
 				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
-				77F0746429FA6FAE00EE1FC9 /* ProfileRequest.swift in Sources */,
+				77F0746429FA6FAE00EE1FC9 /* AccountRequest.swift in Sources */,
 				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,
 				77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */,
 				77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */,
 				77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */,
+				77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
+				77F0746E29FABD1400EE1FC9 /* OutingRequest.swift in Sources */,
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
-				77F0745F29FA67E800EE1FC9 /* ProfileModel.swift in Sources */,
+				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
