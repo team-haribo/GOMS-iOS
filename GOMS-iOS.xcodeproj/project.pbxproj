@@ -64,6 +64,9 @@
 		77F0747529FAC2CF00EE1FC9 /* OutingListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */; };
 		77F0747729FAC51F00EE1FC9 /* OutingCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */; };
 		77F0747929FAC55B00EE1FC9 /* OutingCountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747829FAC55B00EE1FC9 /* OutingCountRequest.swift */; };
+		77F0747F29FB4AA300EE1FC9 /* LateRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */; };
+		77F0748129FB4ADC00EE1FC9 /* LateRankRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748029FB4ADC00EE1FC9 /* LateRankRequest.swift */; };
+		77F0748329FB536100EE1FC9 /* LateServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748229FB536100EE1FC9 /* LateServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +121,9 @@
 		77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListRequest.swift; sourceTree = "<group>"; };
 		77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingCountModel.swift; sourceTree = "<group>"; };
 		77F0747829FAC55B00EE1FC9 /* OutingCountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingCountRequest.swift; sourceTree = "<group>"; };
+		77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
+		77F0748029FB4ADC00EE1FC9 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
+		77F0748229FB536100EE1FC9 /* LateServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +508,7 @@
 		77F0744529F7A4B200EE1FC9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				77F0747D29FB4A9400EE1FC9 /* Late */,
 				77F0746F29FABD5200EE1FC9 /* Outing */,
 				77F0746529FA717400EE1FC9 /* Main */,
 				77F0745229F7B54100EE1FC9 /* Auth */,
@@ -512,6 +519,7 @@
 		77F0744629F7A4C500EE1FC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				77F0747B29FB4A8700EE1FC9 /* Late */,
 				77F0746929FABC9500EE1FC9 /* Outing */,
 				77F0745D29FA67D800EE1FC9 /* Account */,
 				77F0744A29F7B29700EE1FC9 /* Auth */,
@@ -522,6 +530,7 @@
 		77F0744729F7A4CB00EE1FC9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				77F0747C29FB4A8C00EE1FC9 /* Late */,
 				77F0746C29FABD0300EE1FC9 /* Outing */,
 				77F0746229FA6FA200EE1FC9 /* Account */,
 				77F0744E29F7B3D400EE1FC9 /* Auth */,
@@ -627,6 +636,30 @@
 				77F0747029FABD7500EE1FC9 /* OutingServices.swift */,
 			);
 			path = Outing;
+			sourceTree = "<group>";
+		};
+		77F0747B29FB4A8700EE1FC9 /* Late */ = {
+			isa = PBXGroup;
+			children = (
+				77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */,
+			);
+			path = Late;
+			sourceTree = "<group>";
+		};
+		77F0747C29FB4A8C00EE1FC9 /* Late */ = {
+			isa = PBXGroup;
+			children = (
+				77F0748029FB4ADC00EE1FC9 /* LateRankRequest.swift */,
+			);
+			path = Late;
+			sourceTree = "<group>";
+		};
+		77F0747D29FB4A9400EE1FC9 /* Late */ = {
+			isa = PBXGroup;
+			children = (
+				77F0748229FB536100EE1FC9 /* LateServices.swift */,
+			);
+			path = Late;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -747,8 +780,11 @@
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
+				77F0747F29FB4AA300EE1FC9 /* LateRankModel.swift in Sources */,
+				77F0748129FB4ADC00EE1FC9 /* LateRankRequest.swift in Sources */,
 				77F0741129EE8B1300EE1FC9 /* TabBarFlow.swift in Sources */,
 				77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */,
+				77F0748329FB536100EE1FC9 /* LateServices.swift in Sources */,
 				77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */,
 				77F0747929FAC55B00EE1FC9 /* OutingCountRequest.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
