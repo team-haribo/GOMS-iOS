@@ -67,6 +67,8 @@
 		77F0747F29FB4AA300EE1FC9 /* LateRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */; };
 		77F0748129FB4ADC00EE1FC9 /* LateRankRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748029FB4ADC00EE1FC9 /* LateRankRequest.swift */; };
 		77F0748329FB536100EE1FC9 /* LateServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748229FB536100EE1FC9 /* LateServices.swift */; };
+		77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */; };
+		77F0748929FB62C600EE1FC9 /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +126,8 @@
 		77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
 		77F0748029FB4ADC00EE1FC9 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
 		77F0748229FB536100EE1FC9 /* LateServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateServices.swift; sourceTree = "<group>"; };
+		77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
+		77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +545,7 @@
 		77F0744A29F7B29700EE1FC9 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				77F0748429FB624900EE1FC9 /* RefreshToken */,
 				77F0744B29F7B2A100EE1FC9 /* SignIn */,
 			);
 			path = Auth;
@@ -557,6 +562,7 @@
 		77F0744E29F7B3D400EE1FC9 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				77F0748729FB62B400EE1FC9 /* RefreshToken */,
 				77F0744F29F7B3EE00EE1FC9 /* SignIn */,
 			);
 			path = Auth;
@@ -660,6 +666,22 @@
 				77F0748229FB536100EE1FC9 /* LateServices.swift */,
 			);
 			path = Late;
+			sourceTree = "<group>";
+		};
+		77F0748429FB624900EE1FC9 /* RefreshToken */ = {
+			isa = PBXGroup;
+			children = (
+				77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */,
+			);
+			path = RefreshToken;
+			sourceTree = "<group>";
+		};
+		77F0748729FB62B400EE1FC9 /* RefreshToken */ = {
+			isa = PBXGroup;
+			children = (
+				77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */,
+			);
+			path = RefreshToken;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -768,6 +790,7 @@
 				77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */,
 				77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */,
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
+				77F0748929FB62C600EE1FC9 /* RefreshTokenRequest.swift in Sources */,
 				77F0746E29FABD1400EE1FC9 /* OutingRequest.swift in Sources */,
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
@@ -777,6 +800,7 @@
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
+				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
