@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-class ProfileViewController: BaseViewController<BaseViewModel> {
+class ProfileViewController: BaseViewController<ProfileViewModel> {
     private let cellName = ["이름","학년","반","번호","지각횟수"]
     private let cellDetail = ["선민재","3","1","11","11"]
     

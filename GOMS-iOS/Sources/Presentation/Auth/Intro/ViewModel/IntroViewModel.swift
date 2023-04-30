@@ -13,7 +13,7 @@ import Moya
 
 class IntroViewModel: BaseViewModel, Stepper{
     
-    private let authProvider = MoyaProvider<AuthServices>(plugins: [NetworkLoggerPlugin()])
+    private let authProvider = MoyaProvider<AuthServices>()
     private var userData: SignInResponse!
     
     struct Input {
@@ -34,9 +34,12 @@ extension IntroViewModel {
         let param = SignInRequest(code: code)
         authProvider.request(.signIn(param: param)) { response in
             switch response {
-            case let .success(result):
+            case .success(let result):
                 do {
                     self.userData = try result.map(SignInResponse.self)
+                    print("------------------------")
+                    print(self.userData ?? "sex")
+                    print("------------------------")
                 }catch(let err) {
                     print(String(describing: err))
                 }
