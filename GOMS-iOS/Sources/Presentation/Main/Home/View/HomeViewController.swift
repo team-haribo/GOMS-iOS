@@ -93,6 +93,10 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.attributedText = attribtuedString
     }
     
+    private let outingNavigationButton = UIImageView().then {
+        $0.image = UIImage(named: "navigationButton.svg")
+    }
+    
     private let tardyText = UILabel().then {
         $0.text = "지각의 전당"
         $0.textColor = UIColor(
@@ -144,7 +148,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
     
-    private let navigationButton = UIImageView().then {
+    private let profileNavigationButton = UIImageView().then {
         $0.image = UIImage(named: "navigationButton.svg")
     }
     
@@ -155,7 +159,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     override func addView() {
-        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, navigationButton].forEach {
+        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton].forEach {
             view.addSubview($0)
         }
     }
@@ -188,6 +192,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.top.equalTo(totalStudentText.snp.bottom).offset(8)
             $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
+        
+        outingNavigationButton.snp.makeConstraints {
+            $0.centerY.equalTo(outingButton.snp.centerY).offset(0)
+            $0.trailing.equalTo(profileButton.snp.trailing).inset(23)
+        }
+        
         tardyText.snp.makeConstraints {
             $0.top.equalTo(outingButton.snp.bottom).offset(32)
             $0.leading.equalToSuperview().offset(26)
@@ -214,7 +224,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.top.equalTo(userNameText.snp.bottom).offset(4)
             $0.leading.equalTo(profileImg.snp.trailing).offset(14)
         }
-        navigationButton.snp.makeConstraints {
+        profileNavigationButton.snp.makeConstraints {
             $0.centerY.equalTo(profileButton.snp.centerY).offset(0)
             $0.trailing.equalTo(profileButton.snp.trailing).inset(23)
         }
