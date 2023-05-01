@@ -13,7 +13,9 @@ import Moya
 
 class HomeViewModel: BaseViewModel, Stepper{
     private let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
-    private var userData: [LateRankResponse]!
+    private let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
+    private var lateRank: [LateRankResponse]!
+    private var outingCount: OutingCountResponse!
     
     struct Input {
         let navProfileButtonTap: Observable<Void>
@@ -63,7 +65,7 @@ extension HomeViewModel {
             case let .success(result):
                 let responseData = result.data
                 do {
-                    self.userData = try JSONDecoder().decode([LateRankResponse].self, from: responseData)
+                    self.lateRank = try JSONDecoder().decode([LateRankResponse].self, from: responseData)
                 }catch(let err) {
                     print(String(describing: err))
                 }
@@ -75,6 +77,31 @@ extension HomeViewModel {
                     
                 case 404: break
                     
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
+    }
+    
+    func getOutingCount(Authorization: String) {
+        outingProvider.request(.outingCount(authorization: Authorization)) { response in
+            switch response {
+            case let .success(result):
+                let responseData = result.data
+                do {
+                    self.outingCount = try JSONDecoder().decode(OutingCountResponse.self, from: responseData)
+                }catch(let err) {
+                    print(String(describing: err))
+                }
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                    self.steps.accept(GOMSStep.tabBarIsRequired)
+                case 401: break
+                                        
                 default:
                     print("ERROR")
                 }
