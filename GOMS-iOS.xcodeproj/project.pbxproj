@@ -514,7 +514,7 @@
 			children = (
 				77F0747D29FB4A9400EE1FC9 /* Late */,
 				77F0746F29FABD5200EE1FC9 /* Outing */,
-				77F0746529FA717400EE1FC9 /* Main */,
+				77F0746529FA717400EE1FC9 /* Account */,
 				77F0745229F7B54100EE1FC9 /* Auth */,
 			);
 			path = Services;
@@ -609,12 +609,12 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
-		77F0746529FA717400EE1FC9 /* Main */ = {
+		77F0746529FA717400EE1FC9 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				77F0746729FA720600EE1FC9 /* AccountServices.swift */,
 			);
-			path = Main;
+			path = Account;
 			sourceTree = "<group>";
 		};
 		77F0746929FABC9500EE1FC9 /* Outing */ = {

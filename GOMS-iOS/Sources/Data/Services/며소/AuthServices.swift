@@ -15,7 +15,7 @@ extension AuthServices: TargetType {
     var path: String {
         switch self {
         case .signIn:
-            return "/auth/signin"
+            return "/auth/signin/"
         case .refreshToken:
             return "/auth/"
         }

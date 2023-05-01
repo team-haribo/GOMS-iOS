@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>REDIREDCT_URI</key>
 	<string>https://port-0-goms-backend-nx562olfamh7iw.sel3.cloudtype.app/</string>
 	<key>CLIENT_ID</key>
