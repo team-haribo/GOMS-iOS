@@ -30,7 +30,7 @@ class ProfileViewModel: BaseViewModel, Stepper{
 }
 
 extension ProfileViewModel {
-    func userAccountCompleted(Authorization: String) {
+    func getUserData(Authorization: String) {
         accountProvider.request(.account(authorization: Authorization)) { response in
             switch response {
             case let .success(result):
