@@ -9,8 +9,11 @@ import Foundation
 import RxFlow
 import RxSwift
 import RxCocoa
+import Moya
 
 class HomeViewModel: BaseViewModel, Stepper{
+    private let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
+    private var userData: [LateRankResponse]!
     
     struct Input {
         let navProfileButtonTap: Observable<Void>
@@ -51,5 +54,33 @@ class HomeViewModel: BaseViewModel, Stepper{
     
     private func pushQRCodeVC() {
         self.steps.accept(GOMSStep.qrocdeIsRequired)
+    }
+}
+extension HomeViewModel {
+    func getLateRank(Authorization: String) {
+        lateProvider.request(.lateRank(authorization: Authorization)) { response in
+            switch response {
+            case let .success(result):
+                let responseData = result.data
+                do {
+                    self.userData = try JSONDecoder().decode([LateRankResponse].self, from: responseData)
+                }catch(let err) {
+                    print(String(describing: err))
+                }
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                    self.steps.accept(GOMSStep.tabBarIsRequired)
+                case 401: break
+                    
+                case 404: break
+                    
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
     }
 }

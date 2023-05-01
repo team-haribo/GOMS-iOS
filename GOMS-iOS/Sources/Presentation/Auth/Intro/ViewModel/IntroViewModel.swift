@@ -37,9 +37,6 @@ extension IntroViewModel {
             case .success(let result):
                 do {
                     self.userData = try result.map(SignInResponse.self)
-                    print("------------------------")
-                    print(self.userData ?? "sex")
-                    print("------------------------")
                 }catch(let err) {
                     print(String(describing: err))
                 }
