@@ -14,6 +14,8 @@ import Moya
 class HomeViewModel: BaseViewModel, Stepper{
     private let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
     private let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
+    private let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
+    private var userData: AccountResponse!
     private var lateRank: [LateRankResponse]!
     private var outingCount: OutingCountResponse!
     
@@ -102,6 +104,29 @@ extension HomeViewModel {
                     self.steps.accept(GOMSStep.tabBarIsRequired)
                 case 401: break
                                         
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
+    }
+    
+    func getUserData(Authorization: String) {
+        accountProvider.request(.account(authorization: Authorization)) { response in
+            switch response {
+            case let .success(result):
+                let responseData = result.data
+                do {
+                    self.userData = try JSONDecoder().decode(AccountResponse.self, from: responseData)
+                }catch(let err) {
+                    print(String(describing: err))
+                }
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                    self.steps.accept(GOMSStep.tabBarIsRequired)
                 default:
                     print("ERROR")
                 }
