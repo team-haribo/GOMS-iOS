@@ -35,6 +35,7 @@ extension IntroViewModel {
         authProvider.request(.signIn(param: param)) { response in
             switch response {
             case .success(let result):
+                print(String(data: result.data, encoding: .utf8))
                 do {
                     self.userData = try result.map(SignInResponse.self)
                 }catch(let err) {
