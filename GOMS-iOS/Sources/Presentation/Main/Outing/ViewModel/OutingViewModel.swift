@@ -36,7 +36,7 @@ class OutingViewModel: BaseViewModel, Stepper{
 
 
 extension OutingViewModel {
-    func userAccountCompleted(Authorization: String) {
+    func userAccount(Authorization: String) {
         outingProvider.request(.outingList(authorization: Authorization)) { response in
             switch response {
             case let .success(result):
@@ -50,9 +50,9 @@ extension OutingViewModel {
                 switch statusCode{
                 case 200..<300:
                     self.steps.accept(GOMSStep.tabBarIsRequired)
-                case 401:
+                case 401: break
                     
-                case 404:
+                case 404: break
                     
                 default:
                     print("ERROR")
