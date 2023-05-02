@@ -70,6 +70,7 @@
 		77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */; };
 		77F0748929FB62C600EE1FC9 /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */; };
 		77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */; };
+		77F074912A01761D00EE1FC9 /* GOMSRefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 		77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
+		77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 				77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */,
 				77F0744829F7B08B00EE1FC9 /* Bundle.swift */,
 				77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */,
+				77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
 				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
 				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
+				77F074912A01761D00EE1FC9 /* GOMSRefreshToken.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
 				77F0746429FA6FAE00EE1FC9 /* AccountRequest.swift in Sources */,
 				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,

@@ -39,14 +39,14 @@ extension IntroViewModel {
                 print(String(data: result.data, encoding: .utf8))
                 do {
                     self.userData = try result.map(SignInResponse.self)
-                    self.addKeychainToken()
                 }catch(let err) {
                     print(String(describing: err))
                 }
                 let statusCode = result.statusCode
                 switch statusCode{
                 case 200..<300:
-                   self.steps.accept(GOMSStep.tabBarIsRequired)
+                    self.addKeychainToken()
+                    self.steps.accept(GOMSStep.tabBarIsRequired)
                 default:
                     print("ERROR")
                 }
