@@ -3,7 +3,7 @@ import Moya
 
 enum AuthServices {
     case signIn(param: SignInRequest)
-    case refreshToken(authorization: String)
+    case refreshToken(refreshToken: String)
 }
 
 
@@ -45,8 +45,8 @@ extension AuthServices: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .refreshToken(let authorization):
-            return["Content-Type" :"application/json","Authorization" : authorization]
+        case .refreshToken(let refreshToken):
+            return["Content-Type" :"application/json","Authorization" : refreshToken]
         default:
             return["Content-Type" :"application/json"]
         }

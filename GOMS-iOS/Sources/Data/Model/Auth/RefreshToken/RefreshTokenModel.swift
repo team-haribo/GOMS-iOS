@@ -1,10 +1,10 @@
 import Foundation
 
-struct RefrshTokenModel: Codable {
-    let data: RefrshTokenesponse
+struct RefreshTokenModel: Codable {
+    let data: RefreshTokenesponse
 }
 
-struct RefrshTokenesponse: Codable {
+struct RefreshTokenesponse: Codable {
     let accessToken: String
     let refreshToken: String
     let accessTokenExp: String
