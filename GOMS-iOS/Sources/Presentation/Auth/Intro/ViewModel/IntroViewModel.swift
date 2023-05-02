@@ -15,6 +15,7 @@ class IntroViewModel: BaseViewModel, Stepper{
     
     private let authProvider = MoyaProvider<AuthServices>()
     private var userData: SignInResponse!
+    let keychain = Keychain()
     
     struct Input {
         
@@ -38,6 +39,7 @@ extension IntroViewModel {
                 print(String(data: result.data, encoding: .utf8))
                 do {
                     self.userData = try result.map(SignInResponse.self)
+                    self.addKeychainToken()
                 }catch(let err) {
                     print(String(describing: err))
                 }
@@ -52,5 +54,28 @@ extension IntroViewModel {
                 print(String(describing: err))
             }
         }
+    }
+    
+    func addKeychainToken() {
+        self.keychain.create(
+            key: Const.KeychainKey.accessToken,
+            token: self.userData.accessToken
+        )
+        self.keychain.create(
+            key: Const.KeychainKey.accessTokenExp,
+            token: self.userData.accessTokenExp
+        )
+        self.keychain.create(
+            key: Const.KeychainKey.refreshToken,
+            token: self.userData.refreshToken
+        )
+        self.keychain.create(
+            key: Const.KeychainKey.refreshTokenExp,
+            token: self.userData.refreshTokenExp
+        )
+        self.keychain.create(
+            key: Const.KeychainKey.authority,
+            token: self.userData.authority
+        )
     }
 }
