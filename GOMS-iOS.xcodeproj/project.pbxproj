@@ -69,6 +69,7 @@
 		77F0748329FB536100EE1FC9 /* LateServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748229FB536100EE1FC9 /* LateServices.swift */; };
 		77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */; };
 		77F0748929FB62C600EE1FC9 /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */; };
+		77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		77F0748229FB536100EE1FC9 /* LateServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateServices.swift; sourceTree = "<group>"; };
 		77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
+		77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 				77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */,
 				77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */,
 				77F0744829F7B08B00EE1FC9 /* Bundle.swift */,
+				77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
+				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
 				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
