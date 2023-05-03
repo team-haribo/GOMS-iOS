@@ -17,7 +17,6 @@ class GOMSRefreshToken {
         ) { response in
             switch response {
             case .success(let result):
-                print(String(data: result.data, encoding: .utf8))
                 do {
                     self.reissuanceData = try result.map(RefreshTokenesponse.self)
                 }catch(let err) {

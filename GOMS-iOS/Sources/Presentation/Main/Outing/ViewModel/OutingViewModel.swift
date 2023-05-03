@@ -56,8 +56,8 @@ extension OutingViewModel {
                 switch statusCode{
                 case 200..<300:
                     self.steps.accept(GOMSStep.tabBarIsRequired)
-                case 401: break
-                    
+                case 401:
+                    self.gomsRefreshToken.tokenReissuance()
                 case 404: break
                     
                 default:
