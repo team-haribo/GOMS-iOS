@@ -46,32 +46,22 @@ class GOMSRefreshToken {
     
     func deleteKeychainToken() {
         self.keychain.delete(key: Const.KeychainKey.accessToken)
-        self.keychain.delete(key: Const.KeychainKey.accessTokenExp)
         self.keychain.delete(key: Const.KeychainKey.authority)
         self.keychain.delete(key: Const.KeychainKey.refreshToken)
-        self.keychain.delete(key: Const.KeychainKey.refreshTokenExp)
     }
     
     func addKeychainToken() {
         self.keychain.create(
             key: Const.KeychainKey.accessToken,
-            token: self.userData.accessToken
-        )
-        self.keychain.create(
-            key: Const.KeychainKey.accessTokenExp,
-            token: self.userData.accessTokenExp
+            token: self.reissuanceData.accessToken
         )
         self.keychain.create(
             key: Const.KeychainKey.refreshToken,
-            token: self.userData.refreshToken
-        )
-        self.keychain.create(
-            key: Const.KeychainKey.refreshTokenExp,
-            token: self.userData.refreshTokenExp
+            token: self.reissuanceData.refreshToken
         )
         self.keychain.create(
             key: Const.KeychainKey.authority,
-            token: self.userData.authority
+            token: self.reissuanceData.authority
         )
     }
 }

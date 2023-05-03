@@ -5,8 +5,6 @@ struct Const {
     struct KeychainKey {
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
-        static let accessTokenExp = "accessTokenExp"
-        static let refreshTokenExp = "refreshTokenExp"
         static let authority = "authority"
     }
 }

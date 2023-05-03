@@ -62,16 +62,8 @@ extension IntroViewModel {
             token: self.userData.accessToken
         )
         self.keychain.create(
-            key: Const.KeychainKey.accessTokenExp,
-            token: self.userData.accessTokenExp
-        )
-        self.keychain.create(
             key: Const.KeychainKey.refreshToken,
             token: self.userData.refreshToken
-        )
-        self.keychain.create(
-            key: Const.KeychainKey.refreshTokenExp,
-            token: self.userData.refreshTokenExp
         )
         self.keychain.create(
             key: Const.KeychainKey.authority,
