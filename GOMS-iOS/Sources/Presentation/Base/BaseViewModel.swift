@@ -15,4 +15,5 @@ class BaseViewModel{
     var steps = PublishRelay<Step>()
     let keychain = Keychain()
     let gomsRefreshToken = GOMSRefreshToken()
+    lazy var accessToken = "Bearer " + keychain.read(key: Const.KeychainKey.accessToken)!
 }

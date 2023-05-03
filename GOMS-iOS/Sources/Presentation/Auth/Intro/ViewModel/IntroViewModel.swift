@@ -15,7 +15,6 @@ class IntroViewModel: BaseViewModel, Stepper{
     
     private let authProvider = MoyaProvider<AuthServices>()
     private var userData: SignInResponse!
-    private let keychain = Keychain()
     
     struct Input {
         

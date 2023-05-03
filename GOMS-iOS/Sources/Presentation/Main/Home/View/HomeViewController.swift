@@ -14,6 +14,7 @@ import RxSwift
 class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
+        getData()
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
@@ -27,6 +28,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         bindViewModel()
     }
     
+    private func getData() {
+        viewModel.getLateRank()
+        viewModel.getOutingCount()
+        viewModel.getUserData()
+    }
+    
     private func bindViewModel() {
         let input = HomeViewModel.Input(
             navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
@@ -36,6 +43,11 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         )
         viewModel.transVC(input: input)
     }
+    
+    private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
+    private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
+    private let userNum = UserDefaults.standard.integer(forKey: "userNum")
+    private let userProfileURL = UserDefaults.standard.integer(forKey: "userProfileURL")
     
     private let homeMainImage = UIImageView().then {
         $0.image = UIImage(named: "homeUndraw.svg")
@@ -142,8 +154,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.image = UIImage(named: "dummyImage.svg")
     }
     
-    private let userNameText = UILabel().then {
-        $0.text = "선민재"
+    private lazy var userNameText = UILabel().then {
+        $0.text = UserDefaults.standard.string(forKey: "userName")
         $0.textColor = UIColor.black
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
@@ -152,8 +164,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.image = UIImage(named: "navigationButton.svg")
     }
     
-    private var userNumText = UILabel().then {
-        $0.text = "3학년 1반 11번"
+    private lazy var userNumText = UILabel().then {
+        $0.text = "\(self.userGrade)학년 \(self.userClassNum)반 \(self.userNum)번"
         $0.textColor = UIColor.subColor
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }

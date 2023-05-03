@@ -62,13 +62,7 @@ class HomeViewModel: BaseViewModel, Stepper{
 }
 extension HomeViewModel {
     func getLateRank() {
-        lateProvider.request(
-            .lateRank(
-                authorization: keychain.read(
-                    key: Const.KeychainKey.accessToken
-                )!
-            )
-        ) { response in
+        lateProvider.request(.lateRank(authorization: accessToken)) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
@@ -95,13 +89,7 @@ extension HomeViewModel {
     }
     
     func getOutingCount() {
-        outingProvider.request(
-            .outingCount(
-                authorization: keychain.read(
-                    key: Const.KeychainKey.accessToken
-                )!
-            )
-        ) { response in
+        outingProvider.request(.outingCount(authorization: accessToken)) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
@@ -126,13 +114,7 @@ extension HomeViewModel {
     }
     
     func getUserData() {
-        accountProvider.request(
-            .account(
-                authorization: keychain.read(
-                    key: Const.KeychainKey.accessToken
-                )!
-            )
-        ) { response in
+            accountProvider.request(.account(authorization: accessToken)) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
@@ -162,7 +144,7 @@ extension HomeViewModel {
         UserDefaults.standard.set(self.userData.studentNum.classNum, forKey: "userClassNum")
         UserDefaults.standard.set(self.userData.studentNum.grade, forKey: "userGrade")
         UserDefaults.standard.set(self.userData.studentNum.number, forKey: "userNum")
-        UserDefaults.standard.set(self.userData.rateCount, forKey: "userRateCount")
+        UserDefaults.standard.set(self.userData.lateCount, forKey: "userLateCount")
         UserDefaults.standard.set(self.userData.profileUrl, forKey: "userProfileURL")
     }
 }

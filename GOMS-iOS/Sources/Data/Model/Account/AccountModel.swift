@@ -9,7 +9,7 @@ struct AccountResponse: Codable {
     let name: String
     let studentNum: StudentNum
     let profileUrl: String?
-    let rateCount: String
+    let lateCount: Int
     
     struct StudentNum: Codable{
         let grade: Int
