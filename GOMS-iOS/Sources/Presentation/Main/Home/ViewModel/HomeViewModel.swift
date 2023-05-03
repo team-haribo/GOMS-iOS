@@ -144,6 +144,7 @@ extension HomeViewModel {
                 let statusCode = result.statusCode
                 switch statusCode{
                 case 200..<300:
+                    self.saveUserData()
                     self.steps.accept(GOMSStep.tabBarIsRequired)
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
@@ -154,5 +155,14 @@ extension HomeViewModel {
                 print(String(describing: err))
             }
         }
+    }
+    
+    func saveUserData() {
+        UserDefaults.standard.set(self.userData.name, forKey: "userName")
+        UserDefaults.standard.set(self.userData.studentNum.classNum, forKey: "userClassNum")
+        UserDefaults.standard.set(self.userData.studentNum.grade, forKey: "userGrade")
+        UserDefaults.standard.set(self.userData.studentNum.number, forKey: "userNum")
+        UserDefaults.standard.set(self.userData.rateCount, forKey: "userRateCount")
+        UserDefaults.standard.set(self.userData.profileUrl, forKey: "userProfileURL")
     }
 }
