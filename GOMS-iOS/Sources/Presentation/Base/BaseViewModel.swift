@@ -13,4 +13,5 @@ import RxFlow
 class BaseViewModel{
     var disposeBag = DisposeBag()
     var steps = PublishRelay<Step>()
+    let keychain = Keychain()
 }

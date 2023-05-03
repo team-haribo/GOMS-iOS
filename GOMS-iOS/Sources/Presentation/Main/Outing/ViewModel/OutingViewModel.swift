@@ -36,8 +36,14 @@ class OutingViewModel: BaseViewModel, Stepper{
 
 
 extension OutingViewModel {
-    func userAccount(Authorization: String) {
-        outingProvider.request(.outingList(authorization: Authorization)) { response in
+    func userAccount() {
+        outingProvider.request(
+            .outingList(
+                authorization: keychain.read(
+                    key: Const.KeychainKey.accessToken
+                )!
+            )
+        ) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data

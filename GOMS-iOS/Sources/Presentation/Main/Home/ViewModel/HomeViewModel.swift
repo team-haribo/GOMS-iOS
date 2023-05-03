@@ -61,8 +61,14 @@ class HomeViewModel: BaseViewModel, Stepper{
     }
 }
 extension HomeViewModel {
-    func getLateRank(Authorization: String) {
-        lateProvider.request(.lateRank(authorization: Authorization)) { response in
+    func getLateRank() {
+        lateProvider.request(
+            .lateRank(
+                authorization: keychain.read(
+                    key: Const.KeychainKey.accessToken
+                )!
+            )
+        ) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
@@ -88,8 +94,14 @@ extension HomeViewModel {
         }
     }
     
-    func getOutingCount(Authorization: String) {
-        outingProvider.request(.outingCount(authorization: Authorization)) { response in
+    func getOutingCount() {
+        outingProvider.request(
+            .outingCount(
+                authorization: keychain.read(
+                    key: Const.KeychainKey.accessToken
+                )!
+            )
+        ) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
@@ -113,8 +125,14 @@ extension HomeViewModel {
         }
     }
     
-    func getUserData(Authorization: String) {
-        accountProvider.request(.account(authorization: Authorization)) { response in
+    func getUserData() {
+        accountProvider.request(
+            .account(
+                authorization: keychain.read(
+                    key: Const.KeychainKey.accessToken
+                )!
+            )
+        ) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
