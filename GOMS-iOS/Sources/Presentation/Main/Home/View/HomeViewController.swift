@@ -134,7 +134,10 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5) //아이템 상하좌우 사이값 초기화
     }
     
-    private let tardyCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private let tardyCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    ).then {
         $0.isScrollEnabled = false
         $0.backgroundColor = .background
     }

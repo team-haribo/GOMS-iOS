@@ -127,7 +127,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
             $0.height.width.equalTo(100)
         }
         userNameText.snp.makeConstraints {
-            $0.top.equalTo(profileImage.snp.bottom).offset(6)
+            $0.top.equalTo(profileImage.snp.bottom).offset((bounds.height) / 135.333333333)
             $0.centerX.equalToSuperview()
         }
         userNumText.snp.makeConstraints {
@@ -135,16 +135,16 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
             $0.centerX.equalToSuperview()
         }
         backgroundShadow.snp.makeConstraints {
-            $0.top.equalTo(userNumText.snp.bottom).offset(32)
+            $0.top.equalTo(userNumText.snp.bottom).offset((bounds.height) / 2.82)
             $0.leading.equalToSuperview().offset(26)
             $0.trailing.equalToSuperview().offset(-26)
-            $0.bottom.equalToSuperview().inset((bounds.height) / 4.27)
+            $0.bottom.equalToSuperview().inset((bounds.height) / 4.2736842105)
         }
         userInfoTableView.snp.makeConstraints {
-            $0.top.equalTo(userNumText.snp.bottom).offset(32)
+            $0.top.equalTo(view.snp.top).offset((bounds.height) / 2.82)
             $0.leading.equalToSuperview().offset(26)
             $0.trailing.equalToSuperview().offset(-26)
-            $0.bottom.equalToSuperview().inset((bounds.height) / 4.27)
+            $0.bottom.equalToSuperview().inset((bounds.height) / 4.2736842105)
         }
         logoutButton.snp.makeConstraints {
             $0.top.equalTo(userInfoTableView.snp.bottom).offset(34)
@@ -177,6 +177,6 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 67
+        return (bounds.height / 2.42) / 5
     }
 }
