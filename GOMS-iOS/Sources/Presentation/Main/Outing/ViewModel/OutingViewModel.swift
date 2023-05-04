@@ -12,8 +12,6 @@ import RxCocoa
 import Moya
 
 class OutingViewModel: BaseViewModel, Stepper{
-    private let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
-    private var userData: OutingListResponse!
     
     struct Input {
         let profileButtonTap: Observable<Void>
@@ -37,18 +35,12 @@ class OutingViewModel: BaseViewModel, Stepper{
 
 extension OutingViewModel {
     func userAccount() {
-        outingProvider.request(
-            .outingList(
-                authorization: keychain.read(
-                    key: Const.KeychainKey.accessToken
-                )!
-            )
-        ) { response in
+        outingProvider.request(.outingList(authorization: accessToken)){ response in
             switch response {
             case let .success(result):
                 let responseData = result.data
                 do {
-                    self.userData = try JSONDecoder().decode(OutingListResponse.self, from: responseData)
+                    self.outingList = try JSONDecoder().decode(OutingListResponse.self, from: responseData)
                 }catch(let err) {
                     print(String(describing: err))
                 }
