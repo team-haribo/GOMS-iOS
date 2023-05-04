@@ -91,13 +91,14 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     
-    private var outingStudentText = UILabel().then {
-        $0.text = "48 명이 외출중이에요!"
+    private lazy var outingStudentText = UILabel().then {
+        let outingCount = viewModel.outingCount?.outingCount
+        $0.text = "\(outingCount ?? 0) 명이 외출중이에요!"
         $0.textColor = UIColor.black
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
         let fullText = $0.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
-        let range = (fullText as NSString).range(of: "48 ")
+        let range = (fullText as NSString).range(of: "\(outingCount ?? 0) ")
         attribtuedString.addAttribute(
             .foregroundColor,
             value: UIColor.mainColor!,
