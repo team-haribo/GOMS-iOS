@@ -10,6 +10,7 @@ import UIKit
 import Then
 import SnapKit
 import RxSwift
+import Kingfisher
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
@@ -47,7 +48,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
     private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
     private let userNum = UserDefaults.standard.integer(forKey: "userNum")
-    private let userProfileURL = UserDefaults.standard.integer(forKey: "userProfileURL")
+    private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
     
     private let homeMainImage = UIImageView().then {
         $0.image = UIImage(named: "homeUndraw.svg")
@@ -150,8 +151,14 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.layer.cornerRadius = 10
     }
     
-    private let profileImg = UIImageView().then {
-        $0.image = UIImage(named: "dummyImage.svg")
+    private lazy var profileImg = UIImageView().then {
+        let url = URL(string: userProfileURL ?? "")
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
+        $0.kf.setImage(
+            with: url,
+            placeholder:UIImage(named: "dummyImage.svg"),
+            options: [.processor(imageCornerRadius)]
+        )
     }
     
     private lazy var userNameText = UILabel().then {
@@ -227,6 +234,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         profileImg.snp.makeConstraints {
             $0.top.equalTo(profileButton.snp.top).offset(15)
             $0.leading.equalTo(profileButton.snp.leading).offset(16)
+            $0.width.height.equalTo(40)
         }
         userNameText.snp.makeConstraints {
             $0.top.equalTo(profileButton.snp.top).offset(18)
