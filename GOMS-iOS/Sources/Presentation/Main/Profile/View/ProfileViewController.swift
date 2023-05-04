@@ -9,6 +9,7 @@ import UIKit
 import Then
 import SnapKit
 import Foundation
+import Kingfisher
 
 class ProfileViewController: BaseViewController<ProfileViewModel> {
     
@@ -41,18 +42,24 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    private let profileImage = UIImageView().then {
-        $0.image = UIImage(named: "profileImg")
+    private lazy var profileImage = UIImageView().then {
+        let url = URL(string: self.userProfileURL ?? "")
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 100)
+        $0.kf.setImage(
+            with: url,
+            placeholder:UIImage(named: "profileImg"),
+            options: [.processor(imageCornerRadius)]
+        )
     }
     
-    private let userNameText = UILabel().then {
-        $0.text = "선민재"
+    private lazy var userNameText = UILabel().then {
+        $0.text = "\(self.userName ?? "")"
         $0.font = UIFont.GOMSFont(size: 18,family: .Medium)
         $0.textColor = .black
     }
     
-    private let userNumText = UILabel().then {
-        $0.text = "3111"
+    private lazy var userNumText = UILabel().then {
+        $0.text = "\(self.userGrade)" + "\(self.userClassNum)" + "\(self.userNum)"
         $0.font = UIFont.GOMSFont(size: 14,family: .Regular)
         $0.textColor = .subColor
     }
@@ -117,6 +124,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
         profileImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset((bounds.height) / 7.31)
             $0.centerX.equalToSuperview()
+            $0.height.width.equalTo(100)
         }
         userNameText.snp.makeConstraints {
             $0.top.equalTo(profileImage.snp.bottom).offset(6)
