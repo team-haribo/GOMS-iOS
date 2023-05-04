@@ -12,12 +12,6 @@ import RxCocoa
 import Moya
 
 class HomeViewModel: BaseViewModel, Stepper{
-    private let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
-    private let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
-    private let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
-    private var userData: AccountResponse!
-    private var lateRank: [LateRankResponse]!
-    private var outingCount: OutingCountResponse!
     
     struct Input {
         let navProfileButtonTap: Observable<Void>

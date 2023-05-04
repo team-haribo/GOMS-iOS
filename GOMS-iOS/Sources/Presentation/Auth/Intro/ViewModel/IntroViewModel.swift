@@ -11,11 +11,7 @@ import RxCocoa
 import RxSwift
 import Moya
 
-class IntroViewModel: BaseViewModel, Stepper{
-    
-    private let authProvider = MoyaProvider<AuthServices>()
-    private var userData: SignInResponse!
-    
+class IntroViewModel: BaseViewModel, Stepper{    
     struct Input {
         
     }
@@ -37,7 +33,7 @@ extension IntroViewModel {
             case .success(let result):
                 print(String(data: result.data, encoding: .utf8))
                 do {
-                    self.userData = try result.map(SignInResponse.self)
+                    self.authData = try result.map(SignInResponse.self)
                 }catch(let err) {
                     print(String(describing: err))
                 }
@@ -58,15 +54,15 @@ extension IntroViewModel {
     func addKeychainToken() {
         self.keychain.create(
             key: Const.KeychainKey.accessToken,
-            token: self.userData.accessToken
+            token: self.authData.accessToken
         )
         self.keychain.create(
             key: Const.KeychainKey.refreshToken,
-            token: self.userData.refreshToken
+            token: self.authData.refreshToken
         )
         self.keychain.create(
             key: Const.KeychainKey.authority,
-            token: self.userData.authority
+            token: self.authData.authority
         )
     }
 }

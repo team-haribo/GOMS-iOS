@@ -12,10 +12,7 @@ import RxSwift
 import Moya
 
 class ProfileViewModel: BaseViewModel, Stepper{
-
-    private let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
-    private var userData: AccountResponse!
-
+    
     struct Input {
 
     }
@@ -31,13 +28,7 @@ class ProfileViewModel: BaseViewModel, Stepper{
 
 extension ProfileViewModel {
     func getUserData() {
-        accountProvider.request(
-            .account(
-                authorization: keychain.read(
-                    key: Const.KeychainKey.accessToken
-                )!
-            )
-        ) { response in
+        accountProvider.request(.account(authorization: accessToken)) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
