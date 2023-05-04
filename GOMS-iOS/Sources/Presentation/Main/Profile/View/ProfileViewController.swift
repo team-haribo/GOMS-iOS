@@ -8,10 +8,25 @@
 import UIKit
 import Then
 import SnapKit
+import Foundation
 
 class ProfileViewController: BaseViewController<ProfileViewModel> {
+    
+    private let userName = UserDefaults.standard.string(forKey: "userName")
+    private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
+    private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
+    private let userNum = UserDefaults.standard.integer(forKey: "userNum")
+    private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
+    private let userLateCount = UserDefaults.standard.integer(forKey: "userLateCount")
+    
     private let cellName = ["이름","학년","반","번호","지각횟수"]
-    private let cellDetail = ["선민재","3","1","11","11"]
+    private lazy var cellDetail = [
+        self.userName ?? "",
+        self.userGrade,
+        self.userClassNum,
+        self.userNum,
+        self.userLateCount
+    ] as [Any]
     
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
@@ -30,13 +45,13 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
         $0.image = UIImage(named: "profileImg")
     }
     
-    private let userName = UILabel().then {
+    private let userNameText = UILabel().then {
         $0.text = "선민재"
         $0.font = UIFont.GOMSFont(size: 18,family: .Medium)
         $0.textColor = .black
     }
     
-    private let userNum = UILabel().then {
+    private let userNumText = UILabel().then {
         $0.text = "3111"
         $0.font = UIFont.GOMSFont(size: 14,family: .Regular)
         $0.textColor = .subColor
@@ -93,7 +108,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     }
     
     override func addView() {
-        [profileImage, userName, userNum, backgroundShadow, userInfoTableView, logoutButton, logoutText, logoutIcon].forEach {
+        [profileImage, userNameText, userNumText, backgroundShadow, userInfoTableView, logoutButton, logoutText, logoutIcon].forEach {
             view.addSubview($0)
         }
     }
@@ -103,22 +118,22 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
             $0.top.equalToSuperview().offset((bounds.height) / 7.31)
             $0.centerX.equalToSuperview()
         }
-        userName.snp.makeConstraints {
+        userNameText.snp.makeConstraints {
             $0.top.equalTo(profileImage.snp.bottom).offset(6)
             $0.centerX.equalToSuperview()
         }
-        userNum.snp.makeConstraints {
-            $0.top.equalTo(userName.snp.bottom).offset(0)
+        userNumText.snp.makeConstraints {
+            $0.top.equalTo(userNameText.snp.bottom).offset(0)
             $0.centerX.equalToSuperview()
         }
         backgroundShadow.snp.makeConstraints {
-            $0.top.equalTo(userNum.snp.bottom).offset(32)
+            $0.top.equalTo(userNumText.snp.bottom).offset(32)
             $0.leading.equalToSuperview().offset(26)
             $0.trailing.equalToSuperview().offset(-26)
             $0.bottom.equalToSuperview().inset((bounds.height) / 4.27)
         }
         userInfoTableView.snp.makeConstraints {
-            $0.top.equalTo(userNum.snp.bottom).offset(32)
+            $0.top.equalTo(userNumText.snp.bottom).offset(32)
             $0.leading.equalToSuperview().offset(26)
             $0.trailing.equalToSuperview().offset(-26)
             $0.bottom.equalToSuperview().inset((bounds.height) / 4.27)
@@ -148,7 +163,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userInfoTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         cell.cellName.text = cellName[indexPath.row]
-        cell.cellDetail.text = cellDetail[indexPath.row]
+        cell.cellDetail.text = "\(cellDetail[indexPath.row])"
         cell.selectionStyle = .none
         return cell
     }
