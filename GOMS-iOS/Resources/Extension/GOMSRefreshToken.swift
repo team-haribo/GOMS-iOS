@@ -26,7 +26,6 @@ class GOMSRefreshToken {
                 switch statusCode{
                 case 200..<300:
                     self.deleteKeychainToken()
-                    self.addKeychainToken()
                     print("Alert 띄우기")
                 case 400:
                     print("No Token")
@@ -44,23 +43,17 @@ class GOMSRefreshToken {
     }
     
     func deleteKeychainToken() {
-        self.keychain.deleteItem(key: Const.KeychainKey.accessToken)
-        self.keychain.deleteItem(key: Const.KeychainKey.authority)
-        self.keychain.deleteItem(key: Const.KeychainKey.refreshToken)
-    }
-    
-    func addKeychainToken() {
-        self.keychain.create(
-            key: Const.KeychainKey.accessToken,
-            token: self.reissuanceData.accessToken
+        self.keychain.updateItem(
+            token: self.reissuanceData.accessToken,
+            key: Const.KeychainKey.accessToken
         )
-        self.keychain.create(
-            key: Const.KeychainKey.refreshToken,
-            token: self.reissuanceData.refreshToken
+        self.keychain.updateItem(
+            token: self.reissuanceData.refreshToken,
+            key: Const.KeychainKey.refreshToken
         )
-        self.keychain.create(
-            key: Const.KeychainKey.authority,
-            token: self.reissuanceData.authority
+        self.keychain.updateItem(
+            token: self.reissuanceData.authority,
+            key: Const.KeychainKey.authority
         )
     }
 }
