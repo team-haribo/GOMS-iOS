@@ -42,7 +42,7 @@ class GOMSRefreshToken {
         }
     }
     
-    func deleteKeychainToken() {
+    func updateKeychainToken() {
         self.keychain.updateItem(
             token: self.reissuanceData.accessToken,
             key: Const.KeychainKey.accessToken
