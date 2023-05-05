@@ -36,10 +36,16 @@ class QRCodeFlow: Flow {
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? GOMSStep else { return .none }
         switch step {
+            
         case .qrocdeIsRequired:
             return coordinateToQRCode()
+            
         case .homeIsRequired:
             return .one(flowContributor: .forwardToParentFlow(withStep: GOMSStep.homeIsRequired))
+            
+        case .introIsRequired:
+            return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
+            
         default:
             return .none
         }

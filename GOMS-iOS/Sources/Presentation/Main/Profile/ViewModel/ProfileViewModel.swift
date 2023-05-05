@@ -14,39 +14,29 @@ import Moya
 class ProfileViewModel: BaseViewModel, Stepper{
     
     struct Input {
-
+        let logoutButtonDidTap: Observable<Void>
     }
-
+    
     struct Output {
-
+        
     }
-
+    
     func transVC(input: Input) {
+        input.logoutButtonDidTap.subscribe(
+            onNext: logout
+        ) .disposed(by: disposeBag)
     }
-
 }
 
 extension ProfileViewModel {
-    func getUserData() {
-        accountProvider.request(.account(authorization: accessToken)) { response in
-            switch response {
-            case let .success(result):
-                let responseData = result.data
-                do {
-                    self.userData = try JSONDecoder().decode(AccountResponse.self, from: responseData)
-                }catch(let err) {
-                    print(String(describing: err))
-                }
-                let statusCode = result.statusCode
-                switch statusCode{
-                case 200..<300:
-                    self.steps.accept(GOMSStep.tabBarIsRequired)
-                default:
-                    print("ERROR")
-                }
-            case .failure(let err):
-                print(String(describing: err))
-            }
-        }
+    private func logout() {
+        self.steps.accept(GOMSStep.introIsRequired)
+        deleteUserToken()
+    }
+    
+    private func deleteUserToken() {
+        keychain.deleteItem(key: Const.KeychainKey.accessToken)
+        keychain.deleteItem(key: Const.KeychainKey.refreshToken)
+        keychain.deleteItem(key: Const.KeychainKey.authority)
     }
 }

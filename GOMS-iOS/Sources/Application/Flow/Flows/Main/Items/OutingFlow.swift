@@ -43,6 +43,9 @@ class OutingFlow: Flow {
         case .profileIsRequired:
             return coordinateToProfile()
             
+        case .introIsRequired:
+            return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
+            
         default:
             return .none
         }

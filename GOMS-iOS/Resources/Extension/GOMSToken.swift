@@ -43,13 +43,23 @@ class Keychain {
             return nil
         }
     }
+//
+//    func delete(key: String) {
+//        let query: NSDictionary = [
+//            kSecClass: kSecClassGenericPassword,
+//            kSecAttrAccount: key
+//        ]
+//        let status = SecItemDelete(query)
+//        assert(status == noErr, "failed to delete the value, status code = \(status)")
+//    }
     
-    func delete(key: String) {
-        let query: NSDictionary = [
-            kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: key
-        ]
-        let status = SecItemDelete(query)
-        assert(status == noErr, "failed to delete the value, status code = \(status)")
+    func deleteItem(key: String) -> Bool {
+        let deleteQuery: [CFString: Any] = [kSecClass: kSecClassGenericPassword,
+                                            kSecAttrAccount: key]
+        let status = SecItemDelete(deleteQuery as CFDictionary)
+        if status == errSecSuccess { return true }
+        
+        print("deleteItem Error : \(status.description)")
+        return false
     }
 }
