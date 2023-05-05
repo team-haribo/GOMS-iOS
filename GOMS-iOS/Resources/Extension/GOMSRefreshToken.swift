@@ -44,9 +44,9 @@ class GOMSRefreshToken {
     }
     
     func deleteKeychainToken() {
-        self.keychain.delete(key: Const.KeychainKey.accessToken)
-        self.keychain.delete(key: Const.KeychainKey.authority)
-        self.keychain.delete(key: Const.KeychainKey.refreshToken)
+        self.keychain.deleteItem(key: Const.KeychainKey.accessToken)
+        self.keychain.deleteItem(key: Const.KeychainKey.authority)
+        self.keychain.deleteItem(key: Const.KeychainKey.refreshToken)
     }
     
     func addKeychainToken() {

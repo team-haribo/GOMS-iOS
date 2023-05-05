@@ -43,6 +43,8 @@ final class TabBarFlow: Flow {
             return coordinateToTabbar(index: 1)
         case .outingIsRequired:
             return coordinateToTabbar(index: 2)
+        case .introIsRequired:
+            return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
         default:
             return .none
         }

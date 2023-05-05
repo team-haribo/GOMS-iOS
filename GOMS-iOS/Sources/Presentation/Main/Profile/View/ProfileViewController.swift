@@ -10,6 +10,8 @@ import Then
 import SnapKit
 import Foundation
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 class ProfileViewController: BaseViewController<ProfileViewModel> {
     
@@ -36,10 +38,18 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
         userInfoTableView.dataSource = self
         userInfoTableView.layer.cornerRadius = 20
         userInfoTableView.layer.masksToBounds = true
+        bindViewModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private func bindViewModel() {
+        let input = ProfileViewModel.Input(
+            logoutButtonDidTap: logoutButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private lazy var profileImage = UIImageView().then {
