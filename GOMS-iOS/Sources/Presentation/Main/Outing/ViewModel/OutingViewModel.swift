@@ -40,7 +40,7 @@ extension OutingViewModel {
             case let .success(result):
                 let responseData = result.data
                 do {
-                    self.outingList = try JSONDecoder().decode(OutingListResponse.self, from: responseData)
+                    self.outingList = try JSONDecoder().decode([OutingListResponse].self, from: responseData)
                 }catch(let err) {
                     print(String(describing: err))
                 }

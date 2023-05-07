@@ -21,17 +21,17 @@ class HomeCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let userProfileImage = UIImageView().then {
+    var userProfileImage = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    let studentName = UILabel().then {
+    var studentName = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textColor = UIColor.black
         $0.font = UIFont.GOMSFont(size: 14, family: .Medium)
     }
     
-    let studentNum = UILabel().then {
+    var studentNum = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textColor = UIColor.subColor
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
