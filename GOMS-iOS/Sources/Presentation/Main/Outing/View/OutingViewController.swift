@@ -60,8 +60,28 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         $0.backgroundColor = .background
     }
     
+    private let outingIsNilImage = UIImageView().then {
+        $0.image = UIImage(named: "outingIsNilImage.svg")
+        $0.isHidden = true
+    }
+    
+    private let outingIsNilText = UILabel().then {
+        $0.text = "다들 바쁜가봐요..!"
+        $0.font = UIFont.GOMSFont(
+            size: 16,
+            family: .Medium
+        )
+        $0.textColor = UIColor(
+            red: 150/255,
+            green: 150/255,
+            blue: 150/255,
+            alpha: 1
+        )
+        $0.isHidden = true
+    }
+    
     override func addView() {
-        [outingMainText, outingCollectionView].forEach {
+        [outingMainText, outingCollectionView, outingIsNilImage, outingIsNilText].forEach {
             view.addSubview($0)
         }
     }
@@ -75,6 +95,13 @@ class OutingViewController: BaseViewController<OutingViewModel> {
             $0.top.equalTo(outingMainText.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.bottom.equalToSuperview()
+        }
+        outingIsNilImage.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        outingIsNilText.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(outingIsNilImage.snp.bottom).offset(20)
         }
     }
 
