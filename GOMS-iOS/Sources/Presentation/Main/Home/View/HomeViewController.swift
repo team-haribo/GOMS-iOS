@@ -35,6 +35,13 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         viewModel.getUserData()
     }
     
+    private func bindLateRank() {
+        for index in 0...2 {
+            userNameList[index] = viewModel.lateRank[index].name
+            userNumList[index] = viewModel.lateRank[index].studentNum.grade + viewModel.lateRank[index].studentNum.classNum + viewModel.lateRank[index].studentNum.number
+        }
+    }
+    
     private func bindViewModel() {
         let input = HomeViewModel.Input(
             navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
@@ -49,6 +56,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
     private let userNum = UserDefaults.standard.integer(forKey: "userNum")
     private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
+    private var userNameList = [String]()
+    private var userNumList = [Int]()
     
     private let homeMainImage = UIImageView().then {
         $0.image = UIImage(named: "homeUndraw.svg")
@@ -157,7 +166,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     private lazy var profileImg = UIImageView().then {
         let url = URL(string: userProfileURL ?? "")
-        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 200)
         $0.kf.setImage(
             with: url,
             placeholder:UIImage(named: "dummyImage.svg"),
@@ -261,7 +270,7 @@ extension HomeViewController :
     UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return userNameList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -279,9 +288,17 @@ extension HomeViewController :
             blur: 8,
             spread: 0
         )
-        cell.userProfileImage.image = UIImage(named: "dummyImage.svg")
-        cell.studentName.text = "선민재"
-        cell.studentNum.text = "3111"
+        cell.studentName.text = "\(userNameList[indexPath.row])"
+        cell.studentNum.text = "\(userNumList[indexPath.row])"
+        for index in 0 ... userNumList.count {
+            let url = URL(string: viewModel.lateRank[index].profileUrl ?? "")
+            let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
+            cell.userProfileImage.kf.setImage(
+                with: url,
+                placeholder:UIImage(named: "dummyImage.svg"),
+                options: [.processor(imageCornerRadius)]
+            )
+        }
         return cell
     }
     

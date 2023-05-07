@@ -25,7 +25,7 @@ class GOMSRefreshToken {
                 let statusCode = result.statusCode
                 switch statusCode{
                 case 200..<300:
-                    self.deleteKeychainToken()
+                    self.updateKeychainToken()
                     print("Alert 띄우기")
                 case 400:
                     print("No Token")
