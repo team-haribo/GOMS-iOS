@@ -9,10 +9,12 @@ import UIKit
 import Then
 import SnapKit
 import RxSwift
+import Kingfisher
 
 class OutingViewController: BaseViewController<OutingViewModel> {
 
     override func viewDidLoad() {
+        viewModel.outingList()
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
@@ -24,7 +26,25 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         )
         outingCollectionView.collectionViewLayout = layout
         bindViewModel()
+        bindOutingList()
     }
+    
+    private func bindOutingList() {
+        if viewModel.outingCount?.outingCount == nil {
+            outingCollectionView.isHidden = true
+            outingIsNilImage.isHidden = false
+            outingIsNilText.isHidden = false
+        }
+        else {
+            for index in 0...(viewModel.outingCount?.outingCount ?? 0) {
+                userNameList[index] = viewModel.outingList[index].name
+                userNumList[index] = viewModel.outingList[index].studentNum.grade + viewModel.outingList[index].studentNum.classNum + viewModel.outingList[index].studentNum.number
+            }
+        }
+    }
+    
+    private var userNameList = [String]()
+    private var userNumList = [Int]()
     
     private func bindViewModel() {
         let input = OutingViewModel.Input(
@@ -113,7 +133,7 @@ extension OutingViewController:
     UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return userNameList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -131,9 +151,17 @@ extension OutingViewController:
             blur: 8,
             spread: 0
         )
-        cell.userProfile.image = UIImage(named: "userProfile.svg")
-        cell.userName.text = "선민재"
-        cell.userNum.text = "3학년 1반 11번"
+        cell.userName.text = "\(userNameList[indexPath.row])"
+        cell.userNum.text = "\(userNumList[indexPath.row])"
+        for index in 0 ... userNameList.count {
+            let url = URL(string: viewModel.outingList[index].profileUrl ?? "")
+            let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
+            cell.userProfile.kf.setImage(
+                with: url,
+                placeholder:UIImage(named: "userProfile.svg"),
+                options: [.processor(imageCornerRadius)]
+            )
+        }
         return cell
     }
     
