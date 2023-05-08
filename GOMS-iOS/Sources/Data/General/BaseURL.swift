@@ -8,6 +8,6 @@
 import Foundation
 
 struct BaseURL {
-    static let baseURL = "http://52.79.192.31:8080/api/v1"
+    static let baseURL = "http://52.78.110.251:8080/api/v1"
     static let adminBaseURL = "\(baseURL)/admin"
 }
