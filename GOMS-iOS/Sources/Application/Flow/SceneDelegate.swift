@@ -13,15 +13,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var coordinator = FlowCoordinator()
+    let gomsRefreshToken = GOMSRefreshToken()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
+        self.gomsRefreshToken.tokenReissuance()
         let appFlow = AppFlow(window: window)
         self.coordinator.coordinate(flow: appFlow, with: AppStepper())
         window.makeKeyAndVisible()
-        }
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

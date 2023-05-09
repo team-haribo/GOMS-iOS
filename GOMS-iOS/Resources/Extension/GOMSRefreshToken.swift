@@ -1,40 +1,34 @@
 import Foundation
 import Moya
 import UIKit
+import RxFlow
+import RxCocoa
 
 class GOMSRefreshToken {
+    var steps = PublishRelay<Step>()
+    var statusCode: Int = 0
     private let authProvider = MoyaProvider<AuthServices>()
-    private var reissuanceData: RefreshTokenesponse!
+    private var reissuanceData: SignInResponse!
     private let keychain = Keychain()
+    private lazy var refreshToken = "Bearer " + keychain.read(key: Const.KeychainKey.refreshToken)!
 
     func tokenReissuance() {
-        authProvider.request(
-            .refreshToken(
-                refreshToken: keychain.read(
-                    key: Const.KeychainKey.refreshToken
-                )!
-            )
-        ) { response in
+        authProvider.request(.refreshToken(refreshToken: refreshToken)) { response in
             switch response {
             case .success(let result):
                 do {
-                    self.reissuanceData = try result.map(RefreshTokenesponse.self)
+                    self.reissuanceData = try result.map(SignInResponse.self)
                 }catch(let err) {
                     print(String(describing: err))
                 }
-                let statusCode = result.statusCode
-                switch statusCode{
+                self.statusCode = result.statusCode
+                switch self.statusCode {
                 case 200..<300:
                     self.updateKeychainToken()
-                    print("Alert 띄우기")
-                case 400:
-                    print("No Token")
-                case 401:
-                    print("만료")
-                case 404:
-                    print("Not Founds")
+                case 400, 401, 404:
+                    self.steps.accept(GOMSStep.introIsRequired)
                 default:
-                    print("ERROR")
+                    self.steps.accept(GOMSStep.introIsRequired)
                 }
             case .failure(let err):
                 print(String(describing: err))
