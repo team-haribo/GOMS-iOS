@@ -25,6 +25,7 @@ class GOMSRefreshToken {
                 switch self.statusCode {
                 case 200..<300:
                     self.updateKeychainToken()
+                    UserDefaults.standard.set(self.statusCode, forKey: "statusCode")
                 case 400, 401, 404:
                     self.steps.accept(GOMSStep.introIsRequired)
                 default:

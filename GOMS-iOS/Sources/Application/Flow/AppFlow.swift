@@ -15,14 +15,17 @@ struct AppStepper: Stepper {
     let steps = PublishRelay<Step>()
     private let disposeBag = DisposeBag()
     let gomsRefreshToken = GOMSRefreshToken()
+    private let statusCode = UserDefaults.standard.integer(forKey: "statusCode")
     
     init() {}
     
     var initialStep: Step {
-        switch self.gomsRefreshToken.statusCode {
+        switch statusCode {
         case 200..<300:
+            print(statusCode)
             return GOMSStep.tabBarIsRequired
         default:
+            print(statusCode)
             return GOMSStep.introIsRequired
         }
     }
