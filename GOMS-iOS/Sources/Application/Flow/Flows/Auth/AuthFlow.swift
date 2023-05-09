@@ -9,7 +9,7 @@ import RxFlow
 import UIKit
 
 class AuthFlow: Flow {
-
+    
     var root: Presentable {
         return self.rootViewController
     }
@@ -18,9 +18,9 @@ class AuthFlow: Flow {
         let viewController = UINavigationController()
         return viewController
     }()
-
+    
     init(){}
-
+    
     func navigate(to step: Step) -> FlowContributors {
         guard let step = step as? GOMSStep else { return .none }
         switch step {
@@ -40,8 +40,10 @@ class AuthFlow: Flow {
             return .none
         }
     }
-    
-    private func coordinateToIntro() -> FlowContributors {
+}
+
+private extension AuthFlow {
+    func coordinateToIntro() -> FlowContributors {
         let vm = IntroViewModel()
         let vc = IntroViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: false)
@@ -62,7 +64,7 @@ class AuthFlow: Flow {
         } else {
             alert.addAction(.init(title: "확인", style: .default))
         }
-        self.rootVC.topViewController?.present(alert, animated: true)
+        self.rootViewController.topViewController?.present(alert, animated: true)
         return .none
     }
 }
