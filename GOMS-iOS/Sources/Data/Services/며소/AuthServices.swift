@@ -46,7 +46,7 @@ extension AuthServices: TargetType {
     var headers: [String : String]? {
         switch self {
         case .refreshToken(let refreshToken):
-            return["Content-Type" :"application/json","Authorization" : refreshToken]
+            return["Content-Type" :"application/json", "refreshToken" : refreshToken]
         default:
             return["Content-Type" :"application/json"]
         }
