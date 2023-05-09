@@ -7,17 +7,24 @@
 
 import RxFlow
 import UIKit
+import Moya
 import RxSwift
 import RxCocoa
 
 struct AppStepper: Stepper {
     let steps = PublishRelay<Step>()
     private let disposeBag = DisposeBag()
+    let gomsRefreshToken = GOMSRefreshToken()
     
     init() {}
     
     var initialStep: Step {
-        return GOMSStep.introIsRequired
+        switch self.gomsRefreshToken.statusCode {
+        case 200..<300:
+            return GOMSStep.tabBarIsRequired
+        default:
+            return GOMSStep.introIsRequired
+        }
     }
 }
 
