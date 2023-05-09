@@ -39,12 +39,22 @@ final class TabBarFlow: Flow {
         switch step {
         case .tabBarIsRequired:
             return coordinateToTabbar(index: 0)
+            
         case .qrocdeIsRequired:
             return coordinateToTabbar(index: 1)
+            
         case .outingIsRequired:
             return coordinateToTabbar(index: 2)
+            
         case .introIsRequired:
             return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
+            
+        case let .alert(title, message, style, actions):
+            return presentToAlert(title: title, message: message, style: style, actions: actions)
+            
+        case let .failureAlert(title, message, action):
+            return presentToFailureAlert(title: title, message: message, action: action)
+            
         default:
             return .none
         }
@@ -90,5 +100,23 @@ private extension TabBarFlow {
             .contribute(withNextPresentable: qrCodeFlow, withNextStepper: qrCodeFlow.stepper),
             .contribute(withNextPresentable: outingFlow, withNextStepper: outingFlow.stepper)
         ])
+    }
+    
+    func presentToAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) -> FlowContributors {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        actions.forEach { alert.addAction($0) }
+        self.rootViewController.topViewController?.present(alert, animated: true)
+        return .none
+    }
+    
+    func presentToFailureAlert(title: String?, message: String?, action: [UIAlertAction]) -> FlowContributors {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if !action.isEmpty {
+            action.forEach(alert.addAction(_:))
+        } else {
+            alert.addAction(.init(title: "확인", style: .default))
+        }
+        self.rootViewController.topViewController?.present(alert, animated: true)
+        return .none
     }
 }
