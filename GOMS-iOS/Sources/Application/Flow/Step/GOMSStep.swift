@@ -9,21 +9,18 @@ import RxFlow
 
 enum GOMSStep: Step {
     
-    // MARK: Intro
+    // MARK: Auth
     case introIsRequired
     
     // MARK: TabBar
     case tabBarIsRequired
     
-    // MARK: QRCode
-    case qrocdeIsRequired
-    
-    // MARK: Outing
-    case outingIsRequired
-    
     // MARK: Home
+    case qrocdeIsRequired
+    case outingIsRequired
     case homeIsRequired
-    
-    // MARK: Profile
     case profileIsRequired
+    
+    //MARK: Alert
+    case alert
 }
