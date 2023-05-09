@@ -6,6 +6,7 @@
 //
 
 import RxFlow
+import UIKit
 
 enum GOMSStep: Step {
     
@@ -22,5 +23,6 @@ enum GOMSStep: Step {
     case profileIsRequired
     
     //MARK: Alert
-    case alert
+    case alert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction])
+    case failureAlert(title: String?, message: String?, action: [UIAlertAction] = [])
 }
