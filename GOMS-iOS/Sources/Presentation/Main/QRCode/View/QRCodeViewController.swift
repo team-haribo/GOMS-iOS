@@ -77,13 +77,11 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         
         // [클로저 사용 실시]
         self.readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            print("")
-            print("===============================")
-            print("[ViewController >> callQrScanStart() :: QR 스캔 결과 확인 실시]")
-            print("result : ", result?.value ?? "")
-            print("===============================")
-            print("")
+            let qrResult = String(describing: result?.value)
+            print(qrResult)
         }
+        
+        
         self.readerVC.modalPresentationStyle = .fullScreen
         self.present(readerVC, animated: true)
     }
