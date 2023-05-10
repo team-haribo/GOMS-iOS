@@ -32,3 +32,26 @@ class QRCodeViewModel: BaseViewModel, Stepper{
         vc.callQrScanStart()
     }
 }
+
+extension QRCodeViewModel {
+    func userOutingData(outingUUID:UUID) {
+        outingProvider.request(.outing(authorization: accessToken, outingUUID: outingUUID)) { response in
+            switch response {
+            case let .success(result):
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                    self.steps.accept(GOMSStep.tabBarIsRequired)
+                case 400:
+                    break;
+                case 401:
+                    break;
+                default:
+                    print("ERROR")
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
+    }
+}
