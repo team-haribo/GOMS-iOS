@@ -78,9 +78,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         // [클로저 사용 실시]
         self.readerVC.completionBlock = { (result: QRCodeReaderResult?) in
             let qrResult = String(describing: result?.value)
-            let getUUID:String.Index = qrResult.index(qrResult.startIndex, offsetBy: 32)
-            viewModel.userOutingData(outingUUID: getUUID)
-            print(getUUID)
+            self.viewModel.userOutingData(qrCodeURL: qrResult)
+            print(qrResult)
         }
         
         

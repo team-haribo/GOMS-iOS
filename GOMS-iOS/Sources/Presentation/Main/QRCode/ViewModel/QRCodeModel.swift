@@ -34,8 +34,8 @@ class QRCodeViewModel: BaseViewModel, Stepper{
 }
 
 extension QRCodeViewModel {
-    func userOutingData(outingUUID:UUID) {
-        outingProvider.request(.outing(authorization: accessToken, outingUUID: outingUUID)) { response in
+    func userOutingData(qrCodeURL: String) {
+        outingProvider.request(.outing(authorization: accessToken, qrCodeURL: qrCodeURL)) { response in
             switch response {
             case let .success(result):
                 let statusCode = result.statusCode
