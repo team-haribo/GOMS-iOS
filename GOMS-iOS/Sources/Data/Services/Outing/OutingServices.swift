@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum OutingServices {
-    case outing(authorization: String, outingUUID: UUID)
+    case outing(authorization: String, qrCodeURL: String)
     case outingList(authorization: String)
     case outingCount(authorization: String)
 }
@@ -10,13 +10,18 @@ enum OutingServices {
 
 extension OutingServices: TargetType {
     public var baseURL: URL {
-        return URL(string: BaseURL.baseURL)!
+        switch self {
+        case .outing(_,let qrCodeURL):
+            return URL(string: qrCodeURL) ?? URL(string: BaseURL.baseURL)!
+        default:
+            return URL(string: BaseURL.baseURL)!
+        }
     }
     
     var path: String {
         switch self {
-        case .outing(_, let outingUUID):
-            return "/outing/\(outingUUID)"
+        case .outing:
+            return "/"
         case .outingList:
             return "/outing/"
         case .outingCount:
