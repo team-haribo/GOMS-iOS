@@ -9,6 +9,7 @@ import Foundation
 import RxFlow
 import RxCocoa
 import RxSwift
+import UIKit
 
 
 class QRCodeViewModel: BaseViewModel, Stepper{
@@ -43,9 +44,16 @@ extension QRCodeViewModel {
                 case 200..<300:
                     self.steps.accept(GOMSStep.tabBarIsRequired)
                 case 400:
-                    break;
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다."
+                    ))
                 case 401:
-                    break;
+                    self.gomsRefreshToken.tokenReissuance()
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "다시 한 번 작업을 실행해주세요"
+                    ))
                 default:
                     print("ERROR")
                 }

@@ -71,8 +71,16 @@ extension HomeViewModel {
                     self.steps.accept(GOMSStep.tabBarIsRequired)
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
-                case 404: break
-                    
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "다시 한 번 작업을 실행해주세요"
+                    ))
+                case 404:
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "404",
+                        message: "알 수 없는 오류가 발생했습니다."
+                    ))
+                    self.steps.accept(GOMSStep.introIsRequired)
                 default:
                     print("ERROR")
                 }

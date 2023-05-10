@@ -42,6 +42,11 @@ extension IntroViewModel {
                 case 200..<300:
                     self.addKeychainToken()
                     self.steps.accept(GOMSStep.tabBarIsRequired)
+                case 400:
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "로그인 할 수 없습니다. 나중에 다시 시도해주세요."
+                    ))
                 default:
                     print("ERROR")
                 }

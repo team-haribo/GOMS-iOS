@@ -30,8 +30,18 @@ class ProfileViewModel: BaseViewModel, Stepper{
 
 extension ProfileViewModel {
     private func logout() {
-        self.steps.accept(GOMSStep.introIsRequired)
-        deleteUserToken()
+        self.steps.accept(GOMSStep.alert(
+            title: "로그아웃",
+            message: "정말 로그아웃 하시겠습니까?",
+            style: .alert,
+            actions: [
+                .init(title: "확인", style: .default) {_ in
+                    self.steps.accept(GOMSStep.introIsRequired)
+                    self.deleteUserToken()
+                },
+                .init(title: "취소", style: .cancel)
+            ]
+        ))
     }
     
     private func deleteUserToken() {
