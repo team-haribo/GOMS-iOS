@@ -11,6 +11,7 @@
 		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
 		7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */; };
 		7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */; };
+		7771E7A52A0CE35E00649B63 /* MakeQRCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A42A0CE35E00649B63 /* MakeQRCodeRequest.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -85,6 +86,7 @@
 		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
 		7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeQRCodeModel.swift; sourceTree = "<group>"; };
+		7771E7A42A0CE35E00649B63 /* MakeQRCodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeQRCodeRequest.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 				77F0746D29FABD1400EE1FC9 /* OutingRequest.swift */,
 				77F0747429FAC2CF00EE1FC9 /* OutingListRequest.swift */,
 				77F0747829FAC55B00EE1FC9 /* OutingCountRequest.swift */,
+				7771E7A42A0CE35E00649B63 /* MakeQRCodeRequest.swift */,
 			);
 			path = Outing;
 			sourceTree = "<group>";
@@ -861,6 +864,7 @@
 				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
 				7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
+				7771E7A52A0CE35E00649B63 /* MakeQRCodeRequest.swift in Sources */,
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,

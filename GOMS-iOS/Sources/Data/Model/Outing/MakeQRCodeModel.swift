@@ -5,5 +5,5 @@ struct MakeQRCodeModel: Codable {
 }
 
 struct MakeQRCodeResponse: Codable {
-    let Authorization: String
+    let outingUUID: UUID
 }
