@@ -14,7 +14,15 @@ import Kingfisher
 
 class HomeViewController: BaseViewController<HomeViewModel> {
     
+    private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
+    private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
+    private let userNum = UserDefaults.standard.integer(forKey: "userNum")
+    private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
+    private var userNameList = [String]()
+    private var userNumList = [Int]()
+    
     override func viewDidLoad() {
+        checkRole()
         getData()
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
@@ -27,6 +35,26 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         )
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
+    }
+    
+    private func checkRole() {
+        if userAuthority == "ROLE_STUDENT_COUNCIL" {
+            profileImg.isHidden = true
+            profileButton.isHidden = true
+            profileNavigationButton.isHidden = true
+            useQRCodeButton.setTitle("QR 생성하기", for: .normal)
+            useQRCodeButton.backgroundColor = .adminColor
+            outingNavigationButton.tintColor = .adminColor
+            profileNavigationButton.tintColor = .adminColor
+            navigationItem.rightBarButtonItem?.tintColor = .adminColor
+            navigationItem.leftBarButtonItem?.tintColor = .adminColor
+            homeMainText.text = "간편하게\n수요외출제를\n관리해보세요"
+            homeMainImage.image = UIImage(named: "adminHomeImage.svg")
+            manageStudnetText.isHidden = false
+            manageStudentButton.isHidden = false
+            manageStudnetSubText.isHidden = false
+            
+        }
     }
     
     private func getData() {
@@ -51,13 +79,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         )
         viewModel.transVC(input: input)
     }
-    
-    private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
-    private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
-    private let userNum = UserDefaults.standard.integer(forKey: "userNum")
-    private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
-    private var userNameList = [String]()
-    private var userNumList = [Int]()
     
     private let homeMainImage = UIImageView().then {
         $0.image = UIImage(named: "homeUndraw.svg")
@@ -166,7 +187,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     private lazy var profileImg = UIImageView().then {
         let url = URL(string: userProfileURL ?? "")
-        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 200)
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 20)
+        $0.layer.cornerRadius = 20
+        $0.layer.masksToBounds = true
         $0.kf.setImage(
             with: url,
             placeholder:UIImage(named: "dummyImage.svg"),
@@ -190,8 +213,36 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     
+    private let manageStudentButton = UIButton().then {
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
+        $0.layer.cornerRadius = 10
+        $0.isHidden = true
+    }
+    
+    private let manageStudnetSubText = UILabel().then {
+        $0.text = "모든 학생들의 역할을 관리해보세요!"
+        $0.textColor = UIColor.subColor
+        $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
+        $0.isHidden = true
+    }
+    
+    private let manageStudnetText = UILabel().then {
+        $0.text = "학생 관리하기"
+        $0.textColor = UIColor.black
+        $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
+        $0.isHidden = true
+    }
+    
     override func addView() {
-        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton].forEach {
+        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton, manageStudentButton, manageStudnetSubText,manageStudnetText].forEach {
             view.addSubview($0)
         }
     }
@@ -260,6 +311,19 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         profileNavigationButton.snp.makeConstraints {
             $0.centerY.equalTo(profileButton.snp.centerY).offset(0)
             $0.trailing.equalTo(profileButton.snp.trailing).inset(23)
+        }
+        manageStudentButton.snp.makeConstraints {
+            $0.top.equalTo(tardyCollectionView.snp.bottom).offset(32)
+            $0.leading.trailing.equalToSuperview().inset(26)
+            $0.height.equalTo(70)
+        }
+        manageStudnetSubText.snp.makeConstraints {
+            $0.top.equalTo(manageStudentButton.snp.top).offset(14)
+            $0.leading.equalTo(manageStudentButton.snp.leading).offset(16)
+        }
+        manageStudnetSubText.snp.makeConstraints {
+            $0.top.equalTo(manageStudnetSubText.snp.top).offset(6)
+            $0.leading.equalTo(manageStudentButton.snp.leading).offset(16)
         }
     }
 }
