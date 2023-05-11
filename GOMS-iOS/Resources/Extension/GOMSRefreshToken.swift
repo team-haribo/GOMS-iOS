@@ -10,7 +10,7 @@ class GOMSRefreshToken {
     private let authProvider = MoyaProvider<AuthServices>()
     private var reissuanceData: SignInResponse!
     private let keychain = Keychain()
-    private lazy var refreshToken = "Bearer " + keychain.read(key: Const.KeychainKey.refreshToken)!
+    private lazy var refreshToken = "Bearer " + (keychain.read(key: Const.KeychainKey.refreshToken) ?? "")
 
     func tokenReissuance() {
         authProvider.request(.refreshToken(refreshToken: refreshToken)) { response in

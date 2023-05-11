@@ -16,13 +16,15 @@ struct AppStepper: Stepper {
     private let disposeBag = DisposeBag()
     let gomsRefreshToken = GOMSRefreshToken()
     private let statusCode = UserDefaults.standard.integer(forKey: "statusCode")
-    
+
     init() {}
     
     var initialStep: Step {
+        self.gomsRefreshToken.tokenReissuance()
         switch statusCode {
         case 200..<300:
             print(statusCode)
+            UserDefaults.standard.removeObject(forKey: "statusCode")
             return GOMSStep.tabBarIsRequired
         default:
             print(statusCode)
