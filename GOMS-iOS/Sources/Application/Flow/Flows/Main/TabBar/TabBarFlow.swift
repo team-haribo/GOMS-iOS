@@ -30,6 +30,8 @@ final class TabBarFlow: Flow {
     private var homeFlow = HomeFlow()
     private var qrCodeFlow = QRCodeFlow()
     private var outingFlow = OutingFlow()
+    private let keychain = Keychain()
+    private lazy var userAuthority = keychain.read(key: Const.KeychainKey.authority)
     
     init() {}
     
@@ -77,9 +79,11 @@ private extension TabBarFlow {
             )
             
             let qrCodeItem = UITabBarItem(
-                title: "외출하기",
-                image: UIImage(named: "unQRCode.svg"),
-                selectedImage: UIImage(named: "selectedQRcode.svg")
+                title: userAuthority == "ROLE_STUDENT_COUNCIL" ? "생성하기" : "외출하기",
+                image: userAuthority == "ROLE_STUDENT_COUNCIL" ?
+                UIImage(named: "unSelectedAdminQRCode.svg") : UIImage(named: "unQRCode.svg"),
+                selectedImage: userAuthority == "ROLE_STUDENT_COUNCIL" ?
+                UIImage(named: "selectedAdminQRCode.svg") : UIImage(named: "selectedQRcode.svg")
             )
             
             let outingItem = UITabBarItem(
