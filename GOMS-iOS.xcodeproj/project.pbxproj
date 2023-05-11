@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
+		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -77,6 +79,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
+		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7771E7962A0CC3ED00649B63 /* StudentInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7982A0CC41400649B63 /* ViewModel */,
+				7771E7972A0CC40C00649B63 /* View */,
+			);
+			path = StudentInfo;
+			sourceTree = "<group>";
+		};
+		7771E7972A0CC40C00649B63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7771E7982A0CC41400649B63 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		77F0738429ED29CF00EE1FC9 = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +381,7 @@
 		77F073F329EE3D3200EE1FC9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7771E7962A0CC3ED00649B63 /* StudentInfo */,
 				77F0743729F1A6F100EE1FC9 /* Profile */,
 				77F0740629EE8A5E00EE1FC9 /* Outing */,
 				77F073FF29EE89B700EE1FC9 /* QRCode */,
@@ -820,6 +850,7 @@
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
+				7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */,
 				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
@@ -833,6 +864,7 @@
 				77F0747929FAC55B00EE1FC9 /* OutingCountRequest.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
+				7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */,
 				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
 				77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */,
 				77F0746829FA720700EE1FC9 /* AccountServices.swift in Sources */,
