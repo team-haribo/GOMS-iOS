@@ -50,9 +50,11 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     }
     
     private func createQrCode() {
+        viewModel.makeQRCode()
+        let urlUUID = viewModel.uuidData
         var qrCode = QRCode(
             url: (
-                URL(string: "https://google.com") ?? .init(string: "https://naver.com")!
+                URL(string: "\(BaseURL.baseURL)/student-council/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
             )
         )
         qrCode?.color = UIColor.black
