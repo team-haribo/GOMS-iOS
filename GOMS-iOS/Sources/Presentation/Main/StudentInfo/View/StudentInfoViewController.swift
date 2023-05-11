@@ -10,7 +10,12 @@ import UIKit
 class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
 
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
 
 }

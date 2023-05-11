@@ -18,6 +18,7 @@ class HomeViewModel: BaseViewModel, Stepper{
         let outingButtonTap: Observable<Void>
         let profileButtonTap: Observable<Void>
         let useQRCodeButtonTap: Observable<Void>
+        let manageStudentButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -40,6 +41,10 @@ class HomeViewModel: BaseViewModel, Stepper{
         input.useQRCodeButtonTap.subscribe(
             onNext: pushQRCodeVC
         ) .disposed(by: disposeBag)
+        
+        input.manageStudentButtonTap.subscribe(
+            onNext: pushStudentInfoVC
+        ) .disposed(by: disposeBag)
     }
     
     private func pushProfileVC() {
@@ -52,6 +57,10 @@ class HomeViewModel: BaseViewModel, Stepper{
     
     private func pushQRCodeVC() {
         self.steps.accept(GOMSStep.qrocdeIsRequired)
+    }
+    
+    private func pushStudentInfoVC() {
+        self.steps.accept(GOMSStep.studentInfoIsRequired)
     }
 }
 extension HomeViewModel {

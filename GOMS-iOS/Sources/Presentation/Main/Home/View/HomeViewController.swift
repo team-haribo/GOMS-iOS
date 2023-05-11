@@ -75,7 +75,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
             outingButtonTap: outingButton.rx.tap.asObservable(),
             profileButtonTap: profileButton.rx.tap.asObservable(),
-            useQRCodeButtonTap: useQRCodeButton.rx.tap.asObservable()
+            useQRCodeButtonTap: useQRCodeButton.rx.tap.asObservable(),
+            manageStudentButtonTap: manageStudentButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }
