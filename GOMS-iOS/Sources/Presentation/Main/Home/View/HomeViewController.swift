@@ -42,12 +42,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             profileImg.isHidden = true
             profileButton.isHidden = true
             profileNavigationButton.isHidden = true
+            userNameText.isHidden = true
+            userNumText.isHidden = true
             useQRCodeButton.setTitle("QR 생성하기", for: .normal)
             useQRCodeButton.backgroundColor = .adminColor
             outingNavigationButton.tintColor = .adminColor
-            profileNavigationButton.tintColor = .adminColor
-            navigationItem.rightBarButtonItem?.tintColor = .adminColor
-            navigationItem.leftBarButtonItem?.tintColor = .adminColor
+            manageNavigationButton.tintColor = .adminColor
             homeMainText.text = "간편하게\n수요외출제를\n관리해보세요"
             homeMainImage.image = UIImage(named: "adminHomeImage.svg")
             manageStudnetText.isHidden = false
@@ -131,14 +131,14 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         let range = (fullText as NSString).range(of: "\(outingCount ?? 0) ")
         attribtuedString.addAttribute(
             .foregroundColor,
-            value: UIColor.mainColor!,
+            value: userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!,
             range: range
         )
         $0.attributedText = attribtuedString
     }
     
     private let outingNavigationButton = UIImageView().then {
-        $0.image = UIImage(named: "navigationButton.svg")
+        $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
     }
     
     private let tardyText = UILabel().then {
@@ -204,7 +204,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private let profileNavigationButton = UIImageView().then {
-        $0.image = UIImage(named: "navigationButton.svg")
+        $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
     }
     
     private lazy var userNumText = UILabel().then {
@@ -241,8 +241,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.isHidden = true
     }
     
+    private let manageNavigationButton = UIImageView().then {
+        $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
+    }
+    
     override func addView() {
-        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton, manageStudentButton, manageStudnetSubText,manageStudnetText].forEach {
+        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton, manageStudentButton, manageStudnetSubText,manageStudnetText, manageNavigationButton].forEach {
             view.addSubview($0)
         }
     }
@@ -321,9 +325,13 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.top.equalTo(manageStudentButton.snp.top).offset(14)
             $0.leading.equalTo(manageStudentButton.snp.leading).offset(16)
         }
-        manageStudnetSubText.snp.makeConstraints {
-            $0.top.equalTo(manageStudnetSubText.snp.top).offset(6)
+        manageStudnetText.snp.makeConstraints {
+            $0.top.equalTo(manageStudnetSubText.snp.bottom).offset(6)
             $0.leading.equalTo(manageStudentButton.snp.leading).offset(16)
+        }
+        manageNavigationButton.snp.makeConstraints {
+            $0.centerY.equalTo(manageStudentButton.snp.centerY).offset(0)
+            $0.trailing.equalTo(manageStudentButton.snp.trailing).inset(23)
         }
     }
 }
