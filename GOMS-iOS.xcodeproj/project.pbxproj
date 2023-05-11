@@ -10,6 +10,9 @@
 		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
 		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
 		7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */; };
+		7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */; };
+		7771E7A52A0CE35E00649B63 /* MakeQRCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A42A0CE35E00649B63 /* MakeQRCodeRequest.swift */; };
+		7771E7AA2A0CE46D00649B63 /* StudentCouncilServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -83,6 +86,9 @@
 		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
+		7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeQRCodeModel.swift; sourceTree = "<group>"; };
+		7771E7A42A0CE35E00649B63 /* MakeQRCodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeQRCodeRequest.swift; sourceTree = "<group>"; };
+		7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCouncilServices.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +203,30 @@
 				7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		7771E7A62A0CE41E00649B63 /* StudentCouncil */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */,
+			);
+			path = StudentCouncil;
+			sourceTree = "<group>";
+		};
+		7771E7A72A0CE43900649B63 /* StudentCouncil */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7A42A0CE35E00649B63 /* MakeQRCodeRequest.swift */,
+			);
+			path = StudentCouncil;
+			sourceTree = "<group>";
+		};
+		7771E7A82A0CE44700649B63 /* StudentCouncil */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */,
+			);
+			path = StudentCouncil;
 			sourceTree = "<group>";
 		};
 		77F0738429ED29CF00EE1FC9 = {
@@ -566,6 +596,7 @@
 		77F0744529F7A4B200EE1FC9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7771E7A82A0CE44700649B63 /* StudentCouncil */,
 				77F0747D29FB4A9400EE1FC9 /* Late */,
 				77F0746F29FABD5200EE1FC9 /* Outing */,
 				77F0746529FA717400EE1FC9 /* Account */,
@@ -577,6 +608,7 @@
 		77F0744629F7A4C500EE1FC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7771E7A62A0CE41E00649B63 /* StudentCouncil */,
 				77F0747B29FB4A8700EE1FC9 /* Late */,
 				77F0746929FABC9500EE1FC9 /* Outing */,
 				77F0745D29FA67D800EE1FC9 /* Account */,
@@ -588,6 +620,7 @@
 		77F0744729F7A4CB00EE1FC9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				7771E7A72A0CE43900649B63 /* StudentCouncil */,
 				77F0747C29FB4A8C00EE1FC9 /* Late */,
 				77F0746C29FABD0300EE1FC9 /* Outing */,
 				77F0746229FA6FA200EE1FC9 /* Account */,
@@ -858,11 +891,13 @@
 				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
 				7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
+				7771E7A52A0CE35E00649B63 /* MakeQRCodeRequest.swift in Sources */,
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
 				7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */,
+				7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */,
 				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
@@ -885,6 +920,7 @@
 				77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */,
 				77F0747329FAC13100EE1FC9 /* OutingListModel.swift in Sources */,
 				77F0740529EE8A0200EE1FC9 /* QRCodeViewController.swift in Sources */,
+				7771E7AA2A0CE46D00649B63 /* StudentCouncilServices.swift in Sources */,
 				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
 				77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */,
 				77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */,
