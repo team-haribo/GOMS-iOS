@@ -16,7 +16,7 @@ class BaseViewModel{
     var steps = PublishRelay<Step>()
     let keychain = Keychain()
     let gomsRefreshToken = GOMSRefreshToken()
-    lazy var accessToken = "Bearer " + keychain.read(key: Const.KeychainKey.accessToken)!
+    lazy var accessToken = "Bearer " + (keychain.read(key: Const.KeychainKey.accessToken) ?? "")
     let authProvider = MoyaProvider<AuthServices>()
     let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
     let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
