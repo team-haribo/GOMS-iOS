@@ -73,6 +73,7 @@
 		77F074912A01761D00EE1FC9 /* GOMSRefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */; };
 		77F074942A03302100EE1FC9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074932A03302100EE1FC9 /* Kingfisher */; };
 		77F074992A0C965800EE1FC9 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074982A0C965800EE1FC9 /* QRCode */; };
+		77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 		77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
 		77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
+		77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSQrCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 				77F0744829F7B08B00EE1FC9 /* Bundle.swift */,
 				77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */,
 				77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */,
+				77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
+				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
