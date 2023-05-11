@@ -13,22 +13,34 @@ import Then
 import RxFlow
 import RxCocoa
 import RxSwift
+import QRCode
 
-class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate, Stepper {
-    var steps = PublishRelay<Step>()
+
+class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate {
     
     override func viewDidLoad() {
+        checkUserIsAdmin()
         self.navigationItem.hidesBackButton = true
         super.viewDidLoad()
-        if permissionNoArray.count > 0 && permissionNoArray.isEmpty == false {
-            showAlert(tittle: "[알림]", content: "카메라 권한이 비활성 상태입니다.", okBtb: "확인", noBtn: "취소")
-            permissionNoArray.removeAll()
-        }
-        else {
-            self.callQrScanStart()
-        }
         bindViewModel()
      }
+    
+    private func checkUserIsAdmin() {
+        if userAuthority == "ROLE_STUDENT_COUNCIL" {
+            qrCodeBackImg.isHidden = true
+            useQRCodeButton.isHidden = true
+            createQrCode()
+        }
+        else {
+            if permissionNoArray.count > 0 && permissionNoArray.isEmpty == false {
+                showAlert(tittle: "[알림]", content: "카메라 권한이 비활성 상태입니다.", okBtb: "확인", noBtn: "취소")
+                permissionNoArray.removeAll()
+            }
+            else {
+                self.callQrScanStart()
+            }
+        }
+    }
     
     private func bindViewModel() {
         useQRCodeButton.rx.tap
@@ -37,6 +49,25 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             }.disposed(by: disposeBag)
     }
     
+    private func createQrCode() {
+        var qrCode = QRCode(
+            url: (
+                URL(string: "https://google.com") ?? .init(string: "https://naver.com")!
+            )
+        )
+        qrCode?.color = UIColor.black
+        qrCode?.backgroundColor = .background ?? .white
+        qrCode?.size = CGSize(width: 250, height: 250)
+        qrCode?.scale = 1.0
+        qrCode?.inputCorrection = .quartile
+        
+        let qrImageView = UIImageView.init(qrCode: qrCode!)
+        view.addSubview(qrImageView)
+        qrImageView.snp.makeConstraints {
+            $0.height.width.equalTo(250)
+            $0.center.equalTo(view.snp.center).offset(0)
+        }
+    }
      
     var permissionNoArray : Array<String> = []
      

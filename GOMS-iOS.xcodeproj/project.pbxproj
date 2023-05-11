@@ -72,6 +72,8 @@
 		77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */; };
 		77F074912A01761D00EE1FC9 /* GOMSRefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */; };
 		77F074942A03302100EE1FC9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074932A03302100EE1FC9 /* Kingfisher */; };
+		77F074992A0C965800EE1FC9 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074982A0C965800EE1FC9 /* QRCode */; };
+		77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +135,7 @@
 		77F0748829FB62C600EE1FC9 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 		77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
 		77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
+		77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSQrCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F074992A0C965800EE1FC9 /* QRCode in Frameworks */,
 				77F073B429ED37D600EE1FC9 /* RxFlow in Frameworks */,
 				77F073AC29ED379400EE1FC9 /* SnapKit in Frameworks */,
 				77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */,
@@ -288,6 +292,7 @@
 				77F0744829F7B08B00EE1FC9 /* Bundle.swift */,
 				77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */,
 				77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */,
+				77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -718,6 +723,7 @@
 				77F0742829F00A7D00EE1FC9 /* QRCodeReader */,
 				77F0745A29F7BC7600EE1FC9 /* Moya */,
 				77F074932A03302100EE1FC9 /* Kingfisher */,
+				77F074982A0C965800EE1FC9 /* QRCode */,
 			);
 			productName = "GOMS-iOS";
 			productReference = 77F0741E29EE949B00EE1FC9 /* GOMS-iOS.app */;
@@ -756,6 +762,7 @@
 				77F0742729F00A7D00EE1FC9 /* XCRemoteSwiftPackageReference "QRCodeReader" */,
 				77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */,
 				77F074922A03302100EE1FC9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				77F074952A0C959200EE1FC9 /* XCRemoteSwiftPackageReference "QRCode" */,
 			);
 			productRefGroup = 77F0738429ED29CF00EE1FC9;
 			projectDirPath = "";
@@ -807,6 +814,7 @@
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
+				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
@@ -1112,6 +1120,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		77F074952A0C959200EE1FC9 /* XCRemoteSwiftPackageReference "QRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmrschmidt/QRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1159,6 +1175,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77F074922A03302100EE1FC9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		77F074982A0C965800EE1FC9 /* QRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77F074952A0C959200EE1FC9 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
