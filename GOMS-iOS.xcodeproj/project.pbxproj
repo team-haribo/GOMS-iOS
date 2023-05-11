@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
 		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
+		7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
+		7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		7771E7962A0CC3ED00649B63 /* StudentInfo */ = {
 			isa = PBXGroup;
 			children = (
+				7771E79F2A0CCB7900649B63 /* Cell */,
 				7771E7982A0CC41400649B63 /* ViewModel */,
 				7771E7972A0CC40C00649B63 /* View */,
 			);
@@ -186,6 +189,14 @@
 				7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7771E79F2A0CCB7900649B63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		77F0738429ED29CF00EE1FC9 = {
@@ -845,6 +856,7 @@
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
 				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
+				7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
