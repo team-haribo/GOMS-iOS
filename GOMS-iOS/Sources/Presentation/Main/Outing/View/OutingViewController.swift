@@ -80,8 +80,9 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         $0.backgroundColor = .background
     }
     
-    private let outingIsNilImage = UIImageView().then {
-        $0.image = UIImage(named: "outingIsNilImage.svg")
+    private lazy var outingIsNilImage = UIImageView().then {
+        $0.image = userAuthority == "ROLE_STUDENT_COUNCIL" ?
+        UIImage(named: "adminOutingIsNil.svg") : UIImage(named: "outingIsNilImage.svg")
         $0.isHidden = true
     }
     
