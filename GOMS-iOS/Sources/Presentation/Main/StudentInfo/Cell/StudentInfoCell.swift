@@ -17,6 +17,11 @@ class StudentInfoCell: UICollectionViewCell {
         $0.textColor = .subColor
     }
     
+    var editUserAuthorityButton = UIButton().then {
+        $0.backgroundColor = .white
+        $0.setImage(UIImage(named:"editStudent.svg"), for: .normal)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addView()
@@ -28,7 +33,7 @@ class StudentInfoCell: UICollectionViewCell {
     }
     
     func addView() {
-        [userProfile, userName, userNum].forEach {
+        [userProfile, userName, userNum, editUserAuthorityButton].forEach {
             contentView.addSubview($0)
         }
     }
@@ -44,6 +49,10 @@ class StudentInfoCell: UICollectionViewCell {
         userNum.snp.makeConstraints {
             $0.top.equalTo(userName.snp.bottom).offset(6)
             $0.leading.equalTo(userProfile.snp.trailing).offset(24)
+        }
+        editUserAuthorityButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(17)
         }
     }
 }
