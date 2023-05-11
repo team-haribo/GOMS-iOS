@@ -54,7 +54,9 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     
     private lazy var profileImage = UIImageView().then {
         let url = URL(string: self.userProfileURL ?? "")
-        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 100)
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 50)
+        $0.layer.cornerRadius = 50
+        $0.layer.masksToBounds = true
         $0.kf.setImage(
             with: url,
             placeholder:UIImage(named: "profileImg"),

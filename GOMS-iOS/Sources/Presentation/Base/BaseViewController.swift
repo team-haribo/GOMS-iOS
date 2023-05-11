@@ -14,6 +14,8 @@ class BaseViewController<T>: UIViewController {
     let viewModel: T
     var disposeBag = DisposeBag()
     let bounds = UIScreen.main.bounds
+    let keychain = Keychain()
+    lazy var userAuthority = keychain.read(key: Const.KeychainKey.authority)
 
     
     init(_ viewModel: T) {
