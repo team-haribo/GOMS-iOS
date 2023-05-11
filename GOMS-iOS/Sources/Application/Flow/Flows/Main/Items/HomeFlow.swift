@@ -56,6 +56,9 @@ class HomeFlow: Flow {
             
         case let .failureAlert(title, message, action):
             return presentToFailureAlert(title: title, message: message, action: action)
+            
+        case let .studentInfoIsRequired:
+            return coorfinateToStudentInfo()
            
             
         default:
@@ -73,6 +76,13 @@ class HomeFlow: Flow {
     private func coordinateToProfile() -> FlowContributors {
         let vm = ProfileViewModel()
         let vc = ProfileViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coorfinateToStudentInfo() -> FlowContributors{
+        let vm = StudentInfoViewModel()
+        let vc = StudentInfoViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
