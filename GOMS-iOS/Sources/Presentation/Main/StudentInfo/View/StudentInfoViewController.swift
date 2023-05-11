@@ -21,6 +21,19 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    private var searchBarButton = UIButton().then {
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
+        $0.layer.cornerRadius = 10
+    }
+    
     private let layout = UICollectionViewFlowLayout().then {
         $0.itemSize = CGSize(
             width: (
@@ -41,17 +54,40 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         $0.backgroundColor = .background
     }
     
+    private let searchBarText = UILabel().then {
+        $0.text = "찾으시는 학생이 있으신가요?"
+        $0.textColor = UIColor.subColor
+        $0.font = UIFont.GOMSFont(size: 14, family: .Regular)
+    }
+    
+    private let searchIcon = UIImageView().then {
+        $0.image = UIImage(named: "searchIcon")
+    }
+    
     override func addView() {
-        [studentIntoCollectionView].forEach {
+        [searchBarButton, studentIntoCollectionView, searchBarText, searchIcon].forEach {
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
+        searchBarButton.snp.makeConstraints {
+            $0.top.equalTo(view.snp.top).offset(121)
+            $0.height.equalTo(52)
+            $0.trailing.leading.equalToSuperview().inset(26)
+        }
         studentIntoCollectionView.snp.makeConstraints{
-            $0.top.equalTo(view.snp.top).offset(205)
+            $0.top.equalTo(searchBarButton.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.bottom.equalToSuperview()
+        }
+        searchBarText.snp.makeConstraints {
+            $0.centerY.equalTo(searchBarButton.snp.centerY).offset(0)
+            $0.leading.equalTo(searchBarButton.snp.leading).offset(20)
+        }
+        searchIcon.snp.makeConstraints {
+            $0.centerY.equalTo(searchBarButton.snp.centerY).offset(0)
+            $0.trailing.equalTo(searchBarButton.snp.trailing).inset(20)
         }
     }
 
