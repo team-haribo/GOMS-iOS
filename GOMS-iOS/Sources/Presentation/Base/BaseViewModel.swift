@@ -21,9 +21,11 @@ class BaseViewModel{
     let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
     let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
     let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
+    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
     var userData: AccountResponse!
     var lateRank: [LateRankResponse]!
     var outingCount: OutingCountResponse?
     var outingList: [OutingListResponse]!
     var authData: SignInResponse!
+    var uuidData: MakeQRCodeResponse?
 }
