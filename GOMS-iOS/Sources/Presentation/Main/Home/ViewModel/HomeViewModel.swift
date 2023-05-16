@@ -64,13 +64,18 @@ class HomeViewModel: BaseViewModel, Stepper{
     }
 }
 extension HomeViewModel {
-    func getLateRank() {
+    func getLateRank(completion: @escaping () -> Void) {
+        
         lateProvider.request(.lateRank(authorization: accessToken)) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
                 do {
                     self.lateRank = try JSONDecoder().decode([LateRankResponse].self, from: responseData)
+                    completion()
+                    print("----------------------")
+                    print(self.lateRank)
+                    print("----------------------")
                 }catch(let err) {
                     print(String(describing: err))
                 }

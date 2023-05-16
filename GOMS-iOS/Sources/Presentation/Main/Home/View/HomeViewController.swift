@@ -23,7 +23,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     override func viewDidLoad() {
         checkRole()
-        getData()
+        Task {
+            await getData()
+        }
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
@@ -57,16 +59,30 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         }
     }
     
-    private func getData() {
-        viewModel.getLateRank()
-        viewModel.getOutingCount()
-        viewModel.getUserData()
+    private func getData() async {
+        viewModel.getLateRank { [weak self] in
+            self?.bindLateRank()
+        }
+        Task {
+            viewModel.getOutingCount()
+            viewModel.getUserData()
+        }
+        bindLateRank()
     }
     
     private func bindLateRank() {
-        for index in 0...2 {
-            userNameList[index] = viewModel.lateRank[index].name
-            userNumList[index] = viewModel.lateRank[index].studentNum.grade + viewModel.lateRank[index].studentNum.classNum + viewModel.lateRank[index].studentNum.number
+        if viewModel.lateRank.isEmpty {
+            print("empty")
+        }
+        else {
+            for index in 1...2 {
+                print("-------------------------------------------")
+                print(index)
+                print(viewModel.lateRank)
+                print("-------------------------------------------")
+                userNameList[index] = viewModel.lateRank[index].name
+                userNumList[index] = viewModel.lateRank[index].studentNum.grade + viewModel.lateRank[index].studentNum.classNum + viewModel.lateRank[index].studentNum.number
+            }
         }
     }
     
@@ -343,7 +359,7 @@ extension HomeViewController :
     UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userNameList.count
+        return viewModel.lateRank.endIndex - 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -363,7 +379,7 @@ extension HomeViewController :
         )
         cell.studentName.text = "\(userNameList[indexPath.row])"
         cell.studentNum.text = "\(userNumList[indexPath.row])"
-        for index in 0 ... userNumList.count {
+        for index in 0 ... userNumList.count - 1 {
             let url = URL(string: viewModel.lateRank[index].profileUrl ?? "")
             let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
             cell.userProfileImage.kf.setImage(
