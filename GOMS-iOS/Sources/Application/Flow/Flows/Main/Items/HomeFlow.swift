@@ -61,7 +61,7 @@ class HomeFlow: Flow {
             return coordinateToStudentInfo()
             
         case .searchModalIsRequired:
-            return
+            return coordinateToSearchModal()
         
         default:
             return .none

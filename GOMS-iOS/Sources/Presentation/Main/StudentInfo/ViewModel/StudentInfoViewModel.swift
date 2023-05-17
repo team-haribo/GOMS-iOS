@@ -34,7 +34,7 @@ class StudentInfoViewModel: BaseViewModel, Stepper{
 }
 
 extension StudentInfoViewModel {
-    func outingList() {
+    func studentInfo(completion: @escaping () -> Void) {
         studentCouncilProvider.request(.studentInfo(authorization: accessToken)){ response in
             switch response {
             case let .success(result):
@@ -42,6 +42,7 @@ extension StudentInfoViewModel {
                 print(String(data: responseData, encoding: .utf8))
                 do {
                     self.studentUserInfo = try JSONDecoder().decode([StudentInfoResponse].self, from: responseData)
+                    completion() 
                 }catch(let err) {
                     print(String(describing: err))
                 }

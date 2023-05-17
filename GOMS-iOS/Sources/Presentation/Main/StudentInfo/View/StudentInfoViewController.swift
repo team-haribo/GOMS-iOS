@@ -1,20 +1,48 @@
 import UIKit
+import Kingfisher
 import SnapKit
 import Then
 
 class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
+    private var userNameList = [String]()
+    private var userGradeList = [Int]()
+    private var userClassNumList = [Int]()
+    private var userNumList = [Int]()
 
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.title = "학생 정보 수정"
         super.viewDidLoad()
-        studentIntoCollectionView.dataSource = self
-        studentIntoCollectionView.delegate = self
-        studentIntoCollectionView.register(
-            StudentInfoCell.self,
-            forCellWithReuseIdentifier: StudentInfoCell.identifier
-        )
+        Task {
+            await getData()
+        }
         studentIntoCollectionView.collectionViewLayout = layout
+    }
+    
+    private func getData() async {
+        viewModel.studentInfo { [weak self] in
+            self?.bindStudentInfo()
+        }
+    }
+    
+    private func bindStudentInfo() {
+        if viewModel.studentUserInfo.isEmpty {
+            print("empty")
+        }
+        else {
+            for index in 0...viewModel.studentUserInfo.endIndex - 1 {
+                userNameList.insert(viewModel.studentUserInfo[index].name, at: index)
+                userGradeList.insert(viewModel.studentUserInfo[index].studentNum.grade, at: index)
+                userClassNumList.insert(viewModel.studentUserInfo[index].studentNum.classNum, at: index)
+                userNumList.insert(viewModel.studentUserInfo[index].studentNum.number, at: index)
+            }
+            studentIntoCollectionView.dataSource = self
+            studentIntoCollectionView.delegate = self
+            studentIntoCollectionView.register(
+                StudentInfoCell.self,
+                forCellWithReuseIdentifier: StudentInfoCell.identifier
+            )
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -98,7 +126,7 @@ extension StudentInfoViewController:
     UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return userNameList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -116,9 +144,22 @@ extension StudentInfoViewController:
             blur: 8,
             spread: 0
         )
-        cell.userProfile.image = UIImage(named: "userProfile.svg")
-        cell.userName.text = "선민재"
-        cell.userNum.text = "3111"
+        cell.userName.text = "\(userNameList[indexPath.row])"
+        if userNumList[indexPath.row] < 10 {
+            cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
+        }
+        else {
+            cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
+        }
+        for index in 0 ... userNameList.count - 1 {
+            let url = URL(string: viewModel.studentUserInfo[index].profileUrl ?? "")
+            let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
+            cell.userProfile.kf.setImage(
+                with: url,
+                placeholder:UIImage(named: "userProfile.svg"),
+                options: [.processor(imageCornerRadius)]
+            )
+        }
         return cell
     }
     
