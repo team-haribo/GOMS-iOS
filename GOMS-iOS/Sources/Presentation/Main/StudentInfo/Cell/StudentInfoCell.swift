@@ -30,6 +30,13 @@ class StudentInfoCell: UICollectionViewCell {
         $0.layer.cornerRadius = 10
     }
     
+    let roleText = UILabel().then {
+        $0.isHidden = true
+        $0.text = "학생회"
+        $0.textColor = .subColor
+        $0.font = UIFont.GOMSFont(size: 9, family: .Regular)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addView()
@@ -41,7 +48,7 @@ class StudentInfoCell: UICollectionViewCell {
     }
     
     func addView() {
-        [userProfile, userName, userNum, editUserAuthorityButton, roleView].forEach {
+        [userProfile, userName, userNum, editUserAuthorityButton, roleView, roleText].forEach {
             contentView.addSubview($0)
         }
     }
@@ -65,6 +72,9 @@ class StudentInfoCell: UICollectionViewCell {
         roleView.snp.makeConstraints {
             $0.centerX.equalTo(userProfile.snp.centerX).offset(0)
             $0.bottom.equalToSuperview().inset(15)
+        }
+        roleText.snp.makeConstraints {
+            $0.center.equalTo(roleView.snp.center).offset(0)
         }
     }
 }
