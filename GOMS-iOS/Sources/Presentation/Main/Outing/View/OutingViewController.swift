@@ -12,39 +12,50 @@ import RxSwift
 import Kingfisher
 
 class OutingViewController: BaseViewController<OutingViewModel> {
+    private var userNameList = [String]()
+    private var userGradeList = [Int]()
+    private var userClassNumList = [Int]()
+    private var userNumList = [Int]()
 
     override func viewDidLoad() {
-        viewModel.outingList()
         super.viewDidLoad()
+        Task {
+            await getData()
+        }
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
-        outingCollectionView.dataSource = self
-        outingCollectionView.delegate = self
-        outingCollectionView.register(
-            OutingCollectionViewCell.self,
-            forCellWithReuseIdentifier: OutingCollectionViewCell.identifier
-        )
         outingCollectionView.collectionViewLayout = layout
         bindViewModel()
         bindOutingList()
     }
     
+    private func getData() async {
+        viewModel.outingList { [weak self] in
+            self?.bindOutingList()
+        }
+    }
+    
     private func bindOutingList() {
-        if viewModel.outingCount?.outingCount == nil {
+        if viewModel.outingList.isEmpty {
             outingCollectionView.isHidden = true
             outingIsNilImage.isHidden = false
             outingIsNilText.isHidden = false
         }
         else {
-            for index in 0...(viewModel.outingCount?.outingCount ?? 0) - 1 {
-                userNameList[index] = viewModel.outingList[index].name
-                userNumList[index] = viewModel.outingList[index].studentNum.grade + viewModel.outingList[index].studentNum.classNum + viewModel.outingList[index].studentNum.number
+            for index in 0...viewModel.outingList.endIndex - 1 {
+                userNameList.insert(viewModel.outingList[index].name, at: index)
+                userGradeList.insert(viewModel.outingList[index].studentNum.grade, at: index)
+                userClassNumList.insert(viewModel.outingList[index].studentNum.classNum, at: index)
+                userNumList.insert(viewModel.outingList[index].studentNum.number, at: index)
             }
+            outingCollectionView.dataSource = self
+            outingCollectionView.delegate = self
+            outingCollectionView.register(
+                OutingCollectionViewCell.self,
+                forCellWithReuseIdentifier: OutingCollectionViewCell.identifier
+            )
         }
     }
-    
-    private var userNameList = [String]()
-    private var userNumList = [Int]()
     
     private func bindViewModel() {
         let input = OutingViewModel.Input(
@@ -153,7 +164,12 @@ extension OutingViewController:
             spread: 0
         )
         cell.userName.text = "\(userNameList[indexPath.row])"
-        cell.userNum.text = "\(userNumList[indexPath.row])"
+        if userNumList[indexPath.row] < 10 {
+            cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
+        }
+        else {
+            cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
+        }
         for index in 0 ... userNameList.count - 1 {
             let url = URL(string: viewModel.outingList[index].profileUrl ?? "")
             let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
