@@ -64,6 +64,11 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             if self.timerLeft > 0 {
                 self.lastTimer.text = String(format: "%d분 %02d초", minutes, seconds)
             }
+            else {
+                self.lastTimer.text = "0분 00초"
+                self.createQrCode()
+                self.timerLeft = 300
+            }
         })
     }
     
