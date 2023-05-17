@@ -29,6 +29,10 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         if userAuthority == "ROLE_STUDENT_COUNCIL" {
             qrCodeBackImg.isHidden = true
             useQRCodeButton.isHidden = true
+            outingMainText.isHidden = false
+            outingSubText.isHidden = false
+            lastTimeText.isHidden = false
+            lastTimer.isHidden = false
             createQrCode()
         }
         else {
@@ -177,8 +181,38 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         $0.backgroundColor = .mainColor
     }
     
+    private let outingMainText = UILabel().then {
+        $0.isHidden = true
+        $0.text = "외출하기"
+        $0.textColor = .black
+        $0.font = UIFont.GOMSFont(size: 22, family: .Bold)
+    }
+    
+    private let outingSubText = UILabel().then {
+        $0.isHidden = true
+        $0.text = "모바일 기기로\nQRCode를 스캔한 후 외출해주세요!"
+        $0.numberOfLines = 2
+        $0.textAlignment = .center
+        $0.textColor = .black
+        $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
+    }
+    
+    private let lastTimeText = UILabel().then {
+        $0.isHidden = true
+        $0.text = "남은시간"
+        $0.textColor = .black
+        $0.font = UIFont.GOMSFont(size: 16, family: .Bold)
+    }
+    
+    private let lastTimer = UILabel().then {
+        $0.isHidden = true
+        $0.text = "3분 30초"
+        $0.textColor = .adminColor
+        $0.font = UIFont.GOMSFont(size: 22, family: .Bold)
+    }
+    
     override func addView() {
-        [qrCodeBackImg, useQRCodeButton].forEach {
+        [qrCodeBackImg, useQRCodeButton, outingMainText, outingSubText, lastTimeText, lastTimer].forEach {
             view.addSubview($0)
         }
     }
@@ -193,6 +227,22 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             $0.top.equalTo(qrCodeBackImg.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(117)
             $0.height.equalTo(38)
+        }
+        outingMainText.snp.makeConstraints {
+            $0.top.equalTo(view.snp.top).offset((bounds.height) / 4.95)
+            $0.centerX.equalToSuperview()
+        }
+        outingSubText.snp.makeConstraints {
+            $0.top.equalTo(outingMainText.snp.bottom).offset(18)
+            $0.centerX.equalToSuperview()
+        }
+        lastTimeText.snp.makeConstraints {
+            $0.bottom.equalTo(view.snp.bottom).inset((bounds.height) / 3.34)
+            $0.centerX.equalToSuperview()
+        }
+        lastTimer.snp.makeConstraints {
+            $0.top.equalTo(lastTimeText.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
         }
     }
 
