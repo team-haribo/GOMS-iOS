@@ -59,7 +59,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         )
         qrCode?.color = UIColor.black
         qrCode?.backgroundColor = .background ?? .white
-        qrCode?.size = CGSize(width: 250, height: 250)
+        qrCode?.size = CGSize(width: 200, height: 200)
         qrCode?.scale = 1.0
         qrCode?.inputCorrection = .quartile
         
