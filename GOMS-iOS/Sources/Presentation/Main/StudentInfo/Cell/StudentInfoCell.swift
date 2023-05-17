@@ -56,6 +56,7 @@ class StudentInfoCell: UICollectionViewCell {
     func setLayout() {
         userProfile.snp.makeConstraints {
             $0.top.leading.equalToSuperview().offset(20)
+            $0.height.width.equalTo(50)
         }
         userName.snp.makeConstraints {
             $0.top.equalToSuperview().offset(25)

@@ -175,7 +175,7 @@ extension OutingViewController:
             let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
             cell.userProfile.kf.setImage(
                 with: url,
-                placeholder:UIImage(named: "userProfile.svg"),
+                placeholder:UIImage(named: "dummyImage.svg"),
                 options: [.processor(imageCornerRadius)]
             )
         }
