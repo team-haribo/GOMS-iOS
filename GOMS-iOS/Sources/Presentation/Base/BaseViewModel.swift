@@ -25,7 +25,7 @@ class BaseViewModel{
     var userData: AccountResponse!
     var lateRank: [LateRankResponse] = []
     var outingCount: OutingCountResponse?
-    var outingList: [OutingListResponse]!
+    var outingList: [OutingListResponse] = []
     var studentUserInfo: [StudentInfoResponse]?
     var authData: SignInResponse!
     var uuidData: MakeQRCodeResponse?

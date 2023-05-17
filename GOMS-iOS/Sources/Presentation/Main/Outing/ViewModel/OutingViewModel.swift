@@ -34,7 +34,7 @@ class OutingViewModel: BaseViewModel, Stepper{
 
 
 extension OutingViewModel {
-    func outingList() {
+    func outingList(completion: @escaping () -> Void) {
         outingProvider.request(.outingList(authorization: accessToken)){ response in
             switch response {
             case let .success(result):
@@ -42,6 +42,7 @@ extension OutingViewModel {
                 print(String(data: responseData, encoding: .utf8))
                 do {
                     self.outingList = try JSONDecoder().decode([OutingListResponse].self, from: responseData)
+                    completion()
                 }catch(let err) {
                     print(String(describing: err))
                 }

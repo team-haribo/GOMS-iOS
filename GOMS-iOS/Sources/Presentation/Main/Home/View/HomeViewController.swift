@@ -58,7 +58,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private func getData() async {
         viewModel.getLateRank { [weak self] in
             self?.bindLateRank()
-            print("qweq")
         }
         Task {
             viewModel.getOutingCount()

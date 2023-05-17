@@ -43,6 +43,7 @@ class OutingCollectionViewCell: UICollectionViewCell {
     func setLayout() {
         userProfile.snp.makeConstraints {
             $0.top.leading.equalToSuperview().offset(20)
+            $0.width.height.equalTo(50)
         }
         userName.snp.makeConstraints {
             $0.top.equalToSuperview().offset(25)
