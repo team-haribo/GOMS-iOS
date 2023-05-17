@@ -377,7 +377,12 @@ extension HomeViewController :
             spread: 0
         )
         cell.studentName.text = "\(userNameList[indexPath.row])"
-        cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
+        if userNumList[indexPath.row] < 10 {
+            cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
+        }
+        else {
+            cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
+        }
         for index in 0 ... userNameList.count - 1 {
             let url = URL(string: viewModel.lateRank[index].profileUrl ?? "")
             let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
