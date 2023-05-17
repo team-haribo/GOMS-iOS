@@ -36,7 +36,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
             outingIsNilText.isHidden = false
         }
         else {
-            for index in 0...(viewModel.outingCount?.outingCount ?? 0) {
+            for index in 0...(viewModel.outingCount?.outingCount ?? 0) - 1 {
                 userNameList[index] = viewModel.outingList[index].name
                 userNumList[index] = viewModel.outingList[index].studentNum.grade + viewModel.outingList[index].studentNum.classNum + viewModel.outingList[index].studentNum.number
             }
@@ -154,7 +154,7 @@ extension OutingViewController:
         )
         cell.userName.text = "\(userNameList[indexPath.row])"
         cell.userNum.text = "\(userNumList[indexPath.row])"
-        for index in 0 ... userNameList.count {
+        for index in 0 ... userNameList.count - 1 {
             let url = URL(string: viewModel.outingList[index].profileUrl ?? "")
             let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
             cell.userProfile.kf.setImage(

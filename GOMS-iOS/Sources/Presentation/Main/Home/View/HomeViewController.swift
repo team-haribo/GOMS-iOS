@@ -19,20 +19,18 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private let userNum = UserDefaults.standard.integer(forKey: "userNum")
     private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
     private var userNameList = [String]()
+    private var userGradeList = [Int]()
+    private var userClassNumList = [Int]()
     private var userNumList = [Int]()
     
     override func viewDidLoad() {
         checkRole()
-        getData()
+        Task {
+            await getData()
+        }
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
-        tardyCollectionView.dataSource = self
-        tardyCollectionView.delegate = self
-        tardyCollectionView.register(
-            HomeCollectionViewCell.self,
-            forCellWithReuseIdentifier: HomeCollectionViewCell.identifier
-        )
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
     }
@@ -57,16 +55,34 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         }
     }
     
-    private func getData() {
-        viewModel.getLateRank()
-        viewModel.getOutingCount()
-        viewModel.getUserData()
+    private func getData() async {
+        viewModel.getLateRank { [weak self] in
+            self?.bindLateRank()
+            print("qweq")
+        }
+        Task {
+            viewModel.getOutingCount()
+            viewModel.getUserData()
+        }
     }
     
     private func bindLateRank() {
-        for index in 0...2 {
-            userNameList[index] = viewModel.lateRank[index].name
-            userNumList[index] = viewModel.lateRank[index].studentNum.grade + viewModel.lateRank[index].studentNum.classNum + viewModel.lateRank[index].studentNum.number
+        if viewModel.lateRank.isEmpty {
+            print("empty")
+        }
+        else {
+            for index in 0...viewModel.lateRank.endIndex - 1 {
+                userNameList.insert(viewModel.lateRank[index].name, at: index)
+                userGradeList.insert(viewModel.lateRank[index].studentNum.grade, at: index)
+                userClassNumList.insert(viewModel.lateRank[index].studentNum.classNum, at: index)
+                userNumList.insert(viewModel.lateRank[index].studentNum.number, at: index)
+            }
+            tardyCollectionView.dataSource = self
+            tardyCollectionView.delegate = self
+            tardyCollectionView.register(
+                HomeCollectionViewCell.self,
+                forCellWithReuseIdentifier: HomeCollectionViewCell.identifier
+            )
         }
     }
     
@@ -347,7 +363,6 @@ extension HomeViewController :
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -362,8 +377,13 @@ extension HomeViewController :
             spread: 0
         )
         cell.studentName.text = "\(userNameList[indexPath.row])"
-        cell.studentNum.text = "\(userNumList[indexPath.row])"
-        for index in 0 ... userNumList.count {
+        if userNumList[indexPath.row] < 10 {
+            cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
+        }
+        else {
+            cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
+        }
+        for index in 0 ... userNameList.count - 1 {
             let url = URL(string: viewModel.lateRank[index].profileUrl ?? "")
             let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
             cell.userProfileImage.kf.setImage(
