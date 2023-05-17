@@ -18,6 +18,8 @@ import QRCode
 
 class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate {
     
+    private var timerLeft: Int = 300
+    
     override func viewDidLoad() {
         checkUserIsAdmin()
         self.navigationItem.hidesBackButton = true
@@ -34,6 +36,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             lastTimeText.isHidden = false
             lastTimer.isHidden = false
             createQrCode()
+            startTimer()
         }
         else {
             if permissionNoArray.count > 0 && permissionNoArray.isEmpty == false {
@@ -51,6 +54,17 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             .bind{
                 self.callQrScanStart()
             }.disposed(by: disposeBag)
+    }
+    
+    private func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
+            self.timerLeft -= 1
+            var minutes = self.timerLeft / 60
+            var seconds = self.timerLeft % 60
+            if self.timerLeft > 0 {
+                self.lastTimer.text = String(format: "%d분 %02d초", minutes, seconds)
+            }
+        })
     }
     
     private func createQrCode() {
@@ -206,7 +220,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     
     private let lastTimer = UILabel().then {
         $0.isHidden = true
-        $0.text = "3분 30초"
+        $0.text = "5분 00초"
         $0.textColor = .adminColor
         $0.font = UIFont.GOMSFont(size: 22, family: .Bold)
     }
