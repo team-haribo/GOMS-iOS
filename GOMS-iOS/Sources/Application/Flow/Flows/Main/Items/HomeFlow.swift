@@ -57,10 +57,12 @@ class HomeFlow: Flow {
         case let .failureAlert(title, message, action):
             return presentToFailureAlert(title: title, message: message, action: action)
             
-        case let .studentInfoIsRequired:
-            return coorfinateToStudentInfo()
-           
+        case .studentInfoIsRequired:
+            return coordinateToStudentInfo()
             
+        case .searchModalIsRequired:
+            return
+        
         default:
             return .none
         }
@@ -80,7 +82,7 @@ class HomeFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
-    private func coorfinateToStudentInfo() -> FlowContributors{
+    private func coordinateToStudentInfo() -> FlowContributors{
         let vm = StudentInfoViewModel()
         let vc = StudentInfoViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
@@ -103,5 +105,12 @@ class HomeFlow: Flow {
         }
         self.rootViewController.topViewController?.present(alert, animated: true)
         return .none
+    }
+    
+    private func coordinateToSearchModal() -> FlowContributors{
+        let vm = SearchModalViewModal()
+        let vc = SearchModalViewController(vm)
+        self.rootViewController.present(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }

@@ -15,6 +15,8 @@
 		7771E7AA2A0CE46D00649B63 /* StudentCouncilServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */; };
 		7771E7AC2A0D019400649B63 /* StudentInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7AB2A0D019400649B63 /* StudentInfoModel.swift */; };
 		7771E7AE2A0D029F00649B63 /* StudentInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7AD2A0D029F00649B63 /* StudentInfoRequest.swift */; };
+		7771E7B42A14AEB500649B63 /* SearchModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7B32A14AEB500649B63 /* SearchModalViewController.swift */; };
+		7771E7B72A14AF2400649B63 /* SearchModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7B62A14AF2400649B63 /* SearchModalViewModel.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -93,6 +95,8 @@
 		7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCouncilServices.swift; sourceTree = "<group>"; };
 		7771E7AB2A0D019400649B63 /* StudentInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoModel.swift; sourceTree = "<group>"; };
 		7771E7AD2A0D029F00649B63 /* StudentInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoRequest.swift; sourceTree = "<group>"; };
+		7771E7B32A14AEB500649B63 /* SearchModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModalViewController.swift; sourceTree = "<group>"; };
+		7771E7B62A14AF2400649B63 /* SearchModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModalViewModel.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +237,31 @@
 				7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */,
 			);
 			path = StudentCouncil;
+			sourceTree = "<group>";
+		};
+		7771E7B12A14AE5900649B63 /* SearchModal */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7B52A14AF0700649B63 /* ViewModel */,
+				7771E7B22A14AE9200649B63 /* View */,
+			);
+			path = SearchModal;
+			sourceTree = "<group>";
+		};
+		7771E7B22A14AE9200649B63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7B32A14AEB500649B63 /* SearchModalViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7771E7B52A14AF0700649B63 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7771E7B62A14AF2400649B63 /* SearchModalViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		77F0738429ED29CF00EE1FC9 = {
@@ -428,6 +457,7 @@
 		77F073F329EE3D3200EE1FC9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7771E7B12A14AE5900649B63 /* SearchModal */,
 				7771E7962A0CC3ED00649B63 /* StudentInfo */,
 				77F0743729F1A6F100EE1FC9 /* Profile */,
 				77F0740629EE8A5E00EE1FC9 /* Outing */,
@@ -891,6 +921,7 @@
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
 				77F0748929FB62C600EE1FC9 /* RefreshTokenRequest.swift in Sources */,
 				77F0746E29FABD1400EE1FC9 /* OutingRequest.swift in Sources */,
+				7771E7B72A14AF2400649B63 /* SearchModalViewModel.swift in Sources */,
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
@@ -930,6 +961,7 @@
 				77F0740529EE8A0200EE1FC9 /* QRCodeViewController.swift in Sources */,
 				7771E7AA2A0CE46D00649B63 /* StudentCouncilServices.swift in Sources */,
 				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
+				7771E7B42A14AEB500649B63 /* SearchModalViewController.swift in Sources */,
 				77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */,
 				77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */,
 				77F0747729FAC51F00EE1FC9 /* OutingCountModel.swift in Sources */,
