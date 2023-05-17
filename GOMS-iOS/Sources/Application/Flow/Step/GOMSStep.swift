@@ -28,4 +28,5 @@ enum GOMSStep: Step {
     
     //MARK: Admin
     case studentInfoIsRequired
+    case searchModalIsRequired
 }
