@@ -26,7 +26,7 @@ class StudentInfoCell: UICollectionViewCell {
         $0.isHidden = true
         $0.backgroundColor = .background
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.subColor?.cgColor
+        $0.layer.borderColor = UIColor.adminColor?.cgColor
         $0.layer.cornerRadius = 10
     }
     
