@@ -15,7 +15,6 @@
 		7771E7AA2A0CE46D00649B63 /* StudentCouncilServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */; };
 		7771E7AC2A0D019400649B63 /* StudentInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7AB2A0D019400649B63 /* StudentInfoModel.swift */; };
 		7771E7AE2A0D029F00649B63 /* StudentInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7AD2A0D029F00649B63 /* StudentInfoRequest.swift */; };
-		7771E7B02A1305ED00649B63 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7AF2A1305ED00649B63 /* Array.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -94,7 +93,6 @@
 		7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCouncilServices.swift; sourceTree = "<group>"; };
 		7771E7AB2A0D019400649B63 /* StudentInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoModel.swift; sourceTree = "<group>"; };
 		7771E7AD2A0D029F00649B63 /* StudentInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoRequest.swift; sourceTree = "<group>"; };
-		7771E7AF2A1305ED00649B63 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -371,7 +369,6 @@
 				77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */,
 				77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */,
 				77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */,
-				7771E7AF2A1305ED00649B63 /* Array.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -898,7 +895,6 @@
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
 				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
 				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
-				7771E7B02A1305ED00649B63 /* Array.swift in Sources */,
 				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
 				7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,

@@ -49,6 +49,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         userProfileImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset(14)
             $0.centerX.equalToSuperview().offset(0)
+            $0.width.height.equalTo(40)
         }
         studentName.snp.makeConstraints {
             $0.top.equalTo(userProfileImage.snp.bottom).offset(16)

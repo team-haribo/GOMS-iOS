@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private let userNum = UserDefaults.standard.integer(forKey: "userNum")
     private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
     private var userNameList = [String]()
+    private var userGradeList = [Int]()
+    private var userClassNumList = [Int]()
     private var userNumList = [Int]()
     
     override func viewDidLoad() {
@@ -29,12 +31,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
-        tardyCollectionView.dataSource = self
-        tardyCollectionView.delegate = self
-        tardyCollectionView.register(
-            HomeCollectionViewCell.self,
-            forCellWithReuseIdentifier: HomeCollectionViewCell.identifier
-        )
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
     }
@@ -62,12 +58,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private func getData() async {
         viewModel.getLateRank { [weak self] in
             self?.bindLateRank()
+            print("qweq")
         }
         Task {
             viewModel.getOutingCount()
             viewModel.getUserData()
         }
-        bindLateRank()
     }
     
     private func bindLateRank() {
@@ -75,14 +71,18 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             print("empty")
         }
         else {
-            for index in 1...2 {
-                print("-------------------------------------------")
-                print(index)
-                print(viewModel.lateRank)
-                print("-------------------------------------------")
-                userNameList[index] = viewModel.lateRank[index].name
-                userNumList[index] = viewModel.lateRank[index].studentNum.grade + viewModel.lateRank[index].studentNum.classNum + viewModel.lateRank[index].studentNum.number
+            for index in 0...viewModel.lateRank.endIndex - 1 {
+                userNameList.insert(viewModel.lateRank[index].name, at: index)
+                userGradeList.insert(viewModel.lateRank[index].studentNum.grade, at: index)
+                userClassNumList.insert(viewModel.lateRank[index].studentNum.classNum, at: index)
+                userNumList.insert(viewModel.lateRank[index].studentNum.number, at: index)
             }
+            tardyCollectionView.dataSource = self
+            tardyCollectionView.delegate = self
+            tardyCollectionView.register(
+                HomeCollectionViewCell.self,
+                forCellWithReuseIdentifier: HomeCollectionViewCell.identifier
+            )
         }
     }
     
@@ -359,11 +359,10 @@ extension HomeViewController :
     UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.lateRank.endIndex - 1
+        return userNameList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -378,8 +377,8 @@ extension HomeViewController :
             spread: 0
         )
         cell.studentName.text = "\(userNameList[indexPath.row])"
-        cell.studentNum.text = "\(userNumList[indexPath.row])"
-        for index in 0 ... userNumList.count - 1 {
+        cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
+        for index in 0 ... userNameList.count - 1 {
             let url = URL(string: viewModel.lateRank[index].profileUrl ?? "")
             let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
             cell.userProfileImage.kf.setImage(
