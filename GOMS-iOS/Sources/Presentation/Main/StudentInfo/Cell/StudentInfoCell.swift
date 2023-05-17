@@ -22,6 +22,21 @@ class StudentInfoCell: UICollectionViewCell {
         $0.setImage(UIImage(named:"editStudent.svg"), for: .normal)
     }
     
+    let roleView = UIView().then {
+        $0.isHidden = true
+        $0.backgroundColor = .background
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = UIColor.subColor?.cgColor
+        $0.layer.cornerRadius = 10
+    }
+    
+    let roleText = UILabel().then {
+        $0.isHidden = true
+        $0.text = "학생회"
+        $0.textColor = .subColor
+        $0.font = UIFont.GOMSFont(size: 9, family: .Regular)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addView()
@@ -33,7 +48,7 @@ class StudentInfoCell: UICollectionViewCell {
     }
     
     func addView() {
-        [userProfile, userName, userNum, editUserAuthorityButton].forEach {
+        [userProfile, userName, userNum, editUserAuthorityButton, roleView, roleText].forEach {
             contentView.addSubview($0)
         }
     }
@@ -53,6 +68,13 @@ class StudentInfoCell: UICollectionViewCell {
         editUserAuthorityButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(17)
+        }
+        roleView.snp.makeConstraints {
+            $0.centerX.equalTo(userProfile.snp.centerX).offset(0)
+            $0.bottom.equalToSuperview().inset(15)
+        }
+        roleText.snp.makeConstraints {
+            $0.center.equalTo(roleView.snp.center).offset(0)
         }
     }
 }
