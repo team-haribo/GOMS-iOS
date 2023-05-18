@@ -23,6 +23,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     override func viewDidLoad() {
         checkUserIsAdmin()
         self.navigationItem.hidesBackButton = true
+        self.navigationItem.rightBarButtonItem()
+        self.navigationItem.leftLogoImage()
         super.viewDidLoad()
         bindViewModel()
      }
@@ -59,8 +61,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     private func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
             self.timerLeft -= 1
-            var minutes = self.timerLeft / 60
-            var seconds = self.timerLeft % 60
+            let minutes = self.timerLeft / 60
+            let seconds = self.timerLeft % 60
             if self.timerLeft > 0 {
                 self.lastTimer.text = String(format: "%d분 %02d초", minutes, seconds)
             }

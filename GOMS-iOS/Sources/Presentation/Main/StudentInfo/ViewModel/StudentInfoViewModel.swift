@@ -21,14 +21,6 @@ class StudentInfoViewModel: BaseViewModel, Stepper{
     }
     
     private func pushSearchModal() {
-        let vm = SearchModalViewModal()
-        let vc = SearchModalViewController(vm)
-        if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.medium()]
-            sheet.largestUndimmedDetentIdentifier = .medium
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.preferredCornerRadius = 20
-        }
         self.steps.accept(GOMSStep.searchModalIsRequired)
     }
 }
