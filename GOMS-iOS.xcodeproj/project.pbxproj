@@ -20,7 +20,6 @@
 		7771E7BA2A14BFCA00649B63 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7B92A14BFCA00649B63 /* SearchModel.swift */; };
 		7771E7BC2A14C04E00649B63 /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7BB2A14C04E00649B63 /* SearchRequest.swift */; };
 		7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */; };
-		7771E7C12A15C08C00649B63 /* RoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7C02A15C08C00649B63 /* RoleCell.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -104,7 +103,6 @@
 		7771E7B92A14BFCA00649B63 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		7771E7BB2A14C04E00649B63 /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
-		7771E7C02A15C08C00649B63 /* RoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCell.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -278,7 +276,6 @@
 		7771E7BF2A15C07B00649B63 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7771E7C02A15C08C00649B63 /* RoleCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -941,7 +938,6 @@
 				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
 				77F0748929FB62C600EE1FC9 /* RefreshTokenRequest.swift in Sources */,
 				77F0746E29FABD1400EE1FC9 /* OutingRequest.swift in Sources */,
-				7771E7C12A15C08C00649B63 /* RoleCell.swift in Sources */,
 				7771E7B72A14AF2400649B63 /* SearchModalViewModel.swift in Sources */,
 				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
 				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
