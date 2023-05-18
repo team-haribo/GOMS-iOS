@@ -111,7 +111,7 @@ class HomeFlow: Flow {
         let vc = SearchModalViewController(vm)
         if let sheet = vc.sheetPresentationController {
             sheet.detents = [.medium()]
-            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.largestUndimmedDetentIdentifier = .large
             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             sheet.preferredCornerRadius = 20
         }
