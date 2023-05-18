@@ -106,11 +106,16 @@ class HomeFlow: Flow {
         self.rootViewController.topViewController?.present(alert, animated: true)
         return .none
     }
-    
     private func coordinateToSearchModal() -> FlowContributors{
         let vm = SearchModalViewModal()
         let vc = SearchModalViewController(vm)
-        self.rootViewController.present(vc, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = .medium
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.preferredCornerRadius = 20
+        }
+        self.rootViewController.topViewController?.present(vc, animated: true)
+        return .none
     }
 }

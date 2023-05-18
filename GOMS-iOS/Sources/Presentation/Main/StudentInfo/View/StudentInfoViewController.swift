@@ -2,6 +2,8 @@ import UIKit
 import Kingfisher
 import SnapKit
 import Then
+import RxSwift
+import RxCocoa
 
 class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private var userNameList = [String]()
@@ -17,6 +19,16 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
             await getData()
         }
         studentIntoCollectionView.collectionViewLayout = layout
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = StudentInfoViewModel.Input(
+            searchBarButton: searchBarButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private func getData() async {
