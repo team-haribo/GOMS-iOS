@@ -4,8 +4,6 @@ import SnapKit
 
 class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     
-    private let roleName = ["학생","학생회","외출금지"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
