@@ -44,8 +44,22 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
         $0.textColor = .black
     }
     
+    private var roleSeg = UISegmentedControl(items: ["학생","학생회","외출금지"]).then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = UIColor.white
+        $0.selectedSegmentTintColor = .white
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
+    }
+    
     override func addView() {
-        [searchBar,roleText,gradeText,classNumText].forEach {
+        [searchBar,roleText,gradeText,classNumText, roleSeg].forEach {
             view.addSubview($0)
         }
     }
@@ -71,6 +85,13 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
         classNumText.snp.makeConstraints {
             $0.top.equalTo(gradeText.snp.bottom).offset(65)
             $0.leading.equalToSuperview().offset(26)
+        }
+        
+        roleSeg.snp.makeConstraints {
+            $0.top.equalTo(roleText.snp.bottom).offset(6)
+            $0.leading.equalTo(view.snp.leading).offset(26)
+            $0.trailing.equalTo(view.snp.trailing).inset(26)
+            $0.height.equalTo(46)
         }
     }
 }
