@@ -92,22 +92,38 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
         )
     }
     
+    private var searchButton = UIButton().then {
+        $0.backgroundColor = .adminColor
+        $0.setTitle("검색하기", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
+        $0.layer.cornerRadius = 10
+    }
+    
     override func addView() {
-        [searchBar,roleText,gradeText,classNumText, roleSeg, gradeSeg, classNumSeg].forEach {
+        [searchBar,roleText,gradeText,classNumText, roleSeg, gradeSeg, classNumSeg, searchButton].forEach {
             view.addSubview($0)
         }
     }
     
     override func setLayout() {
         searchBar.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(38)
+            $0.top.equalToSuperview().offset(20)
             $0.trailing.leading.equalToSuperview().inset(26)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(52)
         }
         
         roleText.snp.makeConstraints {
-            $0.top.equalTo(searchBar.snp.bottom).offset(35)
+            $0.top.equalTo(searchBar.snp.bottom).offset(20)
             $0.leading.equalToSuperview().offset(26)
         }
         
@@ -140,6 +156,11 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             $0.leading.equalTo(view.snp.leading).offset(26)
             $0.trailing.equalTo(view.snp.trailing).inset(26)
             $0.height.equalTo(46)
+        }
+        searchButton.snp.makeConstraints {
+            $0.top.equalTo(classNumSeg.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(26)
+            $0.height.equalTo(52)
         }
     }
 }
