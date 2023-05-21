@@ -62,6 +62,9 @@ class HomeFlow: Flow {
             
         case .searchModalIsRequired:
             return coordinateToSearchModal()
+            
+        case .searchModalDismiss:
+            return dismissSearchModal()
         
         default:
             return .none
@@ -116,6 +119,13 @@ class HomeFlow: Flow {
             sheet.preferredCornerRadius = 20
         }
         self.rootViewController.topViewController?.present(vc, animated: true)
-        return .none
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func dismissSearchModal() -> FlowContributors {
+        let vm = SearchModalViewModal()
+        let vc = SearchModalViewController(vm)
+        self.rootViewController.dismiss(animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }

@@ -7,7 +7,7 @@ import Moya
 class SearchModalViewModal: BaseViewModel, Stepper{
     
     struct Input {
-        
+        let searchButton: Observable<Void>
     }
     
     struct Output {
@@ -15,8 +15,15 @@ class SearchModalViewModal: BaseViewModel, Stepper{
     }
     
     func transVC(input: Input) {
-        
+        input.searchButton.subscribe(
+            onNext: pushStudentInfo
+        ) .disposed(by: disposeBag)
     }
+    
+    private func pushStudentInfo() {
+        self.steps.accept(GOMSStep.searchModalDismiss)
+    }
+    
 }
 extension SearchModalViewModal {
     func searchStudent(completion: @escaping () -> Void, grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?) {

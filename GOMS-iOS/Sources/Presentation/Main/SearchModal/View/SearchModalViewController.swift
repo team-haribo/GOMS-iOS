@@ -1,11 +1,25 @@
 import UIKit
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = SearchModalViewModal.Input(
+            searchButton: searchButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
+    }
+    
+    private func dismissVC() {
+        self.dismiss(animated: true)
     }
     
     private var searchBar = UITextField().then {
