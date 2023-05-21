@@ -4,7 +4,7 @@ import Moya
 enum StudentCouncilServices {
     case makeQRCode(authorization: String)
     case studentInfo(authorization: String)
-    case search(authorization: String, grade: Int?, classNum: Int?, name: String, isBlackList: Bool?, authority: String?)
+    case search(authorization: String, grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?)
 }
 
 

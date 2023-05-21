@@ -1,6 +1,8 @@
 import Foundation
 import RxFlow
 import RxCocoa
+import RxSwift
+import Moya
 
 class SearchModalViewModal: BaseViewModel, Stepper{
     
