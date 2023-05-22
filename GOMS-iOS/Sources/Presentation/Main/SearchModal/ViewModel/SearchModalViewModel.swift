@@ -26,7 +26,7 @@ class SearchModalViewModal: BaseViewModel, Stepper{
     
 }
 extension SearchModalViewModal {
-    func searchStudent(completion: @escaping () -> Void, grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?) {
+    func searchStudent(grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?) {
         studentCouncilProvider.request(.search(authorization: accessToken, grade: grade, classNum: classNum, name: name, isBlackList: isBlackList, authority: authority)){ response in
             switch response {
             case let .success(result):
@@ -34,7 +34,6 @@ extension SearchModalViewModal {
                 print(String(data: responseData, encoding: .utf8))
                 do {
                     self.searchResult = try JSONDecoder().decode([SearchResponse].self, from: responseData)
-                    completion()
                 }catch(let err) {
                     print(String(describing: err))
                 }
