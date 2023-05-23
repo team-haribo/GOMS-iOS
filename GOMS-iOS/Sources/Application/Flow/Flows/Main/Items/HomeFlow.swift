@@ -63,6 +63,9 @@ class HomeFlow: Flow {
         case .searchModalIsRequired:
             return coordinateToSearchModal()
             
+        case let .editUserModalIsRequired(accountIdx):
+            return coordinateToEditUserModal(accountIdx: accountIdx)
+            
         case .searchModalDismiss:
             return dismissSearchModal()
         
@@ -126,6 +129,19 @@ class HomeFlow: Flow {
         let vm = SearchModalViewModal()
         let vc = SearchModalViewController(vm)
         self.rootViewController.dismiss(animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToEditUserModal(accountIdx: UUID) -> FlowContributors{
+        let vm = EditUserModalViewModel(accountIdx: accountIdx)
+        let vc = EditUserModalViewController(vm)
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.preferredCornerRadius = 20
+        }
+        self.rootViewController.topViewController?.present(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }
