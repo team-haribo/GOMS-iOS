@@ -43,7 +43,7 @@ extension StudentCouncilServices: TargetType {
             return .requestPlain
         case .search(_, let grade, let classNum, let name, let isBlackList, let authority):
             return .requestParameters(
-                parameters: ["grade" : grade, "classNum" : classNum, "name" : name, "isBlackList" : isBlackList, "authority" : authority],
+                parameters: ["grade" : grade ?? "", "classNum" : classNum ?? "", "name" : name ?? "", "isBlackList" : isBlackList ?? "", "authority" : authority ?? ""],
                 encoding: URLEncoding.queryString)
         }
     }

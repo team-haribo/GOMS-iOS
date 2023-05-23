@@ -6,10 +6,10 @@ import RxCocoa
 
 class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     
-    private var searchGrade: Int? = nil
-    private var searchClassNum: Int? = nil
-    private var searchBlackList: Bool? = nil
-    private var searchAuthority: String? = nil
+    private var searchGrade: Int?
+    private var searchClassNum: Int?
+    private var searchBlackList: Bool?
+    private var searchAuthority: String? = ""
 
     
     override func viewDidLoad() {
@@ -31,9 +31,9 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
                 self.viewModel.searchStudent(
                     grade: self.searchGrade,
                     classNum: self.searchClassNum,
-                    name: self.searchBar.text,
+                    name: self.searchBar.text ?? "",
                     isBlackList: self.searchBlackList,
-                    authority: self.searchAuthority
+                    authority: self.searchAuthority ?? ""
                 )
             }
             .disposed(by: disposeBag)
@@ -178,9 +178,8 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             searchAuthority = "ROLE_STUDENT_COUNCIL"
         case 2:
             searchBlackList = true
-        default:
-            searchAuthority = nil
-            searchBlackList = nil
+        default: break
+            searchAuthority = ""
         }
     }
     
@@ -192,8 +191,7 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             searchGrade = 2
         case 2:
             searchGrade = 3
-        default:
-            searchGrade = nil
+        default: break
         }
     }
     
@@ -207,8 +205,8 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             searchClassNum = 3
         case 3:
             searchClassNum = 4
-        default:
-            searchClassNum = nil
+        default: break
+//            searchClassNum = nil
         }
     }
     
