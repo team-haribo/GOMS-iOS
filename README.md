@@ -32,7 +32,7 @@ GOMS-iOS
  ┃ ┣ 📂Font
  ┃ ┣ 📂Extension
  ┃ ┣ 📂Assests
- ┃ ┣ 📂LaunchScreen
+ ┃ ┗ 📂LaunchScreen
  ┣ 📂Source
  ┃ ┣ 📂Application
  ┃ ┃ ┣ 📂Flow
