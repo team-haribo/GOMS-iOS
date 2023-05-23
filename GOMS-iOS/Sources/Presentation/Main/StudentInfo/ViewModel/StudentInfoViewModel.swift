@@ -8,6 +8,7 @@ class StudentInfoViewModel: BaseViewModel, Stepper{
     
     struct Input {
         let searchBarButton: Observable<Void>
+        let editUserButtonDidTap: Observable<UUID>
     }
     
     struct Output {
@@ -18,6 +19,13 @@ class StudentInfoViewModel: BaseViewModel, Stepper{
         input.searchBarButton.subscribe(
             onNext: pushSearchModal
         ) .disposed(by: disposeBag)
+        
+        input.editUserButtonDidTap
+            .bind(with: self) { owner, accountIdx in
+                print(accountIdx)
+                self.steps.accept(GOMSStep.editUserModalIsRequired(accountIdx: accountIdx))
+            }
+            .disposed(by: disposeBag)
     }
     
     private func pushSearchModal() {

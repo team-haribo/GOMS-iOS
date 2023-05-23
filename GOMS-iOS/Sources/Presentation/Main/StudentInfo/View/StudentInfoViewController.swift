@@ -18,15 +18,21 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         Task {
             await getData()
         }
-        studentIntoCollectionView.collectionViewLayout = layout
+        studentInfoCollectionView.collectionViewLayout = layout
     }
     override func viewDidAppear(_ animated: Bool) {
         bindViewModel()
     }
     
     private func bindViewModel() {
+        
+        let mainCellSelectedObservable = studentInfoCollectionView.rx.modelSelected(StudentInfoResponse.self)
+            .asObservable()
+            .map(\.accountIdx)
+        
         let input = StudentInfoViewModel.Input(
-            searchBarButton: searchBarButton.rx.tap.asObservable()
+            searchBarButton: searchBarButton.rx.tap.asObservable(),
+            editUserButtonDidTap: mainCellSelectedObservable
         )
         viewModel.transVC(input: input)
     }
@@ -48,9 +54,9 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
                 userClassNumList.insert(viewModel.studentUserInfo[index].studentNum.classNum, at: index)
                 userNumList.insert(viewModel.studentUserInfo[index].studentNum.number, at: index)
             }
-            studentIntoCollectionView.dataSource = self
-            studentIntoCollectionView.delegate = self
-            studentIntoCollectionView.register(
+            studentInfoCollectionView.dataSource = self
+            studentInfoCollectionView.delegate = self
+            studentInfoCollectionView.register(
                 StudentInfoCell.self,
                 forCellWithReuseIdentifier: StudentInfoCell.identifier
             )
@@ -86,7 +92,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         $0.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0) //아이템 상하좌우 사이값 초기화
     }
     
-    private let studentIntoCollectionView = UICollectionView(
+    private let studentInfoCollectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()
     ).then {
@@ -105,7 +111,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     }
     
     override func addView() {
-        [searchBarButton, studentIntoCollectionView, searchBarText, searchIcon].forEach {
+        [searchBarButton, studentInfoCollectionView, searchBarText, searchIcon].forEach {
             view.addSubview($0)
         }
     }
@@ -116,7 +122,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
             $0.height.equalTo(52)
             $0.trailing.leading.equalToSuperview().inset(26)
         }
-        studentIntoCollectionView.snp.makeConstraints{
+        studentInfoCollectionView.snp.makeConstraints{
             $0.top.equalTo(searchBarButton.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.bottom.equalToSuperview()

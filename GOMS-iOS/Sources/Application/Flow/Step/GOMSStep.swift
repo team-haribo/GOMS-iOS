@@ -30,5 +30,5 @@ enum GOMSStep: Step {
     case studentInfoIsRequired
     case searchModalIsRequired
     case searchModalDismiss
-    case editUserModalIsRequired
+    case editUserModalIsRequired(accountIdx: UUID)
 }
