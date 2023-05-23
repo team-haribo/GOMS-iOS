@@ -1,11 +1,42 @@
 import UIKit
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     
+    private var searchGrade: Int?
+    private var searchClassNum: Int?
+    private var searchBlackList: Bool?
+    private var searchAuthority: String? = ""
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindViewModel()
+        postData()
+    }
+    
+    private func bindViewModel() {
+        let input = SearchModalViewModal.Input(
+            searchButton: searchButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
+    }
+    
+    private func postData() {
+        searchButton.rx.tap
+            .bind {
+                self.viewModel.searchStudent(
+                    grade: self.searchGrade,
+                    classNum: self.searchClassNum,
+                    name: self.searchBar.text ?? "",
+                    isBlackList: self.searchBlackList,
+                    authority: self.searchAuthority ?? ""
+                )
+            }
+            .disposed(by: disposeBag)
     }
     
     private var searchBar = UITextField().then {
@@ -45,8 +76,14 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     private var roleSeg = UISegmentedControl(items: ["학생","학생회","외출금지"]).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.white
-        $0.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.subColor as Any], for: .normal)
-        $0.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black as Any], for: .selected)
+        $0.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.subColor as Any],
+            for: .normal
+        )
+        $0.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.black as Any],
+            for: .selected
+        )
         $0.selectedSegmentTintColor = .white
         $0.layer.applySketchShadow(
             color: UIColor.black,
@@ -55,14 +92,25 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             y: 2,
             blur: 8,
             spread: 0
+        )
+        $0.addTarget(
+            self,
+            action: #selector(roleSegconChanged(segcon:)),
+            for: UIControl.Event.valueChanged
         )
     }
     
     private var gradeSeg = UISegmentedControl(items: ["1","2","3"]).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.white
-        $0.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.subColor as Any], for: .normal)
-        $0.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black as Any], for: .selected)
+        $0.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.subColor as Any],
+            for: .normal
+        )
+        $0.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.black as Any],
+            for: .selected
+        )
         $0.selectedSegmentTintColor = .white
         $0.layer.applySketchShadow(
             color: UIColor.black,
@@ -72,13 +120,24 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             blur: 8,
             spread: 0
         )
+        $0.addTarget(
+            self,
+            action: #selector(gradeSegconChanged(segcon:)),
+            for: UIControl.Event.valueChanged
+        )
     }
     
     private var classNumSeg = UISegmentedControl(items: ["1","2","3","4"]).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = UIColor.white
-        $0.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.subColor as Any], for: .normal)
-        $0.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black as Any], for: .selected)
+        $0.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.subColor as Any],
+            for: .normal
+        )
+        $0.setTitleTextAttributes(
+            [NSAttributedString.Key.foregroundColor: UIColor.black as Any],
+            for: .selected
+        )
         $0.selectedSegmentTintColor = .white
         $0.layer.applySketchShadow(
             color: UIColor.black,
@@ -87,6 +146,11 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             y: 2,
             blur: 8,
             spread: 0
+        )
+        $0.addTarget(
+            self,
+            action: #selector(classNumSegconChanged(segcon:)),
+            for: UIControl.Event.valueChanged
         )
     }
     
@@ -104,6 +168,46 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             spread: 0
         )
         $0.layer.cornerRadius = 10
+    }
+    
+    @objc func roleSegconChanged(segcon: UISegmentedControl) {
+        switch segcon.selectedSegmentIndex {
+        case 0:
+            searchAuthority = "ROLE_STUDENT"
+        case 1:
+            searchAuthority = "ROLE_STUDENT_COUNCIL"
+        case 2:
+            searchBlackList = true
+        default: break
+            searchAuthority = ""
+        }
+    }
+    
+    @objc func gradeSegconChanged(segcon: UISegmentedControl) {
+        switch segcon.selectedSegmentIndex {
+        case 0:
+            searchGrade = 1
+        case 1:
+            searchGrade = 2
+        case 2:
+            searchGrade = 3
+        default: break
+        }
+    }
+    
+    @objc func classNumSegconChanged(segcon: UISegmentedControl) {
+        switch segcon.selectedSegmentIndex {
+        case 0:
+            searchClassNum = 1
+        case 1:
+            searchClassNum = 2
+        case 2:
+            searchClassNum = 3
+        case 3:
+            searchClassNum = 4
+        default: break
+//            searchClassNum = nil
+        }
     }
     
     override func addView() {
