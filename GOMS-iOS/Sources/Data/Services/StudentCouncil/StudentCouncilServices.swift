@@ -6,6 +6,7 @@ enum StudentCouncilServices {
     case studentInfo(authorization: String)
     case search(authorization: String, grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?)
     case editAuthority(authorization: String, param: EditAuthorityRequest)
+    case isBlackList(authorization: String, accountIdx: UUID)
 }
 
 
@@ -24,12 +25,14 @@ extension StudentCouncilServices: TargetType {
             return "/student-council/search"
         case .editAuthority:
             return "/student-council/authority"
+        case .isBlackList:
+            return "/student-council/black-list"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .makeQRCode:
+        case .makeQRCode, .isBlackList:
             return .post
         case .studentInfo, .search:
             return .get
@@ -52,6 +55,8 @@ extension StudentCouncilServices: TargetType {
             return .requestParameters(
                 parameters: ["grade" : grade ?? "", "classNum" : classNum ?? "", "name" : name ?? "", "isBlackList" : isBlackList ?? "", "authority" : authority ?? ""],
                 encoding: URLEncoding.queryString)
+        case .isBlackList(_, let accountIdx):
+            return .requestParameters(parameters: ["accountIdx" : accountIdx], encoding: URLEncoding.queryString)
         }
     }
     
