@@ -26,18 +26,18 @@ class StudentInfoCell: UICollectionViewCell {
         $0.setImage(UIImage(named:"editStudent.svg"), for: .normal)
     }
     
-    let roleView = UIView().then {
+    var roleView = UIView().then {
         $0.isHidden = true
-        $0.backgroundColor = .background
+        $0.backgroundColor = .white
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.adminColor?.cgColor
-        $0.layer.cornerRadius = 10
+        $0.layer.cornerRadius = 8
     }
     
-    let roleText = UILabel().then {
+    var roleText = UILabel().then {
         $0.isHidden = true
         $0.text = "학생회"
-        $0.textColor = .subColor
+        $0.textColor = .adminColor
         $0.font = UIFont.GOMSFont(size: 9, family: .Regular)
     }
     
@@ -86,6 +86,8 @@ class StudentInfoCell: UICollectionViewCell {
         roleView.snp.makeConstraints {
             $0.centerX.equalTo(userProfile.snp.centerX).offset(0)
             $0.bottom.equalToSuperview().inset(15)
+            $0.height.equalTo(16)
+            $0.width.equalTo(50)
         }
         roleText.snp.makeConstraints {
             $0.center.equalTo(roleView.snp.center).offset(0)
