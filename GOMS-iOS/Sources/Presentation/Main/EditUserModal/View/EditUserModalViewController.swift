@@ -71,13 +71,13 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
             $0.leading.equalToSuperview().offset(26)
         }
         roleSeg.snp.makeConstraints {
-            $0.top.equalTo(roleText.snp.bottom).offset(10)
+            $0.top.equalTo(roleText.snp.bottom).offset(56)
             $0.leading.equalTo(view.snp.leading).offset(26)
             $0.trailing.equalTo(view.snp.trailing).inset(26)
-            $0.height.equalTo(46)
+            $0.height.equalTo(100)
         }
         searchButton.snp.makeConstraints {
-            $0.top.equalTo(roleSeg.snp.bottom).offset(20)
+            $0.bottom.equalToSuperview().inset(50)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(52)
         }
