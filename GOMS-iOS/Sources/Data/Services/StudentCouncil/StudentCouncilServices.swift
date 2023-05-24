@@ -6,7 +6,7 @@ enum StudentCouncilServices {
     case studentInfo(authorization: String)
     case search(authorization: String, grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?)
     case editAuthority(authorization: String, param: EditAuthorityRequest)
-    case isBlackList(authorization: String, accountIdx: String)
+    case isBlackList(authorization: String, accountIdx: UUID)
 }
 
 
