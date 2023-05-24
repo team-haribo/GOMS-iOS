@@ -1,11 +1,15 @@
 import UIKit
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class StudentInfoCell: UICollectionViewCell {
     static let identifier = "studentInfoCell"
     
     let userProfile = UIImageView()
+    
+    var editUserAuthorityButtonAction : (() -> ())?
     
     let userName = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 16, family:.Regular)
@@ -41,6 +45,15 @@ class StudentInfoCell: UICollectionViewCell {
         super.init(frame: frame)
         self.addView()
         self.setLayout()
+        self.editUserAuthorityButton.addTarget(
+            self,
+            action: #selector(editUserAuthorityButtonDidTap),
+            for: .touchUpInside
+        )
+    }
+    
+    @objc func editUserAuthorityButtonDidTap() {
+        self.editUserAuthorityButtonAction?()
     }
         
     required init?(coder: NSCoder) {

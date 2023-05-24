@@ -141,7 +141,7 @@ class HomeFlow: Flow {
             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
             sheet.preferredCornerRadius = 20
         }
-        self.rootViewController.topViewController?.present(vc, animated: true)
+        self.rootViewController.present(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }

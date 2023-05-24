@@ -5,8 +5,9 @@ import RxSwift
 import RxCocoa
 
 class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
+    
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
     }
     
     private let roleText = UILabel().then {

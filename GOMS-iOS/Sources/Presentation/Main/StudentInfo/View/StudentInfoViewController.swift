@@ -1,4 +1,5 @@
 import UIKit
+import RxFlow
 import Kingfisher
 import SnapKit
 import Then
@@ -10,6 +11,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
+    private var steps = PublishRelay<Step>()
 
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
@@ -25,14 +27,8 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     }
     
     private func bindViewModel() {
-        
-        let mainCellSelectedObservable = studentInfoCollectionView.rx.modelSelected(StudentInfoResponse.self)
-            .asObservable()
-            .map(\.accountIdx)
-        
         let input = StudentInfoViewModel.Input(
-            searchBarButton: searchBarButton.rx.tap.asObservable(),
-            editUserButtonDidTap: mainCellSelectedObservable
+            searchBarButton: searchBarButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }
@@ -162,6 +158,21 @@ extension StudentInfoViewController:
             blur: 8,
             spread: 0
         )
+        cell.editUserAuthorityButtonAction = { [unowned self] in
+            // MARK: 리팩토링 1순위
+//            steps.accept(GOMSStep.editUserModalIsRequired(
+//                accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
+            print(viewModel.studentUserInfo[indexPath.row].accountIdx)
+            let vm = EditUserModalViewModel(accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx)
+            let vc = EditUserModalViewController(vm)
+            if let sheet = vc.sheetPresentationController {
+                sheet.detents = [.medium()]
+                sheet.largestUndimmedDetentIdentifier = .large
+                sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                sheet.preferredCornerRadius = 20
+            }
+            self.present(vc, animated: true)
+        }
         cell.userName.text = "\(userNameList[indexPath.row])"
         if userNumList[indexPath.row] < 10 {
             cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
