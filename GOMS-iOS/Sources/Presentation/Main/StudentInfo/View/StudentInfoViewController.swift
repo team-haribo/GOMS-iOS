@@ -27,14 +27,8 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     }
     
     private func bindViewModel() {
-        
-        let mainCellSelectedObservable = studentInfoCollectionView.rx.modelSelected(StudentInfoResponse.self)
-            .asObservable()
-            .map(\.accountIdx)
-        
         let input = StudentInfoViewModel.Input(
-            searchBarButton: searchBarButton.rx.tap.asObservable(),
-            editUserButtonDidTap: mainCellSelectedObservable
+            searchBarButton: searchBarButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }
@@ -165,9 +159,19 @@ extension StudentInfoViewController:
             spread: 0
         )
         cell.editUserAuthorityButtonAction = { [unowned self] in
-            self.steps.accept(GOMSStep.editUserModalIsRequired(
-                accountIdx: viewModel.studentUserInfo[index].accountIdx))
-            print("asd")
+            // MARK: 리팩토링 1순위
+//            steps.accept(GOMSStep.editUserModalIsRequired(
+//                accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
+            print(viewModel.studentUserInfo[indexPath.row].accountIdx)
+            let vm = EditUserModalViewModel(accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx)
+            let vc = EditUserModalViewController(vm)
+            if let sheet = vc.sheetPresentationController {
+                sheet.detents = [.medium()]
+                sheet.largestUndimmedDetentIdentifier = .large
+                sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+                sheet.preferredCornerRadius = 20
+            }
+            self.present(vc, animated: true)
         }
         cell.userName.text = "\(userNameList[indexPath.row])"
         if userNumList[indexPath.row] < 10 {
