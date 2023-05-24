@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */; };
+		774D26BA2A1DFFEB003666E8 /* IsBlackListRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */; };
 		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
 		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
 		7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */; };
@@ -94,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
+		774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsBlackListRequset.swift; sourceTree = "<group>"; };
 		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				7771E7AD2A0D029F00649B63 /* StudentInfoRequest.swift */,
 				7771E7BB2A14C04E00649B63 /* SearchRequest.swift */,
 				774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */,
+				774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */,
 			);
 			path = StudentCouncil;
 			sourceTree = "<group>";
@@ -995,6 +998,7 @@
 				774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */,
 				7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */,
 				7771E7AC2A0D019400649B63 /* StudentInfoModel.swift in Sources */,
+				774D26BA2A1DFFEB003666E8 /* IsBlackListRequset.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */,
