@@ -1,4 +1,5 @@
 import UIKit
+import RxFlow
 import Kingfisher
 import SnapKit
 import Then
@@ -10,6 +11,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
+    private var steps = PublishRelay<Step>()
 
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
@@ -162,6 +164,11 @@ extension StudentInfoViewController:
             blur: 8,
             spread: 0
         )
+        cell.editUserAuthorityButtonAction = { [unowned self] in
+            self.steps.accept(GOMSStep.editUserModalIsRequired(
+                accountIdx: viewModel.studentUserInfo[index].accountIdx))
+            print("asd")
+        }
         cell.userName.text = "\(userNameList[indexPath.row])"
         if userNumList[indexPath.row] < 10 {
             cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
