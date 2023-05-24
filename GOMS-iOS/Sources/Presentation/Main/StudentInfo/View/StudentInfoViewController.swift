@@ -11,6 +11,8 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
+    private var userRole = [String]()
+    private var userIsBlackList = [Bool]()
     private var steps = PublishRelay<Step>()
 
     override func viewDidLoad() {
@@ -49,6 +51,8 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
                 userGradeList.insert(viewModel.studentUserInfo[index].studentNum.grade, at: index)
                 userClassNumList.insert(viewModel.studentUserInfo[index].studentNum.classNum, at: index)
                 userNumList.insert(viewModel.studentUserInfo[index].studentNum.number, at: index)
+                userRole.insert(viewModel.studentUserInfo[index].authority, at: index)
+                userIsBlackList.insert(viewModel.studentUserInfo[index].isBlackList, at: index)
             }
             studentInfoCollectionView.dataSource = self
             studentInfoCollectionView.delegate = self
@@ -158,6 +162,19 @@ extension StudentInfoViewController:
             blur: 8,
             spread: 0
         )
+        cell.roleText.isHidden = true
+        cell.roleView.isHidden = true
+        if userRole[indexPath.row] == "ROLE_STUDENT_COUNCIL" {
+            cell.roleView.isHidden = false
+            cell.roleText.isHidden = false
+        }
+        else if userIsBlackList[indexPath.row] == true {
+            cell.roleView.isHidden = false
+            cell.roleText.isHidden = false
+            cell.roleText.text = "외출금지"
+            cell.roleText.textColor = .blackListColor
+            cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
+        }
         cell.editUserAuthorityButtonAction = { [unowned self] in
             // MARK: 리팩토링 1순위
 //            steps.accept(GOMSStep.editUserModalIsRequired(
