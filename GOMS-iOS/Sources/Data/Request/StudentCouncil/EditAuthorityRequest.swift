@@ -1,12 +1,10 @@
 import Foundation
 
 struct EditAuthorityRequest: Codable {
-    let Authorization: String
     let accountIdx: UUID
     let authority: String
     
-    init(Authorization: String, accountIdx: UUID, authority: String) {
-        self.Authorization = Authorization
+    init(accountIdx: UUID, authority: String) {
         self.accountIdx = accountIdx
         self.authority = authority
     }

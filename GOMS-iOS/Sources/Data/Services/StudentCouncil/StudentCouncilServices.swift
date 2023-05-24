@@ -5,7 +5,7 @@ enum StudentCouncilServices {
     case makeQRCode(authorization: String)
     case studentInfo(authorization: String)
     case search(authorization: String, grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?)
-    case editAuthority(authorization: String)
+    case editAuthority(authorization: String, param: EditAuthorityRequest)
 }
 
 
@@ -44,8 +44,10 @@ extension StudentCouncilServices: TargetType {
     
     var task: Task {
         switch self {
-        case .makeQRCode, .studentInfo, .editAuthority:
+        case .makeQRCode, .studentInfo:
             return .requestPlain
+        case .editAuthority(_, let param):
+            return .requestJSONEncodable(param)
         case .search(_, let grade, let classNum, let name, let isBlackList, let authority):
             return .requestParameters(
                 parameters: ["grade" : grade ?? "", "classNum" : classNum ?? "", "name" : name ?? "", "isBlackList" : isBlackList ?? "", "authority" : authority ?? ""],
@@ -55,7 +57,7 @@ extension StudentCouncilServices: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .makeQRCode(let authorization), .studentInfo(let authorization), .search(let authorization, _, _, _, _, _), .editAuthority(let authorization):
+        case .makeQRCode(let authorization), .studentInfo(let authorization), .search(let authorization, _, _, _, _, _), .editAuthority(let authorization,_):
             return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
