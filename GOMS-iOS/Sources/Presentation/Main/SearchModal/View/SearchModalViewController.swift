@@ -16,6 +16,9 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
         super.viewDidLoad()
         bindViewModel()
         postData()
+        deselectRoleButtonDidTap()
+        deselectGradeButtonDidTap()
+        deselectClassNumButtonDidTap()
     }
     
     private func bindViewModel() {
@@ -37,6 +40,27 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
                 )
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func deselectRoleButtonDidTap() {
+        deselectRoleButton.rx.tap
+            .bind {
+                self.roleSeg.selectedSegmentIndex = UISegmentedControl.noSegment
+            }.disposed(by: disposeBag)
+    }
+    
+    private func deselectGradeButtonDidTap() {
+        deselectGradeButton.rx.tap
+            .bind {
+                self.gradeSeg.selectedSegmentIndex = UISegmentedControl.noSegment
+            }.disposed(by: disposeBag)
+    }
+    
+    private func deselectClassNumButtonDidTap() {
+        deselectClassNumButton.rx.tap
+            .bind {
+                self.classNumSeg.selectedSegmentIndex = UISegmentedControl.noSegment
+            }.disposed(by: disposeBag)
     }
     
     private var searchBar = UITextField().then {
@@ -99,6 +123,17 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             for: UIControl.Event.valueChanged
         )
     }
+    private var deselectRoleButton = UIButton().then {
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
+        $0.setTitle("선택해제", for: .normal)
+        $0.setTitleColor(UIColor.subColor, for: .normal)
+        $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Regular)
+    }
     
     private var gradeSeg = UISegmentedControl(items: ["1","2","3"]).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -126,6 +161,17 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             for: UIControl.Event.valueChanged
         )
     }
+    private var deselectGradeButton = UIButton().then {
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
+        $0.setTitle("선택해제", for: .normal)
+        $0.setTitleColor(UIColor.subColor, for: .normal)
+        $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Regular)
+    }
     
     private var classNumSeg = UISegmentedControl(items: ["1","2","3","4"]).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -152,6 +198,18 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             action: #selector(classNumSegconChanged(segcon:)),
             for: UIControl.Event.valueChanged
         )
+    }
+    
+    private var deselectClassNumButton = UIButton().then {
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
+        $0.setTitle("선택해제", for: .normal)
+        $0.setTitleColor(UIColor.subColor, for: .normal)
+        $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Regular)
     }
     
     private var searchButton = UIButton().then {
@@ -211,7 +269,7 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     }
     
     override func addView() {
-        [searchBar,roleText,gradeText,classNumText, roleSeg, gradeSeg, classNumSeg, searchButton].forEach {
+        [searchBar,roleText,gradeText,classNumText, roleSeg, gradeSeg, classNumSeg, searchButton, deselectRoleButton, deselectGradeButton, deselectClassNumButton].forEach {
             view.addSubview($0)
         }
     }
@@ -263,6 +321,21 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
             $0.top.equalTo(classNumSeg.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(52)
+        }
+        
+        deselectRoleButton.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom).offset(15)
+            $0.trailing.equalToSuperview().inset(26)
+        }
+        
+        deselectGradeButton.snp.makeConstraints {
+            $0.top.equalTo(roleSeg.snp.bottom).offset(10)
+            $0.trailing.equalToSuperview().inset(26)
+        }
+        
+        deselectClassNumButton.snp.makeConstraints {
+            $0.top.equalTo(gradeSeg.snp.bottom).offset(10)
+            $0.trailing.equalToSuperview().inset(26)
         }
     }
 }
