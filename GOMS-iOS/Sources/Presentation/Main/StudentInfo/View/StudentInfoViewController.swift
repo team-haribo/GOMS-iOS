@@ -176,7 +176,6 @@ extension StudentInfoViewController:
             cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
         }
         cell.editUserAuthorityButtonAction = { [unowned self] in
-            // MARK: 리팩토링 1순위
             viewModel.steps.accept(GOMSStep.editUserModalIsRequired(
                 accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
             print(viewModel.studentUserInfo[indexPath.row].accountIdx)
