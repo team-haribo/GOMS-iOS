@@ -68,6 +68,9 @@ class HomeFlow: Flow {
             
         case .searchModalDismiss:
             return dismissSearchModal()
+            
+        case let .editModalDismiss(accountIdx):
+            return dismissEditModal(accountIdx: accountIdx)
         
         default:
             return .none
@@ -129,7 +132,15 @@ class HomeFlow: Flow {
         let vm = SearchModalViewModal()
         let vc = SearchModalViewController(vm)
         self.rootViewController.dismiss(animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+        vc.dismiss(animated: true)
+        return .none
+    }
+    
+    private func dismissEditModal(accountIdx: UUID) -> FlowContributors {
+        let vm = EditUserModalViewModel(accountIdx: accountIdx)
+        let vc = EditUserModalViewController(vm)
+        self.rootViewController.dismiss(animated: true)
+        return .none
     }
     
     private func coordinateToEditUserModal(accountIdx: UUID) -> FlowContributors{

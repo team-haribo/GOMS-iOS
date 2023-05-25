@@ -12,6 +12,14 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         editUserData()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = EditUserModalViewModel.Input(
+            editButtonDidTap: editButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private func editUserData() {
