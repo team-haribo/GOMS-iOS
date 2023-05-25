@@ -13,7 +13,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private var userNumList = [Int]()
     private var userRole = [String]()
     private var userIsBlackList = [Bool]()
-    private var steps = PublishRelay<Step>()
+
 
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
@@ -177,18 +177,9 @@ extension StudentInfoViewController:
         }
         cell.editUserAuthorityButtonAction = { [unowned self] in
             // MARK: 리팩토링 1순위
-//            steps.accept(GOMSStep.editUserModalIsRequired(
-//                accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
+            viewModel.steps.accept(GOMSStep.editUserModalIsRequired(
+                accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
             print(viewModel.studentUserInfo[indexPath.row].accountIdx)
-            let vm = EditUserModalViewModel(accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx)
-            let vc = EditUserModalViewController(vm)
-            if let sheet = vc.sheetPresentationController {
-                sheet.detents = [.medium()]
-                sheet.largestUndimmedDetentIdentifier = .large
-                sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-                sheet.preferredCornerRadius = 20
-            }
-            self.present(vc, animated: true)
         }
         cell.userName.text = "\(userNameList[indexPath.row])"
         if userNumList[indexPath.row] < 10 {

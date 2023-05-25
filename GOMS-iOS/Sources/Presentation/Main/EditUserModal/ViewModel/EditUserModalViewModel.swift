@@ -27,7 +27,7 @@ class EditUserModalViewModel: BaseViewModel, Stepper{
     }
     
     private func pushStudentInfo() {
-        self.steps.accept(GOMSStep.editModalDismiss(accountIdx: accountIdx))
+        self.steps.accept(GOMSStep.editModalDismiss)
     }
 }
 
