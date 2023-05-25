@@ -13,7 +13,7 @@ class EditUserModalViewModel: BaseViewModel, Stepper{
     }
         
     struct Input {
-        
+        let editButtonDidTap: Observable<Void>
     }
     
     struct Output {
@@ -21,7 +21,13 @@ class EditUserModalViewModel: BaseViewModel, Stepper{
     }
     
     func transVC(input: Input) {
-        
+        input.editButtonDidTap.subscribe(
+            onNext: pushStudentInfo
+        ) .disposed(by: disposeBag)
+    }
+    
+    private func pushStudentInfo() {
+        self.steps.accept(GOMSStep.editModalDismiss(accountIdx: accountIdx))
     }
 }
 
@@ -57,6 +63,7 @@ extension EditUserModalViewModel {
             switch response {
             case let .success(result):
                 let statusCode = result.statusCode
+                print(self.accessToken)
                 switch statusCode{
                 case 200..<300:
                     print("success")

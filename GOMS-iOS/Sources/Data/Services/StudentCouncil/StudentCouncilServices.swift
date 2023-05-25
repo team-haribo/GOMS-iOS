@@ -25,8 +25,8 @@ extension StudentCouncilServices: TargetType {
             return "/student-council/search"
         case .editAuthority:
             return "/student-council/authority"
-        case .isBlackList:
-            return "/student-council/black-list"
+        case .isBlackList(_,let accountIdx):
+            return "/student-council/black-list/\(accountIdx)"
         }
     }
     
@@ -47,7 +47,7 @@ extension StudentCouncilServices: TargetType {
     
     var task: Task {
         switch self {
-        case .makeQRCode, .studentInfo:
+        case .makeQRCode, .studentInfo, .isBlackList:
             return .requestPlain
         case .editAuthority(_, let param):
             return .requestJSONEncodable(param)
@@ -55,8 +55,6 @@ extension StudentCouncilServices: TargetType {
             return .requestParameters(
                 parameters: ["grade" : grade ?? "", "classNum" : classNum ?? "", "name" : name ?? "", "isBlackList" : isBlackList ?? "", "authority" : authority ?? ""],
                 encoding: URLEncoding.queryString)
-        case .isBlackList(_, let accountIdx):
-            return .requestParameters(parameters: ["accountIdx" : accountIdx], encoding: URLEncoding.queryString)
         }
     }
     
