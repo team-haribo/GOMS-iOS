@@ -71,14 +71,14 @@ class OutingFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
-    func presentToAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) -> FlowContributors {
+    private func presentToAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) -> FlowContributors {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         actions.forEach { alert.addAction($0) }
         self.rootViewController.topViewController?.present(alert, animated: true)
         return .none
     }
     
-    func presentToFailureAlert(title: String?, message: String?, action: [UIAlertAction]) -> FlowContributors {
+    private func presentToFailureAlert(title: String?, message: String?, action: [UIAlertAction]) -> FlowContributors {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if !action.isEmpty {
             action.forEach(alert.addAction(_:))
