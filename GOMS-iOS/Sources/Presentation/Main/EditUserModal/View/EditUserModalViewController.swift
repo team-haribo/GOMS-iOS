@@ -37,7 +37,7 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     
     private let roleText = UILabel().then {
         $0.text = "역할"
-        $0.font = UIFont.GOMSFont(size: 16, family: .Regular)
+        $0.font = UIFont.GOMSFont(size: 20, family: .Regular)
         $0.textColor = .black
     }
     
@@ -66,6 +66,18 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
             action: #selector(roleSegconChanged(segcon:)),
             for: UIControl.Event.valueChanged
         )
+    }
+    
+    private var deselectButton = UIButton().then {
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 1,
+            blue: 1,
+            alpha: 0
+        )
+        $0.setTitle("선택해제", for: .normal)
+        $0.setTitleColor(UIColor.subColor, for: .normal)
+        $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Regular)
     }
     
     @objc func roleSegconChanged(segcon: UISegmentedControl) {
@@ -99,7 +111,7 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     }
     
     override func addView() {
-        [roleText,roleSeg,editButton].forEach {
+        [roleText,roleSeg,editButton,deselectButton].forEach {
             view.addSubview($0)
         }
     }
@@ -119,6 +131,10 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
             $0.bottom.equalToSuperview().inset(50)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(52)
+        }
+        deselectButton.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(54)
+            $0.trailing.equalToSuperview().inset(26)
         }
     }
 }
