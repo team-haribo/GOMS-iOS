@@ -6,8 +6,25 @@ import RxCocoa
 
 class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     
+    private var editedUserAuthority: String? = ""
+    private var editedUserIsBlackList: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        editUserData()
+    }
+    
+    private func editUserData() {
+        editButton.rx.tap
+            .bind { [self] in
+                if editedUserIsBlackList == false {
+                    viewModel.editAuthority(authority: self.editedUserAuthority ?? "")
+                }
+                else if editedUserIsBlackList == true {
+                    viewModel.isBlackList()
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     private let roleText = UILabel().then {
@@ -36,16 +53,30 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
             blur: 8,
             spread: 0
         )
-//        $0.addTarget(
-//            self,
-//            action: #selector(roleSegconChanged(segcon:)),
-//            for: UIControl.Event.valueChanged
-//        )
+        $0.addTarget(
+            self,
+            action: #selector(roleSegconChanged(segcon:)),
+            for: UIControl.Event.valueChanged
+        )
     }
     
-    private var searchButton = UIButton().then {
+    @objc func roleSegconChanged(segcon: UISegmentedControl) {
+        switch segcon.selectedSegmentIndex {
+        case 0:
+            editedUserAuthority = "ROLE_STUDENT"
+        case 1:
+            editedUserAuthority = "ROLE_STUDENT_COUNCIL"
+        case 2:
+            editedUserIsBlackList = true
+        default: break
+            editedUserAuthority = ""
+            editedUserIsBlackList = false
+        }
+    }
+    
+    private var editButton = UIButton().then {
         $0.backgroundColor = .adminColor
-        $0.setTitle("검색하기", for: .normal)
+        $0.setTitle("수정하기", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
         $0.layer.applySketchShadow(
@@ -60,7 +91,7 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     }
     
     override func addView() {
-        [roleText,roleSeg,searchButton].forEach {
+        [roleText,roleSeg,editButton].forEach {
             view.addSubview($0)
         }
     }
@@ -76,7 +107,7 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
             $0.trailing.equalTo(view.snp.trailing).inset(26)
             $0.height.equalTo(100)
         }
-        searchButton.snp.makeConstraints {
+        editButton.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(50)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(52)

@@ -57,6 +57,7 @@ extension EditUserModalViewModel {
             switch response {
             case let .success(result):
                 let statusCode = result.statusCode
+                print(self.accessToken)
                 switch statusCode{
                 case 200..<300:
                     print("success")

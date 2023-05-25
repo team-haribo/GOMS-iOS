@@ -16,13 +16,13 @@ class GOMSRefreshToken {
         authProvider.request(.refreshToken(refreshToken: refreshToken)) { response in
             switch response {
             case .success(let result):
+                self.statusCode = result.statusCode
                 do {
                     self.reissuanceData = try result.map(SignInResponse.self)
                     UserDefaults.standard.set(self.statusCode, forKey: "statusCode")
                 }catch(let err) {
                     print(String(describing: err))
                 }
-                self.statusCode = result.statusCode
                 switch self.statusCode {
                 case 200..<300:
                     self.updateKeychainToken()
