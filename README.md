@@ -70,7 +70,6 @@ GOMS-iOS
  ┃ ┃ ┃ ┃ ┃ ┗ 📂SignIn
  ┣ 📂presentaion
  ┃ ┣ 📂TabBar
- ┃ ┃ ┗ 📂module
  ┃ ┣ 📂Base
  ┃ ┣ 📂Main
  ┃ ┃ ┣ 📂EditUserModal
