@@ -67,6 +67,18 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    private let noResultImage = UIImageView().then {
+        $0.image = UIImage(named: "noResultImage")
+        $0.isHidden = true
+    }
+    
+    private let noResultText = UILabel().then {
+        $0.text = "검색 결과를 찾을 수 없어요!"
+        $0.textColor = .subColor
+        $0.font = UIFont.GOMSFont(size: 16,family: .Medium)
+        $0.isHidden = true
+    }
+    
     private var searchBarButton = UIButton().then {
         $0.backgroundColor = .white
         $0.layer.applySketchShadow(
@@ -111,7 +123,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     }
     
     override func addView() {
-        [searchBarButton, studentInfoCollectionView, searchBarText, searchIcon].forEach {
+        [searchBarButton, studentInfoCollectionView, searchBarText, searchIcon, noResultImage, noResultText].forEach {
             view.addSubview($0)
         }
     }
@@ -134,6 +146,13 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         searchIcon.snp.makeConstraints {
             $0.centerY.equalTo(searchBarButton.snp.centerY).offset(0)
             $0.trailing.equalTo(searchBarButton.snp.trailing).inset(20)
+        }
+        noResultImage.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        noResultText.snp.makeConstraints {
+            $0.top.equalTo(noResultImage.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
     }
 
