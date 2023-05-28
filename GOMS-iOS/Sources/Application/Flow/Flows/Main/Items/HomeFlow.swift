@@ -116,7 +116,7 @@ class HomeFlow: Flow {
         return .none
     }
     private func coordinateToSearchModal() -> FlowContributors{
-        let vm = SearchModalViewModal()
+        let vm = SearchModalViewModal.shared
         let vc = SearchModalViewController(vm)
         if let sheet = vc.sheetPresentationController {
             sheet.detents = [.medium()]

@@ -14,11 +14,16 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+//        bindViewModel()
         postData()
         deselectRoleButtonDidTap()
         deselectGradeButtonDidTap()
         deselectClassNumButtonDidTap()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissSearchView"), object: nil, userInfo: nil)
     }
     
     private func bindViewModel() {
@@ -37,7 +42,9 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
                     name: self.searchBar.text ?? "",
                     isBlackList: self.searchBlackList,
                     authority: self.searchAuthority ?? ""
-                )
+                ) {
+                    self.viewModel.steps.accept(GOMSStep.searchModalDismiss)
+                }
             }
             .disposed(by: disposeBag)
     }

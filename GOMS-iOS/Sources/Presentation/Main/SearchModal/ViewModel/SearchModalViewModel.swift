@@ -5,7 +5,11 @@ import RxSwift
 import Moya
 
 class SearchModalViewModal: BaseViewModel, Stepper{
+    static let shared = SearchModalViewModal()
+    var searchResult: [SearchResponse] = []
     
+    private override init() { }
+
     struct Input {
         let searchButton: Observable<Void>
     }
@@ -26,7 +30,7 @@ class SearchModalViewModal: BaseViewModel, Stepper{
     
 }
 extension SearchModalViewModal {
-    func searchStudent(grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?) {
+    func searchStudent(grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?,completion: @escaping () -> Void) {
         studentCouncilProvider.request(.search(authorization: accessToken, grade: grade, classNum: classNum, name: name, isBlackList: isBlackList, authority: authority)){ response in
             switch response {
             case let .success(result):
@@ -49,6 +53,7 @@ extension SearchModalViewModal {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }
