@@ -27,7 +27,6 @@ class BaseViewModel{
     var outingCount: OutingCountResponse?
     var outingList: [OutingListResponse] = []
     var studentUserInfo: [StudentInfoResponse] = []
-    var searchResult: [SearchResponse] = []
     var authData: SignInResponse!
     var uuidData: MakeQRCodeResponse?
 }

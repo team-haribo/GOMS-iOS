@@ -13,6 +13,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private var userNumList = [Int]()
     private var userRole = [String]()
     private var userIsBlackList = [Bool]()
+    private let searchModalViewModal = SearchModalViewModal.shared
 
 
     override func viewDidLoad() {
@@ -23,7 +24,30 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
             await getData()
         }
         studentInfoCollectionView.collectionViewLayout = layout
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.didDismissSearchNotification(_:)),
+            name: NSNotification.Name("DismissSearchView"),
+            object: nil
+        )
     }
+    
+    @objc func didDismissSearchNotification(_ notification: Notification) {
+        DispatchQueue.main.async { [self] in
+            userNameList = [String]()
+            userGradeList = [Int]()
+            userClassNumList = [Int]()
+            userNumList = [Int]()
+            userRole = [String]()
+            userIsBlackList = [Bool]()
+            bindSearchData()
+            print("---------------------------")
+            print(searchModalViewModal.searchResult)
+            print(userRole)
+            print("---------------------------")
+          }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         bindViewModel()
     }
@@ -38,6 +62,33 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private func getData() async {
         viewModel.studentInfo { [weak self] in
             self?.bindStudentInfo()
+        }
+    }
+    
+    private func bindSearchData() {
+        if searchModalViewModal.searchResult.isEmpty {
+            self.studentInfoCollectionView.isHidden = true
+            self.noResultText.isHidden = false
+            self.noResultImage.isHidden = false
+        }
+        else {
+            for index in 0...searchModalViewModal.searchResult.endIndex - 1 {
+                self.studentInfoCollectionView.isHidden = false
+                self.noResultText.isHidden = false
+                self.noResultImage.isHidden = false
+                userNameList.insert(searchModalViewModal.searchResult[index].name, at: index)
+                userGradeList.insert(searchModalViewModal.searchResult[index].studentNum.grade, at: index)
+                userClassNumList.insert(searchModalViewModal.searchResult[index].studentNum.classNum, at: index)
+                userNumList.insert(searchModalViewModal.searchResult[index].studentNum.number, at: index)
+                userRole.insert(searchModalViewModal.searchResult[index].authority, at: index)
+                userIsBlackList.insert(searchModalViewModal.searchResult[index].isBlackList, at: index)
+            }
+            studentInfoCollectionView.dataSource = self
+            studentInfoCollectionView.delegate = self
+            studentInfoCollectionView.register(
+                StudentInfoCell.self,
+                forCellWithReuseIdentifier: StudentInfoCell.identifier
+            )
         }
     }
     
@@ -65,6 +116,18 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    private let noResultImage = UIImageView().then {
+        $0.image = UIImage(named: "noResultImage")
+        $0.isHidden = true
+    }
+    
+    private let noResultText = UILabel().then {
+        $0.text = "검색 결과를 찾을 수 없어요!"
+        $0.textColor = .subColor
+        $0.font = UIFont.GOMSFont(size: 16,family: .Medium)
+        $0.isHidden = true
     }
     
     private var searchBarButton = UIButton().then {
@@ -111,7 +174,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     }
     
     override func addView() {
-        [searchBarButton, studentInfoCollectionView, searchBarText, searchIcon].forEach {
+        [searchBarButton, studentInfoCollectionView, searchBarText, searchIcon, noResultImage, noResultText].forEach {
             view.addSubview($0)
         }
     }
@@ -134,6 +197,13 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         searchIcon.snp.makeConstraints {
             $0.centerY.equalTo(searchBarButton.snp.centerY).offset(0)
             $0.trailing.equalTo(searchBarButton.snp.trailing).inset(20)
+        }
+        noResultImage.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+        noResultText.snp.makeConstraints {
+            $0.top.equalTo(noResultImage.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
         }
     }
 
