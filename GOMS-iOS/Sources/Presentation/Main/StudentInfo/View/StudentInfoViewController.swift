@@ -74,8 +74,8 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         else {
             for index in 0...searchModalViewModal.searchResult.endIndex - 1 {
                 self.studentInfoCollectionView.isHidden = false
-                self.noResultText.isHidden = false
-                self.noResultImage.isHidden = false
+                self.noResultText.isHidden = true
+                self.noResultImage.isHidden = true
                 userNameList.insert(searchModalViewModal.searchResult[index].name, at: index)
                 userGradeList.insert(searchModalViewModal.searchResult[index].studentNum.grade, at: index)
                 userClassNumList.insert(searchModalViewModal.searchResult[index].studentNum.classNum, at: index)

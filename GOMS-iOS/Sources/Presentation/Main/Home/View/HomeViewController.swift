@@ -22,6 +22,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
+    private var userProfile = [String]()
     
     override func viewDidLoad() {
         checkRole()
@@ -51,7 +52,6 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             manageStudnetText.isHidden = false
             manageStudentButton.isHidden = false
             manageStudnetSubText.isHidden = false
-            
         }
     }
     
@@ -75,6 +75,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
                 userGradeList.insert(viewModel.lateRank[index].studentNum.grade, at: index)
                 userClassNumList.insert(viewModel.lateRank[index].studentNum.classNum, at: index)
                 userNumList.insert(viewModel.lateRank[index].studentNum.number, at: index)
+                userProfile.insert(viewModel.lateRank[index].profileUrl ?? "", at: index)
             }
             tardyCollectionView.dataSource = self
             tardyCollectionView.delegate = self
@@ -382,15 +383,13 @@ extension HomeViewController :
         else {
             cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
         }
-        for index in 0 ... userNameList.count - 1 {
-            let url = URL(string: viewModel.lateRank[index].profileUrl ?? "")
-            let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
-            cell.userProfileImage.kf.setImage(
-                with: url,
-                placeholder:UIImage(named: "dummyImage.svg"),
-                options: [.processor(imageCornerRadius)]
-            )
-        }
+        let url = URL(string: userProfile[indexPath.row])
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
+        cell.userProfileImage.kf.setImage(
+            with: url,
+            placeholder:UIImage(named: "dummyImage.svg"),
+            options: [.processor(imageCornerRadius)]
+        )
         return cell
     }
     
