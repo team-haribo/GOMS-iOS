@@ -12,8 +12,13 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         editUserData()
-        bindViewModel()
+//        bindViewModel()
         deselectButtonDidTap()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: NSNotification.Name("DismissEditView"), object: nil, userInfo: nil)
     }
     
     private func bindViewModel() {
@@ -27,10 +32,14 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
         editButton.rx.tap
             .bind { [self] in
                 if editedUserIsBlackList == false {
-                    viewModel.editAuthority(authority: self.editedUserAuthority ?? "")
+                    viewModel.editAuthority(authority: self.editedUserAuthority ?? "") {
+                        self.viewModel.steps.accept(GOMSStep.editModalDismiss)
+                    }
                 }
                 else if editedUserIsBlackList == true {
-                    viewModel.isBlackList()
+                    viewModel.isBlackList {
+                        self.viewModel.steps.accept(GOMSStep.editModalDismiss)
+                    }
                 }
             }
             .disposed(by: disposeBag)

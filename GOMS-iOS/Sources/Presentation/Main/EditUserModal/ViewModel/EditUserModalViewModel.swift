@@ -32,7 +32,7 @@ class EditUserModalViewModel: BaseViewModel, Stepper{
 }
 
 extension EditUserModalViewModel {
-    func editAuthority(authority: String) {
+    func editAuthority(authority: String, completion: @escaping () -> Void) {
         let param = EditAuthorityRequest(accountIdx: accountIdx, authority: authority)
         studentCouncilProvider.request(.editAuthority(authorization: accessToken, param: param)){ response in
             switch response {
@@ -52,13 +52,14 @@ extension EditUserModalViewModel {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }
         }
     }
     
-    func isBlackList() {
+    func isBlackList(completion: @escaping () -> Void) {
         studentCouncilProvider.request(.isBlackList(authorization: accessToken, accountIdx: accountIdx)){ response in
             switch response {
             case let .success(result):
@@ -78,6 +79,7 @@ extension EditUserModalViewModel {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }
