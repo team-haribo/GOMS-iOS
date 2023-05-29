@@ -14,21 +14,20 @@ import RxCocoa
 struct AppStepper: Stepper {
     let steps = PublishRelay<Step>()
     private let disposeBag = DisposeBag()
-    let gomsRefreshToken = GOMSRefreshToken()
-    private let statusCode = UserDefaults.standard.integer(forKey: "statusCode")
+    private let gomsRefreshToken = GOMSRefreshToken.shared
 
     init() {}
     
-    var initialStep: Step {
-        self.gomsRefreshToken.tokenReissuance()
-        switch statusCode {
-        case 200..<300:
-            print(statusCode)
-            UserDefaults.standard.removeObject(forKey: "statusCode")
-            return GOMSStep.tabBarIsRequired
-        default:
-            print(statusCode)
-            return GOMSStep.introIsRequired
+    func readyToEmitSteps() {
+        self.gomsRefreshToken.autoLogin {
+            switch gomsRefreshToken.statusCode {
+            case 200..<300:
+                print(gomsRefreshToken.statusCode)
+                steps.accept(GOMSStep.tabBarIsRequired)
+            default:
+                print(gomsRefreshToken.statusCode)
+                steps.accept(GOMSStep.introIsRequired)
+            }
         }
     }
 }

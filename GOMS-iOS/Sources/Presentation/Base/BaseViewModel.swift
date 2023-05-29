@@ -15,7 +15,7 @@ class BaseViewModel{
     var disposeBag = DisposeBag()
     var steps = PublishRelay<Step>()
     let keychain = Keychain()
-    let gomsRefreshToken = GOMSRefreshToken()
+    let gomsRefreshToken = GOMSRefreshToken.shared
     lazy var accessToken = "Bearer " + (keychain.read(key: Const.KeychainKey.accessToken) ?? "")
     let authProvider = MoyaProvider<AuthServices>()
     let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
