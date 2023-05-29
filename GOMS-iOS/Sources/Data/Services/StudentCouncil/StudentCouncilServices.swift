@@ -7,6 +7,7 @@ enum StudentCouncilServices {
     case search(authorization: String, grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?)
     case editAuthority(authorization: String, param: EditAuthorityRequest)
     case isBlackList(authorization: String, accountIdx: UUID)
+    case blackListDelete(authorization: String, accountIdx: UUID)
 }
 
 
@@ -25,7 +26,7 @@ extension StudentCouncilServices: TargetType {
             return "/student-council/search"
         case .editAuthority:
             return "/student-council/authority"
-        case .isBlackList(_,let accountIdx):
+        case .isBlackList(_,let accountIdx),.blackListDelete(_,let accountIdx):
             return "/student-council/black-list/\(accountIdx)"
         }
     }
@@ -38,6 +39,8 @@ extension StudentCouncilServices: TargetType {
             return .get
         case .editAuthority:
             return .patch
+        case .blackListDelete:
+            return .delete
         }
     }
     
@@ -47,7 +50,7 @@ extension StudentCouncilServices: TargetType {
     
     var task: Task {
         switch self {
-        case .makeQRCode, .studentInfo, .isBlackList:
+        case .makeQRCode, .studentInfo, .isBlackList, .blackListDelete:
             return .requestPlain
         case .editAuthority(_, let param):
             return .requestJSONEncodable(param)
@@ -60,7 +63,7 @@ extension StudentCouncilServices: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .makeQRCode(let authorization), .studentInfo(let authorization), .search(let authorization, _, _, _, _, _), .editAuthority(let authorization,_):
+        case .makeQRCode(let authorization), .studentInfo(let authorization), .search(let authorization, _, _, _, _, _), .editAuthority(let authorization,_), .blackListDelete(let authorization,_):
             return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
