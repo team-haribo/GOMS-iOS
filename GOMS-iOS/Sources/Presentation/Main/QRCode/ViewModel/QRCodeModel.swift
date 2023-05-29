@@ -49,7 +49,7 @@ extension QRCodeViewModel {
                         actions: [
                             .init(title: "확인", style: .default) {_ in
                                 self.steps.accept(GOMSStep.tabBarIsRequired)
-                            },
+                            }
                         ]
                     ))
                 case 400:

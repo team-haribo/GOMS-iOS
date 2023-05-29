@@ -23,6 +23,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     private let userLateCount = UserDefaults.standard.integer(forKey: "userLateCount")
     
     private let cellName = ["이름","학년","반","번호","지각횟수"]
+    
     private lazy var cellDetail = [
         self.userName ?? "",
         self.userGrade,
@@ -71,7 +72,12 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     }
     
     private lazy var userNumText = UILabel().then {
-        $0.text = "\(self.userGrade)" + "\(self.userClassNum)" + "\(self.userNum)"
+        if self.userNum < 10 {
+            $0.text = "\(self.userGrade)" + "\(self.userClassNum)" + "0\(self.userNum)"
+        }
+        else {
+            $0.text = "\(self.userGrade)" + "\(self.userClassNum)" + "\(self.userNum)"
+        }
         $0.font = UIFont.GOMSFont(size: 14,family: .Regular)
         $0.textColor = .subColor
     }
