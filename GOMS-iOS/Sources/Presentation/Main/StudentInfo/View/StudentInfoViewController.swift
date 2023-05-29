@@ -13,6 +13,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     private var userNumList = [Int]()
     private var userRole = [String]()
     private var userIsBlackList = [Bool]()
+    private var userProfile = [String]()
     private let searchModalViewModal = SearchModalViewModal.shared
 
 
@@ -82,6 +83,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
                 userNumList.insert(searchModalViewModal.searchResult[index].studentNum.number, at: index)
                 userRole.insert(searchModalViewModal.searchResult[index].authority, at: index)
                 userIsBlackList.insert(searchModalViewModal.searchResult[index].isBlackList, at: index)
+                userProfile.insert(searchModalViewModal.searchResult[index].profileUrl ?? "", at: index)
             }
             studentInfoCollectionView.dataSource = self
             studentInfoCollectionView.delegate = self
@@ -104,6 +106,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
                 userNumList.insert(viewModel.studentUserInfo[index].studentNum.number, at: index)
                 userRole.insert(viewModel.studentUserInfo[index].authority, at: index)
                 userIsBlackList.insert(viewModel.studentUserInfo[index].isBlackList, at: index)
+                userProfile.insert(viewModel.studentUserInfo[index].profileUrl ?? "", at: index)
             }
             studentInfoCollectionView.dataSource = self
             studentInfoCollectionView.delegate = self
@@ -257,15 +260,13 @@ extension StudentInfoViewController:
         else {
             cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
         }
-        for index in 0 ... userNameList.count - 1 {
-            let url = URL(string: viewModel.studentUserInfo[index].profileUrl ?? "")
-            let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
-            cell.userProfile.kf.setImage(
-                with: url,
-                placeholder:UIImage(named: "dummyImage.svg"),
-                options: [.processor(imageCornerRadius)]
-            )
-        }
+        let url = URL(string: userProfile[indexPath.row])
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
+        cell.userProfile.kf.setImage(
+            with: url,
+            placeholder:UIImage(named: "dummyImage.svg"),
+            options: [.processor(imageCornerRadius)]
+        )
         return cell
     }
     

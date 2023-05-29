@@ -7,7 +7,11 @@ import RxCocoa
 class StudentInfoCell: UICollectionViewCell {
     static let identifier = "studentInfoCell"
     
-    let userProfile = UIImageView()
+    let userProfile = UIImageView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.cornerRadius = 24
+        $0.layer.masksToBounds = true
+    }
     
     var editUserAuthorityButtonAction : (() -> ())?
     
