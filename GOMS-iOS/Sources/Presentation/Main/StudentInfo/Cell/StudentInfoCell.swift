@@ -15,6 +15,8 @@ class StudentInfoCell: UICollectionViewCell {
     
     var editUserAuthorityButtonAction : (() -> ())?
     
+    var deleteBlackListButtonAction : (() -> ())?
+    
     let userName = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 16, family:.Regular)
         $0.textColor = .black
@@ -33,7 +35,7 @@ class StudentInfoCell: UICollectionViewCell {
     var deleteBlackListButton = UIButton().then {
         $0.isHidden = true
         $0.backgroundColor = .white
-        $0.setImage(UIImage(named:" deleteBlackList.svg"), for: .normal)
+        $0.setImage(UIImage(named:"deleteBlackList.svg"), for: .normal)
     }
     
     var roleView = UIView().then {
@@ -60,10 +62,19 @@ class StudentInfoCell: UICollectionViewCell {
             action: #selector(editUserAuthorityButtonDidTap),
             for: .touchUpInside
         )
+        self.deleteBlackListButton.addTarget(
+            self,
+            action: #selector(edeleteBlackListButtonDidTap),
+            for: .touchUpInside
+        )
     }
     
     @objc func editUserAuthorityButtonDidTap() {
         self.editUserAuthorityButtonAction?()
+    }
+    
+    @objc func edeleteBlackListButtonDidTap() {
+        self.deleteBlackListButtonAction?()
     }
         
     required init?(coder: NSCoder) {
@@ -71,7 +82,7 @@ class StudentInfoCell: UICollectionViewCell {
     }
     
     func addView() {
-        [userProfile, userName, userNum, editUserAuthorityButton, roleView, roleText].forEach {
+        [userProfile, userName, userNum, editUserAuthorityButton, roleView, roleText, deleteBlackListButton].forEach {
             contentView.addSubview($0)
         }
     }
@@ -101,6 +112,10 @@ class StudentInfoCell: UICollectionViewCell {
         }
         roleText.snp.makeConstraints {
             $0.center.equalTo(roleView.snp.center).offset(0)
+        }
+        deleteBlackListButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(17)
         }
     }
 }

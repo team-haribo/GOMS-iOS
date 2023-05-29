@@ -54,7 +54,7 @@ extension StudentInfoViewModel {
         }
     }
     
-    func blackListDelete(accountIdx: UUID) {
+    func blackListDelete(accountIdx: UUID,completion: @escaping () -> Void) {
         studentCouncilProvider.request(.blackListDelete(authorization: accessToken, accountIdx: accountIdx)){ response in
             switch response {
             case let .success(result):
@@ -74,6 +74,7 @@ extension StudentInfoViewModel {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }

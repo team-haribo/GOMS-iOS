@@ -255,38 +255,56 @@ extension StudentInfoViewController:
         )
         cell.roleText.isHidden = true
         cell.roleView.isHidden = true
-        if userRole[indexPath.row] == "ROLE_STUDENT_COUNCIL" {
+        cell.deleteBlackListButton.isHidden = true
+        cell.editUserAuthorityButton.isHidden = false
+        
+        if userRole[indexPath.row] == "ROLE_STUDENT_COUNCIL" && userIsBlackList[indexPath.row] != true{
             cell.roleView.isHidden = false
             cell.roleText.isHidden = false
         }
+
         else if userIsBlackList[indexPath.row] == true {
             cell.roleView.isHidden = false
             cell.roleText.isHidden = false
-            cell.editUserAuthorityButton.setImage(UIImage(named:"deleteBlackList.svg"), for: .normal)
+            cell.deleteBlackListButton.isHidden = false
+            cell.editUserAuthorityButton.isHidden = true
             cell.roleText.text = "외출금지"
             cell.roleText.textColor = .blackListColor
             cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
         }
         cell.editUserAuthorityButtonAction = { [unowned self] in
-            if userIsBlackList[indexPath.row] == true {
-                viewModel.steps.accept(GOMSStep.alert(
-                    title: "블랙리스트 취소",
-                    message: "정말 블랙리스트를 취소할까요?",
-                    style: .alert,
-                    actions: [
-                        .init(title: "확인", style: .default) {_ in
-                            self.viewModel.blackListDelete(
-                                accountIdx: self.viewModel.studentUserInfo[indexPath.row].accountIdx
-                            )
-                        },
-                        .init(title: "취소", style: .cancel)
-                    ]
-                ))
-            }
-            else {
-                viewModel.steps.accept(GOMSStep.editUserModalIsRequired(
-                    accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
-            }
+            viewModel.steps.accept(
+                GOMSStep.editUserModalIsRequired(
+                    accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx
+                )
+            )
+        }
+        cell.deleteBlackListButtonAction = { [unowned self] in
+            viewModel.steps.accept(GOMSStep.alert(
+                title: "블랙리스트 취소",
+                message: "정말 블랙리스트를 취소할까요?",
+                style: .alert,
+                actions: [
+                    .init(title: "확인", style: .default) { _ in
+                        self.viewModel.blackListDelete(
+                            accountIdx: self.viewModel.studentUserInfo[indexPath.row].accountIdx, completion: {
+                                [unowned self] in
+                                userNameList = [String]()
+                                userGradeList = [Int]()
+                                userClassNumList = [Int]()
+                                userNumList = [Int]()
+                                userRole = [String]()
+                                userIsBlackList = [Bool]()
+                                viewModel.studentInfo { [unowned self] in
+                                    studentInfoCollectionView.reloadData()
+                                    bindStudentInfo()
+                                }
+                            }
+                        )
+                    },
+                    .init(title: "취소", style: .cancel)
+                ]
+            ))
         }
         cell.userName.text = "\(userNameList[indexPath.row])"
         if userNumList[indexPath.row] < 10 {
