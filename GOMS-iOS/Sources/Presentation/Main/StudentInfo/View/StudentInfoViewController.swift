@@ -262,6 +262,7 @@ extension StudentInfoViewController:
         else if userIsBlackList[indexPath.row] == true {
             cell.roleView.isHidden = false
             cell.roleText.isHidden = false
+            cell.editUserAuthorityButton.setImage(UIImage(named:"deleteBlackList.svg"), for: .normal)
             cell.roleText.text = "외출금지"
             cell.roleText.textColor = .blackListColor
             cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
