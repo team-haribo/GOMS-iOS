@@ -31,6 +31,12 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
             name: NSNotification.Name("DismissSearchView"),
             object: nil
         )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.didDismissEditNotification(_:)),
+            name: NSNotification.Name("DismissEditView"),
+            object: nil
+        )
     }
     
     @objc func didDismissSearchNotification(_ notification: Notification) {
@@ -43,13 +49,24 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
             userRole = [String]()
             userIsBlackList = [Bool]()
             bindSearchData()
-            print("---------------------------")
-            print(searchModalViewModal.searchResult)
-            print(userRole)
-            print("---------------------------")
           }
     }
     
+    @objc func didDismissEditNotification(_ notification: Notification) {
+        DispatchQueue.main.async { [self] in
+            userNameList = [String]()
+            userGradeList = [Int]()
+            userClassNumList = [Int]()
+            userNumList = [Int]()
+            userRole = [String]()
+            userIsBlackList = [Bool]()
+            viewModel.studentInfo {
+                self.studentInfoCollectionView.reloadData()
+                self.bindStudentInfo()
+            }
+          }
+    }
+        
     override func viewDidAppear(_ animated: Bool) {
         bindViewModel()
     }
