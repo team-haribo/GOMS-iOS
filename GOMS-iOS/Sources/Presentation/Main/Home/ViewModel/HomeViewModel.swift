@@ -90,11 +90,15 @@ extension HomeViewModel {
                         message: "다시 한 번 작업을 실행해주세요"
                     ))
                 case 404:
-                    self.steps.accept(GOMSStep.failureAlert(
-                        title: "404",
-                        message: "알 수 없는 오류가 발생했습니다."
-                    ))
-                    self.steps.accept(GOMSStep.introIsRequired)
+                    self.steps.accept(
+                        GOMSStep.failureAlert(
+                            title: "오류",
+                            message: "알 수 없는 오류가 발생했습니다.",
+                            action: [.init(title: "확인",style: .default) { _ in
+                                self.steps.accept(GOMSStep.introIsRequired)}
+                            ]
+                        )
+                    )
                 default:
                     print("ERROR")
                 }
