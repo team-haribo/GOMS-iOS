@@ -268,9 +268,25 @@ extension StudentInfoViewController:
             cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
         }
         cell.editUserAuthorityButtonAction = { [unowned self] in
-            viewModel.steps.accept(GOMSStep.editUserModalIsRequired(
-                accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
-            print(viewModel.studentUserInfo[indexPath.row].accountIdx)
+            if userIsBlackList[indexPath.row] == true {
+                viewModel.steps.accept(GOMSStep.alert(
+                    title: "블랙리스트 취소",
+                    message: "정말 블랙리스트를 취소할까요?",
+                    style: .alert,
+                    actions: [
+                        .init(title: "확인", style: .default) {_ in
+                            self.viewModel.blackListDelete(
+                                accountIdx: self.viewModel.studentUserInfo[indexPath.row].accountIdx
+                            )
+                        },
+                        .init(title: "취소", style: .cancel)
+                    ]
+                ))
+            }
+            else {
+                viewModel.steps.accept(GOMSStep.editUserModalIsRequired(
+                    accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx))
+            }
         }
         cell.userName.text = "\(userNameList[indexPath.row])"
         if userNumList[indexPath.row] < 10 {
