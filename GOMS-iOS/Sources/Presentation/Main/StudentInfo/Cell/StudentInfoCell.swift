@@ -30,6 +30,12 @@ class StudentInfoCell: UICollectionViewCell {
         $0.setImage(UIImage(named:"editStudent.svg"), for: .normal)
     }
     
+    var deleteBlackListButton = UIButton().then {
+        $0.isHidden = true
+        $0.backgroundColor = .white
+        $0.setImage(UIImage(named:" deleteBlackList.svg"), for: .normal)
+    }
+    
     var roleView = UIView().then {
         $0.isHidden = true
         $0.backgroundColor = .white
