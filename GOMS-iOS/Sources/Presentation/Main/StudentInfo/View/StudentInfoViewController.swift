@@ -35,6 +35,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     
     @objc func didDismissSearchNotification(_ notification: Notification) {
         DispatchQueue.main.async { [self] in
+            studentInfoCollectionView.reloadData()
             userNameList = [String]()
             userGradeList = [Int]()
             userClassNumList = [Int]()
