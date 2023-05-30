@@ -91,12 +91,19 @@ extension QRCodeViewModel {
                     print("success")
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
-                case 404:
-                    print("----------------------")
-                    print(self.uuidData)
-                    print("----------------------")
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "다시 한 번 작업을 실행해주세요"
+                    ))
                 default:
-                    print("ERROR")
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "알 수 없는 오류가 발생하였습니다.",
+                        action: [
+                        .init(title: "확인", style: .default) {_ in
+                            self.steps.accept(GOMSStep.introIsRequired)
+                        }
+                    ]))
                 }
                 completion()
             case .failure(let err):
