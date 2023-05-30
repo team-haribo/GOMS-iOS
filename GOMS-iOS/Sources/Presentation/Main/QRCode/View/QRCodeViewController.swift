@@ -28,7 +28,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         self.navigationItem.leftLogoImage()
         super.viewDidLoad()
         bindViewModel()
-     }
+        barButtonDidTap()
+    }
     
     private func checkIsBlackList() {
         if userIsBlackList == true {
@@ -52,6 +53,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             lastTimer.isHidden = false
             createQrCode()
             startTimer()
+            bindViewModel()
         }
         else {
             if permissionNoArray.count > 0 && permissionNoArray.isEmpty == false {
@@ -71,6 +73,13 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             }.disposed(by: disposeBag)
     }
     
+    private func barButtonDidTap() {
+        let input = QRCodeViewModel.Input(
+            navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
+    }
+    
     private func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
             self.timerLeft -= 1
@@ -88,24 +97,25 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     }
     
     private func createQrCode() {
-        viewModel.makeQRCode()
-        let urlUUID = viewModel.uuidData
-        var qrCode = QRCode(
-            url: (
-                URL(string: "\(BaseURL.baseURL)/student-council/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
+        viewModel.makeQRCode {
+            guard let urlUUID = self.viewModel.uuidData?.outingUUID else {return}
+            var qrCode = QRCode(
+                url: (
+                    URL(string: "\(BaseURL.baseURL)/student-council/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
+                )
             )
-        )
-        qrCode?.color = UIColor.black
-        qrCode?.backgroundColor = .background ?? .white
-        qrCode?.size = CGSize(width: 200, height: 200)
-        qrCode?.scale = 1.0
-        qrCode?.inputCorrection = .quartile
-        
-        let qrImageView = UIImageView.init(qrCode: qrCode!)
-        view.addSubview(qrImageView)
-        qrImageView.snp.makeConstraints {
-            $0.height.width.equalTo(250)
-            $0.center.equalTo(view.snp.center).offset(0)
+            qrCode?.color = UIColor.black
+            qrCode?.backgroundColor = .background ?? .white
+            qrCode?.size = CGSize(width: 200, height: 200)
+            qrCode?.scale = 1.0
+            qrCode?.inputCorrection = .quartile
+            
+            let qrImageView = UIImageView.init(qrCode: qrCode!)
+            self.view.addSubview(qrImageView)
+            qrImageView.snp.makeConstraints {
+                $0.height.width.equalTo(250)
+                $0.center.equalTo(self.view.snp.center).offset(0)
+            }
         }
     }
      
@@ -146,13 +156,12 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         // [QR 패턴 사용 실시]
         self.readerVC.delegate = self
         
-        // [클로저 사용 실시]
         self.readerVC.completionBlock = { (result: QRCodeReaderResult?) in
             let qrResult = String(describing: result?.value)
+            print(qrResult)
             self.viewModel.userOutingData(qrCodeURL: qrResult)
             print(qrResult)
         }
-        
         
         self.readerVC.modalPresentationStyle = .fullScreen
         self.present(readerVC, animated: true)

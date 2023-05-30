@@ -14,7 +14,7 @@ import UIKit
 
 class QRCodeViewModel: BaseViewModel, Stepper{
     struct Input {
-        let useQRCodeButtonTap: Observable<Void>
+        let navProfileButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -22,9 +22,13 @@ class QRCodeViewModel: BaseViewModel, Stepper{
     }
     
     func transVC(input: Input) {
-        input.useQRCodeButtonTap.subscribe(
-            onNext: pushQRCodeVC
+        input.navProfileButtonTap.subscribe(
+            onNext: pushProfileVC
         ) .disposed(by: disposeBag)
+    }
+    
+    private func pushProfileVC() {
+        self.steps.accept(GOMSStep.profileIsRequired)
     }
     
     private func pushQRCodeVC() {
@@ -43,8 +47,8 @@ extension QRCodeViewModel {
                 switch statusCode{
                 case 200..<300:
                     self.steps.accept(GOMSStep.alert(
-                        title: "오류",
-                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다.",
+                        title: "",
+                        message: "정상적으로 외출이 되었습니다.",
                         style: .alert,
                         actions: [
                             .init(title: "확인", style: .default) {_ in
@@ -64,14 +68,17 @@ extension QRCodeViewModel {
                         message: "다시 한 번 작업을 실행해주세요"
                     ))
                 default:
-                    print("ERROR")
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다."
+                    ))
                 }
             case .failure(let err):
                 print(String(describing: err))
             }
         }
     }
-    func makeQRCode() {
+    func makeQRCode(completion: @escaping () -> Void) {
         studentCouncilProvider.request(.makeQRCode(authorization: accessToken)){ response in
             switch response {
             case let .success(result):
@@ -88,13 +95,21 @@ extension QRCodeViewModel {
                     print("success")
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
-                case 404:
-                    print("----------------------")
-                    print(self.uuidData)
-                    print("----------------------")
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "다시 한 번 작업을 실행해주세요"
+                    ))
                 default:
-                    print("ERROR")
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "알 수 없는 오류가 발생하였습니다.",
+                        action: [
+                        .init(title: "확인", style: .default) {_ in
+                            self.steps.accept(GOMSStep.introIsRequired)
+                        }
+                    ]))
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }
