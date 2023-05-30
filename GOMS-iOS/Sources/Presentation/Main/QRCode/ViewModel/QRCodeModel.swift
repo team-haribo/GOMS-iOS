@@ -71,7 +71,7 @@ extension QRCodeViewModel {
             }
         }
     }
-    func makeQRCode() {
+    func makeQRCode(completion: @escaping () -> Void) {
         studentCouncilProvider.request(.makeQRCode(authorization: accessToken)){ response in
             switch response {
             case let .success(result):
@@ -95,6 +95,7 @@ extension QRCodeViewModel {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }

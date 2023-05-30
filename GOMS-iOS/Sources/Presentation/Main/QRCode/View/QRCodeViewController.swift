@@ -88,24 +88,25 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     }
     
     private func createQrCode() {
-        viewModel.makeQRCode()
-        let urlUUID = viewModel.uuidData
-        var qrCode = QRCode(
-            url: (
-                URL(string: "\(BaseURL.baseURL)/student-council/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
+        viewModel.makeQRCode {
+            guard let urlUUID = self.viewModel.uuidData?.outingUUID else {return}
+            var qrCode = QRCode(
+                url: (
+                    URL(string: "\(BaseURL.baseURL)/student-council/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
+                )
             )
-        )
-        qrCode?.color = UIColor.black
-        qrCode?.backgroundColor = .background ?? .white
-        qrCode?.size = CGSize(width: 200, height: 200)
-        qrCode?.scale = 1.0
-        qrCode?.inputCorrection = .quartile
-        
-        let qrImageView = UIImageView.init(qrCode: qrCode!)
-        view.addSubview(qrImageView)
-        qrImageView.snp.makeConstraints {
-            $0.height.width.equalTo(250)
-            $0.center.equalTo(view.snp.center).offset(0)
+            qrCode?.color = UIColor.black
+            qrCode?.backgroundColor = .background ?? .white
+            qrCode?.size = CGSize(width: 200, height: 200)
+            qrCode?.scale = 1.0
+            qrCode?.inputCorrection = .quartile
+            
+            let qrImageView = UIImageView.init(qrCode: qrCode!)
+            self.view.addSubview(qrImageView)
+            qrImageView.snp.makeConstraints {
+                $0.height.width.equalTo(250)
+                $0.center.equalTo(self.view.snp.center).offset(0)
+            }
         }
     }
      
