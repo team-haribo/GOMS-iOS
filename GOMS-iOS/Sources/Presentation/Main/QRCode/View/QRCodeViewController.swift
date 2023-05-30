@@ -17,10 +17,11 @@ import QRCode
 
 
 class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate {
-    
+    private let userIsBlackList = UserDefaults.standard.bool(forKey: "userIsBlackList")
     private var timerLeft: Int = 300
     
     override func viewDidLoad() {
+        checkIsBlackList()
         checkUserIsAdmin()
         self.navigationItem.hidesBackButton = true
         self.navigationItem.rightBarButtonItem()
@@ -28,6 +29,18 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         super.viewDidLoad()
         bindViewModel()
      }
+    
+    private func checkIsBlackList() {
+        if userIsBlackList == true {
+            viewModel.steps.accept(GOMSStep.failureAlert(
+                title: "",
+                message: "외출이 금지된 상태입니다.",
+                action: [.init(title: "확인",style: .default) { _ in
+                    self.viewModel.steps.accept(GOMSStep.introIsRequired)}
+                ]
+            ))
+        }
+    }
     
     private func checkUserIsAdmin() {
         if userAuthority == "ROLE_STUDENT_COUNCIL" {

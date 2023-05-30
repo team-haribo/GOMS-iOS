@@ -18,6 +18,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
     private let userNum = UserDefaults.standard.integer(forKey: "userNum")
     private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
+    private let userIsBlackList = UserDefaults.standard.bool(forKey: "userIsBlackList")
     private var userNameList = [String]()
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
@@ -111,8 +112,9 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         $0.textColor = .black
     }
     
-    private var useQRCodeButton = UIButton().then {
-        $0.setTitle("외출하기", for: .normal)
+    private lazy var useQRCodeButton = UIButton().then {
+        let text = userIsBlackList == true ? "외출금지" : "외출하기"
+        $0.setTitle(text, for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
         $0.layer.cornerRadius = 10
