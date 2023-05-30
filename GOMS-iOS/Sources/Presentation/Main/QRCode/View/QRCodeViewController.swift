@@ -28,7 +28,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         self.navigationItem.leftLogoImage()
         super.viewDidLoad()
         bindViewModel()
-     }
+        barButtonDidTap()
+    }
     
     private func checkIsBlackList() {
         if userIsBlackList == true {
@@ -52,6 +53,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             lastTimer.isHidden = false
             createQrCode()
             startTimer()
+            bindViewModel()
         }
         else {
             if permissionNoArray.count > 0 && permissionNoArray.isEmpty == false {
@@ -69,6 +71,13 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             .bind{
                 self.callQrScanStart()
             }.disposed(by: disposeBag)
+    }
+    
+    private func barButtonDidTap() {
+        let input = QRCodeViewModel.Input(
+            navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private func startTimer() {
@@ -147,14 +156,12 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         // [QR 패턴 사용 실시]
         self.readerVC.delegate = self
         
-        // [클로저 사용 실시]
         self.readerVC.completionBlock = { (result: QRCodeReaderResult?) in
             let qrResult = String(describing: result?.value)
             print(qrResult)
             self.viewModel.userOutingData(qrCodeURL: qrResult)
             print(qrResult)
         }
-        
         
         self.readerVC.modalPresentationStyle = .fullScreen
         self.present(readerVC, animated: true)

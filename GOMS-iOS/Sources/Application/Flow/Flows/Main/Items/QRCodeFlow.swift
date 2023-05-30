@@ -46,6 +46,9 @@ class QRCodeFlow: Flow {
         case .introIsRequired:
             return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
             
+        case .profileIsRequired:
+            return coordinateToProfile()
+            
         case let .alert(title, message, style, actions):
             return presentToAlert(title: title, message: message, style: style, actions: actions)
             
@@ -60,6 +63,13 @@ class QRCodeFlow: Flow {
     private func coordinateToQRCode() -> FlowContributors {
         let vm = QRCodeViewModel()
         let vc = QRCodeViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToProfile() -> FlowContributors {
+        let vm = ProfileViewModel()
+        let vc = ProfileViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

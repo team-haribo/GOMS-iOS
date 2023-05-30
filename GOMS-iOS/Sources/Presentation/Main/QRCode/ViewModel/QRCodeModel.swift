@@ -14,7 +14,7 @@ import UIKit
 
 class QRCodeViewModel: BaseViewModel, Stepper{
     struct Input {
-        let useQRCodeButtonTap: Observable<Void>
+        let navProfileButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -22,9 +22,13 @@ class QRCodeViewModel: BaseViewModel, Stepper{
     }
     
     func transVC(input: Input) {
-        input.useQRCodeButtonTap.subscribe(
-            onNext: pushQRCodeVC
+        input.navProfileButtonTap.subscribe(
+            onNext: pushProfileVC
         ) .disposed(by: disposeBag)
+    }
+    
+    private func pushProfileVC() {
+        self.steps.accept(GOMSStep.profileIsRequired)
     }
     
     private func pushQRCodeVC() {
