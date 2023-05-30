@@ -172,5 +172,6 @@ extension HomeViewModel {
         UserDefaults.standard.set(self.userData.lateCount, forKey: "userLateCount")
         UserDefaults.standard.set(self.userData.profileUrl, forKey: "userProfileURL")
         UserDefaults.standard.set(self.userData.isBlackList, forKey: "userIsBlackList")
+        UserDefaults.standard.set(self.userData.isOuting, forKey: "userIsOuting")
     }
 }

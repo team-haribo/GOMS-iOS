@@ -72,6 +72,7 @@ private extension TabBarFlow {
         ) { [unowned self] (root1: UINavigationController,
                             root2: UINavigationController,
                             root3: UINavigationController) in
+            lazy var userIsOuting = UserDefaults.standard.bool(forKey: "userIsOuting")
             let homeItem = UITabBarItem(
                 title: "홈",
                 image: UIImage(named: "unHome.svg"),
@@ -85,6 +86,10 @@ private extension TabBarFlow {
                 selectedImage: userAuthority == "ROLE_STUDENT_COUNCIL" ?
                 UIImage(named: "selectedAdminQRCode.svg") : UIImage(named: "selectedQRcode.svg")
             )
+            
+            if userIsOuting == true {
+                qrCodeItem.title = "복귀하기"
+            }
             
             let outingItem = UITabBarItem(
                 title: "외출현황",
