@@ -43,8 +43,8 @@ extension QRCodeViewModel {
                 switch statusCode{
                 case 200..<300:
                     self.steps.accept(GOMSStep.alert(
-                        title: "오류",
-                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다.",
+                        title: "",
+                        message: "정상적으로 외출이 되었습니다.",
                         style: .alert,
                         actions: [
                             .init(title: "확인", style: .default) {_ in
@@ -64,7 +64,10 @@ extension QRCodeViewModel {
                         message: "다시 한 번 작업을 실행해주세요"
                     ))
                 default:
-                    print("ERROR")
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다."
+                    ))
                 }
             case .failure(let err):
                 print(String(describing: err))
