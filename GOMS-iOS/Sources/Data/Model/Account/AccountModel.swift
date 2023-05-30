@@ -10,6 +10,7 @@ struct AccountResponse: Codable {
     let studentNum: StudentNum
     let profileUrl: String?
     let lateCount: Int
+    let isBlackList: Bool
     
     struct StudentNum: Codable{
         let grade: Int

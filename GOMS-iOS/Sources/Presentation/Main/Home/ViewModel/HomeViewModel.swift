@@ -56,7 +56,12 @@ class HomeViewModel: BaseViewModel, Stepper{
     }
     
     private func pushQRCodeVC() {
-        self.steps.accept(GOMSStep.qrocdeIsRequired)
+        if self.userData.isBlackList == true {
+            self.steps.accept(GOMSStep.failureAlert(title: "" , message: "외출이 금지된 상태입니다."))
+        }
+        else {
+            self.steps.accept(GOMSStep.qrocdeIsRequired)
+        }
     }
     
     private func pushStudentInfoVC() {
@@ -166,5 +171,6 @@ extension HomeViewModel {
         UserDefaults.standard.set(self.userData.studentNum.number, forKey: "userNum")
         UserDefaults.standard.set(self.userData.lateCount, forKey: "userLateCount")
         UserDefaults.standard.set(self.userData.profileUrl, forKey: "userProfileURL")
+        UserDefaults.standard.set(self.userData.isBlackList, forKey: "userIsBlackList")
     }
 }
