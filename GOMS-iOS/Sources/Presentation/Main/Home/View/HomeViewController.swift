@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private let userNum = UserDefaults.standard.integer(forKey: "userNum")
     private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
     private let userIsBlackList = UserDefaults.standard.bool(forKey: "userIsBlackList")
+    private let userIsOuting = UserDefaults.standard.bool(forKey: "userIsOuting")
     private var userNameList = [String]()
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
@@ -26,6 +27,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private var userProfile = [String]()
     
     override func viewDidLoad() {
+        checkUserIsOuting()
         checkRole()
         Task {
             await getData()
@@ -35,6 +37,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         self.navigationItem.leftLogoImage()
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
+    }
+    
+    private func checkUserIsOuting() {
+        if userIsOuting == true {
+            useQRCodeButton.setTitle("복귀하기", for: .normal)
+        }
     }
     
     private func checkRole() {
