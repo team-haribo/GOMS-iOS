@@ -113,13 +113,14 @@ extension HomeViewModel {
         }
     }
     
-    func getOutingCount() {
+    func getOutingCount(completion: @escaping () -> Void) {
         outingProvider.request(.outingCount(authorization: accessToken)) { response in
             switch response {
             case let .success(result):
                 let responseData = result.data
                 do {
                     self.outingCount = try JSONDecoder().decode(OutingCountResponse.self, from: responseData)
+                    print(self.outingCount?.outingCount ?? 0)
                 }catch(let err) {
                     print(String(describing: err))
                 }
@@ -132,6 +133,7 @@ extension HomeViewModel {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }

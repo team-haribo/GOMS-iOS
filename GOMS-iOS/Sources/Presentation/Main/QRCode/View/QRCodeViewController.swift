@@ -61,7 +61,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
                 permissionNoArray.removeAll()
             }
             else {
-                self.callQrScanStart()
+                self.openCamera()
             }
         }
     }
@@ -69,7 +69,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     private func bindViewModel() {
         useQRCodeButton.rx.tap
             .bind{
-                self.callQrScanStart()
+                self.openCamera()
             }.disposed(by: disposeBag)
     }
     
@@ -101,7 +101,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             guard let urlUUID = self.viewModel.uuidData?.outingUUID else {return}
             var qrCode = QRCode(
                 url: (
-                    URL(string: "\(BaseURL.baseURL)/student-council/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
+                    URL(string: "\(BaseURL.baseURL)/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
                 )
             )
             qrCode?.color = UIColor.black
@@ -141,26 +141,84 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             
             // [QR 스캔 뷰 컨트롤러 구성 실시]
             $0.showTorchButton        = false
-            $0.showSwitchCameraButton = true // 화면 전환 버튼 표시 여부
+            $0.showSwitchCameraButton = false // 화면 전환 버튼 표시 여부
             $0.showCancelButton       = true // 취소 버튼 표시 여부
             $0.showOverlayView        = true
             $0.rectOfInterest         = CGRect(x: 0.2, y: 0.2, width: 0.6, height: 0.6)
         }
         return QRCodeReaderViewController(builder: builder)
     }()
+    
+    func openCamera(){
+            print("")
+            print("===============================")
+            print("[A_Main >> openCamera() :: 카메라 열기 수행 실시]")
+            print("===============================")
+            print("")
+            
+            /*
+            MARK: [QR 코드 스캔 필요 사항]
+            1. info.plist 권한 : Privacy - Camera Usage Description
+            2. 라이브러리 설치 git : https://github.com/yannickl/QRCodeReader.swift.git
+            3. SPM 패키지 매니저 사용해 설치 시 참고 : branch >> 라이브러리 설치 진행
+            4. 필요 import :
+               - import AVFoundation
+               - import QRCodeReader
+            5. 필요 딜리게이트 : QRCodeReaderViewControllerDelegate
+            6. 로직 :
+              - 카메라 권한 상태 퍼미션 인증 확인
+              - 카메라 호출 및 QR 스캔 시작 실시
+              - QR 스캔 완료 시 카메라 활성 창 닫기 및 스캔 종료 실시
+            */
+            
+            
+            // [SEARCH FAST] : [카메라 호출 수행]
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+                if granted {
+                    print("")
+                    print("===============================")
+                    print("[A_Main > openCamera() :: 카메라 권한 허용 상태]")
+                    print("===============================")
+                    print("")
+                    
+                    // [카메라 열기 수행 실시]
+                    DispatchQueue.main.async {
+                        // -----------------------------------------
+                        // [사진 찍기 카메라 호출]
+                        /*let camera = UIImagePickerController()
+                        camera.sourceType = .camera
+                        self.present(camera, animated: false, completion: nil)*/
+                        // -----------------------------------------
+                        // [QR 패턴 사용 실시]
+                        self.readerVC.delegate = self
+                        
+                        
+                        // [클로저 사용 실시]
+                        self.readerVC.completionBlock = { (result: QRCodeReaderResult?) in
+                            print("")
+                            print("===============================")
+                            print("[A_Main >> openCamera() :: 카메라 스캔 결과 확인 실시]")
+                            print("result [결과] :: ", result?.value ?? "")
+                            print("===============================")
+                            print("")
+                            let scanResult = String(describing: result?.value ?? "")
+                            self.viewModel.userOutingData(qrCodeURL: scanResult)
+                        }
+                        self.readerVC.modalPresentationStyle = .fullScreen
+                        //self.readerVC.modalPresentationStyle = .fullScreen
+                       
+                        self.present(self.readerVC, animated: false, completion: nil)
+                        // -----------------------------------------
+                    }
+                }
+            })
+        }
      
-     
-     
-     // MARK: [QR 코드 스캔 시작 실시]
     func callQrScanStart(){
-        // [QR 패턴 사용 실시]
         self.readerVC.delegate = self
         
         self.readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            let qrResult = String(describing: result?.value)
-            print(qrResult)
-            self.viewModel.userOutingData(qrCodeURL: qrResult)
-            print(qrResult)
+            print("result : ", result?.value ?? "")
         }
         
         self.readerVC.modalPresentationStyle = .fullScreen

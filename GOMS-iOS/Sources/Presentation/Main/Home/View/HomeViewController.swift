@@ -25,13 +25,18 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
     private var userProfile = [String]()
+    private var outingCount:Int = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkUserIsOuting()
+        checkRole()
+        getData()
+    }
     
     override func viewDidLoad() {
         checkUserIsOuting()
         checkRole()
-        Task {
-            await getData()
-        }
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
@@ -64,14 +69,28 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         }
     }
     
-    private func getData() async {
+    private func getData() {
         viewModel.getLateRank { [weak self] in
             self?.bindLateRank()
         }
-        Task {
-            viewModel.getOutingCount()
-            viewModel.getUserData()
+        viewModel.getOutingCount{ [weak self] in
+            self?.setOuting()
         }
+        viewModel.getUserData()
+    }
+    
+    private func setOuting() {
+        let outingCount = viewModel.outingCount?.outingCount ?? 0
+        outingStudentText.text = "\(outingCount) 명이 외출중이에요!"
+        let fullText = outingStudentText.text ?? ""
+        let attribtuedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: "\(outingCount)")
+        attribtuedString.addAttribute(
+            .foregroundColor,
+            value: userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!,
+            range: range
+        )
+        outingStudentText.attributedText = attribtuedString
     }
     
     private func bindLateRank() {
@@ -149,13 +168,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private lazy var outingStudentText = UILabel().then {
-        let outingCount = viewModel.outingCount?.outingCount
-        $0.text = "\(outingCount ?? 0) 명이 외출중이에요!"
+        $0.text = "0 명이 외출중이에요!"
         $0.textColor = UIColor.black
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
         let fullText = $0.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
-        let range = (fullText as NSString).range(of: "\(outingCount ?? 0) ")
+        let range = (fullText as NSString).range(of: "0")
         attribtuedString.addAttribute(
             .foregroundColor,
             value: userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!,
