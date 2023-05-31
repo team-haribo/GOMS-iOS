@@ -42,7 +42,6 @@ extension OutingViewModel {
                 print(String(data: responseData, encoding: .utf8))
                 do {
                     self.outingList = try JSONDecoder().decode([OutingListResponse].self, from: responseData)
-                    completion()
                 }catch(let err) {
                     print(String(describing: err))
                 }
@@ -59,6 +58,7 @@ extension OutingViewModel {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }

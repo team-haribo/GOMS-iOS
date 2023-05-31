@@ -42,6 +42,9 @@ class OutingViewController: BaseViewController<OutingViewModel> {
             outingIsNilText.isHidden = false
         }
         else {
+            outingCollectionView.isHidden = false
+            outingIsNilImage.isHidden = true
+            outingIsNilText.isHidden = true
             for index in 0...viewModel.outingList.endIndex - 1 {
                 userNameList.insert(viewModel.outingList[index].name, at: index)
                 userGradeList.insert(viewModel.outingList[index].studentNum.grade, at: index)
