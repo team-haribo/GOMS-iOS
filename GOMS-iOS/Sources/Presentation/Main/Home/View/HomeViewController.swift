@@ -317,7 +317,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.height.equalTo((bounds.height) / 11.6)
         }
         totalStudentText.snp.makeConstraints {
-            $0.top.equalTo(outingButton.snp.top).offset(14)
+            $0.top.equalTo(outingButton.snp.top).offset((bounds.height) / 54)
             $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
         outingStudentText.snp.makeConstraints {
@@ -350,7 +350,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.width.height.equalTo(40)
         }
         userNameText.snp.makeConstraints {
-            $0.top.equalTo(profileButton.snp.top).offset(18)
+            $0.top.equalTo(profileButton.snp.top).offset((bounds.height) / 45.11)
             $0.leading.equalTo(profileImg.snp.trailing).offset(14)
         }
         userNumText.snp.makeConstraints {
