@@ -308,13 +308,13 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         useQRCodeButton.snp.makeConstraints {
             $0.top.equalTo(homeMainText.snp.bottom).offset(22)
             $0.leading.equalToSuperview().offset(26)
-            $0.height.equalTo(38)
+            $0.height.equalTo((bounds.height) / 21.36)
             $0.trailing.equalTo(homeMainImage.snp.leading).inset(23)
         }
         outingButton.snp.makeConstraints {
             $0.top.equalTo(homeMainImage.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
-            $0.height.equalTo(70)
+            $0.height.equalTo((bounds.height) / 11.6)
         }
         totalStudentText.snp.makeConstraints {
             $0.top.equalTo(outingButton.snp.top).offset(14)
@@ -342,10 +342,10 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         profileButton.snp.makeConstraints {
             $0.top.equalTo(tardyCollectionView.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
-            $0.height.equalTo(70)
+            $0.height.equalTo((bounds.height) / 11.6)
         }
         profileImg.snp.makeConstraints {
-            $0.top.equalTo(profileButton.snp.top).offset(15)
+            $0.centerY.equalTo(profileButton.snp.centerY).offset(0)
             $0.leading.equalTo(profileButton.snp.leading).offset(16)
             $0.width.height.equalTo(40)
         }
