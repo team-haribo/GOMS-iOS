@@ -144,7 +144,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             $0.showSwitchCameraButton = false // 화면 전환 버튼 표시 여부
             $0.showCancelButton       = true // 취소 버튼 표시 여부
             $0.showOverlayView        = true
-            $0.rectOfInterest         = CGRect(x: 0.2, y: 0.2, width: 0.6, height: 0.6)
+            $0.rectOfInterest         = CGRect(x: 0.2, y: 0.35, width: 0.6, height: 0.33)
         }
         return QRCodeReaderViewController(builder: builder)
     }()
