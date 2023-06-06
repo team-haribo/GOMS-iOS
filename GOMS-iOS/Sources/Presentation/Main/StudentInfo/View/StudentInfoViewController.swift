@@ -258,7 +258,7 @@ extension StudentInfoViewController:
         cell.deleteBlackListButton.isHidden = true
         cell.editUserAuthorityButton.isHidden = false
         
-        if userRole[indexPath.row] == "ROLE_STUDENT_COUNCIL" && userIsBlackList[indexPath.row] != true{
+        if userRole[indexPath.row] == "ROLE_STUDENT_COUNCIL" {
             cell.roleView.isHidden = false
             cell.roleText.isHidden = false
         }
