@@ -55,6 +55,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             profileImg.isHidden = true
             profileButton.isHidden = true
             profileNavigationButton.isHidden = true
+            manageNavigationButton.isHidden = false
             userNameText.isHidden = true
             userNumText.isHidden = true
             useQRCodeButton.setTitle("QR 생성하기", for: .normal)
@@ -184,6 +185,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let outingNavigationButton = UIImageView().then {
         $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
+        $0.tintColor = .mainColor
     }
     
     private let tardyText = UILabel().then {
@@ -250,6 +252,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let profileNavigationButton = UIImageView().then {
         $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
+        $0.tintColor = .mainColor
     }
     
     private lazy var userNumText = UILabel().then {
@@ -287,6 +290,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private let manageNavigationButton = UIImageView().then {
+        $0.isHidden = true
         $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
     }
     

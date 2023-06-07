@@ -12,20 +12,12 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         editUserData()
-//        bindViewModel()
         deselectButtonDidTap()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: NSNotification.Name("DismissEditView"), object: nil, userInfo: nil)
-    }
-    
-    private func bindViewModel() {
-        let input = EditUserModalViewModel.Input(
-            editButtonDidTap: editButton.rx.tap.asObservable()
-        )
-        viewModel.transVC(input: input)
     }
     
     private func editUserData() {

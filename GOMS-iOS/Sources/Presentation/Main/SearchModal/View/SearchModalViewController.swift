@@ -14,7 +14,6 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bindViewModel()
         postData()
         deselectRoleButtonDidTap()
         deselectGradeButtonDidTap()
@@ -24,13 +23,6 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: NSNotification.Name("DismissSearchView"), object: nil, userInfo: nil)
-    }
-    
-    private func bindViewModel() {
-        let input = SearchModalViewModal.Input(
-            searchButton: searchButton.rx.tap.asObservable()
-        )
-        viewModel.transVC(input: input)
     }
     
     private func postData() {
