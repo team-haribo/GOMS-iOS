@@ -12,7 +12,7 @@
 	<key>CLIENT_ID</key>
 	<string>c6731e83059f4decaaa5b6a79c75320c306471f896da4284811f02bdcfeb7f94</string>
 	<key>NSCameraUsageDescription</key>
-	<string>카메라 권한을 활성화 해주세요</string>
+	<string>QR코드 스캔을 위해 카메라 권한을 허용해주세요</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Text-Bold.otf</string>
