@@ -190,6 +190,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = userInfoTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         cell.cellName.text = cellName[indexPath.row]
         cell.cellDetail.text = "\(cellDetail[indexPath.row])"
+        cell.backgroundColor = .white
         cell.selectionStyle = .none
         return cell
     }
