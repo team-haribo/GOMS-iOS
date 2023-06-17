@@ -12,6 +12,13 @@ import RxCocoa
 import Moya
 
 class HomeViewModel: BaseViewModel, Stepper{
+    let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
+    let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
+    let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
+    
+    var outingCount: OutingCountResponse?
+    var userData: AccountResponse!
+    var lateRank: [LateRankResponse] = []
     
     struct Input {
         let navProfileButtonTap: Observable<Void>
@@ -70,7 +77,6 @@ class HomeViewModel: BaseViewModel, Stepper{
 }
 extension HomeViewModel {
     func getLateRank(completion: @escaping () -> Void) {
-        
         lateProvider.request(.lateRank(authorization: accessToken)) { response in
             switch response {
             case let .success(result):

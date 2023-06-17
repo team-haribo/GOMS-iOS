@@ -14,6 +14,7 @@ import Moya
 class IntroViewModel: BaseViewModel, Stepper{
     let authProvider = MoyaProvider<AuthServices>()
     var authData: SignInResponse!
+    
 
     struct Input {
         

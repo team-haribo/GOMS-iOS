@@ -12,7 +12,10 @@ import RxCocoa
 import Moya
 
 class OutingViewModel: BaseViewModel, Stepper{
+    let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
     
+    var outingList: [OutingListResponse] = []
+
     struct Input {
         let profileButtonTap: Observable<Void>
     }

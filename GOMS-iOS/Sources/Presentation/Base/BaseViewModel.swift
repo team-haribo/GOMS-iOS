@@ -17,14 +17,4 @@ class BaseViewModel{
     let keychain = Keychain()
     let gomsRefreshToken = GOMSRefreshToken.shared
     lazy var accessToken = "Bearer " + (keychain.read(key: Const.KeychainKey.accessToken) ?? "")
-    let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
-    let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
-    let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
-    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
-    var userData: AccountResponse!
-    var lateRank: [LateRankResponse] = []
-    var outingCount: OutingCountResponse?
-    var outingList: [OutingListResponse] = []
-    var studentUserInfo: [StudentInfoResponse] = []
-    var uuidData: MakeQRCodeResponse?
 }
