@@ -11,7 +11,11 @@ import RxCocoa
 import RxSwift
 import Moya
 
-class IntroViewModel: BaseViewModel, Stepper{    
+class IntroViewModel: BaseViewModel, Stepper{
+    let authProvider = MoyaProvider<AuthServices>()
+    var authData: SignInResponse!
+    
+
     struct Input {
         
     }

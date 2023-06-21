@@ -6,7 +6,9 @@ import RxSwift
 import Moya
 
 class StudentInfoViewModel: BaseViewModel, Stepper{
-    
+    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
+    var studentUserInfo: [StudentInfoResponse] = []
+
     struct Input {
         let searchBarButton: Observable<Void>
     }

@@ -5,7 +5,8 @@ import RxSwift
 import Moya
 
 class EditUserModalViewModel: BaseViewModel, Stepper{
-    
+    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
+
     let accountIdx: UUID
     
     init(accountIdx: UUID) {

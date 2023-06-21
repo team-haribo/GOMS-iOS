@@ -10,9 +10,16 @@ import RxFlow
 import RxCocoa
 import RxSwift
 import UIKit
+import Moya
 
 
 class QRCodeViewModel: BaseViewModel, Stepper{
+    let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
+    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
+    
+    var uuidData: MakeQRCodeResponse?
+
+
     struct Input {
         let navProfileButtonTap: Observable<Void>
     }
