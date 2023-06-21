@@ -20,6 +20,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.title = "학생 정보 수정"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
         super.viewDidLoad()
         Task {
             await getData()
