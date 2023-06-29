@@ -12,7 +12,11 @@ import SnapKit
 class OutingCollectionViewCell: UICollectionViewCell {
     static let identifier = "outingCell"
     
-    let userProfile = UIImageView()
+    let userProfile = UIImageView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.cornerRadius = 23
+        $0.layer.masksToBounds = true
+    }
     
     let userName = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 16, family:.Regular)

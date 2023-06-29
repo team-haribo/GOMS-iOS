@@ -16,6 +16,8 @@ class OutingViewController: BaseViewController<OutingViewModel> {
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
+    private var userProfile = [String]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
                 userGradeList.insert(viewModel.outingList[index].studentNum.grade, at: index)
                 userClassNumList.insert(viewModel.outingList[index].studentNum.classNum, at: index)
                 userNumList.insert(viewModel.outingList[index].studentNum.number, at: index)
+                userProfile.insert(viewModel.outingList[index].profileUrl ?? "", at: index)
             }
             outingCollectionView.dataSource = self
             outingCollectionView.delegate = self
@@ -173,15 +176,13 @@ extension OutingViewController:
         else {
             cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
         }
-        for index in 0 ... userNameList.count - 1 {
-            let url = URL(string: viewModel.outingList[index].profileUrl ?? "")
-            let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
-            cell.userProfile.kf.setImage(
-                with: url,
-                placeholder:UIImage(named: "dummyImage.svg"),
-                options: [.processor(imageCornerRadius)]
-            )
-        }
+        let url = URL(string: userProfile[indexPath.row])
+        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 20)
+        cell.userProfile.kf.setImage(
+            with: url,
+            placeholder:UIImage(named: "dummyImage.svg"),
+            options: [.processor(imageCornerRadius)]
+        )
         return cell
     }
     
