@@ -230,7 +230,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
      // MARK: [QRCodeReaderViewController 대리자 메소드]
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning() // 스캔 중지
-        self.dismiss(animated: true, completion: nil)// 카메라 팝업창 없앰
+        self.dismiss(animated: false, completion: nil)// 카메라 팝업창 없앰
     }
 
      
@@ -250,7 +250,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
      // MARK: [QR 스캔 종료 실시]
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
         reader.stopScanning() // 스캔 중지
-        self.dismiss(animated: true, completion: nil)// 카메라 팝업창 없앰
+        self.dismiss(animated: false, completion: nil)// 카메라 팝업창 없앰
     }
     
     func showAlert(tittle:String, content:String, okBtb:String, noBtn:String) {
@@ -275,7 +275,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     }
     
     private var useQRCodeButton = UIButton().then {
-        $0.setTitle("외출하기", for: .normal)
+        $0.setTitle("스캔하기", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
         $0.layer.cornerRadius = 10

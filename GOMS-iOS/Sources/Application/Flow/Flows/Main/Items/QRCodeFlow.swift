@@ -75,6 +75,7 @@ class QRCodeFlow: Flow {
     }
     
     private func presentToAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) -> FlowContributors {
+        print("asndjansojdankjdaijdaskj")
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         actions.forEach { alert.addAction($0) }
         self.rootViewController.topViewController?.present(alert, animated: true)
@@ -82,6 +83,9 @@ class QRCodeFlow: Flow {
     }
     
     private func presentToFailureAlert(title: String?, message: String?, action: [UIAlertAction]) -> FlowContributors {
+        print("======================================")
+        print("asndjansojdankjdaijdaskj")
+        print("======================================")
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if !action.isEmpty {
             action.forEach(alert.addAction(_:))

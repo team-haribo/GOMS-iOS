@@ -20,11 +20,6 @@ final class TabBarFlow: Flow {
         return self.rootVC
     }
     
-    private lazy var rootViewController: UINavigationController = {
-        let viewController = UINavigationController()
-        return viewController
-    }()
-    
     private let rootVC = GOMSTabBarViewController()
     
     private var homeFlow = HomeFlow()
@@ -50,12 +45,6 @@ final class TabBarFlow: Flow {
             
         case .introIsRequired:
             return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
-            
-        case let .alert(title, message, style, actions):
-            return presentToAlert(title: title, message: message, style: style, actions: actions)
-            
-        case let .failureAlert(title, message, action):
-            return presentToFailureAlert(title: title, message: message, action: action)
             
         default:
             return .none
@@ -105,27 +94,9 @@ private extension TabBarFlow {
 
         }
         return .multiple(flowContributors: [
-            .contribute(withNextPresentable: homeFlow, withNextStepper: homeFlow.stepper),
-            .contribute(withNextPresentable: qrCodeFlow, withNextStepper: qrCodeFlow.stepper),
-            .contribute(withNextPresentable: outingFlow, withNextStepper: outingFlow.stepper)
+            .contribute(withNextPresentable: homeFlow, withNextStepper: OneStepper(withSingleStep: GOMSStep.homeIsRequired)),
+            .contribute(withNextPresentable: qrCodeFlow, withNextStepper: OneStepper(withSingleStep: GOMSStep.qrocdeIsRequired)),
+            .contribute(withNextPresentable: outingFlow, withNextStepper: OneStepper(withSingleStep: GOMSStep.outingIsRequired))
         ])
-    }
-    
-    func presentToAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) -> FlowContributors {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        actions.forEach { alert.addAction($0) }
-        self.rootViewController.topViewController?.present(alert, animated: true)
-        return .none
-    }
-    
-    func presentToFailureAlert(title: String?, message: String?, action: [UIAlertAction]) -> FlowContributors {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        if !action.isEmpty {
-            action.forEach(alert.addAction(_:))
-        } else {
-            alert.addAction(.init(title: "확인", style: .default))
-        }
-        self.rootViewController.topViewController?.present(alert, animated: true)
-        return .none
     }
 }

@@ -37,12 +37,6 @@ class QRCodeViewModel: BaseViewModel, Stepper{
     private func pushProfileVC() {
         self.steps.accept(GOMSStep.profileIsRequired)
     }
-    
-    private func pushQRCodeVC() {
-        let vm = QRCodeViewModel()
-        let vc = QRCodeViewController(vm)
-        vc.callQrScanStart()
-    }
 }
 
 extension QRCodeViewModel {
@@ -50,19 +44,20 @@ extension QRCodeViewModel {
         outingProvider.request(.outing(authorization: accessToken, qrCodeURL: qrCodeURL)) { response in
             switch response {
             case let .success(result):
-                let statusCode = result.statusCode
+                let statusCode = result.response?.statusCode ?? 500
                 switch statusCode{
                 case 200..<300:
                     self.steps.accept(GOMSStep.alert(
                         title: "",
-                        message: "정상적으로 외출이 되었습니다.",
+                        message: "QRCode 스캔이 완로되었습니다.",
                         style: .alert,
                         actions: [
                             .init(title: "확인", style: .default) {_ in
                                 self.steps.accept(GOMSStep.tabBarIsRequired)
                             }
                         ]
-                    ))
+                    )
+                    )
                 case 400:
                     self.steps.accept(GOMSStep.failureAlert(
                         title: "오류",
@@ -74,11 +69,7 @@ extension QRCodeViewModel {
                         title: "오류",
                         message: "다시 한 번 작업을 실행해주세요"
                     ))
-                default:
-                    self.steps.accept(GOMSStep.failureAlert(
-                        title: "오류",
-                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다."
-                    ))
+                default: break
                 }
             case .failure(let err):
                 print(String(describing: err))
