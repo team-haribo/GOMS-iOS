@@ -141,7 +141,7 @@
 		77F0741429EE8B2D00EE1FC9 /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
 		77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
 		77F0741B29EE8B8A00EE1FC9 /* GOMSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTabBar.swift; sourceTree = "<group>"; };
-		77F0741E29EE949B00EE1FC9 /* GOMS-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GOMS-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F0741E29EE949B00EE1FC9 /* GOMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSShadow.swift; sourceTree = "<group>"; };
 		77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
@@ -312,7 +312,7 @@
 			children = (
 				77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */,
 				77F073B229ED37D600EE1FC9 /* Frameworks */,
-				77F0741E29EE949B00EE1FC9 /* GOMS-iOS.app */,
+				77F0741E29EE949B00EE1FC9 /* GOMS.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -881,7 +881,7 @@
 				77F074982A0C965800EE1FC9 /* QRCode */,
 			);
 			productName = "GOMS-iOS";
-			productReference = 77F0741E29EE949B00EE1FC9 /* GOMS-iOS.app */;
+			productReference = 77F0741E29EE949B00EE1FC9 /* GOMS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1170,7 +1170,8 @@
 				);
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Minjae.GOMS-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = GOMS;
+				PRODUCT_NAME = GOMS;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1199,7 +1200,8 @@
 				);
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Minjae.GOMS-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = GOMS;
+				PRODUCT_NAME = GOMS;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
