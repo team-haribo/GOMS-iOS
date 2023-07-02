@@ -12,6 +12,8 @@ import RxCocoa
 import Moya
 
 class HomeViewModel: BaseViewModel, Stepper{
+    weak var delegate: HomeViewModelDelegate?
+    
     let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
     let lateProvider = MoyaProvider<LateServices>(plugins: [NetworkLoggerPlugin()])
     let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
@@ -21,6 +23,7 @@ class HomeViewModel: BaseViewModel, Stepper{
     var lateRank: [LateRankResponse] = []
     
     struct Input {
+        let refreshAction: Observable<Void>
         let navProfileButtonTap: Observable<Void>
         let outingButtonTap: Observable<Void>
         let profileButtonTap: Observable<Void>
@@ -33,6 +36,12 @@ class HomeViewModel: BaseViewModel, Stepper{
     }
     
     func transVC(input: Input) {
+        input.refreshAction.subscribe(
+            onNext: { [weak self] _ in
+                self?.delegate?.refreshMain()
+            }
+        ).disposed(by: disposeBag)
+        
         input.navProfileButtonTap.subscribe(
             onNext: pushProfileVC
         ) .disposed(by: disposeBag)
@@ -75,6 +84,11 @@ class HomeViewModel: BaseViewModel, Stepper{
         self.steps.accept(GOMSStep.studentInfoIsRequired)
     }
 }
+
+protocol HomeViewModelDelegate: AnyObject {
+    func refreshMain()
+}
+
 extension HomeViewModel {
     func getLateRank(completion: @escaping () -> Void) {
         lateProvider.request(.lateRank(authorization: accessToken)) { response in
