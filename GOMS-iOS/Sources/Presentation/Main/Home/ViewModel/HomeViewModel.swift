@@ -19,7 +19,7 @@ class HomeViewModel: BaseViewModel, Stepper{
     let accountProvider = MoyaProvider<AccountServices>(plugins: [NetworkLoggerPlugin()])
     
     var outingCount: OutingCountResponse?
-    var userData: AccountResponse!
+    var userData: AccountResponse?
     var lateRank: [LateRankResponse] = []
     
     struct Input {
@@ -72,7 +72,7 @@ class HomeViewModel: BaseViewModel, Stepper{
     }
     
     private func pushQRCodeVC() {
-        if self.userData.isBlackList == true {
+        if self.userData?.isBlackList == true {
             self.steps.accept(GOMSStep.failureAlert(title: "" , message: "외출이 금지된 상태입니다."))
         }
         else {
@@ -187,13 +187,13 @@ extension HomeViewModel {
     }
     
     func saveUserData() {
-        UserDefaults.standard.set(self.userData.name, forKey: "userName")
-        UserDefaults.standard.set(self.userData.studentNum.classNum, forKey: "userClassNum")
-        UserDefaults.standard.set(self.userData.studentNum.grade, forKey: "userGrade")
-        UserDefaults.standard.set(self.userData.studentNum.number, forKey: "userNum")
-        UserDefaults.standard.set(self.userData.lateCount, forKey: "userLateCount")
-        UserDefaults.standard.set(self.userData.profileUrl, forKey: "userProfileURL")
-        UserDefaults.standard.set(self.userData.isBlackList, forKey: "userIsBlackList")
-        UserDefaults.standard.set(self.userData.isOuting, forKey: "userIsOuting")
+        UserDefaults.standard.set(self.userData?.name, forKey: "userName")
+        UserDefaults.standard.set(self.userData?.studentNum.classNum, forKey: "userClassNum")
+        UserDefaults.standard.set(self.userData?.studentNum.grade, forKey: "userGrade")
+        UserDefaults.standard.set(self.userData?.studentNum.number, forKey: "userNum")
+        UserDefaults.standard.set(self.userData?.lateCount, forKey: "userLateCount")
+        UserDefaults.standard.set(self.userData?.profileUrl, forKey: "userProfileURL")
+        UserDefaults.standard.set(self.userData?.isBlackList, forKey: "userIsBlackList")
+        UserDefaults.standard.set(self.userData?.isOuting, forKey: "userIsOuting")
     }
 }
