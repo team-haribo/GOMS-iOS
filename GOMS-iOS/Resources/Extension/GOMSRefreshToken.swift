@@ -50,6 +50,11 @@ class GOMSRefreshToken {
                 }catch(let err) {
                     print(String(describing: err))
                 }
+                switch self.statusCode {
+                case 200..<300:
+                    self.updateKeychainToken()
+                default: break;
+                }
             case .failure(let err):
                 print(String(describing: err))
             }
