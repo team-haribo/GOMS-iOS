@@ -187,7 +187,7 @@ extension HomeViewModel {
     }
     
     func saveUserData() {
-        UserDefaults.standard.set(self.userData?.nameg, forKey: "userName")
+        UserDefaults.standard.set(self.userData?.name, forKey: "userName")
         UserDefaults.standard.set(self.userData?.studentNum.classNum, forKey: "userClassNum")
         UserDefaults.standard.set(self.userData?.studentNum.grade, forKey: "userGrade")
         UserDefaults.standard.set(self.userData?.studentNum.number, forKey: "userNum")
