@@ -135,16 +135,13 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         let viewModel = HomeViewModel()
         viewModel.getOutingCount { [weak self] in
             DispatchQueue.main.async {
-                if let count = viewModel.outingCount?.outingCount {
-                    self?.outingStudentText.text = "\(count) 명이 외출중이에요!"
-                    let fullText = self?.outingStudentText.text ?? ""
-                    let attributedString = NSMutableAttributedString(string: fullText)
-                    let range = (fullText as NSString).range(of: "\(count)")
-                    attributedString.addAttribute(.foregroundColor, value: self?.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!, range: range)
-                    self?.outingStudentText.attributedText = attributedString
-                } else {
-                    self?.outingStudentText.text = "0 명이 외출중이에요!"
-                }
+                let count = viewModel.outingCount?.outingCount
+                self?.outingStudentText.text = "\(count ?? 0) 명이 외출중이에요!"
+                let fullText = self?.outingStudentText.text ?? ""
+                let attributedString = NSMutableAttributedString(string: fullText)
+                let range = (fullText as NSString).range(of: "\(count ?? 0)")
+                attributedString.addAttribute(.foregroundColor, value: self?.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!, range: range)
+                self?.outingStudentText.attributedText = attributedString
             }
         }
     }
