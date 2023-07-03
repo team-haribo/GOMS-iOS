@@ -9,7 +9,7 @@ class GOMSRefreshToken {
     var steps = PublishRelay<Step>()
     var statusCode: Int = 0
     private let authProvider = MoyaProvider<AuthServices>()
-    private var reissuanceData: SignInResponse!
+    private var reissuanceData: SignInResponse?
     private let keychain = Keychain()
     private lazy var refreshToken = "Bearer " + (keychain.read(key: Const.KeychainKey.refreshToken) ?? "")
     
@@ -50,12 +50,6 @@ class GOMSRefreshToken {
                 }catch(let err) {
                     print(String(describing: err))
                 }
-                switch self.statusCode {
-                case 200..<300:
-                    self.updateKeychainToken()
-                default:
-                    self.steps.accept(GOMSStep.introIsRequired)
-                }
             case .failure(let err):
                 print(String(describing: err))
             }
@@ -64,15 +58,15 @@ class GOMSRefreshToken {
     
     func updateKeychainToken() {
         self.keychain.updateItem(
-            token: self.reissuanceData.accessToken,
+            token: self.reissuanceData?.accessToken ?? "",
             key: Const.KeychainKey.accessToken
         )
         self.keychain.updateItem(
-            token: self.reissuanceData.refreshToken,
+            token: self.reissuanceData?.refreshToken ?? "",
             key: Const.KeychainKey.refreshToken
         )
         self.keychain.updateItem(
-            token: self.reissuanceData.authority,
+            token: self.reissuanceData?.authority ?? "",
             key: Const.KeychainKey.authority
         )
     }
