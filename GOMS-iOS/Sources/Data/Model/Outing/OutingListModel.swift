@@ -9,6 +9,7 @@ struct OutingListResponse: Codable {
     let name: String
     let studentNum: StudentNum
     let profileUrl: String?
+    let createdTime: String
     
     struct StudentNum: Codable{
         let grade: Int

@@ -28,6 +28,11 @@ class OutingCollectionViewCell: UICollectionViewCell {
         $0.textColor = .subColor
     }
     
+    let createTime = UILabel().then {
+        $0.font = UIFont.GOMSFont(size: 12, family:.Regular)
+        $0.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addView()
@@ -39,7 +44,7 @@ class OutingCollectionViewCell: UICollectionViewCell {
     }
     
     func addView() {
-        [userProfile, userName, userNum].forEach {
+        [userProfile, userName, userNum, createTime].forEach {
             contentView.addSubview($0)
         }
     }
@@ -56,6 +61,10 @@ class OutingCollectionViewCell: UICollectionViewCell {
         userNum.snp.makeConstraints {
             $0.top.equalTo(userName.snp.bottom).offset(6)
             $0.leading.equalTo(userProfile.snp.trailing).offset(24)
+        }
+        createTime.snp.makeConstraints {
+            $0.leading.equalTo(userNum.snp.trailing).offset(6)
+            $0.centerY.equalTo(userNum.snp.centerY).offset(0)
         }
     }
 }

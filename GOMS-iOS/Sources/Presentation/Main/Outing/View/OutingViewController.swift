@@ -17,6 +17,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
     private var userProfile = [String]()
+    private var createTime = [String]()
 
 
     override func viewDidLoad() {
@@ -53,6 +54,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
                 userClassNumList.insert(viewModel.outingList[index].studentNum.classNum, at: index)
                 userNumList.insert(viewModel.outingList[index].studentNum.number, at: index)
                 userProfile.insert(viewModel.outingList[index].profileUrl ?? "", at: index)
+                createTime.insert(viewModel.outingList[index].createdTime, at: index)
             }
             outingCollectionView.dataSource = self
             outingCollectionView.delegate = self
@@ -183,6 +185,7 @@ extension OutingViewController:
             placeholder:UIImage(named: "dummyImage.svg"),
             options: [.processor(imageCornerRadius)]
         )
+        cell.createTime.text = "\(createTime[indexPath.row])"
         return cell
     }
     
