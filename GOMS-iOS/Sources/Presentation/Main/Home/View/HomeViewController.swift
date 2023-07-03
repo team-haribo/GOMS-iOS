@@ -12,7 +12,7 @@ import SnapKit
 import RxSwift
 import Kingfisher
 
-class HomeViewController: BaseViewController<HomeViewModel> {
+class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelegate {
     
     private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
     private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
@@ -38,8 +38,12 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         checkUserIsOuting()
         checkRole()
         super.viewDidLoad()
+        viewModel.delegate = self
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
+        refreshScrollView.frame = view.bounds
+        refreshScrollView.alwaysBounceVertical = true
+        refreshScrollView.refreshControl = refreshControl
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
     }
@@ -117,6 +121,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     
     private func bindViewModel() {
         let input = HomeViewModel.Input(
+            refreshAction: refreshControl.rx.controlEvent(.valueChanged).map { _ in }.asObservable(),
             navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
             outingButtonTap: outingButton.rx.tap.asObservable(),
             profileButtonTap: profileButton.rx.tap.asObservable(),
@@ -125,6 +130,35 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         )
         viewModel.transVC(input: input)
     }
+    
+    private func updateOutingStudentText() {
+        let viewModel = HomeViewModel()
+        viewModel.getOutingCount { [weak self] in
+            DispatchQueue.main.async {
+                if let count = viewModel.outingCount?.outingCount {
+                    self?.outingStudentText.text = "\(count) 명이 외출중이에요!"
+                    let fullText = self?.outingStudentText.text ?? ""
+                    let attributedString = NSMutableAttributedString(string: fullText)
+                    let range = (fullText as NSString).range(of: "\(count)")
+                    attributedString.addAttribute(.foregroundColor, value: self?.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!, range: range)
+                    self?.outingStudentText.attributedText = attributedString
+                } else {
+                    self?.outingStudentText.text = "0 명이 외출중이에요!"
+                }
+            }
+        }
+    }
+    
+    func refreshMain() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.refreshControl.endRefreshing()
+            self.updateOutingStudentText()
+        }
+    }
+    
+    private let refreshScrollView = UIScrollView()
+    
+    private let refreshControl = UIRefreshControl()
     
     private let homeMainImage = UIImageView().then {
         $0.image = UIImage(named: "homeUndraw.svg")
@@ -295,7 +329,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     override func addView() {
-        [homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton, manageStudentButton, manageStudnetSubText,manageStudnetText, manageNavigationButton].forEach {
+        [refreshScrollView,homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton, manageStudentButton, manageStudnetSubText,manageStudnetText, manageNavigationButton].forEach {
             view.addSubview($0)
         }
     }
