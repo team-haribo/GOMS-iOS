@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
-      run: echo Hello, world!
     - name: Run tests
       run: | 
        xcodebuild clean test -project GOMS-iOS.xcodeproj \
