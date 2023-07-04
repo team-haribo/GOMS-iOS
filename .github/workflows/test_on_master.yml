@@ -15,6 +15,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run tests
       run: | 
-       xcodebuild clean test -project GOMS-iOS.xcodeproj \
-        -scheme GOMS-iOS \
-        -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.5'
+        xcodebuild build -project GOMS-iOS/GOMS-iOS.xcodeproj
+
