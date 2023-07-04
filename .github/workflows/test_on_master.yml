@@ -16,4 +16,3 @@ jobs:
     - name: Run tests
       run: | 
         xcodebuild build -project GOMS-iOS.xcodeproj
-
