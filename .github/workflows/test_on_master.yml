@@ -24,3 +24,7 @@ jobs:
         xcodebuild build -project GOMS-iOS.xcodeproj
         -scheme GOMS-iOS 
         -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=15'
+        
+    - name : Configure Code Signing
+      run: | 
+        gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROFILES_ENCRYPTO_PWD" "$ENCRYPTED_PROVISION_FILE_PATH"
