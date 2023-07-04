@@ -16,5 +16,5 @@ jobs:
       run: | 
         xcodebuild clean test -project GOMS-iOS.xcodeproj \
         -scheme GOMS-iOS \
-        -destination 'platform=iOS Simulator,name=iPhone 13,OS=latest'
+        -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.0'
 
