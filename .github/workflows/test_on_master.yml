@@ -1,0 +1,28 @@
+// Workflow 이름
+name: Run Test
+
+// ✅ 트리거 조건 (push 하거나 PR 하면 하단의 jobs를 실행하겠다는 뜻)
+on:
+  push:
+    branches: [ master ]  // master branch로 push한 상황
+  pull_request:
+    branches: [ master ]  // master branch로 PR 생성한 상황
+
+// ✅ 트리거 발생 시 실행할 작업들 
+jobs:
+  // ✅ 이번 예시에서는 "build"라는 1개 작업만 진행
+  build:  
+
+    runs-on: macos-latest  // iOS 플랫폼에서 실행한다는 뜻
+
+    // ✅ job 내부에서 순차적으로 실행할 내용
+    steps:
+    - uses: actions/checkout@v3  // repository에 체크아웃해서 job이 접근 가능하게 한다는 뜻 (Github Actions에서 미리 정의한 명령)
+    - name: Build Xcode  // 실행할 작업 이름
+      run: |  // 여러가지 명령어를 사용할 때 "|" 입력
+        xcodebuild clean test -project GOMS-iOS.xcodeproj \
+        -scheme GOMS \
+        -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.5'
+        // Xcode로 특정 환경에서 clean 및 test를 진행하겠다는 뜻
+        // ❗-project WhatWeEat/WhatWeEat.xcodeproj를 쓰면 경로를 못찾는 문제 발생 가능
+        // ❗-destination '...,OS=14.1'를 쓰면 OS 버전이 안맞는 문제 발생 가능
