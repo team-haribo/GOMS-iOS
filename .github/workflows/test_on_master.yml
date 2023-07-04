@@ -1,5 +1,5 @@
 // Workflow 이름
-name: Run Test
+name: Swift
 
 // ✅ 트리거 조건 (push 하거나 PR 하면 하단의 jobs를 실행하겠다는 뜻)
 on:
