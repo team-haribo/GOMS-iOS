@@ -8,25 +8,13 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
-    
-    env: 
-      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/distribution.cer' }}
-      ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/distribution.cer.gpg' }}
-      PROVISION_ENCRYPTION_PWD: ${{ secrets.PROVISION_PWD }}     
-
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name : Configure Code Signing
-      run: | 
-        gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROVISION_ENCRYPTION_PWD" "$ENCRYPTED_PROVISION_FILE_PATH"
-
-    
     - name: Run tests
       run: | 
-        xcodebuild build -project GOMS-iOS.xcodeproj
-        -scheme GOMS-iOS 
-        -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=15'
+        xcodebuild clean test -project GOMS-iOS.xcodeproj \
+        -scheme GOMS-iOS \
+        -destination 'platform=iOS Simulator,name=iPhone 13,OS=latest'
+
