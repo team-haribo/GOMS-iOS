@@ -14,7 +14,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run tests
       run: | 
-        xcodebuild clean test -project GOMS-iOS/GOMS-iOS.xcodeproj 
+        pod install --repo-update --clean-install --project-directory=GOMS-iOS/
+        xcodebuild clean test -workspace GOMS-iOS/GOMS-iOS.xcworkspace 
         -scheme GOMS-iOS 
         -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=15'
 
