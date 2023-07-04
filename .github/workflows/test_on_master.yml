@@ -15,5 +15,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run tests
       run: | 
-        xcodebuild build -project GOMS-iOS/GOMS-iOS.xcodeproj
+        xcodebuild build -project GOMS-iOS.xcodeproj
 
