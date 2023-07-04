@@ -25,6 +25,9 @@
 		7771E7C62A1C567800649B63 /* EditUserModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7C52A1C567800649B63 /* EditUserModalViewController.swift */; };
 		7771E7C82A1C568500649B63 /* EditUserModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7C72A1C568500649B63 /* EditUserModalViewModel.swift */; };
 		77C0338E2A540CF0008E95D6 /* GOMSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0338D2A540CF0008E95D6 /* GOMSTests.swift */; };
+		77C033962A54347E008E95D6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 77C033952A54347E008E95D6 /* RxCocoa */; };
+		77C033982A54347E008E95D6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77C033972A54347E008E95D6 /* RxSwift */; };
+		77C0339B2A5434A5008E95D6 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 77C0339A2A5434A5008E95D6 /* RxFlow */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -32,9 +35,6 @@
 		77F0739D29ED29D000EE1FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */; };
 		77F073A629ED377800EE1FC9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073A529ED377800EE1FC9 /* Then */; };
 		77F073AC29ED379400EE1FC9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073AB29ED379400EE1FC9 /* SnapKit */; };
-		77F073B129ED37AB00EE1FC9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B029ED37AB00EE1FC9 /* RxSwift */; };
-		77F073B429ED37D600EE1FC9 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B329ED37D600EE1FC9 /* RxFlow */; };
-		77F073B629ED37EB00EE1FC9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B529ED37EB00EE1FC9 /* RxCocoa */; };
 		77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C229ED898F00EE1FC9 /* BaseViewController.swift */; };
 		77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */; };
 		77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */; };
@@ -197,14 +197,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C0339B2A5434A5008E95D6 /* RxFlow in Frameworks */,
+				77C033962A54347E008E95D6 /* RxCocoa in Frameworks */,
 				77F074992A0C965800EE1FC9 /* QRCode in Frameworks */,
-				77F073B429ED37D600EE1FC9 /* RxFlow in Frameworks */,
+				77C033982A54347E008E95D6 /* RxSwift in Frameworks */,
 				77F073AC29ED379400EE1FC9 /* SnapKit in Frameworks */,
 				77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */,
 				77F074942A03302100EE1FC9 /* Kingfisher in Frameworks */,
 				77F073D329ED923700EE1FC9 /* GAuthSignin in Frameworks */,
-				77F073B629ED37EB00EE1FC9 /* RxCocoa in Frameworks */,
-				77F073B129ED37AB00EE1FC9 /* RxSwift in Frameworks */,
 				77F0742929F00A7D00EE1FC9 /* QRCodeReader in Frameworks */,
 				77F073A629ED377800EE1FC9 /* Then in Frameworks */,
 			);
@@ -919,14 +919,14 @@
 			packageProductDependencies = (
 				77F073A529ED377800EE1FC9 /* Then */,
 				77F073AB29ED379400EE1FC9 /* SnapKit */,
-				77F073B029ED37AB00EE1FC9 /* RxSwift */,
-				77F073B329ED37D600EE1FC9 /* RxFlow */,
-				77F073B529ED37EB00EE1FC9 /* RxCocoa */,
 				77F073D229ED923700EE1FC9 /* GAuthSignin */,
 				77F0742829F00A7D00EE1FC9 /* QRCodeReader */,
 				77F0745A29F7BC7600EE1FC9 /* Moya */,
 				77F074932A03302100EE1FC9 /* Kingfisher */,
 				77F074982A0C965800EE1FC9 /* QRCode */,
+				77C033952A54347E008E95D6 /* RxCocoa */,
+				77C033972A54347E008E95D6 /* RxSwift */,
+				77C0339A2A5434A5008E95D6 /* RxFlow */,
 			);
 			productName = "GOMS-iOS";
 			productReference = 77F0741E29EE949B00EE1FC9 /* GOMS.app */;
@@ -962,14 +962,14 @@
 			mainGroup = 77F0738429ED29CF00EE1FC9;
 			packageReferences = (
 				77F073A429ED377800EE1FC9 /* XCRemoteSwiftPackageReference "Then" */,
-				77F073A729ED378600EE1FC9 /* XCRemoteSwiftPackageReference "RxFlow" */,
 				77F073AA29ED379400EE1FC9 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				77F073D129ED923700EE1FC9 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
 				77F0742729F00A7D00EE1FC9 /* XCRemoteSwiftPackageReference "QRCodeReader" */,
 				77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */,
 				77F074922A03302100EE1FC9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				77F074952A0C959200EE1FC9 /* XCRemoteSwiftPackageReference "QRCode" */,
+				77C033942A54347E008E95D6 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				77C033992A5434A5008E95D6 /* XCRemoteSwiftPackageReference "RxFlow" */,
 			);
 			productRefGroup = 77F0738429ED29CF00EE1FC9;
 			projectDirPath = "";
@@ -1355,6 +1355,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		77C033942A54347E008E95D6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		77C033992A5434A5008E95D6 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		77F073A429ED377800EE1FC9 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -1363,28 +1379,12 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		77F073A729ED378600EE1FC9 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		77F073AA29ED379400EE1FC9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
-			};
-		};
-		77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
 			};
 		};
 		77F073D129ED923700EE1FC9 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */ = {
@@ -1430,6 +1430,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		77C033952A54347E008E95D6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77C033942A54347E008E95D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		77C033972A54347E008E95D6 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77C033942A54347E008E95D6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		77C0339A2A5434A5008E95D6 /* RxFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77C033992A5434A5008E95D6 /* XCRemoteSwiftPackageReference "RxFlow" */;
+			productName = RxFlow;
+		};
 		77F073A529ED377800EE1FC9 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 77F073A429ED377800EE1FC9 /* XCRemoteSwiftPackageReference "Then" */;
@@ -1439,21 +1454,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 77F073AA29ED379400EE1FC9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		77F073B029ED37AB00EE1FC9 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		77F073B329ED37D600EE1FC9 /* RxFlow */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073A729ED378600EE1FC9 /* XCRemoteSwiftPackageReference "RxFlow" */;
-			productName = RxFlow;
-		};
-		77F073B529ED37EB00EE1FC9 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
 		};
 		77F073D229ED923700EE1FC9 /* GAuthSignin */ = {
 			isa = XCSwiftPackageProductDependency;
