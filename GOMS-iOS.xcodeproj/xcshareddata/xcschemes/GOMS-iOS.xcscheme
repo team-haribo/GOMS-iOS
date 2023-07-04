@@ -24,7 +24,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "77F0738C29ED29CF00EE1FC9"
-               BuildableName = "GOMS-iOS.app"
+               BuildableName = "GOMS.app"
                BlueprintName = "GOMS-iOS"
                ReferencedContainer = "container:GOMS-iOS.xcodeproj">
             </BuildableReference>
@@ -37,6 +37,19 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "77C0338A2A540CF0008E95D6"
+               BuildableName = "GOMSTests.xctest"
+               BlueprintName = "GOMSTests"
+               ReferencedContainer = "container:GOMS-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -53,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "77F0738C29ED29CF00EE1FC9"
-            BuildableName = "GOMS-iOS.app"
+            BuildableName = "GOMS.app"
             BlueprintName = "GOMS-iOS"
             ReferencedContainer = "container:GOMS-iOS.xcodeproj">
          </BuildableReference>
@@ -70,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "77F0738C29ED29CF00EE1FC9"
-            BuildableName = "GOMS-iOS.app"
+            BuildableName = "GOMS.app"
             BlueprintName = "GOMS-iOS"
             ReferencedContainer = "container:GOMS-iOS.xcodeproj">
          </BuildableReference>

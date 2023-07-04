@@ -24,6 +24,7 @@
 		7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */; };
 		7771E7C62A1C567800649B63 /* EditUserModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7C52A1C567800649B63 /* EditUserModalViewController.swift */; };
 		7771E7C82A1C568500649B63 /* EditUserModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7C72A1C568500649B63 /* EditUserModalViewModel.swift */; };
+		77C0338E2A540CF0008E95D6 /* GOMSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0338D2A540CF0008E95D6 /* GOMSTests.swift */; };
 		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
 		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
 		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
@@ -93,6 +94,16 @@
 		77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		77C0338F2A540CF0008E95D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77F0738529ED29CF00EE1FC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77F0738C29ED29CF00EE1FC9;
+			remoteInfo = "GOMS-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
 		774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsBlackListRequset.swift; sourceTree = "<group>"; };
@@ -111,6 +122,8 @@
 		7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
 		7771E7C52A1C567800649B63 /* EditUserModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserModalViewController.swift; sourceTree = "<group>"; };
 		7771E7C72A1C568500649B63 /* EditUserModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserModalViewModel.swift; sourceTree = "<group>"; };
+		77C0338B2A540CF0008E95D6 /* GOMSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GOMSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77C0338D2A540CF0008E95D6 /* GOMSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTests.swift; sourceTree = "<group>"; };
 		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +186,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		77C033882A540CF0008E95D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77F0738A29ED29CF00EE1FC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,12 +327,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		77C0338C2A540CF0008E95D6 /* GOMSTests */ = {
+			isa = PBXGroup;
+			children = (
+				77C0338D2A540CF0008E95D6 /* GOMSTests.swift */,
+			);
+			path = GOMSTests;
+			sourceTree = "<group>";
+		};
 		77F0738429ED29CF00EE1FC9 = {
 			isa = PBXGroup;
 			children = (
 				77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */,
+				77C0338C2A540CF0008E95D6 /* GOMSTests */,
 				77F073B229ED37D600EE1FC9 /* Frameworks */,
 				77F0741E29EE949B00EE1FC9 /* GOMS.app */,
+				77C0338B2A540CF0008E95D6 /* GOMSTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -855,6 +885,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		77C0338A2A540CF0008E95D6 /* GOMSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77C033912A540CF0008E95D6 /* Build configuration list for PBXNativeTarget "GOMSTests" */;
+			buildPhases = (
+				77C033872A540CF0008E95D6 /* Sources */,
+				77C033882A540CF0008E95D6 /* Frameworks */,
+				77C033892A540CF0008E95D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77C033902A540CF0008E95D6 /* PBXTargetDependency */,
+			);
+			name = GOMSTests;
+			productName = GOMSTests;
+			productReference = 77C0338B2A540CF0008E95D6 /* GOMSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		77F0738C29ED29CF00EE1FC9 /* GOMS-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77F073A129ED29D000EE1FC9 /* Build configuration list for PBXNativeTarget "GOMS-iOS" */;
@@ -894,6 +942,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					77C0338A2A540CF0008E95D6 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 77F0738C29ED29CF00EE1FC9;
+					};
 					77F0738C29ED29CF00EE1FC9 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -924,11 +976,19 @@
 			projectRoot = "";
 			targets = (
 				77F0738C29ED29CF00EE1FC9 /* GOMS-iOS */,
+				77C0338A2A540CF0008E95D6 /* GOMSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		77C033892A540CF0008E95D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77F0738B29ED29CF00EE1FC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -945,6 +1005,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		77C033872A540CF0008E95D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77C0338E2A540CF0008E95D6 /* GOMSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		77F0738929ED29CF00EE1FC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1022,6 +1090,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		77C033902A540CF0008E95D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77F0738C29ED29CF00EE1FC9 /* GOMS-iOS */;
+			targetProxy = 77C0338F2A540CF0008E95D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -1034,6 +1110,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		77C033922A540CF0008E95D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5GD5Q99952;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minjae.GOMSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GOMS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GOMS";
+			};
+			name = Debug;
+		};
+		77C033932A540CF0008E95D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5GD5Q99952;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minjae.GOMSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GOMS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GOMS";
+			};
+			name = Release;
+		};
 		77F0739F29ED29D000EE1FC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1211,6 +1325,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		77C033912A540CF0008E95D6 /* Build configuration list for PBXNativeTarget "GOMSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77C033922A540CF0008E95D6 /* Debug */,
+				77C033932A540CF0008E95D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		77F0738829ED29CF00EE1FC9 /* Build configuration list for PBXProject "GOMS-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
