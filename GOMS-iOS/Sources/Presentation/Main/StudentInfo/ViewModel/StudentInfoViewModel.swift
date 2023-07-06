@@ -6,21 +6,62 @@ import RxSwift
 import Moya
 
 class StudentInfoViewModel: BaseViewModel, Stepper{
-    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
+    let provider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
     var studentUserInfo: [StudentInfoResponse] = []
 
     struct Input {
         let searchBarButton: Observable<Void>
+        var viewWillAppear: Observable<Void>
     }
     
     struct Output {
-        
+        var list: Observable<[StudentInfoResponse]>
     }
     
-    func transVC(input: Input) {
+    func transVC(input: Input) -> Output{
+        let listRelay = BehaviorRelay<[StudentInfoResponse]>(value: [])
+
         input.searchBarButton.subscribe(
             onNext: pushSearchModal
         ) .disposed(by: disposeBag)
+                
+        input.viewWillAppear
+            .flatMap {
+                Observable<[StudentInfoResponse]>.create { observer in
+                    self.provider.request(.studentInfo(authorization: self.accessToken)) { response in
+                        switch response {
+                        case let .success(result):
+                            let responseData = result.data
+                            let statusCode = result.statusCode
+                            do {
+                                self.studentUserInfo = try JSONDecoder().decode([StudentInfoResponse].self, from: responseData)
+                                observer.onNext(self.studentUserInfo)
+                                
+                            }catch(let err) {
+                                print(String(describing: err))
+                            }
+                            switch statusCode{
+                            case 200..<300:
+                                print("success")
+                            case 401:
+                                self.gomsRefreshToken.tokenReissuance()
+                            case 404: break
+                            default:
+                                print("ERROR")
+                            }
+                        case let .failure(err):
+                            observer.onError(err)
+                        }
+                    }
+                    return Disposables.create()
+                }
+            }
+            .bind(to: listRelay)
+            .disposed(by: disposeBag)
+        
+        return Output(
+            list: listRelay.asObservable()
+        )
     }
     
     private func pushSearchModal() {
@@ -29,36 +70,8 @@ class StudentInfoViewModel: BaseViewModel, Stepper{
 }
 
 extension StudentInfoViewModel {
-    func studentInfo(completion: @escaping () -> Void) {
-        studentCouncilProvider.request(.studentInfo(authorization: accessToken)){ response in
-            switch response {
-            case let .success(result):
-                let responseData = result.data
-                print(String(data: responseData, encoding: .utf8))
-                do {
-                    self.studentUserInfo = try JSONDecoder().decode([StudentInfoResponse].self, from: responseData)
-                    completion() 
-                }catch(let err) {
-                    print(String(describing: err))
-                }
-                let statusCode = result.statusCode
-                switch statusCode{
-                case 200..<300:
-                    print("success")
-                case 401:
-                    self.gomsRefreshToken.tokenReissuance()
-                case 404: break
-                default:
-                    print("ERROR")
-                }
-            case .failure(let err):
-                print(String(describing: err))
-            }
-        }
-    }
-    
     func blackListDelete(accountIdx: UUID,completion: @escaping () -> Void) {
-        studentCouncilProvider.request(.blackListDelete(authorization: accessToken, accountIdx: accountIdx)){ response in
+        provider.request(.blackListDelete(authorization: accessToken, accountIdx: accountIdx)){ response in
             switch response {
             case let .success(result):
                 let statusCode = result.statusCode
