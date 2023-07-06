@@ -18,7 +18,7 @@ class StudentInfoViewModel: BaseViewModel, Stepper{
         var list: Observable<[StudentInfoResponse]>
     }
     
-    func transVC(input: Input) -> Output{
+    func transform(_ input: Input) -> Output {
         let listRelay = BehaviorRelay<[StudentInfoResponse]>(value: [])
 
         input.searchBarButton.subscribe(

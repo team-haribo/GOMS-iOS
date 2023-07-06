@@ -1,139 +1,80 @@
 import UIKit
-import RxFlow
-import Kingfisher
 import SnapKit
 import Then
-import RxSwift
 import RxCocoa
+import RxSwift
+import Kingfisher
 
 class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
-    private var userNameList = [String]()
-    private var userGradeList = [Int]()
-    private var userClassNumList = [Int]()
-    private var userNumList = [Int]()
-    private var userRole = [String]()
-    private var userIsBlackList = [Bool]()
-    private var userProfile = [String]()
     private let searchModalViewModal = SearchModalViewModal.shared
-
 
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.title = "학생 정보 수정"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
         super.viewDidLoad()
-        Task {
-            await getData()
-        }
-        studentInfoCollectionView.collectionViewLayout = layout
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.didDismissSearchNotification(_:)),
-            name: NSNotification.Name("DismissSearchView"),
-            object: nil
-        )
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.didDismissEditNotification(_:)),
-            name: NSNotification.Name("DismissEditView"),
-            object: nil
-        )
-    }
-    
-    @objc func didDismissSearchNotification(_ notification: Notification) {
-        DispatchQueue.main.async { [self] in
-            studentInfoCollectionView.reloadData()
-            userNameList = [String]()
-            userGradeList = [Int]()
-            userClassNumList = [Int]()
-            userNumList = [Int]()
-            userRole = [String]()
-            userIsBlackList = [Bool]()
-            bindSearchData()
-          }
-    }
-    
-    @objc func didDismissEditNotification(_ notification: Notification) {
-        DispatchQueue.main.async { [self] in
-            userNameList = [String]()
-            userGradeList = [Int]()
-            userClassNumList = [Int]()
-            userNumList = [Int]()
-            userRole = [String]()
-            userIsBlackList = [Bool]()
-            viewModel.studentInfo {
-                self.studentInfoCollectionView.reloadData()
-                self.bindStudentInfo()
-            }
-          }
-    }
-        
-    override func viewDidAppear(_ animated: Bool) {
         bindViewModel()
+        studentInfoCollectionView.collectionViewLayout = layout
     }
     
     private func bindViewModel() {
-        let input = StudentInfoViewModel.Input(
-            searchBarButton: searchBarButton.rx.tap.asObservable()
+        let viewWillApeearObservable = self.rx.methodInvoked(#selector(viewWillAppear))
+            .map { _ in }
+            .asObservable()
+        
+        let output = viewModel.transform(
+            .init(
+                searchBarButton: searchBarButton.rx.tap.asObservable(),
+                viewWillAppear: viewWillApeearObservable
+            )
         )
-        viewModel.transVC(input: input)
-    }
-    
-    private func getData() async {
-        viewModel.studentInfo { [weak self] in
-            self?.bindStudentInfo()
-        }
-    }
-    
-    private func bindSearchData() {
-        if searchModalViewModal.searchResult.isEmpty {
-            self.studentInfoCollectionView.isHidden = true
-            self.noResultText.isHidden = false
-            self.noResultImage.isHidden = false
-        }
-        else {
-            for index in 0...searchModalViewModal.searchResult.endIndex - 1 {
-                self.studentInfoCollectionView.isHidden = false
-                self.noResultText.isHidden = true
-                self.noResultImage.isHidden = true
-                userNameList.insert(searchModalViewModal.searchResult[index].name, at: index)
-                userGradeList.insert(searchModalViewModal.searchResult[index].studentNum.grade, at: index)
-                userClassNumList.insert(searchModalViewModal.searchResult[index].studentNum.classNum, at: index)
-                userNumList.insert(searchModalViewModal.searchResult[index].studentNum.number, at: index)
-                userRole.insert(searchModalViewModal.searchResult[index].authority, at: index)
-                userIsBlackList.insert(searchModalViewModal.searchResult[index].isBlackList, at: index)
-                userProfile.insert(searchModalViewModal.searchResult[index].profileUrl ?? "", at: index)
+        
+        output.list
+            .bind(
+                to: studentInfoCollectionView.rx.items(
+                    cellIdentifier: "studentInfoCell",
+                    cellType: StudentInfoCell.self
+                )
+            ) { ip, item, cell in
+                cell.backgroundColor = .white
+                cell.layer.cornerRadius = 10
+                cell.layer.applySketchShadow(
+                    color: UIColor.black,
+                    alpha: 0.1,
+                    x: 0,
+                    y: 2,
+                    blur: 8,
+                    spread: 0
+                )
+                let url = URL(string: item.profileUrl ?? "")
+                cell.userProfile.kf.setImage(with: url, placeholder: UIImage(named: "dummyImage.svg"))
+                cell.userName.text = item.name
+                if item.studentNum.number < 10 {
+                    cell.userNum.text = "\(item.studentNum.grade)\(item.studentNum.classNum)0\(item.studentNum.number)"
+
+                }
+                else {
+                    cell.userNum.text = "\(item.studentNum.grade)\(item.studentNum.classNum)\(item.studentNum.number)"
+                }
+                if item.isBlackList == true {
+                    cell.roleView.isHidden = false
+                    cell.roleText.isHidden = false
+                    cell.deleteBlackListButton.isHidden = false
+                    cell.editUserAuthorityButton.isHidden = true
+                    cell.roleText.text = "외출금지"
+                    cell.roleText.textColor = .blackListColor
+                    cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
+                }
+                else if item.authority == "ROLE_STUDENT_COUNCIL" {
+                    cell.roleView.isHidden = false
+                    cell.roleText.isHidden = false
+                }
+                else {
+                    cell.roleView.isHidden = true
+                    cell.roleText.isHidden = true
+                }
             }
-            studentInfoCollectionView.dataSource = self
-            studentInfoCollectionView.delegate = self
-            studentInfoCollectionView.register(
-                StudentInfoCell.self,
-                forCellWithReuseIdentifier: StudentInfoCell.identifier
-            )
-        }
-    }
-    
-    private func bindStudentInfo() {
-        if viewModel.studentUserInfo.isEmpty {
-            print("empty")
-        }
-        else {
-            for index in 0...viewModel.studentUserInfo.endIndex - 1 {
-                userNameList.insert(viewModel.studentUserInfo[index].name, at: index)
-                userGradeList.insert(viewModel.studentUserInfo[index].studentNum.grade, at: index)
-                userClassNumList.insert(viewModel.studentUserInfo[index].studentNum.classNum, at: index)
-                userNumList.insert(viewModel.studentUserInfo[index].studentNum.number, at: index)
-                userRole.insert(viewModel.studentUserInfo[index].authority, at: index)
-                userIsBlackList.insert(viewModel.studentUserInfo[index].isBlackList, at: index)
-                userProfile.insert(viewModel.studentUserInfo[index].profileUrl ?? "", at: index)
-            }
-            studentInfoCollectionView.dataSource = self
-            studentInfoCollectionView.delegate = self
-            studentInfoCollectionView.register(
-                StudentInfoCell.self,
-                forCellWithReuseIdentifier: StudentInfoCell.identifier
-            )
-        }
+            .disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -183,6 +124,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
     ).then {
         $0.isScrollEnabled = true
         $0.backgroundColor = .background
+        $0.register(StudentInfoCell.self, forCellWithReuseIdentifier: "studentInfoCell")
     }
     
     private let searchBarText = UILabel().then {
@@ -210,6 +152,7 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         studentInfoCollectionView.snp.makeConstraints{
             $0.top.equalTo(searchBarButton.snp.bottom).offset(32)
             $0.leading.trailing.equalToSuperview().inset(26)
+            $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
         searchBarText.snp.makeConstraints {
@@ -229,109 +172,4 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         }
     }
 
-}
-extension StudentInfoViewController:
-    UICollectionViewDelegate,
-    UICollectionViewDelegateFlowLayout,
-    UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userNameList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentInfoCell.identifier, for: indexPath) as? StudentInfoCell else {
-            return UICollectionViewCell()
-        }
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 10
-        cell.layer.applySketchShadow(
-            color: UIColor.black,
-            alpha: 0.1,
-            x: 0,
-            y: 2,
-            blur: 8,
-            spread: 0
-        )
-        cell.roleText.isHidden = true
-        cell.roleView.isHidden = true
-        cell.deleteBlackListButton.isHidden = true
-        cell.editUserAuthorityButton.isHidden = false
-        
-        if userRole[indexPath.row] == "ROLE_STUDENT_COUNCIL" {
-            cell.roleView.isHidden = false
-            cell.roleText.isHidden = false
-        }
-
-        else if userIsBlackList[indexPath.row] == true {
-            cell.roleView.isHidden = false
-            cell.roleText.isHidden = false
-            cell.deleteBlackListButton.isHidden = false
-            cell.editUserAuthorityButton.isHidden = true
-            cell.roleText.text = "외출금지"
-            cell.roleText.textColor = .blackListColor
-            cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
-        }
-        cell.editUserAuthorityButtonAction = { [unowned self] in
-            viewModel.steps.accept(
-                GOMSStep.editUserModalIsRequired(
-                    accountIdx: viewModel.studentUserInfo[indexPath.row].accountIdx
-                )
-            )
-        }
-        cell.deleteBlackListButtonAction = { [unowned self] in
-            viewModel.steps.accept(GOMSStep.alert(
-                title: "블랙리스트 취소",
-                message: "정말 블랙리스트를 취소할까요?",
-                style: .alert,
-                actions: [
-                    .init(title: "확인", style: .default) { _ in
-                        self.viewModel.blackListDelete(
-                            accountIdx: self.viewModel.studentUserInfo[indexPath.row].accountIdx, completion: {
-                                [unowned self] in
-                                userNameList = [String]()
-                                userGradeList = [Int]()
-                                userClassNumList = [Int]()
-                                userNumList = [Int]()
-                                userRole = [String]()
-                                userIsBlackList = [Bool]()
-                                viewModel.studentInfo { [unowned self] in
-                                    studentInfoCollectionView.reloadData()
-                                    bindStudentInfo()
-                                }
-                            }
-                        )
-                    },
-                    .init(title: "취소", style: .cancel)
-                ]
-            ))
-        }
-        cell.userName.text = "\(userNameList[indexPath.row])"
-        if userNumList[indexPath.row] < 10 {
-            cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
-        }
-        else {
-            cell.userNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
-        }
-        let url = URL(string: userProfile[indexPath.row])
-        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
-        cell.userProfile.kf.setImage(
-            with: url,
-            placeholder:UIImage(named: "dummyImage.svg"),
-            options: [.processor(imageCornerRadius)]
-        )
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(
-            width: (
-                (UIScreen.main.bounds.width) - 52
-            ),
-            height: (
-                90
-            )
-        )
-    }
 }
