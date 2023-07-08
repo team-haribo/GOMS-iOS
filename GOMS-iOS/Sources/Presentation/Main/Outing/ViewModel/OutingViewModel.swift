@@ -12,12 +12,15 @@ import RxCocoa
 import Moya
 
 class OutingViewModel: BaseViewModel, Stepper{
+    weak var delegate: OutingViewModelDelegate?
+    
     let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
     
     var outingList: [OutingListResponse] = []
 
     struct Input {
         let profileButtonTap: Observable<Void>
+        let searchButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -28,6 +31,12 @@ class OutingViewModel: BaseViewModel, Stepper{
         input.profileButtonTap.subscribe(
             onNext: pushProfileVC
         ) .disposed(by: disposeBag)
+        
+        input.searchButtonTap.subscribe(
+            onNext: { [weak self] in
+                self?.delegate?.searchUser()
+            }
+        ).disposed(by: disposeBag)
     }
     
     private func pushProfileVC() {
@@ -35,6 +44,9 @@ class OutingViewModel: BaseViewModel, Stepper{
     }
 }
 
+protocol OutingViewModelDelegate: AnyObject {
+    func searchUser()
+}
 
 extension OutingViewModel {
     func outingList(completion: @escaping () -> Void) {
