@@ -29,7 +29,7 @@ enum GOMSStep: Step {
     //MARK: Admin
     case studentInfoIsRequired
     case searchModalIsRequired
-    case searchModalDismiss(grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?)
+    case searchModalDismiss
     case editUserModalIsRequired(accountIdx: UUID)
     case editModalDismiss
 }

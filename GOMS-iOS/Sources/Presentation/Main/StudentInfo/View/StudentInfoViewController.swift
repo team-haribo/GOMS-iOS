@@ -22,14 +22,19 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
             .map { _ in }
             .asObservable()
         
+        let searchModalDismiss = NotificationCenter.default.rx.notification(.searchModalDismiss)
+            .map { _ in }
+            .asObservable()
+        
         let output = viewModel.transform(
             .init(
                 searchBarButton: searchBarButton.rx.tap.asObservable(),
-                viewWillAppear: viewWillApeearObservable
+                viewWillAppear: viewWillApeearObservable,
+                searchModalDismiss: searchModalDismiss
             )
         )
         
-        output.list
+        output.studentList
             .bind(
                 to: studentInfoCollectionView.rx.items(
                     cellIdentifier: "studentInfoCell",
@@ -51,7 +56,6 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
                 cell.userName.text = item.name
                 if item.studentNum.number < 10 {
                     cell.userNum.text = "\(item.studentNum.grade)\(item.studentNum.classNum)0\(item.studentNum.number)"
-
                 }
                 else {
                     cell.userNum.text = "\(item.studentNum.grade)\(item.studentNum.classNum)\(item.studentNum.number)"
