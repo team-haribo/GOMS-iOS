@@ -68,10 +68,15 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
                 else if item.authority == "ROLE_STUDENT_COUNCIL" {
                     cell.roleView.isHidden = false
                     cell.roleText.isHidden = false
+                    cell.deleteBlackListButton.isHidden = true
+                    cell.editUserAuthorityButton.isHidden = false
                 }
                 else {
                     cell.roleView.isHidden = true
                     cell.roleText.isHidden = true
+                    cell.deleteBlackListButton.isHidden = true
+                    cell.editUserAuthorityButton.isHidden = false
+
                 }
             }
             .disposed(by: disposeBag)

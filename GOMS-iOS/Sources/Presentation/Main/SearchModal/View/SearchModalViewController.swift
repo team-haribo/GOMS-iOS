@@ -28,15 +28,15 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     private func postData() {
         searchButton.rx.tap
             .bind {
-                self.viewModel.searchStudent(
-                    grade: self.searchGrade,
-                    classNum: self.searchClassNum,
-                    name: self.searchBar.text ?? "",
-                    isBlackList: self.searchBlackList,
-                    authority: self.searchAuthority ?? ""
-                ) {
-                    self.viewModel.steps.accept(GOMSStep.searchModalDismiss)
-                }
+                self.viewModel.steps.accept(
+                    GOMSStep.searchModalDismiss(
+                        grade: self.searchGrade,
+                        classNum: self.searchClassNum,
+                        name: self.searchBar.text ?? "",
+                        isBlackList: self.searchBlackList,
+                        authority: self.searchAuthority ?? ""
+                    )
+                )
             }
             .disposed(by: disposeBag)
     }

@@ -6,34 +6,21 @@ import Moya
 
 class SearchModalViewModal: BaseViewModel, Stepper{
     static let shared = SearchModalViewModal()
-    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
+    let provider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
 
     var searchResult: [SearchResponse] = []
     
     private override init() { }
 
     struct Input {
-        let searchButton: Observable<Void>
     }
     
     struct Output {
-        
     }
-    
-    func transVC(input: Input) {
-        input.searchButton.subscribe(
-            onNext: pushStudentInfo
-        ) .disposed(by: disposeBag)
-    }
-    
-    private func pushStudentInfo() {
-        self.steps.accept(GOMSStep.searchModalDismiss)
-    }
-    
 }
 extension SearchModalViewModal {
     func searchStudent(grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?,completion: @escaping () -> Void) {
-        studentCouncilProvider.request(.search(authorization: accessToken, grade: grade, classNum: classNum, name: name, isBlackList: isBlackList, authority: authority)){ response in
+        provider.request(.search(authorization: accessToken, grade: grade, classNum: classNum, name: name, isBlackList: isBlackList, authority: authority)){ response in
             switch response {
             case let .success(result):
                 let responseData = result.data

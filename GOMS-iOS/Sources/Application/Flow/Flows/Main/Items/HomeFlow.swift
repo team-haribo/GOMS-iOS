@@ -66,8 +66,8 @@ class HomeFlow: Flow {
         case let .editUserModalIsRequired(accountIdx):
             return coordinateToEditUserModal(accountIdx: accountIdx)
             
-        case .searchModalDismiss:
-            return dismissSearchModal()
+        case let .searchModalDismiss(grade, classNum, name, isBlackList, authority):
+            return dismissSearchModal(grade: grade, classNum: classNum, name: name, isBlackList: isBlackList, authority: authority)
             
         case .editModalDismiss:
             return dismissEditModal()
@@ -128,7 +128,7 @@ class HomeFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
-    private func dismissSearchModal() -> FlowContributors {
+    private func dismissSearchModal(grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?) -> FlowContributors {
         let vm = StudentInfoViewModel()
         let vc = StudentInfoViewController(vm)
         self.rootViewController.dismiss(animated: true)
