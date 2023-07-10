@@ -11,6 +11,8 @@ import SnapKit
 
 class OutingCollectionViewCell: UICollectionViewCell {
     static let identifier = "outingCell"
+    let keychain = Keychain()
+    lazy var userAuthority = keychain.read(key: Const.KeychainKey.authority)
     
     let userProfile = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +35,12 @@ class OutingCollectionViewCell: UICollectionViewCell {
         $0.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
     }
     
+    lazy var deleteButton = UIButton().then {
+        $0.setImage(UIImage(named: "deleteIcon.svg"), for: .normal)
+        $0.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        $0.isHidden = userAuthority == "ROLE_STUDENT_COUNCIL" ? false : true
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addView()
@@ -44,7 +52,7 @@ class OutingCollectionViewCell: UICollectionViewCell {
     }
     
     func addView() {
-        [userProfile, userName, userNum, createTime].forEach {
+        [userProfile, userName, userNum, createTime, deleteButton].forEach {
             contentView.addSubview($0)
         }
     }
@@ -65,6 +73,12 @@ class OutingCollectionViewCell: UICollectionViewCell {
         createTime.snp.makeConstraints {
             $0.leading.equalTo(userNum.snp.trailing).offset(6)
             $0.centerY.equalTo(userNum.snp.centerY).offset(0)
+        }
+        deleteButton.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(18)
+            $0.height.equalTo(22)
         }
     }
 }
