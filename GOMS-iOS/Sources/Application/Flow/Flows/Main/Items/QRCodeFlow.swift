@@ -55,6 +55,9 @@ class QRCodeFlow: Flow {
         case let .failureAlert(title, message, action):
             return presentToFailureAlert(title: title, message: message, action: action)
             
+        case .scanSuccessIsRequired:
+            return coordinateToSuccess()
+            
         default:
             return .none
         }
@@ -63,6 +66,13 @@ class QRCodeFlow: Flow {
     private func coordinateToQRCode() -> FlowContributors {
         let vm = QRCodeViewModel()
         let vc = QRCodeViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToSuccess() -> FlowContributors {
+        let vm = ScanViewModel()
+        let vc = ScanViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }

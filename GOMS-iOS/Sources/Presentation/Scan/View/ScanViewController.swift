@@ -9,6 +9,7 @@ import RxCocoa
 class ScanViewController: BaseViewController<ScanViewModel> {
 
     override func viewDidLoad() {
+        self.navigationItem.hidesBackButton = true
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
         bindViewModel()

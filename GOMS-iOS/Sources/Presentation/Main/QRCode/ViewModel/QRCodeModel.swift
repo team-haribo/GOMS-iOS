@@ -47,17 +47,18 @@ extension QRCodeViewModel {
                 let statusCode = result.response?.statusCode ?? 500
                 switch statusCode{
                 case 200..<300:
-                    self.steps.accept(GOMSStep.alert(
-                        title: "",
-                        message: "QRCode 스캔이 완로되었습니다.",
-                        style: .alert,
-                        actions: [
-                            .init(title: "확인", style: .default) {_ in
-                                self.steps.accept(GOMSStep.tabBarIsRequired)
-                            }
-                        ]
-                    )
-                    )
+//                    self.steps.accept(GOMSStep.alert(
+//                        title: "",
+//                        message: "QRCode 스캔이 완로되었습니다.",
+//                        style: .alert,
+//                        actions: [
+//                            .init(title: "확인", style: .default) {_ in
+//                                self.steps.accept(GOMSStep.tabBarIsRequired)
+//                            }
+//                        ]
+//                    )
+//                    )
+                    self.steps.accept(GOMSStep.scanSuccessIsRequired)
                 case 400:
                     self.steps.accept(GOMSStep.failureAlert(
                         title: "오류",
