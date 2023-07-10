@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */; };
 		774D26BA2A1DFFEB003666E8 /* IsBlackListRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */; };
+		7761C52A2A5C41BF00C48348 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761C5292A5C41BF00C48348 /* ScanViewController.swift */; };
+		7761C52C2A5C41D000C48348 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761C52B2A5C41D000C48348 /* ScanViewModel.swift */; };
 		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
 		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
 		7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */; };
@@ -96,6 +98,8 @@
 /* Begin PBXFileReference section */
 		774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
 		774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsBlackListRequset.swift; sourceTree = "<group>"; };
+		7761C5292A5C41BF00C48348 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		7761C52B2A5C41D000C48348 /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
@@ -193,6 +197,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7761C5262A5C40E100C48348 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				7761C5282A5C40F000C48348 /* ViewModel */,
+				7761C5272A5C40EA00C48348 /* View */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		7761C5272A5C40EA00C48348 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7761C5292A5C41BF00C48348 /* ScanViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7761C5282A5C40F000C48348 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7761C52B2A5C41D000C48348 /* ScanViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		7771E7962A0CC3ED00649B63 /* StudentInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +376,7 @@
 		77F073B829ED676000EE1FC9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7761C5262A5C40E100C48348 /* Scan */,
 				77F0741829EE8B5800EE1FC9 /* TabBar */,
 				77F073F329EE3D3200EE1FC9 /* Main */,
 				77F073C129ED893100EE1FC9 /* Base */,
@@ -982,6 +1012,7 @@
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
+				7761C52C2A5C41D000C48348 /* ScanViewModel.swift in Sources */,
 				7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */,
 				7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */,
 				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
@@ -1008,6 +1039,7 @@
 				77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */,
 				77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */,
 				77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */,
+				7761C52A2A5C41BF00C48348 /* ScanViewController.swift in Sources */,
 				77F0747329FAC13100EE1FC9 /* OutingListModel.swift in Sources */,
 				7771E7C62A1C567800649B63 /* EditUserModalViewController.swift in Sources */,
 				77F0740529EE8A0200EE1FC9 /* QRCodeViewController.swift in Sources */,
