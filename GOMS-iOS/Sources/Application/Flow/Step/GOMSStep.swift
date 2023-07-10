@@ -32,4 +32,7 @@ enum GOMSStep: Step {
     case searchModalDismiss
     case editUserModalIsRequired(accountIdx: UUID)
     case editModalDismiss
+    
+    //MARK: QRSucecss
+    case scanSuccessIsRequired
 }
