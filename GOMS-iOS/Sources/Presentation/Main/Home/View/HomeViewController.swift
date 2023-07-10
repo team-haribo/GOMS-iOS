@@ -42,6 +42,25 @@ class HomeViewController: BaseViewController<HomeViewModel> {
         self.navigationItem.leftLogoImage()
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
+        
+        if UIDevice.current.isiPhoneSE {
+            useQRCodeButton.snp.makeConstraints {
+                $0.top.equalTo(homeMainText.snp.bottom).offset(22)
+                $0.leading.equalToSuperview().offset(26)
+                $0.height.equalTo(30)
+                $0.trailing.equalTo(homeMainImage.snp.leading).inset(23)
+            }
+            tardyCollectionView.snp.makeConstraints {
+                $0.top.equalTo(tardyText.snp.bottom).offset(17)
+                $0.leading.trailing.equalToSuperview().inset(26)
+                $0.bottom.equalTo(view.snp.bottom).inset((bounds.height) / 4.5)
+            }
+            profileButton.snp.makeConstraints {
+                $0.bottom.equalTo(view).inset(120)
+                $0.leading.trailing.equalToSuperview().inset(26)
+                $0.height.equalTo((bounds.height) / 11.6)
+            }
+        }
     }
     
     private func checkUserIsOuting() {
@@ -301,22 +320,22 @@ class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     override func setLayout() {
-        homeMainImage.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 7.73)
+        homeMainImage.snp.makeConstraints {            $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-((bounds.height)/1.804444444))
             $0.trailing.equalToSuperview().offset(16)
+            $0.height.equalTo(174)
         }
         homeMainText.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 6.94)
+            $0.bottom.equalTo(useQRCodeButton.snp.top).offset(-22)
             $0.leading.equalToSuperview().offset(26)
         }
         useQRCodeButton.snp.makeConstraints {
-            $0.top.equalTo(homeMainText.snp.bottom).offset(22)
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-((bounds.height)/1.75757575))
             $0.leading.equalToSuperview().offset(26)
             $0.height.equalTo((bounds.height) / 21.36)
             $0.trailing.equalTo(homeMainImage.snp.leading).inset(23)
         }
         outingButton.snp.makeConstraints {
-            $0.top.equalTo(homeMainImage.snp.bottom).offset(32)
+            $0.bottom.equalTo(tardyText.snp.top).offset(-32)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo((bounds.height) / 11.6)
         }
@@ -325,28 +344,27 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
         outingStudentText.snp.makeConstraints {
-            $0.top.equalTo(totalStudentText.snp.bottom).offset(8)
+            $0.top.equalTo(totalStudentText.snp.bottom).offset(6)
             $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
-        
         outingNavigationButton.snp.makeConstraints {
             $0.centerY.equalTo(outingButton.snp.centerY).offset(0)
             $0.trailing.equalTo(profileButton.snp.trailing).inset(23)
         }
         
         tardyText.snp.makeConstraints {
-            $0.top.equalTo(outingButton.snp.bottom).offset(32)
+            $0.bottom.equalTo(tardyCollectionView.snp.top).offset(-((bounds.height)/47.7647058824))
             $0.leading.equalToSuperview().offset(26)
         }
         tardyCollectionView.snp.makeConstraints {
-            $0.top.equalTo(tardyText.snp.bottom).offset(17)
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-((bounds.height)/5.2387096774))
             $0.leading.trailing.equalToSuperview().inset(26)
-            $0.bottom.equalTo(view.snp.bottom).inset((bounds.height) / 3.5)
+            $0.height.equalTo(bounds.height / 6.7)
         }
         profileButton.snp.makeConstraints {
-            $0.top.equalTo(tardyCollectionView.snp.bottom).offset(32)
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide).offset(-((bounds.height)/15.320754717))
             $0.leading.trailing.equalToSuperview().inset(26)
-            $0.height.equalTo((bounds.height) / 11.6)
+            $0.height.equalTo(view.bounds.height / 11.6)
         }
         profileImg.snp.makeConstraints {
             $0.centerY.equalTo(profileButton.snp.centerY).offset(0)
@@ -358,7 +376,7 @@ class HomeViewController: BaseViewController<HomeViewModel> {
             $0.leading.equalTo(profileImg.snp.trailing).offset(14)
         }
         userNumText.snp.makeConstraints {
-            $0.top.equalTo(userNameText.snp.bottom).offset(4)
+            $0.top.equalTo(userNameText.snp.bottom).offset((bounds.height) / 203)
             $0.leading.equalTo(profileImg.snp.trailing).offset(14)
         }
         profileNavigationButton.snp.makeConstraints {

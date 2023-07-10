@@ -91,6 +91,7 @@
 		77F074942A03302100EE1FC9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074932A03302100EE1FC9 /* Kingfisher */; };
 		77F074992A0C965800EE1FC9 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074982A0C965800EE1FC9 /* QRCode */; };
 		77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */; };
+		9B6F42072A52DF9000EC098D /* ScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F42062A52DF9000EC098D /* ScreenExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +171,7 @@
 		77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
 		77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
 		77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSQrCode.swift; sourceTree = "<group>"; };
+		9B6F42062A52DF9000EC098D /* ScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +444,7 @@
 				77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */,
 				77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */,
 				7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */,
+				9B6F42062A52DF9000EC098D /* ScreenExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
 				7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */,
+				9B6F42072A52DF9000EC098D /* ScreenExtension.swift in Sources */,
 				7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */,
 				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,

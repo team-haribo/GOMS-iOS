@@ -47,16 +47,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     func setLayout() {
         userProfileImage.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(14)
+            $0.top.equalToSuperview().offset((bounds.height)/8.5714285714)
             $0.centerX.equalToSuperview().offset(0)
             $0.width.height.equalTo(40)
         }
         studentName.snp.makeConstraints {
-            $0.top.equalTo(userProfileImage.snp.bottom).offset(16)
+            $0.top.equalTo(userProfileImage.snp.bottom).offset((bounds.height) / 11.6)
             $0.centerX.equalToSuperview().offset(0)
         }
         studentNum.snp.makeConstraints {
-            $0.top.equalTo(studentName.snp.bottom).offset(5)
+            $0.top.equalTo(studentName.snp.bottom).offset((bounds.height) / 58)
             $0.centerX.equalToSuperview().offset(0)
         }
     }
