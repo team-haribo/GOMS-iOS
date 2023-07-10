@@ -34,7 +34,7 @@ class OutingCollectionViewCell: UICollectionViewCell {
     
     let createTime = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 12, family:.Regular)
-        $0.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+        $0.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
     }
     
     lazy var deleteButton = UIButton().then {
