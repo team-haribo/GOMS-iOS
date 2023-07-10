@@ -84,6 +84,57 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
                 }
             }
             .disposed(by: disposeBag)
+        
+        output.searchResult
+            .bind(
+                to: studentInfoCollectionView.rx.items(
+                    cellIdentifier: "studentInfoCell",
+                    cellType: StudentInfoCell.self
+                )
+            ) { ip, item, cell in
+                cell.reloadInputViews()
+                cell.backgroundColor = .white
+                cell.layer.cornerRadius = 10
+                cell.layer.applySketchShadow(
+                    color: UIColor.black,
+                    alpha: 0.1,
+                    x: 0,
+                    y: 2,
+                    blur: 8,
+                    spread: 0
+                )
+                let url = URL(string: item.profileUrl ?? "")
+                cell.userProfile.kf.setImage(with: url, placeholder: UIImage(named: "dummyImage.svg"))
+                cell.userName.text = item.name
+                if item.studentNum.number < 10 {
+                    cell.userNum.text = "\(item.studentNum.grade)\(item.studentNum.classNum)0\(item.studentNum.number)"
+                }
+                else {
+                    cell.userNum.text = "\(item.studentNum.grade)\(item.studentNum.classNum)\(item.studentNum.number)"
+                }
+                if item.isBlackList == true {
+                    cell.roleView.isHidden = false
+                    cell.roleText.isHidden = false
+                    cell.deleteBlackListButton.isHidden = false
+                    cell.editUserAuthorityButton.isHidden = true
+                    cell.roleText.text = "외출금지"
+                    cell.roleText.textColor = .blackListColor
+                    cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
+                }
+                else if item.authority == "ROLE_STUDENT_COUNCIL" {
+                    cell.roleView.isHidden = false
+                    cell.roleText.isHidden = false
+                    cell.deleteBlackListButton.isHidden = true
+                    cell.editUserAuthorityButton.isHidden = false
+                }
+                else {
+                    cell.roleView.isHidden = true
+                    cell.roleText.isHidden = true
+                    cell.deleteBlackListButton.isHidden = true
+                    cell.editUserAuthorityButton.isHidden = false
+                }
+            }
+            .disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
