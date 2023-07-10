@@ -66,8 +66,8 @@ class HomeFlow: Flow {
         case let .editUserModalIsRequired(accountIdx):
             return coordinateToEditUserModal(accountIdx: accountIdx)
             
-        case .searchModalDismiss:
-            return dismissSearchModal()
+        case let .searchModalDismiss(grade, classNum, name, isBlackList, authority):
+            return dismissSearchModal(grade: grade, classNum: classNum, name: name, isBlackList: isBlackList, authority: authority)
             
         case .editModalDismiss:
             return dismissEditModal()
@@ -92,7 +92,13 @@ class HomeFlow: Flow {
     }
     
     private func coordinateToStudentInfo() -> FlowContributors{
-        let vm = StudentInfoViewModel()
+        let vm = StudentInfoViewModel(
+            grade: nil,
+            classNum: nil,
+            name: nil,
+            isBlackList: false,
+            authority: nil
+        )
         let vc = StudentInfoViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
@@ -128,15 +134,27 @@ class HomeFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
-    private func dismissSearchModal() -> FlowContributors {
-        let vm = StudentInfoViewModel()
+    private func dismissSearchModal(grade: Int?, classNum: Int?, name: String?, isBlackList: Bool?, authority: String?) -> FlowContributors {
+        let vm = StudentInfoViewModel(
+            grade: grade,
+            classNum: classNum,
+            name: name,
+            isBlackList: isBlackList ?? false,
+            authority: authority
+        )
         let vc = StudentInfoViewController(vm)
         self.rootViewController.dismiss(animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
     private func dismissEditModal() -> FlowContributors {
-        let vm = StudentInfoViewModel()
+        let vm = StudentInfoViewModel(
+            grade: nil,
+            classNum: nil,
+            name: nil,
+            isBlackList: false,
+            authority: nil
+        )
         let vc = StudentInfoViewController(vm)
         self.rootViewController.dismiss(animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))

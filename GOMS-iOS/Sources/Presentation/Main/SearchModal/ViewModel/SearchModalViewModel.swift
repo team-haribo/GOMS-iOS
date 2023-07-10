@@ -7,7 +7,6 @@ import Moya
 class SearchModalViewModal: BaseViewModel, Stepper{
     static let shared = SearchModalViewModal()
     let provider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
-    let searchResult = PublishSubject<SearchRequest>()
     
     private override init() { }
 

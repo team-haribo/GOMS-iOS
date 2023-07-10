@@ -10,14 +10,6 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
     private var searchClassNum: Int?
     private var searchBlackList: Bool?
     private var searchAuthority: String? = ""
-    private lazy var searchResult = SearchRequest(
-        grade: searchGrade,
-        classNum: searchClassNum,
-        name: searchBar.text ?? "",
-        isBlackList: searchBlackList ?? false,
-        authority: searchAuthority ?? ""
-    )
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +28,17 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
         searchButton.rx.tap
             .debug()
             .subscribe(onNext:{ [unowned self] in
-                save(searchResult: searchResult)
-                self.viewModel.steps.accept(GOMSStep.searchModalDismiss)
+                self.viewModel.steps.accept(
+                    GOMSStep.searchModalDismiss(
+                        grade: searchGrade,
+                        classNum: searchClassNum,
+                        name: searchBar.text ?? "",
+                        isBlackList: searchBlackList,
+                        authority: searchAuthority
+                    )
+                )
             })
             .disposed(by: disposeBag)
-    }
-    
-    private func save(searchResult: SearchRequest) {
-        self.viewModel.searchResult.onNext(searchResult)
-        self.viewModel.searchResult.onCompleted()
     }
     
     private func deselectRoleButtonDidTap() {
