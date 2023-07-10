@@ -74,6 +74,7 @@ class SearchModalViewController: BaseViewController<SearchModalViewModal> {
         )
         $0.font = UIFont.GOMSFont(size: 14, family: .Regular)
         $0.layer.cornerRadius = 10
+        $0.textColor = .black
         $0.placeholder = "찾으시는 학생이 있으신가요?"
         $0.addLeftPadding()
     }
