@@ -186,6 +186,33 @@ extension OutingViewController:
             options: [.processor(imageCornerRadius)]
         )
         cell.createTime.text = "\(createTime[indexPath.row])"
+        cell.deleteUserButtonAction = { [unowned self] in
+            viewModel.steps.accept(GOMSStep.alert(
+                title: "외출자 삭제",
+                message: "정말 이 외출자를 삭제할까요?",
+                style: .alert,
+                actions: [
+                    .init(title: "확인", style: .default) { _ in
+                        self.viewModel.outingUserDelete(
+                            accountIdx: self.viewModel.outingList[indexPath.row].accountIdx, completion: {
+                                [unowned self] in
+                                userNameList = [String]()
+                                userGradeList = [Int]()
+                                userClassNumList = [Int]()
+                                userNumList = [Int]()
+                                userProfile = [String]()
+                                createTime = [String]()
+                                viewModel.outingList { [unowned self] in
+                                    outingCollectionView.reloadData()
+                                    bindOutingList()
+                                }
+                            }
+                        )
+                    },
+                    .init(title: "취소", style: .cancel)
+                ]
+            ))
+        }
         return cell
     }
     

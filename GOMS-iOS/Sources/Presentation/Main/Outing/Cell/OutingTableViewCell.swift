@@ -14,6 +14,8 @@ class OutingCollectionViewCell: UICollectionViewCell {
     let keychain = Keychain()
     lazy var userAuthority = keychain.read(key: Const.KeychainKey.authority)
     
+    var deleteUserButtonAction : (() -> ())?
+    
     let userProfile = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.cornerRadius = 23
@@ -45,10 +47,19 @@ class OutingCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         self.addView()
         self.setLayout()
+        self.deleteButton.addTarget(
+            self,
+            action: #selector(deleteUserButtonDidTap),
+            for: .touchUpInside
+        )
     }
         
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func deleteUserButtonDidTap() {
+        self.deleteUserButtonAction?()
     }
     
     func addView() {
