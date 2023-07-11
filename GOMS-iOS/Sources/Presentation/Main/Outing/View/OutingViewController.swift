@@ -130,9 +130,9 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
         )
     }
     
-    private let searchButton = UIButton().then {
+    private lazy var searchButton = UIButton().then {
         $0.isEnabled = true
-        $0.backgroundColor = .mainColor
+        $0.backgroundColor = self.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor : UIColor.mainColor
         $0.layer.cornerRadius = 10
         $0.setTitle("검색", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
