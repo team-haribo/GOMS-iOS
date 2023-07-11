@@ -64,6 +64,7 @@ extension OutingViewModel {
                 switch statusCode{
                 case 200..<300:
                     print("success")
+                    //print(self.outingList)
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
                 case 404:
@@ -76,6 +77,37 @@ extension OutingViewModel {
                 completion()
             case .failure(let err):
                 print(String(describing: err))
+            }
+        }
+    }
+    
+    func searchStudent(name: String, completion: @escaping ([OutingSearchResponse]?) -> Void) {
+        let request = OutingSearchRequest(Authorization: accessToken, name: name)
+        outingProvider.request(.outingSearch(authorization: accessToken, name: name)) { response in
+            switch response {
+            case let .success(result):
+                let responseData = result.data
+                print(String(data: responseData, encoding: .utf8))
+                do {
+                    let searchResults = try JSONDecoder().decode([OutingSearchResponse].self, from: responseData)
+                    completion(searchResults)
+                } catch {
+                    print("Error parsing search student response: \(error)")
+                    completion(nil)
+                }
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                    print("success")
+                case 401:
+                    self.gomsRefreshToken.tokenReissuance()
+                default:
+                    print("ERROR")
+                }
+                completion([])
+            case .failure(let error):
+                print("Network request failed: \(error)")
+                completion(nil)
             }
         }
     }

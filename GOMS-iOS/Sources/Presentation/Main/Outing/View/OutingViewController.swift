@@ -86,22 +86,19 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     }
     
     func searchUser() {
-        let searchText = searchTextField.text ?? ""
-        if searchText.isEmpty {
-            userNameList = originalUserNameList
-        } else {
-            let filteredItems = originalUserNameList.filter { name in
-                for char in searchText.lowercased() {
-                    if !name.lowercased().contains(char) {
-                        return false
-                    }
-                }
-                return true
-            }
-            userNameList = filteredItems
+        guard let searchText = searchTextField.text else {
+            return
         }
-        searchTextField.text = ""
-        outingCollectionView.reloadData()
+        viewModel.searchStudent(name: searchText) { [weak self] (searchResults: [OutingSearchResponse]?) in
+            guard let searchResults = searchResults else {
+                self?.userNameList = []
+                self?.outingCollectionView.reloadData()
+                return
+            }
+            self?.userNameList = searchResults.map { $0.name }
+            self?.outingCollectionView.reloadData()
+        }
+        print(searchText)
     }
     
     private let outingMainText = UILabel().then {

@@ -5,6 +5,7 @@ enum OutingServices {
     case outing(authorization: String, qrCodeURL: String)
     case outingList(authorization: String)
     case outingCount(authorization: String)
+    case outingSearch(authorization: String, name: String)
 }
 
 
@@ -26,6 +27,8 @@ extension OutingServices: TargetType {
             return "/outing/"
         case .outingCount:
             return "/outing/count"
+        case .outingSearch:
+            return "/outing/search"
         }
     }
     
@@ -33,7 +36,7 @@ extension OutingServices: TargetType {
         switch self {
         case .outing:
             return .post
-        case .outingList, .outingCount:
+        case .outingList, .outingCount, .outingSearch:
             return .get
         }
     }
@@ -44,14 +47,16 @@ extension OutingServices: TargetType {
     
     var task: Task {
         switch self {
-        case .outing, .outingList, .outingCount:
+        case .outing, .outingList, .outingCount, .outingSearch:
             return .requestPlain
+        case let .outingSearch(_, name):
+            return .requestParameters(parameters: ["name" : name ?? ""], encoding: URLEncoding.queryString)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .outing(let authorization, _), .outingList(let authorization), .outingCount(let authorization):
+        case .outing(let authorization, _), .outingList(let authorization), .outingCount(let authorization), .outingSearch(let authorization, _):
             return["Content-Type" :"application/json","Authorization" : authorization]
         default:
             return["Content-Type" :"application/json"]
