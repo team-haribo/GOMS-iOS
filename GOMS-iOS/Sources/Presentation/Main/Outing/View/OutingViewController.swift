@@ -18,7 +18,6 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     private var userNumList = [Int]()
     private var userProfile = [String]()
     private var createTime = [String]()
-<<<<<<< HEAD
     
     private var originalUserNameList = [String]()
     private var originalUserGradeList = [Int]()
@@ -27,11 +26,9 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     private var originalUserProfile = [String]()
     private var originalCreateTime = [String]()
     
-=======
     private var refreshControl = UIRefreshControl()
 
 
->>>>>>> 0be431f14185e94a291426fe8df3e7f7d3a79927
     override func viewDidLoad() {
         super.viewDidLoad()
         Task {
