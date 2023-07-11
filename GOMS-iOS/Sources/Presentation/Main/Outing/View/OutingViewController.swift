@@ -13,18 +13,18 @@ import Kingfisher
 
 class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModelDelegate {
     private var userNameList = [String]()
-    private var originalUserNameList = [String]()
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
     private var userProfile = [String]()
     private var createTime = [String]()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        userNameList = originalUserNameList
-        outingCollectionView.reloadData()
-    }
+    private var originalUserNameList = [String]()
+    private var originalUserGradeList = [Int]()
+    private var originalUserClassNumList = [Int]()
+    private var originalUserNumList = [Int]()
+    private var originalUserProfile = [String]()
+    private var originalCreateTime = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,12 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
                 createTime.insert(viewModel.outingList[index].createdTime, at: index)
             }
             originalUserNameList = userNameList
+            originalUserGradeList = userGradeList
+            originalUserClassNumList = userClassNumList
+            originalUserNumList = userNumList
+            originalUserProfile = userProfile
+            originalCreateTime = createTime
+            
             outingCollectionView.dataSource = self
             outingCollectionView.delegate = self
             outingCollectionView.register(
@@ -86,19 +92,42 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     }
     
     func searchUser() {
-        guard let searchText = searchTextField.text else {
+        let searchText = searchTextField.text ?? ""
+        
+        if searchText.isEmpty {
+            userNameList = originalUserNameList
+            userGradeList = originalUserGradeList
+            userClassNumList = originalUserClassNumList
+            userNumList = originalUserNumList
+            userProfile = originalUserProfile
+            createTime = originalCreateTime
+            
+            outingCollectionView.reloadData()
             return
         }
-        viewModel.searchStudent(name: searchText) { [weak self] (searchResults: [OutingSearchResponse]?) in
-            guard let searchResults = searchResults else {
-                self?.userNameList = []
+        viewModel.searchStudent(name: searchText) { [weak self] searchResults in
+            DispatchQueue.main.async {
+                if let searchResults = searchResults {
+                    if searchResults.isEmpty {
+                        self?.userNameList = []
+                        self?.userGradeList = []
+                        self?.userClassNumList = []
+                        self?.userNumList = []
+                        self?.userProfile = []
+                        self?.createTime = []
+                    } else {
+                        self?.userNameList = searchResults.map { $0.name }
+                        self?.userGradeList = searchResults.map { $0.studentNum.grade }
+                        self?.userClassNumList = searchResults.map { $0.studentNum.classNum }
+                        self?.userNumList = searchResults.map { $0.studentNum.number }
+                        self?.userProfile = searchResults.map { $0.profileUrl ?? "" }
+                        self?.createTime = searchResults.map { $0.createdTime }
+                    }
+                }
                 self?.outingCollectionView.reloadData()
-                return
             }
-            self?.userNameList = searchResults.map { $0.name }
-            self?.outingCollectionView.reloadData()
         }
-        print(searchText)
+        searchTextField.text = ""
     }
     
     private let outingMainText = UILabel().then {

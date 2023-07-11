@@ -64,7 +64,6 @@ extension OutingViewModel {
                 switch statusCode{
                 case 200..<300:
                     print("success")
-                    //print(self.outingList)
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
                 case 404:
@@ -104,7 +103,6 @@ extension OutingViewModel {
                 default:
                     print("ERROR")
                 }
-                completion([])
             case .failure(let error):
                 print("Network request failed: \(error)")
                 completion(nil)

@@ -47,7 +47,7 @@ extension OutingServices: TargetType {
     
     var task: Task {
         switch self {
-        case .outing, .outingList, .outingCount, .outingSearch:
+        case .outing, .outingList, .outingCount:
             return .requestPlain
         case let .outingSearch(_, name):
             return .requestParameters(parameters: ["name" : name ?? ""], encoding: URLEncoding.queryString)

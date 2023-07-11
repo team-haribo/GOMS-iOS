@@ -9,7 +9,6 @@ struct OutingSearchResponse: Codable {
     let name: String
     let studentNum: StudentNum
     let profileUrl: String?
-    let authority: String
     let createdTime: String
     
     struct StudentNum: Codable {
