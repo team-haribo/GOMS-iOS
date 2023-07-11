@@ -12,6 +12,8 @@ import RxCocoa
 import Moya
 
 class OutingViewModel: BaseViewModel, Stepper{
+    weak var delegate: OutingViewModelDelegate?
+    
     let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
     let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
     
@@ -19,6 +21,7 @@ class OutingViewModel: BaseViewModel, Stepper{
 
     struct Input {
         let profileButtonTap: Observable<Void>
+        let searchButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -29,6 +32,12 @@ class OutingViewModel: BaseViewModel, Stepper{
         input.profileButtonTap.subscribe(
             onNext: pushProfileVC
         ) .disposed(by: disposeBag)
+        
+        input.searchButtonTap.subscribe(
+            onNext: { [weak self] in
+                self?.delegate?.searchUser()
+            }
+        ).disposed(by: disposeBag)
     }
     
     private func pushProfileVC() {
@@ -36,6 +45,9 @@ class OutingViewModel: BaseViewModel, Stepper{
     }
 }
 
+protocol OutingViewModelDelegate: AnyObject {
+    func searchUser()
+}
 
 extension OutingViewModel {
     func outingList(completion: @escaping () -> Void) {
@@ -69,17 +81,43 @@ extension OutingViewModel {
         }
     }
     
+<<<<<<< HEAD
+    func searchStudent(name: String, completion: @escaping ([OutingSearchResponse]?) -> Void) {
+        let request = OutingSearchRequest(Authorization: accessToken, name: name)
+        outingProvider.request(.outingSearch(authorization: accessToken, name: name)) { response in
+            switch response {
+            case let .success(result):
+                let responseData = result.data
+                print(String(data: responseData, encoding: .utf8))
+                do {
+                    let searchResults = try JSONDecoder().decode([OutingSearchResponse].self, from: responseData)
+                    completion(searchResults)
+                } catch {
+                    print("Error parsing search student response: \(error)")
+                    completion(nil)
+                }
+                let statusCode = result.statusCode
+=======
     func outingUserDelete(accountIdx: UUID,completion: @escaping () -> Void) {
         studentCouncilProvider.request(.deleteOutUser(authorization: accessToken, accountIdx: accountIdx)){ response in
             switch response {
             case let .success(result):
                 let statusCode = result.statusCode
                 print(self.accessToken)
+>>>>>>> 0be431f14185e94a291426fe8df3e7f7d3a79927
                 switch statusCode{
                 case 200..<300:
                     print("success")
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
+<<<<<<< HEAD
+                default:
+                    print("ERROR")
+                }
+            case .failure(let error):
+                print("Network request failed: \(error)")
+                completion(nil)
+=======
                 case 403:
                     self.steps.accept(
                         GOMSStep.failureAlert(
@@ -96,6 +134,7 @@ extension OutingViewModel {
                 completion()
             case .failure(let err):
                 print(String(describing: err))
+>>>>>>> 0be431f14185e94a291426fe8df3e7f7d3a79927
             }
         }
     }

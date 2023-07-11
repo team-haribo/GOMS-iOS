@@ -11,16 +11,27 @@ import SnapKit
 import RxSwift
 import Kingfisher
 
-class OutingViewController: BaseViewController<OutingViewModel> {
+class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModelDelegate {
     private var userNameList = [String]()
     private var userGradeList = [Int]()
     private var userClassNumList = [Int]()
     private var userNumList = [Int]()
     private var userProfile = [String]()
     private var createTime = [String]()
+<<<<<<< HEAD
+    
+    private var originalUserNameList = [String]()
+    private var originalUserGradeList = [Int]()
+    private var originalUserClassNumList = [Int]()
+    private var originalUserNumList = [Int]()
+    private var originalUserProfile = [String]()
+    private var originalCreateTime = [String]()
+    
+=======
     private var refreshControl = UIRefreshControl()
 
 
+>>>>>>> 0be431f14185e94a291426fe8df3e7f7d3a79927
     override func viewDidLoad() {
         super.viewDidLoad()
         Task {
@@ -28,6 +39,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         }
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
+        viewModel.delegate = self
         outingCollectionView.collectionViewLayout = layout
         outingCollectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -65,11 +77,15 @@ class OutingViewController: BaseViewController<OutingViewModel> {
     
     private func bindOutingList() {
         if viewModel.outingList.isEmpty {
+            searchTextField.isHidden = true
+            searchButton.isHidden = true
             outingCollectionView.isHidden = true
             outingIsNilImage.isHidden = false
             outingIsNilText.isHidden = false
         }
         else {
+            searchTextField.isHidden = false
+            searchButton.isHidden = false
             outingCollectionView.isHidden = false
             outingIsNilImage.isHidden = true
             outingIsNilText.isHidden = true
@@ -81,6 +97,13 @@ class OutingViewController: BaseViewController<OutingViewModel> {
                 userProfile.insert(viewModel.outingList[index].profileUrl ?? "", at: index)
                 createTime.insert(viewModel.outingList[index].createdTime, at: index)
             }
+            originalUserNameList = userNameList
+            originalUserGradeList = userGradeList
+            originalUserClassNumList = userClassNumList
+            originalUserNumList = userNumList
+            originalUserProfile = userProfile
+            originalCreateTime = createTime
+            
             outingCollectionView.dataSource = self
             outingCollectionView.delegate = self
             outingCollectionView.register(
@@ -92,9 +115,49 @@ class OutingViewController: BaseViewController<OutingViewModel> {
     
     private func bindViewModel() {
         let input = OutingViewModel.Input(
-            profileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
+            profileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
+            searchButtonTap: searchButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
+    }
+    
+    func searchUser() {
+        let searchText = searchTextField.text ?? ""
+        
+        if searchText.isEmpty {
+            userNameList = originalUserNameList
+            userGradeList = originalUserGradeList
+            userClassNumList = originalUserClassNumList
+            userNumList = originalUserNumList
+            userProfile = originalUserProfile
+            createTime = originalCreateTime
+            
+            outingCollectionView.reloadData()
+            return
+        }
+        viewModel.searchStudent(name: searchText) { [weak self] searchResults in
+            DispatchQueue.main.async {
+                if let searchResults = searchResults {
+                    if searchResults.isEmpty {
+                        self?.userNameList = []
+                        self?.userGradeList = []
+                        self?.userClassNumList = []
+                        self?.userNumList = []
+                        self?.userProfile = []
+                        self?.createTime = []
+                    } else {
+                        self?.userNameList = searchResults.map { $0.name }
+                        self?.userGradeList = searchResults.map { $0.studentNum.grade }
+                        self?.userClassNumList = searchResults.map { $0.studentNum.classNum }
+                        self?.userNumList = searchResults.map { $0.studentNum.number }
+                        self?.userProfile = searchResults.map { $0.profileUrl ?? "" }
+                        self?.createTime = searchResults.map { $0.createdTime }
+                    }
+                }
+                self?.outingCollectionView.reloadData()
+            }
+        }
+        searchTextField.text = ""
     }
     
     private let outingMainText = UILabel().then {
@@ -105,6 +168,34 @@ class OutingViewController: BaseViewController<OutingViewModel> {
             family: .Bold
         )
         $0.textColor = .black
+    }
+    
+    private let searchTextField = UITextField().then {
+        let placeholderText = "찾으시는 학생이 있으신가요?"
+        let placeholderAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.GOMSFont(size: 14,family: .Regular)
+        ]
+        $0.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
+        $0.addLeftPadding()
+        $0.layer.cornerRadius = 10
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
+    }
+    
+    private lazy var searchButton = UIButton().then {
+        $0.isEnabled = true
+        $0.backgroundColor = self.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor : UIColor.mainColor
+        $0.layer.cornerRadius = 10
+        $0.setTitle("검색", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Regular)
     }
     
     private let layout = UICollectionViewFlowLayout().then {
@@ -146,7 +237,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
     }
     
     override func addView() {
-        [outingMainText, outingCollectionView, outingIsNilImage, outingIsNilText].forEach {
+        [outingMainText, searchTextField, searchButton, outingCollectionView, outingIsNilImage, outingIsNilText].forEach {
             view.addSubview($0)
         }
     }
@@ -156,8 +247,20 @@ class OutingViewController: BaseViewController<OutingViewModel> {
             $0.top.equalTo(view.snp.top).offset((bounds.height) / 7.73)
             $0.leading.equalToSuperview().offset(26)
         }
+        searchTextField.snp.makeConstraints {
+            $0.top.equalTo(outingMainText.snp.bottom).offset(26)
+            $0.leading.equalToSuperview().inset(26)
+            $0.trailing.equalToSuperview().inset(113)
+            $0.height.equalTo(55)
+        }
+        searchButton.snp.makeConstraints {
+            $0.top.equalTo(outingMainText.snp.bottom).offset(26)
+            $0.leading.equalTo(searchTextField.snp.trailing).offset(9)
+            $0.trailing.equalToSuperview().inset(26)
+            $0.height.equalTo(55)
+        }
         outingCollectionView.snp.makeConstraints {
-            $0.top.equalTo(outingMainText.snp.bottom).offset(20)
+            $0.top.equalTo(searchTextField.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.bottom.equalToSuperview()
         }
