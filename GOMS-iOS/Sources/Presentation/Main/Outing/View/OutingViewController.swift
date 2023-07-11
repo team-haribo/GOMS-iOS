@@ -18,6 +18,7 @@ class OutingViewController: BaseViewController<OutingViewModel> {
     private var userNumList = [Int]()
     private var userProfile = [String]()
     private var createTime = [String]()
+    private var refreshControl = UIRefreshControl()
 
 
     override func viewDidLoad() {
@@ -28,6 +29,8 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
         outingCollectionView.collectionViewLayout = layout
+        outingCollectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         bindViewModel()
         bindOutingList()
     }
@@ -36,6 +39,28 @@ class OutingViewController: BaseViewController<OutingViewModel> {
         viewModel.outingList { [weak self] in
             self?.bindOutingList()
         }
+    }
+    
+    @objc func refresh() {
+        DispatchQueue.main.async() { [self] in
+            bindData { [unowned self] in
+                outingCollectionView.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
+    private func bindData(completion: @escaping () -> Void) {
+        viewModel.outingList { [unowned self] in
+            userNameList = [String]()
+            userGradeList = [Int]()
+            userClassNumList = [Int]()
+            userNumList = [Int]()
+            userProfile = [String]()
+            createTime = [String]()
+            self.outingCollectionView.reloadData()
+            self.bindOutingList()
+        }
+        completion()
     }
     
     private func bindOutingList() {
