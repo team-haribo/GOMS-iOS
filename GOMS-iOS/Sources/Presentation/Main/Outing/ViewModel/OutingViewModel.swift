@@ -15,6 +15,7 @@ class OutingViewModel: BaseViewModel, Stepper{
     weak var delegate: OutingViewModelDelegate?
     
     let outingProvider = MoyaProvider<OutingServices>(plugins: [NetworkLoggerPlugin()])
+    let studentCouncilProvider = MoyaProvider<StudentCouncilServices>(plugins: [NetworkLoggerPlugin()])
     
     var outingList: [OutingListResponse] = []
 
@@ -80,6 +81,7 @@ extension OutingViewModel {
         }
     }
     
+<<<<<<< HEAD
     func searchStudent(name: String, completion: @escaping ([OutingSearchResponse]?) -> Void) {
         let request = OutingSearchRequest(Authorization: accessToken, name: name)
         outingProvider.request(.outingSearch(authorization: accessToken, name: name)) { response in
@@ -95,17 +97,44 @@ extension OutingViewModel {
                     completion(nil)
                 }
                 let statusCode = result.statusCode
+=======
+    func outingUserDelete(accountIdx: UUID,completion: @escaping () -> Void) {
+        studentCouncilProvider.request(.deleteOutUser(authorization: accessToken, accountIdx: accountIdx)){ response in
+            switch response {
+            case let .success(result):
+                let statusCode = result.statusCode
+                print(self.accessToken)
+>>>>>>> 0be431f14185e94a291426fe8df3e7f7d3a79927
                 switch statusCode{
                 case 200..<300:
                     print("success")
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
+<<<<<<< HEAD
                 default:
                     print("ERROR")
                 }
             case .failure(let error):
                 print("Network request failed: \(error)")
                 completion(nil)
+=======
+                case 403:
+                    self.steps.accept(
+                        GOMSStep.failureAlert(
+                            title: "오류",
+                            message: "학생회 계정이 아닙니다.",
+                            action: [.init(title: "확인",style: .default) { _ in
+                                self.steps.accept(GOMSStep.introIsRequired)}
+                            ]
+                        )
+                    )
+                default:
+                    print("ERROR")
+                }
+                completion()
+            case .failure(let err):
+                print(String(describing: err))
+>>>>>>> 0be431f14185e94a291426fe8df3e7f7d3a79927
             }
         }
     }

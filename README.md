@@ -109,8 +109,8 @@ FrameWork
 - Language: Swift
 - Layout: Snapkit
 - Design Pattern: MVVM
-- Async: RxSwift
 - Network: Moya
 - Navigation Logic: RxFlow
 - Cooperation: Git, Github
 - Auth: GauthSignIn
+- Etc: : RxSwift, KingFisher, Then, QRCodeReader, QRCode

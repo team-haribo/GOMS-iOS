@@ -18,6 +18,7 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     private var userNumList = [Int]()
     private var userProfile = [String]()
     private var createTime = [String]()
+<<<<<<< HEAD
     
     private var originalUserNameList = [String]()
     private var originalUserGradeList = [Int]()
@@ -26,6 +27,11 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     private var originalUserProfile = [String]()
     private var originalCreateTime = [String]()
     
+=======
+    private var refreshControl = UIRefreshControl()
+
+
+>>>>>>> 0be431f14185e94a291426fe8df3e7f7d3a79927
     override func viewDidLoad() {
         super.viewDidLoad()
         Task {
@@ -35,6 +41,8 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
         self.navigationItem.leftLogoImage()
         viewModel.delegate = self
         outingCollectionView.collectionViewLayout = layout
+        outingCollectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         bindViewModel()
         bindOutingList()
     }
@@ -43,6 +51,28 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
         viewModel.outingList { [weak self] in
             self?.bindOutingList()
         }
+    }
+    
+    @objc func refresh() {
+        DispatchQueue.main.async() { [self] in
+            bindData { [unowned self] in
+                outingCollectionView.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
+    private func bindData(completion: @escaping () -> Void) {
+        viewModel.outingList { [unowned self] in
+            userNameList = [String]()
+            userGradeList = [Int]()
+            userClassNumList = [Int]()
+            userNumList = [Int]()
+            userProfile = [String]()
+            createTime = [String]()
+            self.outingCollectionView.reloadData()
+            self.bindOutingList()
+        }
+        completion()
     }
     
     private func bindOutingList() {
@@ -284,6 +314,33 @@ extension OutingViewController:
             options: [.processor(imageCornerRadius)]
         )
         cell.createTime.text = "\(createTime[indexPath.row])"
+        cell.deleteUserButtonAction = { [unowned self] in
+            viewModel.steps.accept(GOMSStep.alert(
+                title: "외출자 삭제",
+                message: "정말 이 외출자를 삭제할까요?",
+                style: .alert,
+                actions: [
+                    .init(title: "확인", style: .default) { _ in
+                        self.viewModel.outingUserDelete(
+                            accountIdx: self.viewModel.outingList[indexPath.row].accountIdx, completion: {
+                                [unowned self] in
+                                userNameList = [String]()
+                                userGradeList = [Int]()
+                                userClassNumList = [Int]()
+                                userNumList = [Int]()
+                                userProfile = [String]()
+                                createTime = [String]()
+                                viewModel.outingList { [unowned self] in
+                                    outingCollectionView.reloadData()
+                                    bindOutingList()
+                                }
+                            }
+                        )
+                    },
+                    .init(title: "취소", style: .cancel)
+                ]
+            ))
+        }
         return cell
     }
     
