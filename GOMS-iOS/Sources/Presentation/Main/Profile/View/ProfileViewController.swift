@@ -140,12 +140,12 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     
     override func setLayout() {
         profileImage.snp.makeConstraints {
-            $0.top.equalToSuperview().offset((bounds.height) / 7.31)
+            $0.bottom.equalTo(userNameText.snp.top).offset(-6)
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(100)
         }
         userNameText.snp.makeConstraints {
-            $0.top.equalTo(profileImage.snp.bottom).offset((bounds.height) / 135.333333333)
+            $0.bottom.equalTo(userInfoTableView.snp.top).offset(-49)
             $0.centerX.equalToSuperview()
         }
         userNumText.snp.makeConstraints {
