@@ -23,7 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     var userProfileImage = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.layer.cornerRadius = 20
+        $0.layer.cornerRadius = 0
         $0.layer.masksToBounds = true
     }
     
@@ -47,16 +47,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     func setLayout() {
         userProfileImage.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(14)
+            $0.top.equalToSuperview().offset((bounds.height)/8.5714285714)
             $0.centerX.equalToSuperview().offset(0)
-            $0.width.height.equalTo(40)
+            $0.width.height.equalTo((bounds.height)/3)
         }
         studentName.snp.makeConstraints {
-            $0.top.equalTo(userProfileImage.snp.bottom).offset(16)
+            $0.bottom.equalToSuperview().inset((bounds.height)/3.6363636364)
             $0.centerX.equalToSuperview().offset(0)
         }
         studentNum.snp.makeConstraints {
-            $0.top.equalTo(studentName.snp.bottom).offset(5)
+            $0.bottom.equalToSuperview().inset((bounds.height)/8.5714285714)
             $0.centerX.equalToSuperview().offset(0)
         }
     }
