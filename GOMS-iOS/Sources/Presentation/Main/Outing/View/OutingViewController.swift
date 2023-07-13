@@ -174,6 +174,7 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
         ]
         $0.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
         $0.addLeftPadding()
+        $0.textColor = .black
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .white
         $0.layer.applySketchShadow(
