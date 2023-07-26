@@ -173,7 +173,7 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
             .font: UIFont.GOMSFont(size: 14,family: .Regular)
         ]
         $0.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
-        $0.addLeftPadding()
+        $0.leftPadding(width: 20)
         $0.textColor = .black
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .white

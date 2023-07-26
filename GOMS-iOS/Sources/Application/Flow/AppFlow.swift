@@ -23,7 +23,8 @@ struct AppStepper: Stepper {
             switch gomsRefreshToken.statusCode {
             case 200..<300:
                 print(gomsRefreshToken.statusCode)
-                steps.accept(GOMSStep.tabBarIsRequired)
+                // MARK: Intro 화면을 보기 위해 임시로 설정
+                steps.accept(GOMSStep.introIsRequired)
             default:
                 print(gomsRefreshToken.statusCode)
                 steps.accept(GOMSStep.introIsRequired)

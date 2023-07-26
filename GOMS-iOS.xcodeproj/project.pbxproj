@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		771583F62A5D247600DBD2D4 /* OutingSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771583F52A5D247600DBD2D4 /* OutingSearchRequest.swift */; };
+		7743CB6D2A6CEE1800B837B2 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */; };
+		7743CB6F2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */; };
+		7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */; };
 		774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */; };
 		774D26BA2A1DFFEB003666E8 /* IsBlackListRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */; };
 		7761C52E2A5D156600C48348 /* OutingSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761C52D2A5D156600C48348 /* OutingSearchModel.swift */; };
@@ -97,6 +100,9 @@
 
 /* Begin PBXFileReference section */
 		771583F52A5D247600DBD2D4 /* OutingSearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingSearchRequest.swift; sourceTree = "<group>"; };
+		7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
+		7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
+		7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
 		774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
 		774D26B92A1DFFEB003666E8 /* IsBlackListRequset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsBlackListRequset.swift; sourceTree = "<group>"; };
 		7761C52D2A5D156600C48348 /* OutingSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingSearchModel.swift; sourceTree = "<group>"; };
@@ -197,6 +203,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7743CB692A6CEDFE00B837B2 /* LoginWithNumber */ = {
+			isa = PBXGroup;
+			children = (
+				7743CB6B2A6CEE0F00B837B2 /* View */,
+				7743CB6A2A6CEE0800B837B2 /* ViewModel */,
+			);
+			path = LoginWithNumber;
+			sourceTree = "<group>";
+		};
+		7743CB6A2A6CEE0800B837B2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7743CB6B2A6CEE0F00B837B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7771E7962A0CC3ED00649B63 /* StudentInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +423,7 @@
 		77F073BD29ED67A400EE1FC9 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -411,6 +443,7 @@
 		77F073BF29ED67E200EE1FC9 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				7743CB692A6CEDFE00B837B2 /* LoginWithNumber */,
 				77F073C029ED67E600EE1FC9 /* Intro */,
 			);
 			path = Auth;
@@ -966,6 +999,7 @@
 				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,
 				7771E7AE2A0D029F00649B63 /* StudentInfoRequest.swift in Sources */,
 				77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */,
+				7743CB6F2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift in Sources */,
 				77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */,
 				77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */,
 				77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */,
@@ -990,9 +1024,11 @@
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
+				7743CB6D2A6CEE1800B837B2 /* LoginWithNumberViewController.swift in Sources */,
 				7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */,
 				7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */,
 				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
+				7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
 				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
 				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,

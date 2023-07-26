@@ -17,7 +17,7 @@ class IntroViewModel: BaseViewModel, Stepper{
     
 
     struct Input {
-        
+        let loginWithNumberButtonTap: Observable<Void>
     }
     
     struct Output {
@@ -25,6 +25,13 @@ class IntroViewModel: BaseViewModel, Stepper{
     }
     
     func transVC(input: Input) {
+        input.loginWithNumberButtonTap.subscribe(
+            onNext: pushLoginWithNumberVC
+        ) .disposed(by: disposeBag)
+    }
+    
+    private func pushLoginWithNumberVC() {
+        self.steps.accept(GOMSStep.loginWithNumberIsRequired)
     }
 
 }
