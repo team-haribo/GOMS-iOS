@@ -40,19 +40,44 @@ class LoginWithNumberViewController: BaseViewController<LoginWithNumberViewModel
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Medium)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .mainColor
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
     }
     
     private var numberTextField = LoginWithNumberTextField(
         placeholder: "인증번호를 입력하세요",
         width: 16
-    )
+    ).then {
+        $0.isHidden = true
+    }
     
     private var completeButton = UIButton().then {
-        $0.setTitle("인증하기", for: .normal)
-        $0.setTitleColor(UIColor.white, for: .normal)
-        $0.titleLabel?.font = UIFont.GOMSFont(size: 16, family: .Bold)
+        $0.setTitle(
+            "인증하기",
+            for: .normal
+        )
+        $0.setTitleColor(
+            UIColor.white,
+            for: .normal
+        )
+        $0.titleLabel?.font = UIFont.GOMSFont(
+            size: 16,
+            family: .Bold
+        )
         $0.layer.cornerRadius = 10
-        $0.backgroundColor = .mainColor
+        $0.backgroundColor = UIColor(
+            red: 1,
+            green: 139,
+            blue: 67,
+            alpha: 0.5
+        )
+        $0.isHidden = true
     }
 
     override func addView() {
@@ -87,7 +112,17 @@ class LoginWithNumberViewController: BaseViewController<LoginWithNumberViewModel
             $0.top.equalTo(subText.snp.bottom).offset(50)
             $0.height.equalTo(52)
             $0.leading.equalToSuperview().offset(26)
-            $0.trailing.equalTo(confirmationButton.snp.leading).offset(12)
+            $0.width.equalTo((bounds.width) / 1.6)
+        }
+        numberTextField.snp.makeConstraints {
+            $0.top.equalTo(emailTextField.snp.bottom).offset(30)
+            $0.height.equalTo(52)
+            $0.leading.trailing.equalToSuperview().inset(26)
+        }
+        completeButton.snp.makeConstraints {
+            $0.bottom.equalTo(view.snp.bottom).inset(50)
+            $0.height.equalTo(60)
+            $0.leading.trailing.equalToSuperview().inset(26)
         }
     }
     

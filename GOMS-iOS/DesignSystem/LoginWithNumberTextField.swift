@@ -17,10 +17,21 @@ public final class LoginWithNumberTextField: UITextField {
         self.init()
         self.placeholder = placeholder
         self.leftPadding(width: width)
-        self.placeholder = placeholder
         self.backgroundColor = .white
         self.layer.cornerRadius = 10
         self.textColor = .black
+        self.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
+        self.font = UIFont.GOMSFont(
+            size:14,
+            family: .Regular
+        )
     }
     
     public override func becomeFirstResponder() -> Bool {
