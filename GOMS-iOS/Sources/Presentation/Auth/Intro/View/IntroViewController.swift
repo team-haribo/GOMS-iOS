@@ -9,12 +9,22 @@ import UIKit
 import Then
 import SnapKit
 import GAuthSignin
+import RxCocoa
+import RxSwift
 
 class IntroViewController: BaseViewController<IntroViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gauthButtonSetUp()
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = IntroViewModel.Input(
+            loginWithNumberButtonTap: loginWithNumberButton.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private let logoImage = UIImageView().then {

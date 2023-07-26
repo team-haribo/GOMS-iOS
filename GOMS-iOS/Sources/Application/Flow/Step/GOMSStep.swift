@@ -12,6 +12,7 @@ enum GOMSStep: Step {
     
     // MARK: Auth
     case introIsRequired
+    case loginWithNumberIsRequired
     
     // MARK: TabBar
     case tabBarIsRequired

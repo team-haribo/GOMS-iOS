@@ -30,6 +30,9 @@ class AuthFlow: Flow {
         case .tabBarIsRequired:
             return .end(forwardToParentFlowWithStep: GOMSStep.tabBarIsRequired)
             
+        case .loginWithNumberIsRequired:
+            return coordinateToLoginWithNumber()
+            
         case let .alert(title, message, style, actions):
             return presentToAlert(title: title, message: message, style: style, actions: actions)
             
@@ -47,6 +50,13 @@ private extension AuthFlow {
         let vm = IntroViewModel()
         let vc = IntroViewController(vm)
         self.rootViewController.setViewControllers([vc], animated: false)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    func coordinateToLoginWithNumber() -> FlowContributors {
+        let vm = LoginWithNumberViewModel()
+        let vc = LoginWithNumberViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
