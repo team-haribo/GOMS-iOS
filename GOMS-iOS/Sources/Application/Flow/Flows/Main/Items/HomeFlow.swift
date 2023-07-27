@@ -57,21 +57,6 @@ class HomeFlow: Flow {
         case let .failureAlert(title, message, action):
             return presentToFailureAlert(title: title, message: message, action: action)
             
-        case .studentInfoIsRequired:
-            return coordinateToStudentInfo()
-            
-        case .searchModalIsRequired:
-            return coordinateToSearchModal()
-            
-        case let .editUserModalIsRequired(accountIdx):
-            return coordinateToEditUserModal(accountIdx: accountIdx)
-            
-        case .searchModalDismiss:
-            return dismissSearchModal()
-            
-        case .editModalDismiss:
-            return dismissEditModal()
-        
         default:
             return .none
         }
@@ -87,13 +72,6 @@ class HomeFlow: Flow {
     private func coordinateToProfile() -> FlowContributors {
         let vm = ProfileViewModel()
         let vc = ProfileViewController(vm)
-        self.rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
-    }
-    
-    private func coordinateToStudentInfo() -> FlowContributors{
-        let vm = StudentInfoViewModel()
-        let vc = StudentInfoViewController(vm)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
@@ -114,44 +92,5 @@ class HomeFlow: Flow {
         }
         self.rootViewController.topViewController?.present(alert, animated: true)
         return .none
-    }
-    private func coordinateToSearchModal() -> FlowContributors{
-        let vm = SearchModalViewModal.shared
-        let vc = SearchModalViewController(vm)
-        if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.medium()]
-            sheet.largestUndimmedDetentIdentifier = .large
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.preferredCornerRadius = 20
-        }
-        self.rootViewController.topViewController?.present(vc, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
-    }
-    
-    private func dismissSearchModal() -> FlowContributors {
-        let vm = StudentInfoViewModel()
-        let vc = StudentInfoViewController(vm)
-        self.rootViewController.dismiss(animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
-    }
-    
-    private func dismissEditModal() -> FlowContributors {
-        let vm = StudentInfoViewModel()
-        let vc = StudentInfoViewController(vm)
-        self.rootViewController.dismiss(animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
-    }
-    
-    private func coordinateToEditUserModal(accountIdx: UUID) -> FlowContributors{
-        let vm = EditUserModalViewModel(accountIdx: accountIdx)
-        let vc = EditUserModalViewController(vm)
-        if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.medium()]
-            sheet.largestUndimmedDetentIdentifier = .large
-            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
-            sheet.preferredCornerRadius = 20
-        }
-        self.rootViewController.present(vc, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }
