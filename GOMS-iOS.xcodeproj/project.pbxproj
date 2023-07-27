@@ -16,12 +16,9 @@
 		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
 		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
 		7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */; };
-		7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */; };
 		7771E7AA2A0CE46D00649B63 /* StudentCouncilServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */; };
-		7771E7AC2A0D019400649B63 /* StudentInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7AB2A0D019400649B63 /* StudentInfoModel.swift */; };
 		7771E7B42A14AEB500649B63 /* SearchModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7B32A14AEB500649B63 /* SearchModalViewController.swift */; };
 		7771E7B72A14AF2400649B63 /* SearchModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7B62A14AF2400649B63 /* SearchModalViewModel.swift */; };
-		7771E7BA2A14BFCA00649B63 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7B92A14BFCA00649B63 /* SearchModel.swift */; };
 		7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */; };
 		7771E7C62A1C567800649B63 /* EditUserModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7C52A1C567800649B63 /* EditUserModalViewController.swift */; };
 		7771E7C82A1C568500649B63 /* EditUserModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7C72A1C568500649B63 /* EditUserModalViewModel.swift */; };
@@ -98,12 +95,9 @@
 		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
-		7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeQRCodeModel.swift; sourceTree = "<group>"; };
 		7771E7A92A0CE46D00649B63 /* StudentCouncilServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCouncilServices.swift; sourceTree = "<group>"; };
-		7771E7AB2A0D019400649B63 /* StudentInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoModel.swift; sourceTree = "<group>"; };
 		7771E7B32A14AEB500649B63 /* SearchModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModalViewController.swift; sourceTree = "<group>"; };
 		7771E7B62A14AF2400649B63 /* SearchModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModalViewModel.swift; sourceTree = "<group>"; };
-		7771E7B92A14BFCA00649B63 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
 		7771E7C52A1C567800649B63 /* EditUserModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserModalViewController.swift; sourceTree = "<group>"; };
 		7771E7C72A1C568500649B63 /* EditUserModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserModalViewModel.swift; sourceTree = "<group>"; };
@@ -240,16 +234,6 @@
 				7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		7771E7A62A0CE41E00649B63 /* StudentCouncil */ = {
-			isa = PBXGroup;
-			children = (
-				7771E7A22A0CE1AA00649B63 /* MakeQRCodeModel.swift */,
-				7771E7AB2A0D019400649B63 /* StudentInfoModel.swift */,
-				7771E7B92A14BFCA00649B63 /* SearchModel.swift */,
-			);
-			path = StudentCouncil;
 			sourceTree = "<group>";
 		};
 		7771E7A72A0CE43900649B63 /* StudentCouncil */ = {
@@ -703,7 +687,6 @@
 		77F0744629F7A4C500EE1FC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7771E7A62A0CE41E00649B63 /* StudentCouncil */,
 				77F0747B29FB4A8700EE1FC9 /* Late */,
 				77F0746929FABC9500EE1FC9 /* Outing */,
 				77F0745D29FA67D800EE1FC9 /* Account */,
@@ -950,14 +933,12 @@
 				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
 				7771E7A12A0CCB8600649B63 /* StudentInfoCell.swift in Sources */,
 				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
-				7771E7BA2A14BFCA00649B63 /* SearchModel.swift in Sources */,
 				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
 				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
 				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
 				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
 				7743CB6D2A6CEE1800B837B2 /* LoginWithNumberViewController.swift in Sources */,
 				7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */,
-				7771E7A32A0CE1AA00649B63 /* MakeQRCodeModel.swift in Sources */,
 				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
 				7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */,
 				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
@@ -970,7 +951,6 @@
 				77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */,
 				774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */,
 				7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */,
-				7771E7AC2A0D019400649B63 /* StudentInfoModel.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
 				7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */,
