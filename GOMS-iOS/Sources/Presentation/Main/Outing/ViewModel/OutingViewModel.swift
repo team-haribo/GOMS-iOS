@@ -82,7 +82,6 @@ extension OutingViewModel {
     }
     
     func searchStudent(name: String, completion: @escaping ([OutingSearchResponse]?) -> Void) {
-        let request = OutingSearchRequest(Authorization: accessToken, name: name)
         outingProvider.request(.outingSearch(authorization: accessToken, name: name)) { response in
             switch response {
             case let .success(result):

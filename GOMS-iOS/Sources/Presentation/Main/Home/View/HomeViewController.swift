@@ -46,7 +46,20 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         refreshScrollView.refreshControl = refreshControl
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
+        getFontName()
     }
+    
+    func getFontName() {
+            for family in UIFont.familyNames {
+
+                let sName: String = family as String
+                print("family: \(sName)")
+                        
+                for name in UIFont.fontNames(forFamilyName: sName) {
+                    print("name: \(name as String)")
+                }
+            }
+        }
     
     private func checkUserIsOuting() {
         if userIsOuting == true {
