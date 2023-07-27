@@ -11,7 +11,6 @@
 		7743CB6F2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */; };
 		7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */; };
 		7743CB772A725D1300B837B2 /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */; };
-		774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */; };
 		7761C52E2A5D156600C48348 /* OutingSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761C52D2A5D156600C48348 /* OutingSearchModel.swift */; };
 		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
 		7771E79D2A0CC48E00649B63 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */; };
@@ -90,7 +89,6 @@
 		7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
 		7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
 		7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-Black.ttf"; sourceTree = "<group>"; };
-		774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
 		7761C52D2A5D156600C48348 /* OutingSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingSearchModel.swift; sourceTree = "<group>"; };
 		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		7771E79C2A0CC48E00649B63 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
@@ -234,14 +232,6 @@
 				7771E7A02A0CCB8600649B63 /* StudentInfoCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		7771E7A72A0CE43900649B63 /* StudentCouncil */ = {
-			isa = PBXGroup;
-			children = (
-				774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */,
-			);
-			path = StudentCouncil;
 			sourceTree = "<group>";
 		};
 		7771E7A82A0CE44700649B63 /* StudentCouncil */ = {
@@ -698,7 +688,6 @@
 		77F0744729F7A4CB00EE1FC9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				7771E7A72A0CE43900649B63 /* StudentCouncil */,
 				77F0744E29F7B3D400EE1FC9 /* Auth */,
 			);
 			path = Request;
@@ -949,7 +938,6 @@
 				77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */,
 				77F0748329FB536100EE1FC9 /* LateServices.swift in Sources */,
 				77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */,
-				774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */,
 				7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */,
 				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
 				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
