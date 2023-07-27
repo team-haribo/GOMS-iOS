@@ -10,6 +10,7 @@
 		7743CB6D2A6CEE1800B837B2 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */; };
 		7743CB6F2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */; };
 		7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */; };
+		7743CB772A725D1300B837B2 /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */; };
 		774D26B82A1DF048003666E8 /* EditAuthorityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */; };
 		7761C52E2A5D156600C48348 /* OutingSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761C52D2A5D156600C48348 /* OutingSearchModel.swift */; };
 		7771E79B2A0CC48100649B63 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */; };
@@ -91,6 +92,7 @@
 		7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
 		7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
 		7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
+		7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-Black.ttf"; sourceTree = "<group>"; };
 		774D26B72A1DF048003666E8 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
 		7761C52D2A5D156600C48348 /* OutingSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingSearchModel.swift; sourceTree = "<group>"; };
 		7771E79A2A0CC48100649B63 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 		77F073DF29EE170A00EE1FC9 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */,
 				77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */,
 				77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */,
 				77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */,
@@ -913,6 +916,7 @@
 				77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */,
 				77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */,
 				77F0739A29ED29D000EE1FC9 /* Assets.xcassets in Resources */,
+				7743CB772A725D1300B837B2 /* Fraunces-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1126,6 +1130,7 @@
 				DEVELOPMENT_TEAM = 5GD5Q99952;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드 스캔을 위해 카메라 권한을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -1156,6 +1161,7 @@
 				DEVELOPMENT_TEAM = 5GD5Q99952;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드 스캔을 위해 카메라 권한을 허용해주세요";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

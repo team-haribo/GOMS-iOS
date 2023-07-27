@@ -22,7 +22,7 @@ extension UINavigationItem {
     func leftLogoImage() {
         let keychain = Keychain()
         lazy var userAuthority = keychain.read(key: Const.KeychainKey.authority)
-        let customFont = UIFont.GOMSFont(size: 20,family: .Bold)
+        let customFont = UIFont.LogoFont(size: 20,family: .Black)
         self.leftBarButtonItem = UIBarButtonItem(
             title: "GOMS",
             style: .plain,
