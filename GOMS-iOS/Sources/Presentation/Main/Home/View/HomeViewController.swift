@@ -266,7 +266,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
     private lazy var profileImg = UIImageView().then {
         let url = URL(string: userProfileURL ?? "")
         let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 20)
-        $0.layer.cornerRadius = 0
+        $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = true
         $0.kf.setImage(
             with: url,

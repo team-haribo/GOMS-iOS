@@ -23,7 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     var userProfileImage = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.layer.cornerRadius = 0
+        $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = true
     }
     
