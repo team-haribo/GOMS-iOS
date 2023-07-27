@@ -49,7 +49,7 @@ extension QRCodeViewModel {
                 case 200..<300:
                     self.steps.accept(GOMSStep.alert(
                         title: "",
-                        message: "QRCode 스캔이 완로되었습니다.",
+                        message: "QRCode 스캔이 완료되었습니다.",
                         style: .alert,
                         actions: [
                             .init(title: "확인", style: .default) {_ in
