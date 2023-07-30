@@ -3,864 +3,860 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7743CB6D2A6CEE1800B837B2 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */; };
-		7743CB6F2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */; };
-		7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */; };
-		7743CB772A725D1300B837B2 /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */; };
-		7761C52E2A5D156600C48348 /* OutingSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7761C52D2A5D156600C48348 /* OutingSearchModel.swift */; };
-		7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */; };
-		77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */; };
-		77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */; };
-		77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */; };
-		77F0739A29ED29D000EE1FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F0739929ED29D000EE1FC9 /* Assets.xcassets */; };
-		77F0739D29ED29D000EE1FC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */; };
-		77F073A629ED377800EE1FC9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073A529ED377800EE1FC9 /* Then */; };
-		77F073AC29ED379400EE1FC9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073AB29ED379400EE1FC9 /* SnapKit */; };
-		77F073B129ED37AB00EE1FC9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B029ED37AB00EE1FC9 /* RxSwift */; };
-		77F073B429ED37D600EE1FC9 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B329ED37D600EE1FC9 /* RxFlow */; };
-		77F073B629ED37EB00EE1FC9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073B529ED37EB00EE1FC9 /* RxCocoa */; };
-		77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C229ED898F00EE1FC9 /* BaseViewController.swift */; };
-		77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */; };
-		77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */; };
-		77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073CF29ED8E0B00EE1FC9 /* IntroViewModel.swift */; };
-		77F073D329ED923700EE1FC9 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = 77F073D229ED923700EE1FC9 /* GAuthSignin */; };
-		77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073D529ED970200EE1FC9 /* GOMSStep.swift */; };
-		77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073D729ED9A6000EE1FC9 /* AppFlow.swift */; };
-		77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */; };
-		77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073E029EE172200EE1FC9 /* GOMSFont.swift */; };
-		77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */; };
-		77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */; };
-		77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */; };
-		77F073F029EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */; };
-		77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */; };
-		77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */; };
-		77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */; };
-		77F0740329EE89F100EE1FC9 /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740229EE89F100EE1FC9 /* QRCodeModel.swift */; };
-		77F0740529EE8A0200EE1FC9 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740429EE8A0200EE1FC9 /* QRCodeViewController.swift */; };
-		77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */; };
-		77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */; };
-		77F0741129EE8B1300EE1FC9 /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741029EE8B1300EE1FC9 /* TabBarFlow.swift */; };
-		77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */; };
-		77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741429EE8B2D00EE1FC9 /* QRCodeFlow.swift */; };
-		77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */; };
-		77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741B29EE8B8A00EE1FC9 /* GOMSTabBar.swift */; };
-		77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */; };
-		77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */; };
-		77F0742929F00A7D00EE1FC9 /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0742829F00A7D00EE1FC9 /* QRCodeReader */; };
-		77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */; };
-		77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */; };
-		77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */; };
-		77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */; };
-		77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744829F7B08B00EE1FC9 /* Bundle.swift */; };
-		77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */; };
-		77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */; };
-		77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745329F7B55600EE1FC9 /* AuthServices.swift */; };
-		77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745729F7B59900EE1FC9 /* BaseURL.swift */; };
-		77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 77F0745A29F7BC7600EE1FC9 /* Moya */; };
-		77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0745E29FA67E800EE1FC9 /* AccountModel.swift */; };
-		77F0746829FA720700EE1FC9 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0746729FA720600EE1FC9 /* AccountServices.swift */; };
-		77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747029FABD7500EE1FC9 /* OutingServices.swift */; };
-		77F0747329FAC13100EE1FC9 /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747229FAC13100EE1FC9 /* OutingListModel.swift */; };
-		77F0747729FAC51F00EE1FC9 /* OutingCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */; };
-		77F0747F29FB4AA300EE1FC9 /* LateRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */; };
-		77F0748329FB536100EE1FC9 /* LateServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748229FB536100EE1FC9 /* LateServices.swift */; };
-		77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */; };
-		77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */; };
-		77F074912A01761D00EE1FC9 /* GOMSRefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */; };
-		77F074942A03302100EE1FC9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074932A03302100EE1FC9 /* Kingfisher */; };
-		77F074992A0C965800EE1FC9 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = 77F074982A0C965800EE1FC9 /* QRCode */; };
-		77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */; };
+		00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731D6D31347481DA366521B /* IntroViewModel.swift */; };
+		00C1EDD175C07AA22845430E /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */; };
+		13BEAA05293FA4319A826530 /* LateServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295397FAD951EB22776E0EA2 /* LateServices.swift */; };
+		13DC2925516B449FCC210747 /* OutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6428C1CD555E404837613330 /* OutingViewController.swift */; };
+		14267BD13559E0B6203CAFEA /* GOMSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490FA17B9A929FDAEEA923C /* GOMSTabBar.swift */; };
+		17EFEB02E598A042C1191B07 /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846BEC8229D59DE6E0BC868 /* LoginWithNumberViewModel.swift */; };
+		1815C764B5C149B5B9CC62DD /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8A3BF1C61EFCBB1A314149 /* QRCodeModel.swift */; };
+		197141CE26653C403692AEA9 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B077D499D3BF1E566F0E52 /* SignInModel.swift */; };
+		248B1FD13684D09BC1863DF9 /* GOMSStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E451230CE75A5B517AC7C0D /* GOMSStep.swift */; };
+		2790EF0FB564F8CB2C7A9307 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63889E2CE3DE6CECF9E50B /* SceneDelegate.swift */; };
+		281F5521BCF7E784E22419E8 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87F44DB0DCBE1F74B576907 /* AuthFlow.swift */; };
+		2E688212D716DFFBF49CAE79 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DD3B2162507EFE23B404 /* ProfileViewModel.swift */; };
+		31D5181F3E02660DC61E7534 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46453BBA10D94D166B2498C9 /* AccountModel.swift */; };
+		32FAB44A8574F1B2397B936F /* OutingCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1222865F763F7F78EB7F82B /* OutingCountModel.swift */; };
+		39CDEA366D86ECCD3553F1E0 /* QRCodeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */; };
+		3C712424DDE4DA31065FE32C /* GOMSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */; };
+		3E6CD32E11DA46CEAFBC933B /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE97E13DBFC259E99CD7D4F /* QRCodeViewController.swift */; };
+		3EFE78D654C4E3EA52D19E60 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A4373B1E936D9213011BE /* Bundle.swift */; };
+		493128A428A77484FDE0078A /* RoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F326E926997F82820F199 /* RoleCell.swift */; };
+		4F404B67DE5AF8F2F8E712A9 /* OutingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F2375EE5E4B6444926746 /* OutingFlow.swift */; };
+		526E648A9EA922B192DF0736 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */; };
+		53EC2844FFCCBBDB4BCB1EA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA7E9CF4EB6A2520AB2D86 /* HomeViewController.swift */; };
+		5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */; };
+		59146D014C3ED51F631D7478 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457424C44ED3902460CF44D3 /* AuthServices.swift */; };
+		5931240923D88D5E8A8A7B40 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */; };
+		60EAF1A265451E7899876667 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */; };
+		6A6F960A5D95151F3FBC0F8E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40A2FE679E0118A486F06F /* ProfileViewController.swift */; };
+		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
+		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
+		87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62934592A276D55D6D24B0 /* GOMSShadow.swift */; };
+		887741D4F59F52B1A7F51783 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */; };
+		8AEA943BDBCE5CDC0BBDDF40 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */; };
+		8C3E388AC696BE1B4400758F /* OutingSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388FF33F3F763118675B3B5 /* OutingSearchModel.swift */; };
+		8C9541A3B3B16F51A003B1A3 /* GOMSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */; };
+		90C0666B24341AF743D2A48E /* LateRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5793E1FC9341527315B0A8 /* LateRankModel.swift */; };
+		9251671FB767C6D2E48564E8 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5F78908D60700B4C935DF /* AccountServices.swift */; };
+		96CC4DEF30770C1F115658DA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297FAE6FE4A628F72E17B21 /* BaseViewController.swift */; };
+		9A33939DC41C18EB4059A600 /* OutingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED536E620F9BC99598EE54 /* OutingViewModel.swift */; };
+		9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F53CB28B1A5311BF484B8E /* SignInRequest.swift */; };
+		B23C5A8F69B6CB7C9BFE292C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978264A050185C912349596A /* HomeCollectionViewCell.swift */; };
+		B63E657DEAC2370BA64B1F06 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */; };
+		BFDFBA92A023471A581634F5 /* AccountServices 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4856E21ACF480E5004AFAFDF /* AccountServices 2.swift */; };
+		C076B14F4653C3D1E78F3A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */; };
+		C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF56F29FFC248A39CA54F95 /* OutingServices.swift */; };
+		C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */; };
+		C8CCAB7E00784089C11B8B3B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */; };
+		C991C75FBDD7E39A9B8C3A57 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */; };
+		D1BDAC2DC3627EC26CBCEE7B /* OutingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994B53423EF41EC5BA02DEF7 /* OutingModel.swift */; };
+		D1E01ADCD6A4A83C842D5CC7 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230CCA82A130F052294DDB4 /* Cell.swift */; };
+		D91B89B2FA342DF438E99E2F /* GOMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26BC738406BAFEE640D2240 /* GOMSFont.swift */; };
+		DEAB3329F0DBE01E23B8755D /* GOMSRefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25117C0BE38B6B07AA04ADE5 /* GOMSRefreshToken.swift */; };
+		F489CC7B7ED7391181D47267 /* GOMSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BCAF04F5F64366DA7FB3B /* GOMSToken.swift */; };
+		F71E566CAB6CE41B32AE0BFB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897DBB2E89D9A3111F95E28 /* BaseURL.swift */; };
+		F9836FCE6394F772A14B06D4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F81B1F96416CCEF789E952 /* BaseViewModel.swift */; };
+		F99CB0B4579C8BF18BD50FA5 /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BEA719AD89929E5D32B7E9 /* TabBarFlow.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D543DCF894EFBA2CE01F63E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
-		7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
-		7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
-		7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-Black.ttf"; sourceTree = "<group>"; };
-		7761C52D2A5D156600C48348 /* OutingSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingSearchModel.swift; sourceTree = "<group>"; };
-		7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
-		77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		77F0739929ED29D000EE1FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77F0739C29ED29D000EE1FC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		77F0739E29ED29D000EE1FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77F073C229ED898F00EE1FC9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSColor.swift; sourceTree = "<group>"; };
-		77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		77F073CF29ED8E0B00EE1FC9 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
-		77F073D529ED970200EE1FC9 /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
-		77F073D729ED9A6000EE1FC9 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
-		77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
-		77F073E029EE172200EE1FC9 /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
-		77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Semibold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Medium.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
-		77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
-		77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
-		77F0740229EE89F100EE1FC9 /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
-		77F0740429EE8A0200EE1FC9 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
-		77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
-		77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewModel.swift; sourceTree = "<group>"; };
-		77F0741029EE8B1300EE1FC9 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
-		77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
-		77F0741429EE8B2D00EE1FC9 /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
-		77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
-		77F0741B29EE8B8A00EE1FC9 /* GOMSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTabBar.swift; sourceTree = "<group>"; };
-		77F0741E29EE949B00EE1FC9 /* GOMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSShadow.swift; sourceTree = "<group>"; };
-		77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
-		77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
-		77F0744829F7B08B00EE1FC9 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
-		77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
-		77F0745329F7B55600EE1FC9 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
-		77F0745729F7B59900EE1FC9 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
-		77F0745E29FA67E800EE1FC9 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		77F0746729FA720600EE1FC9 /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
-		77F0747029FABD7500EE1FC9 /* OutingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingServices.swift; sourceTree = "<group>"; };
-		77F0747229FAC13100EE1FC9 /* OutingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListModel.swift; sourceTree = "<group>"; };
-		77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingCountModel.swift; sourceTree = "<group>"; };
-		77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
-		77F0748229FB536100EE1FC9 /* LateServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateServices.swift; sourceTree = "<group>"; };
-		77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
-		77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
-		77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
-		77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSQrCode.swift; sourceTree = "<group>"; };
+		0297FAE6FE4A628F72E17B21 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListModel.swift; sourceTree = "<group>"; };
+		0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
+		0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
+		0EF56F29FFC248A39CA54F95 /* OutingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingServices.swift; sourceTree = "<group>"; };
+		0FF5F78908D60700B4C935DF /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
+		13E6EA3CA9937374CE43A043 /* GOMS-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GOMS-iOS-Info.plist"; sourceTree = "<group>"; };
+		13EA7E9CF4EB6A2520AB2D86 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		25117C0BE38B6B07AA04ADE5 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
+		295397FAD951EB22776E0EA2 /* LateServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateServices.swift; sourceTree = "<group>"; };
+		2A0F2375EE5E4B6444926746 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
+		2B5793E1FC9341527315B0A8 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
+		3C40A2FE679E0118A486F06F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3E451230CE75A5B517AC7C0D /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
+		3EC474B134561AC16088E87B /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
+		4490FA17B9A929FDAEEA923C /* GOMSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTabBar.swift; sourceTree = "<group>"; };
+		457424C44ED3902460CF44D3 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		46453BBA10D94D166B2498C9 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		4856E21ACF480E5004AFAFDF /* AccountServices 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountServices 2.swift"; sourceTree = "<group>"; };
+		4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSQrCode.swift; sourceTree = "<group>"; };
+		5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		6428C1CD555E404837613330 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
+		64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
+		6846BEC8229D59DE6E0BC868 /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
+		71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
+		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
+		8230CCA82A130F052294DDB4 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		8897DBB2E89D9A3111F95E28 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		89BEA719AD89929E5D32B7E9 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
+		8B63889E2CE3DE6CECF9E50B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8CE97E13DBFC259E99CD7D4F /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		91ED536E620F9BC99598EE54 /* OutingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewModel.swift; sourceTree = "<group>"; };
+		9388FF33F3F763118675B3B5 /* OutingSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingSearchModel.swift; sourceTree = "<group>"; };
+		978264A050185C912349596A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		994B53423EF41EC5BA02DEF7 /* OutingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingModel.swift; sourceTree = "<group>"; };
+		9C62934592A276D55D6D24B0 /* GOMSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSShadow.swift; sourceTree = "<group>"; };
+		A1222865F763F7F78EB7F82B /* OutingCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingCountModel.swift; sourceTree = "<group>"; };
+		A1F81B1F96416CCEF789E952 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		A4B077D499D3BF1E566F0E52 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		C26BC738406BAFEE640D2240 /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
+		C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
+		C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
+		CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D731D6D31347481DA366521B /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
+		DF5F326E926997F82820F199 /* RoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCell.swift; sourceTree = "<group>"; };
+		DF8A3BF1C61EFCBB1A314149 /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
+		E3D8DD3B2162507EFE23B404 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		E48BCAF04F5F64366DA7FB3B /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
+		E61A4373B1E936D9213011BE /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87F44DB0DCBE1F74B576907 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
+		F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSColor.swift; sourceTree = "<group>"; };
+		FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		77F0738A29ED29CF00EE1FC9 /* Frameworks */ = {
+		D02FC1658295CB87615F4677 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F074992A0C965800EE1FC9 /* QRCode in Frameworks */,
-				77F073B429ED37D600EE1FC9 /* RxFlow in Frameworks */,
-				77F073AC29ED379400EE1FC9 /* SnapKit in Frameworks */,
-				77F0745B29F7BC7600EE1FC9 /* Moya in Frameworks */,
-				77F074942A03302100EE1FC9 /* Kingfisher in Frameworks */,
-				77F073D329ED923700EE1FC9 /* GAuthSignin in Frameworks */,
-				77F073B629ED37EB00EE1FC9 /* RxCocoa in Frameworks */,
-				77F073B129ED37AB00EE1FC9 /* RxSwift in Frameworks */,
-				77F0742929F00A7D00EE1FC9 /* QRCodeReader in Frameworks */,
-				77F073A629ED377800EE1FC9 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7743CB692A6CEDFE00B837B2 /* LoginWithNumber */ = {
+		01B5A62669A529644A9BE66F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7743CB6B2A6CEE0F00B837B2 /* View */,
-				7743CB6A2A6CEE0800B837B2 /* ViewModel */,
-			);
-			path = LoginWithNumber;
-			sourceTree = "<group>";
-		};
-		7743CB6A2A6CEE0800B837B2 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7743CB6B2A6CEE0F00B837B2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */,
+				3C40A2FE679E0118A486F06F /* ProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		77F0738429ED29CF00EE1FC9 = {
+		01F499BA59DEA97DC40B4DE9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */,
-				77F073B229ED37D600EE1FC9 /* Frameworks */,
-				77F0741E29EE949B00EE1FC9 /* GOMS.app */,
+				29494436C442EDAC7E609D9B /* Cell */,
+				01B5A62669A529644A9BE66F /* View */,
+				44EA8FFC819024E5AD4FC1AD /* ViewModel */,
 			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
-		77F0738F29ED29CF00EE1FC9 /* GOMS-iOS */ = {
+		04D538CC9A97E8FF93797E1E /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				77F073BD29ED67A400EE1FC9 /* DesignSystem */,
-				77F073BC29ED678900EE1FC9 /* Resources */,
-				77F073B729ED675100EE1FC9 /* Sources */,
-				77F0739E29ED29D000EE1FC9 /* Info.plist */,
+				BFD87E3C008AE719C438F552 /* View */,
+				3771E199C9D78C1BBD6FB81D /* ViewModel */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		06BB3C1669155C886E98E08F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				978264A050185C912349596A /* HomeCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0F25B683BA9121AC236A5EAC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3EC474B134561AC16088E87B /* OutingTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		10BC48B7229F18F1FF8E2BD8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7B2E5264F132D139B4DDD061 /* Items */,
+				9A2D6A22F138088DBF246225 /* TabBar */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1279362F6A3976567E1C0C13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CE97E13DBFC259E99CD7D4F /* QRCodeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1A86A625066647A04D548EAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13EA7E9CF4EB6A2520AB2D86 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C20FE308149C07822D5A181 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6428C1CD555E404837613330 /* OutingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C55A26C560F6E91B821D271 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				78F09023BC88D75D81A0F52B /* Home */,
+				65031E658783B8E6050D5845 /* Outing */,
+				01F499BA59DEA97DC40B4DE9 /* Profile */,
+				B685C449D6207D7ED465C30E /* QRCode */,
+				BBE2F3F10692575B420EDF17 /* SearchModal */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1D7C950AD9A5F2466F7A8BE8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5C922DAA2E0069271EFCB6B0 /* Auth */,
+				CC411DA68DB947F2DE4D0E79 /* Base */,
+				1C55A26C560F6E91B821D271 /* Main */,
+				74C92CAD275D1A87EFE19488 /* TabBar */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		29494436C442EDAC7E609D9B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2AE672F6EFD4B4B4C011AF72 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				4856E21ACF480E5004AFAFDF /* AccountServices 2.swift */,
+				0FF5F78908D60700B4C935DF /* AccountServices.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		2AEA64F7361F4FBC11525BB8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E87F44DB0DCBE1F74B576907 /* AuthFlow.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2F38A5C6231BD3DD6CBD0AB5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D508BBFE2D5EAEC0DE8F9D34 /* 며소 */,
+				2AE672F6EFD4B4B4C011AF72 /* Account */,
+				660F02A333B53D87F3D172D4 /* Late */,
+				C0BB95D9729D7FB96D8B3CD3 /* Outing */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		345371DEF1E982230E03F99F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF8A3BF1C61EFCBB1A314149 /* QRCodeModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		35A365B421C2A70E8FBE60AB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6177794B256B2FF13CB79D7C /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		36AE259B1D0F0C5CAF7E4C9B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B9367C110059253AAC232AB2 /* RefreshToken */,
+				FB06AB00CBC4BB37973A0913 /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		371B3A9B6E0BB4C6678AC552 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		3771E199C9D78C1BBD6FB81D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D731D6D31347481DA366521B /* IntroViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		39D9F1721E67CED7DE9BD69C /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				FB45DDF9F0BE84DBB34FC6E7 /* InfoPlists */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		3C08BBE787467FF7AA5AC8F9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A60E4713C2F8D878C44FADCA /* Application */,
+				56323FF0400E945A8B59E94A /* Data */,
+				1D7C950AD9A5F2466F7A8BE8 /* Presentation */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3F60F2231D45D03507A7C88A /* Late */ = {
+			isa = PBXGroup;
+			children = (
+				71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */,
+			);
+			path = Late;
+			sourceTree = "<group>";
+		};
+		44EA8FFC819024E5AD4FC1AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DD3B2162507EFE23B404 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		54C2F0F7053DBB7D7B091D74 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56323FF0400E945A8B59E94A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				563CB46DB9C5E64FA7DF1BD9 /* General */,
+				E1938EA295496D9315328F12 /* Model */,
+				A20AEDC3DF9566A364483D52 /* Request */,
+				2F38A5C6231BD3DD6CBD0AB5 /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		563CB46DB9C5E64FA7DF1BD9 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				8897DBB2E89D9A3111F95E28 /* BaseURL.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		59D312E526D037E7A6D7989F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6846BEC8229D59DE6E0BC868 /* LoginWithNumberViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C922DAA2E0069271EFCB6B0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				04D538CC9A97E8FF93797E1E /* Intro */,
+				9CD815B0836B1475C0C08DC3 /* LoginWithNumber */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		6177794B256B2FF13CB79D7C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				71F53CB28B1A5311BF484B8E /* SignInRequest.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		648BAF08E2848A87A88F0B47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65031E658783B8E6050D5845 /* Outing */ = {
+			isa = PBXGroup;
+			children = (
+				0F25B683BA9121AC236A5EAC /* Cell */,
+				1C20FE308149C07822D5A181 /* View */,
+				6D51ACBCE326B06C32D0A1A5 /* ViewModel */,
+			);
+			path = Outing;
+			sourceTree = "<group>";
+		};
+		660F02A333B53D87F3D172D4 /* Late */ = {
+			isa = PBXGroup;
+			children = (
+				295397FAD951EB22776E0EA2 /* LateServices.swift */,
+			);
+			path = Late;
+			sourceTree = "<group>";
+		};
+		6D51ACBCE326B06C32D0A1A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				91ED536E620F9BC99598EE54 /* OutingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		74C92CAD275D1A87EFE19488 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4490FA17B9A929FDAEEA923C /* GOMSTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		78F09023BC88D75D81A0F52B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				06BB3C1669155C886E98E08F /* Cell */,
+				1A86A625066647A04D548EAF /* View */,
+				54C2F0F7053DBB7D7B091D74 /* ViewModel */,
+				8230CCA82A130F052294DDB4 /* Cell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		79BBDEC18805E22B0E13C82D /* GOMS-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				371B3A9B6E0BB4C6678AC552 /* DesignSystem */,
+				7BB6BD5705737AFB1B14871C /* Resources */,
+				3C08BBE787467FF7AA5AC8F9 /* Sources */,
 			);
 			path = "GOMS-iOS";
 			sourceTree = "<group>";
 		};
-		77F073B229ED37D600EE1FC9 /* Frameworks */ = {
+		7B2E5264F132D139B4DDD061 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */,
+				2A0F2375EE5E4B6444926746 /* OutingFlow.swift */,
+				64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		7BB6BD5705737AFB1B14871C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7D84311A9F0220377C7CA4FA /* Extension */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7D84311A9F0220377C7CA4FA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E61A4373B1E936D9213011BE /* Bundle.swift */,
+				F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */,
+				C26BC738406BAFEE640D2240 /* GOMSFont.swift */,
+				4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */,
+				25117C0BE38B6B07AA04ADE5 /* GOMSRefreshToken.swift */,
+				9C62934592A276D55D6D24B0 /* GOMSShadow.swift */,
+				C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */,
+				E48BCAF04F5F64366DA7FB3B /* GOMSToken.swift */,
+				E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8190DAC218EC612754461DC0 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BE7207EF61DBB01C42F6FAB7 /* Flows */,
+				8BE6F76733D41DF56D6DA797 /* Step */,
+				CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */,
+				5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */,
+				8B63889E2CE3DE6CECF9E50B /* SceneDelegate.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		81B349B2A17DA59FF5FDC903 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		77F073B729ED675100EE1FC9 /* Sources */ = {
+		8BE6F76733D41DF56D6DA797 /* Step */ = {
 			isa = PBXGroup;
 			children = (
-				77F073BB29ED677B00EE1FC9 /* Application */,
-				77F073B929ED676D00EE1FC9 /* Data */,
-				77F073B829ED676000EE1FC9 /* Presentation */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		77F073B829ED676000EE1FC9 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				77F0741829EE8B5800EE1FC9 /* TabBar */,
-				77F073F329EE3D3200EE1FC9 /* Main */,
-				77F073C129ED893100EE1FC9 /* Base */,
-				77F073BF29ED67E200EE1FC9 /* Auth */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		77F073B929ED676D00EE1FC9 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				77F0745529F7B58600EE1FC9 /* General */,
-				77F0744629F7A4C500EE1FC9 /* Model */,
-				77F0744729F7A4CB00EE1FC9 /* Request */,
-				77F0744529F7A4B200EE1FC9 /* Services */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		77F073BB29ED677B00EE1FC9 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				77F073BE29ED67C000EE1FC9 /* Flow */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		77F073BC29ED678900EE1FC9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				77F073DF29EE170A00EE1FC9 /* Font */,
-				77F073C429ED8A0800EE1FC9 /* Extension */,
-				77F0739929ED29D000EE1FC9 /* Assets.xcassets */,
-				77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		77F073BD29ED67A400EE1FC9 /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */,
-			);
-			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		77F073BE29ED67C000EE1FC9 /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				77F0739029ED29CF00EE1FC9 /* AppDelegate.swift */,
-				77F0739229ED29CF00EE1FC9 /* SceneDelegate.swift */,
-				77F073D729ED9A6000EE1FC9 /* AppFlow.swift */,
-				77F073D429ED96EE00EE1FC9 /* Step */,
-				77F073D929ED9AE900EE1FC9 /* Flows */,
-			);
-			path = Flow;
-			sourceTree = "<group>";
-		};
-		77F073BF29ED67E200EE1FC9 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				7743CB692A6CEDFE00B837B2 /* LoginWithNumber */,
-				77F073C029ED67E600EE1FC9 /* Intro */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		77F073C029ED67E600EE1FC9 /* Intro */ = {
-			isa = PBXGroup;
-			children = (
-				77F073CA29ED8B9100EE1FC9 /* ViewModel */,
-				77F073C929ED8B8B00EE1FC9 /* View */,
-			);
-			path = Intro;
-			sourceTree = "<group>";
-		};
-		77F073C129ED893100EE1FC9 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				77F073C229ED898F00EE1FC9 /* BaseViewController.swift */,
-				77F073C729ED8A5200EE1FC9 /* BaseViewModel.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		77F073C429ED8A0800EE1FC9 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				77F073C529ED8A1600EE1FC9 /* GOMSColor.swift */,
-				77F073E029EE172200EE1FC9 /* GOMSFont.swift */,
-				77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */,
-				77F0741F29EEDFF800EE1FC9 /* GOMSShadow.swift */,
-				77F0744829F7B08B00EE1FC9 /* Bundle.swift */,
-				77F0748C2A0122C900EE1FC9 /* GOMSToken.swift */,
-				77F074902A01761D00EE1FC9 /* GOMSRefreshToken.swift */,
-				77F0749A2A0CACBC00EE1FC9 /* GOMSQrCode.swift */,
-				7771E7BD2A15BE2200649B63 /* GOMSTextField.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		77F073C929ED8B8B00EE1FC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				77F0739429ED29CF00EE1FC9 /* IntroViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		77F073CA29ED8B9100EE1FC9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				77F073CF29ED8E0B00EE1FC9 /* IntroViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		77F073D429ED96EE00EE1FC9 /* Step */ = {
-			isa = PBXGroup;
-			children = (
-				77F073D529ED970200EE1FC9 /* GOMSStep.swift */,
+				3E451230CE75A5B517AC7C0D /* GOMSStep.swift */,
 			);
 			path = Step;
 			sourceTree = "<group>";
 		};
-		77F073D929ED9AE900EE1FC9 /* Flows */ = {
+		91B2C3E344F2AFAB4DC6E044 /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				77F0740D29EE8AF100EE1FC9 /* Main */,
-				77F073DA29ED9AFA00EE1FC9 /* Auth */,
+				39D9F1721E67CED7DE9BD69C /* Derived */,
+				79BBDEC18805E22B0E13C82D /* GOMS-iOS */,
 			);
-			path = Flows;
+			name = Project;
 			sourceTree = "<group>";
 		};
-		77F073DA29ED9AFA00EE1FC9 /* Auth */ = {
+		9A2D6A22F138088DBF246225 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		77F073DF29EE170A00EE1FC9 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */,
-				77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */,
-				77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */,
-				77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */,
-				77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
-		77F073F329EE3D3200EE1FC9 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				77F0743729F1A6F100EE1FC9 /* Profile */,
-				77F0740629EE8A5E00EE1FC9 /* Outing */,
-				77F073FF29EE89B700EE1FC9 /* QRCode */,
-				77F073F429EE3D3B00EE1FC9 /* Home */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		77F073F429EE3D3B00EE1FC9 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				77F0742329EF6D5000EE1FC9 /* Cell */,
-				77F073F629EE3D4800EE1FC9 /* ViewModel */,
-				77F073F529EE3D4400EE1FC9 /* View */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		77F073F529EE3D4400EE1FC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		77F073F629EE3D4800EE1FC9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		77F073FF29EE89B700EE1FC9 /* QRCode */ = {
-			isa = PBXGroup;
-			children = (
-				77F0740129EE89E000EE1FC9 /* ViewModel */,
-				77F0740029EE89DC00EE1FC9 /* View */,
-			);
-			path = QRCode;
-			sourceTree = "<group>";
-		};
-		77F0740029EE89DC00EE1FC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				77F0740429EE8A0200EE1FC9 /* QRCodeViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		77F0740129EE89E000EE1FC9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				77F0740229EE89F100EE1FC9 /* QRCodeModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		77F0740629EE8A5E00EE1FC9 /* Outing */ = {
-			isa = PBXGroup;
-			children = (
-				77F0742F29F15AAB00EE1FC9 /* Cell */,
-				77F0740829EE8A6F00EE1FC9 /* ViewModel */,
-				77F0740729EE8A6A00EE1FC9 /* View */,
-			);
-			path = Outing;
-			sourceTree = "<group>";
-		};
-		77F0740729EE8A6A00EE1FC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				77F0740929EE8A7B00EE1FC9 /* OutingViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		77F0740829EE8A6F00EE1FC9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				77F0740B29EE8A8600EE1FC9 /* OutingViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		77F0740D29EE8AF100EE1FC9 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				77F0740F29EE8B0600EE1FC9 /* Items */,
-				77F0740E29EE8AF600EE1FC9 /* TabBar */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		77F0740E29EE8AF600EE1FC9 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				77F0741029EE8B1300EE1FC9 /* TabBarFlow.swift */,
+				89BEA719AD89929E5D32B7E9 /* TabBarFlow.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		77F0740F29EE8B0600EE1FC9 /* Items */ = {
+		9CD815B0836B1475C0C08DC3 /* LoginWithNumber */ = {
 			isa = PBXGroup;
 			children = (
-				77F0741229EE8B2400EE1FC9 /* HomeFlow.swift */,
-				77F0741429EE8B2D00EE1FC9 /* QRCodeFlow.swift */,
-				77F0741629EE8B3400EE1FC9 /* OutingFlow.swift */,
+				D40E0F92AAC4747611560503 /* View */,
+				59D312E526D037E7A6D7989F /* ViewModel */,
 			);
-			path = Items;
+			path = LoginWithNumber;
 			sourceTree = "<group>";
 		};
-		77F0741829EE8B5800EE1FC9 /* TabBar */ = {
+		A20AEDC3DF9566A364483D52 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				77F0741B29EE8B8A00EE1FC9 /* GOMSTabBar.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
-		77F0742329EF6D5000EE1FC9 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				77F0742429EF6D6500EE1FC9 /* HomeCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		77F0742F29F15AAB00EE1FC9 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				77F0743029F15ABF00EE1FC9 /* OutingTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		77F0743729F1A6F100EE1FC9 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				77F0744129F2175C00EE1FC9 /* Cell */,
-				77F0743929F1A6FD00EE1FC9 /* ViewModel */,
-				77F0743829F1A6F700EE1FC9 /* View */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		77F0743829F1A6F700EE1FC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				77F0743A29F1A70700EE1FC9 /* ProfileViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		77F0743929F1A6FD00EE1FC9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				77F0743C29F1A71300EE1FC9 /* ProfileViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		77F0744129F2175C00EE1FC9 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				77F0744229F2176E00EE1FC9 /* ProfileTableViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		77F0744529F7A4B200EE1FC9 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				77F0747D29FB4A9400EE1FC9 /* Late */,
-				77F0746F29FABD5200EE1FC9 /* Outing */,
-				77F0746529FA717400EE1FC9 /* Account */,
-				77F0745229F7B54100EE1FC9 /* Auth */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		77F0744629F7A4C500EE1FC9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				77F0747B29FB4A8700EE1FC9 /* Late */,
-				77F0746929FABC9500EE1FC9 /* Outing */,
-				77F0745D29FA67D800EE1FC9 /* Account */,
-				77F0744A29F7B29700EE1FC9 /* Auth */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		77F0744729F7A4CB00EE1FC9 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				77F0744E29F7B3D400EE1FC9 /* Auth */,
+				35A365B421C2A70E8FBE60AB /* Auth */,
+				3F60F2231D45D03507A7C88A /* Late */,
 			);
 			path = Request;
 			sourceTree = "<group>";
 		};
-		77F0744A29F7B29700EE1FC9 /* Auth */ = {
+		A60E4713C2F8D878C44FADCA /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				77F0748429FB624900EE1FC9 /* RefreshToken */,
-				77F0744B29F7B2A100EE1FC9 /* SignIn */,
+				8190DAC218EC612754461DC0 /* Flow */,
 			);
-			path = Auth;
+			path = Application;
 			sourceTree = "<group>";
 		};
-		77F0744B29F7B2A100EE1FC9 /* SignIn */ = {
+		AED56A1DF2A785FA860E859D = {
 			isa = PBXGroup;
 			children = (
-				77F0744C29F7B2AC00EE1FC9 /* SignInModel.swift */,
+				91B2C3E344F2AFAB4DC6E044 /* Project */,
+				81B349B2A17DA59FF5FDC903 /* Frameworks */,
+				648BAF08E2848A87A88F0B47 /* Products */,
 			);
-			path = SignIn;
 			sourceTree = "<group>";
 		};
-		77F0744E29F7B3D400EE1FC9 /* Auth */ = {
+		B3D33AE2B2CF66A911BAF080 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				77F0744F29F7B3EE00EE1FC9 /* SignIn */,
+				DF5F326E926997F82820F199 /* RoleCell.swift */,
 			);
-			path = Auth;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		77F0744F29F7B3EE00EE1FC9 /* SignIn */ = {
+		B685C449D6207D7ED465C30E /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				77F0745029F7B3FD00EE1FC9 /* SignInRequest.swift */,
+				1279362F6A3976567E1C0C13 /* View */,
+				345371DEF1E982230E03F99F /* ViewModel */,
 			);
-			path = SignIn;
+			path = QRCode;
 			sourceTree = "<group>";
 		};
-		77F0745229F7B54100EE1FC9 /* Auth */ = {
+		B9367C110059253AAC232AB2 /* RefreshToken */ = {
 			isa = PBXGroup;
 			children = (
-				77F0745329F7B55600EE1FC9 /* AuthServices.swift */,
+				73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */,
 			);
-			name = Auth;
+			path = RefreshToken;
+			sourceTree = "<group>";
+		};
+		BBE2F3F10692575B420EDF17 /* SearchModal */ = {
+			isa = PBXGroup;
+			children = (
+				B3D33AE2B2CF66A911BAF080 /* Cell */,
+			);
+			path = SearchModal;
+			sourceTree = "<group>";
+		};
+		BE7207EF61DBB01C42F6FAB7 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				2AEA64F7361F4FBC11525BB8 /* Auth */,
+				10BC48B7229F18F1FF8E2BD8 /* Main */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		BFD87E3C008AE719C438F552 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0BB95D9729D7FB96D8B3CD3 /* Outing */ = {
+			isa = PBXGroup;
+			children = (
+				0EF56F29FFC248A39CA54F95 /* OutingServices.swift */,
+			);
+			path = Outing;
+			sourceTree = "<group>";
+		};
+		CC411DA68DB947F2DE4D0E79 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0297FAE6FE4A628F72E17B21 /* BaseViewController.swift */,
+				A1F81B1F96416CCEF789E952 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D40E0F92AAC4747611560503 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D508BBFE2D5EAEC0DE8F9D34 /* 며소 */ = {
+			isa = PBXGroup;
+			children = (
+				457424C44ED3902460CF44D3 /* AuthServices.swift */,
+			);
 			path = "며소";
 			sourceTree = "<group>";
 		};
-		77F0745529F7B58600EE1FC9 /* General */ = {
+		E1938EA295496D9315328F12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				77F0745729F7B59900EE1FC9 /* BaseURL.swift */,
+				F7DEA3EAA82AB834BE83E7FD /* Account */,
+				36AE259B1D0F0C5CAF7E4C9B /* Auth */,
+				E83D8C3FB2F2FD9D0E47DF0A /* Late */,
+				FE46763B34FB6B77AA418D86 /* Outing */,
 			);
-			path = General;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		77F0745D29FA67D800EE1FC9 /* Account */ = {
+		E83D8C3FB2F2FD9D0E47DF0A /* Late */ = {
 			isa = PBXGroup;
 			children = (
-				77F0745E29FA67E800EE1FC9 /* AccountModel.swift */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
-		77F0746529FA717400EE1FC9 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				77F0746729FA720600EE1FC9 /* AccountServices.swift */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
-		77F0746929FABC9500EE1FC9 /* Outing */ = {
-			isa = PBXGroup;
-			children = (
-				77F0747229FAC13100EE1FC9 /* OutingListModel.swift */,
-				77F0747629FAC51F00EE1FC9 /* OutingCountModel.swift */,
-				7761C52D2A5D156600C48348 /* OutingSearchModel.swift */,
-			);
-			path = Outing;
-			sourceTree = "<group>";
-		};
-		77F0746F29FABD5200EE1FC9 /* Outing */ = {
-			isa = PBXGroup;
-			children = (
-				77F0747029FABD7500EE1FC9 /* OutingServices.swift */,
-			);
-			path = Outing;
-			sourceTree = "<group>";
-		};
-		77F0747B29FB4A8700EE1FC9 /* Late */ = {
-			isa = PBXGroup;
-			children = (
-				77F0747E29FB4AA300EE1FC9 /* LateRankModel.swift */,
+				2B5793E1FC9341527315B0A8 /* LateRankModel.swift */,
 			);
 			path = Late;
 			sourceTree = "<group>";
 		};
-		77F0747D29FB4A9400EE1FC9 /* Late */ = {
+		F7DEA3EAA82AB834BE83E7FD /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				77F0748229FB536100EE1FC9 /* LateServices.swift */,
+				46453BBA10D94D166B2498C9 /* AccountModel.swift */,
 			);
-			path = Late;
+			path = Account;
 			sourceTree = "<group>";
 		};
-		77F0748429FB624900EE1FC9 /* RefreshToken */ = {
+		FB06AB00CBC4BB37973A0913 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				77F0748529FB625E00EE1FC9 /* RefreshTokenModel.swift */,
+				A4B077D499D3BF1E566F0E52 /* SignInModel.swift */,
 			);
-			path = RefreshToken;
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		FB45DDF9F0BE84DBB34FC6E7 /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				13E6EA3CA9937374CE43A043 /* GOMS-iOS-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		FE46763B34FB6B77AA418D86 /* Outing */ = {
+			isa = PBXGroup;
+			children = (
+				A1222865F763F7F78EB7F82B /* OutingCountModel.swift */,
+				0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */,
+				994B53423EF41EC5BA02DEF7 /* OutingModel.swift */,
+				9388FF33F3F763118675B3B5 /* OutingSearchModel.swift */,
+			);
+			path = Outing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		77F0738C29ED29CF00EE1FC9 /* GOMS-iOS */ = {
+		F66C9385E26BB33EE2931DFB /* GOMS-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77F073A129ED29D000EE1FC9 /* Build configuration list for PBXNativeTarget "GOMS-iOS" */;
+			buildConfigurationList = 77C8DA289F40AC2417B9248D /* Build configuration list for PBXNativeTarget "GOMS-iOS" */;
 			buildPhases = (
-				77F0738929ED29CF00EE1FC9 /* Sources */,
-				77F0738A29ED29CF00EE1FC9 /* Frameworks */,
-				77F0738B29ED29CF00EE1FC9 /* Resources */,
+				982153C8294538EB33A3D9F6 /* Sources */,
+				231319C443AE43E855BCAFCA /* Resources */,
+				D543DCF894EFBA2CE01F63E0 /* Embed Frameworks */,
+				D02FC1658295CB87615F4677 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "GOMS-iOS";
-			packageProductDependencies = (
-				77F073A529ED377800EE1FC9 /* Then */,
-				77F073AB29ED379400EE1FC9 /* SnapKit */,
-				77F073B029ED37AB00EE1FC9 /* RxSwift */,
-				77F073B329ED37D600EE1FC9 /* RxFlow */,
-				77F073B529ED37EB00EE1FC9 /* RxCocoa */,
-				77F073D229ED923700EE1FC9 /* GAuthSignin */,
-				77F0742829F00A7D00EE1FC9 /* QRCodeReader */,
-				77F0745A29F7BC7600EE1FC9 /* Moya */,
-				77F074932A03302100EE1FC9 /* Kingfisher */,
-				77F074982A0C965800EE1FC9 /* QRCode */,
-			);
-			productName = "GOMS-iOS";
-			productReference = 77F0741E29EE949B00EE1FC9 /* GOMS.app */;
+			productName = GOMS_iOS;
+			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		77F0738529ED29CF00EE1FC9 /* Project object */ = {
+		681508A39904DC3090579ACB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				ORGANIZATIONNAME = HARIBO;
 				TargetAttributes = {
-					77F0738C29ED29CF00EE1FC9 = {
-						CreatedOnToolsVersion = 14.3;
-					};
 				};
 			};
-			buildConfigurationList = 77F0738829ED29CF00EE1FC9 /* Build configuration list for PBXProject "GOMS-iOS" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */;
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = 77F0738429ED29CF00EE1FC9;
-			packageReferences = (
-				77F073A429ED377800EE1FC9 /* XCRemoteSwiftPackageReference "Then" */,
-				77F073A729ED378600EE1FC9 /* XCRemoteSwiftPackageReference "RxFlow" */,
-				77F073AA29ED379400EE1FC9 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				77F073D129ED923700EE1FC9 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
-				77F0742729F00A7D00EE1FC9 /* XCRemoteSwiftPackageReference "QRCodeReader" */,
-				77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */,
-				77F074922A03302100EE1FC9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				77F074952A0C959200EE1FC9 /* XCRemoteSwiftPackageReference "QRCode" */,
-			);
-			productRefGroup = 77F0738429ED29CF00EE1FC9;
+			mainGroup = AED56A1DF2A785FA860E859D;
+			productRefGroup = 648BAF08E2848A87A88F0B47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77F0738C29ED29CF00EE1FC9 /* GOMS-iOS */,
+				F66C9385E26BB33EE2931DFB /* GOMS-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		77F0738B29ED29CF00EE1FC9 /* Resources */ = {
+		231319C443AE43E855BCAFCA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */,
-				77F0739D29ED29D000EE1FC9 /* LaunchScreen.storyboard in Resources */,
-				77F073F029EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf in Resources */,
-				77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */,
-				77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */,
-				77F0739A29ED29D000EE1FC9 /* Assets.xcassets in Resources */,
-				7743CB772A725D1300B837B2 /* Fraunces-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		77F0738929ED29CF00EE1FC9 /* Sources */ = {
+		982153C8294538EB33A3D9F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F0740329EE89F100EE1FC9 /* QRCodeModel.swift in Sources */,
-				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
-				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
-				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
-				77F074912A01761D00EE1FC9 /* GOMSRefreshToken.swift in Sources */,
-				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
-				77F0743129F15ABF00EE1FC9 /* OutingTableViewCell.swift in Sources */,
-				77F0744D29F7B2AC00EE1FC9 /* SignInModel.swift in Sources */,
-				7743CB6F2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift in Sources */,
-				77F0743D29F1A71300EE1FC9 /* ProfileViewModel.swift in Sources */,
-				77F0743B29F1A70700EE1FC9 /* ProfileViewController.swift in Sources */,
-				77F0747129FABD7500EE1FC9 /* OutingServices.swift in Sources */,
-				77F073C329ED898F00EE1FC9 /* BaseViewController.swift in Sources */,
-				7761C52E2A5D156600C48348 /* OutingSearchModel.swift in Sources */,
-				77F0741729EE8B3400EE1FC9 /* OutingFlow.swift in Sources */,
-				77F0740C29EE8A8600EE1FC9 /* OutingViewModel.swift in Sources */,
-				77F073C629ED8A1600EE1FC9 /* GOMSColor.swift in Sources */,
-				77F073D629ED970200EE1FC9 /* GOMSStep.swift in Sources */,
-				77F0749B2A0CACBC00EE1FC9 /* GOMSQrCode.swift in Sources */,
-				77F0745829F7B59900EE1FC9 /* BaseURL.swift in Sources */,
-				77F0745F29FA67E800EE1FC9 /* AccountModel.swift in Sources */,
-				77F0744929F7B08B00EE1FC9 /* Bundle.swift in Sources */,
-				77F0741529EE8B2D00EE1FC9 /* QRCodeFlow.swift in Sources */,
-				77F0748D2A0122C900EE1FC9 /* GOMSToken.swift in Sources */,
-				7743CB6D2A6CEE1800B837B2 /* LoginWithNumberViewController.swift in Sources */,
-				77F0748629FB625E00EE1FC9 /* RefreshTokenModel.swift in Sources */,
-				7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */,
-				77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */,
-				77F073D029ED8E0B00EE1FC9 /* IntroViewModel.swift in Sources */,
-				77F0739129ED29CF00EE1FC9 /* AppDelegate.swift in Sources */,
-				77F0747F29FB4AA300EE1FC9 /* LateRankModel.swift in Sources */,
-				77F0741129EE8B1300EE1FC9 /* TabBarFlow.swift in Sources */,
-				77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */,
-				77F0748329FB536100EE1FC9 /* LateServices.swift in Sources */,
-				77F0745429F7B55600EE1FC9 /* AuthServices.swift in Sources */,
-				7771E7BE2A15BE2200649B63 /* GOMSTextField.swift in Sources */,
-				77F0739329ED29CF00EE1FC9 /* SceneDelegate.swift in Sources */,
-				77F073C829ED8A5200EE1FC9 /* BaseViewModel.swift in Sources */,
-				77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */,
-				77F0744329F2176E00EE1FC9 /* ProfileTableViewCell.swift in Sources */,
-				77F0746829FA720700EE1FC9 /* AccountServices.swift in Sources */,
-				77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */,
-				77F0742529EF6D6500EE1FC9 /* HomeCollectionViewCell.swift in Sources */,
-				77F0740A29EE8A7B00EE1FC9 /* OutingViewController.swift in Sources */,
-				77F0747329FAC13100EE1FC9 /* OutingListModel.swift in Sources */,
-				77F0740529EE8A0200EE1FC9 /* QRCodeViewController.swift in Sources */,
-				77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */,
-				77F0742029EEDFF800EE1FC9 /* GOMSShadow.swift in Sources */,
-				77F0745129F7B3FD00EE1FC9 /* SignInRequest.swift in Sources */,
-				77F0747729FAC51F00EE1FC9 /* OutingCountModel.swift in Sources */,
+				8AEA943BDBCE5CDC0BBDDF40 /* LoginWithNumberTextField.swift in Sources */,
+				3EFE78D654C4E3EA52D19E60 /* Bundle.swift in Sources */,
+				3C712424DDE4DA31065FE32C /* GOMSColor.swift in Sources */,
+				D91B89B2FA342DF438E99E2F /* GOMSFont.swift in Sources */,
+				5931240923D88D5E8A8A7B40 /* GOMSQrCode.swift in Sources */,
+				DEAB3329F0DBE01E23B8755D /* GOMSRefreshToken.swift in Sources */,
+				87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */,
+				8C9541A3B3B16F51A003B1A3 /* GOMSTextField.swift in Sources */,
+				F489CC7B7ED7391181D47267 /* GOMSToken.swift in Sources */,
+				887741D4F59F52B1A7F51783 /* UINavigationBar.swift in Sources */,
+				C076B14F4653C3D1E78F3A3E /* AppDelegate.swift in Sources */,
+				C8CCAB7E00784089C11B8B3B /* AppFlow.swift in Sources */,
+				281F5521BCF7E784E22419E8 /* AuthFlow.swift in Sources */,
+				C991C75FBDD7E39A9B8C3A57 /* HomeFlow.swift in Sources */,
+				4F404B67DE5AF8F2F8E712A9 /* OutingFlow.swift in Sources */,
+				39CDEA366D86ECCD3553F1E0 /* QRCodeFlow.swift in Sources */,
+				F99CB0B4579C8BF18BD50FA5 /* TabBarFlow.swift in Sources */,
+				2790EF0FB564F8CB2C7A9307 /* SceneDelegate.swift in Sources */,
+				248B1FD13684D09BC1863DF9 /* GOMSStep.swift in Sources */,
+				F71E566CAB6CE41B32AE0BFB /* BaseURL.swift in Sources */,
+				31D5181F3E02660DC61E7534 /* AccountModel.swift in Sources */,
+				B63E657DEAC2370BA64B1F06 /* RefreshTokenModel.swift in Sources */,
+				197141CE26653C403692AEA9 /* SignInModel.swift in Sources */,
+				90C0666B24341AF743D2A48E /* LateRankModel.swift in Sources */,
+				32FAB44A8574F1B2397B936F /* OutingCountModel.swift in Sources */,
+				00C1EDD175C07AA22845430E /* OutingListModel.swift in Sources */,
+				D1BDAC2DC3627EC26CBCEE7B /* OutingModel.swift in Sources */,
+				8C3E388AC696BE1B4400758F /* OutingSearchModel.swift in Sources */,
+				9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */,
+				5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */,
+				BFDFBA92A023471A581634F5 /* AccountServices 2.swift in Sources */,
+				9251671FB767C6D2E48564E8 /* AccountServices.swift in Sources */,
+				13BEAA05293FA4319A826530 /* LateServices.swift in Sources */,
+				C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */,
+				59146D014C3ED51F631D7478 /* AuthServices.swift in Sources */,
+				C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */,
+				00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */,
+				526E648A9EA922B192DF0736 /* LoginWithNumberViewController.swift in Sources */,
+				17EFEB02E598A042C1191B07 /* LoginWithNumberViewModel.swift in Sources */,
+				96CC4DEF30770C1F115658DA /* BaseViewController.swift in Sources */,
+				F9836FCE6394F772A14B06D4 /* BaseViewModel.swift in Sources */,
+				D1E01ADCD6A4A83C842D5CC7 /* Cell.swift in Sources */,
+				B23C5A8F69B6CB7C9BFE292C /* HomeCollectionViewCell.swift in Sources */,
+				53EC2844FFCCBBDB4BCB1EA0 /* HomeViewController.swift in Sources */,
+				7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */,
+				72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */,
+				13DC2925516B449FCC210747 /* OutingViewController.swift in Sources */,
+				9A33939DC41C18EB4059A600 /* OutingViewModel.swift in Sources */,
+				60EAF1A265451E7899876667 /* ProfileTableViewCell.swift in Sources */,
+				6A6F960A5D95151F3FBC0F8E /* ProfileViewController.swift in Sources */,
+				2E688212D716DFFBF49CAE79 /* ProfileViewModel.swift in Sources */,
+				3E6CD32E11DA46CEAFBC933B /* QRCodeViewController.swift in Sources */,
+				1815C764B5C149B5B9CC62DD /* QRCodeModel.swift in Sources */,
+				493128A428A77484FDE0078A /* RoleCell.swift in Sources */,
+				14267BD13559E0B6203CAFEA /* GOMSTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77F0739C29ED29D000EE1FC9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		77F0739F29ED29D000EE1FC9 /* Debug */ = {
+		241AD0489E4BAABA52B1349A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -887,6 +883,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -904,23 +901,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		77F073A029ED29D000EE1FC9 /* Release */ = {
+		6BB5AFDD8BBAB4337A4631DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -947,6 +942,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -958,228 +954,81 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		77F073A229ED29D000EE1FC9 /* Debug */ = {
+		7CFD4C7979FBB6BC6D66D611 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5GD5Q99952;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드 스캔을 위해 카메라 권한을 허용해주세요";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/GOMS-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "Minjae.GOMS-iOS";
-				PRODUCT_MODULE_NAME = GOMS;
-				PRODUCT_NAME = GOMS;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				PRODUCT_NAME = GOMS_iOS;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		77F073A329ED29D000EE1FC9 /* Release */ = {
+		8297ECFDDC86E6105E5DCB3E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5GD5Q99952;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "QR코드 스캔을 위해 카메라 권한을 허용해주세요";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/GOMS-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "Minjae.GOMS-iOS";
-				PRODUCT_MODULE_NAME = GOMS;
-				PRODUCT_NAME = GOMS;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				PRODUCT_NAME = GOMS_iOS;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		77F0738829ED29CF00EE1FC9 /* Build configuration list for PBXProject "GOMS-iOS" */ = {
+		77C8DA289F40AC2417B9248D /* Build configuration list for PBXNativeTarget "GOMS-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77F0739F29ED29D000EE1FC9 /* Debug */,
-				77F073A029ED29D000EE1FC9 /* Release */,
+				7CFD4C7979FBB6BC6D66D611 /* Debug */,
+				8297ECFDDC86E6105E5DCB3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77F073A129ED29D000EE1FC9 /* Build configuration list for PBXNativeTarget "GOMS-iOS" */ = {
+		DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77F073A229ED29D000EE1FC9 /* Debug */,
-				77F073A329ED29D000EE1FC9 /* Release */,
+				241AD0489E4BAABA52B1349A /* Debug */,
+				6BB5AFDD8BBAB4337A4631DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		77F073A429ED377800EE1FC9 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		77F073A729ED378600EE1FC9 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		77F073AA29ED379400EE1FC9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		77F073D129ED923700EE1FC9 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/GSM-MSG/GAuthSignin-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
-			};
-		};
-		77F0742729F00A7D00EE1FC9 /* XCRemoteSwiftPackageReference "QRCodeReader" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/yannickl/QRCodeReader.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-		77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
-			};
-		};
-		77F074922A03302100EE1FC9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		77F074952A0C959200EE1FC9 /* XCRemoteSwiftPackageReference "QRCode" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dmrschmidt/QRCode";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		77F073A529ED377800EE1FC9 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073A429ED377800EE1FC9 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-		77F073AB29ED379400EE1FC9 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073AA29ED379400EE1FC9 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		77F073B029ED37AB00EE1FC9 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		77F073B329ED37D600EE1FC9 /* RxFlow */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073A729ED378600EE1FC9 /* XCRemoteSwiftPackageReference "RxFlow" */;
-			productName = RxFlow;
-		};
-		77F073B529ED37EB00EE1FC9 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073AD29ED37AB00EE1FC9 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		77F073D229ED923700EE1FC9 /* GAuthSignin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F073D129ED923700EE1FC9 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */;
-			productName = GAuthSignin;
-		};
-		77F0742829F00A7D00EE1FC9 /* QRCodeReader */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F0742729F00A7D00EE1FC9 /* XCRemoteSwiftPackageReference "QRCodeReader" */;
-			productName = QRCodeReader;
-		};
-		77F0745A29F7BC7600EE1FC9 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F0745929F7BC7600EE1FC9 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		77F074932A03302100EE1FC9 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F074922A03302100EE1FC9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		77F074982A0C965800EE1FC9 /* QRCode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 77F074952A0C959200EE1FC9 /* XCRemoteSwiftPackageReference "QRCode" */;
-			productName = QRCode;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 77F0738529ED29CF00EE1FC9 /* Project object */;
+	rootObject = 681508A39904DC3090579ACB /* Project object */;
 }
