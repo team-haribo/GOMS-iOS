@@ -12,15 +12,20 @@ import RxCocoa
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator = FlowCoordinator()
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        self.window = window
-        let appFlow = AppFlow(window: window)
-        self.coordinator.coordinate(flow: appFlow, with: AppStepper())
-        window.makeKeyAndVisible()
-    }
+        var coordinator = FlowCoordinator()
+        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+            guard let windowScene = (scene as? UIWindowScene) else { return }
+            let window = UIWindow(windowScene: windowScene)
+            self.window = window
+            let splashViewController = SplashViewController()
+                    window.rootViewController = splashViewController
+                    window.makeKeyAndVisible()
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        let appFlow = AppFlow(window: window)
+                        self.coordinator.coordinate(flow: appFlow, with: AppStepper())
+                    }
+        }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

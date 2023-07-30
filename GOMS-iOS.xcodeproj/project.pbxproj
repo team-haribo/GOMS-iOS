@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0707BDB12A75564B002D4744 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0707BDB02A75564B002D4744 /* SF-Pro-Text-Bold.otf */; };
+		0707BDB32A755657002D4744 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0707BDB22A755657002D4744 /* SF-Pro-Text-Medium.otf */; };
+		0707BDB52A75565E002D4744 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0707BDB42A75565E002D4744 /* SF-Pro-Text-Regular.otf */; };
+		0707BDB72A755665002D4744 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0707BDB62A755665002D4744 /* SF-Pro-Text-Semibold.otf */; };
+		0707BDB92A75577C002D4744 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707BDB82A75577C002D4744 /* SplashViewController.swift */; };
 		7743CB6D2A6CEE1800B837B2 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */; };
 		7743CB6F2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */; };
 		7743CB712A6CEFE900B837B2 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */; };
@@ -32,10 +37,6 @@
 		77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073D729ED9A6000EE1FC9 /* AppFlow.swift */; };
 		77F073DC29ED9B0C00EE1FC9 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */; };
 		77F073E129EE172200EE1FC9 /* GOMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073E029EE172200EE1FC9 /* GOMSFont.swift */; };
-		77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */; };
-		77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */; };
-		77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */; };
-		77F073F029EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */; };
 		77F073F829EE3D5900EE1FC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */; };
 		77F073FA29EE3D6300EE1FC9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */; };
 		77F073FC29EE448500EE1FC9 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */; };
@@ -77,6 +78,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0707BDB02A75564B002D4744 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		0707BDB22A755657002D4744 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		0707BDB42A75565E002D4744 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		0707BDB62A755665002D4744 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		0707BDB82A75577C002D4744 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		7743CB6C2A6CEE1800B837B2 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
 		7743CB6E2A6CEE3300B837B2 /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
 		7743CB702A6CEFE900B837B2 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
@@ -97,10 +103,6 @@
 		77F073D729ED9A6000EE1FC9 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		77F073DB29ED9B0C00EE1FC9 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		77F073E029EE172200EE1FC9 /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
-		77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Semibold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Medium.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
-		77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../Downloads/SF Pro Text/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		77F073F729EE3D5900EE1FC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77F073F929EE3D6300EE1FC9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		77F073FB29EE448500EE1FC9 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				77F073C429ED8A0800EE1FC9 /* Extension */,
 				77F0739929ED29D000EE1FC9 /* Assets.xcassets */,
 				77F0739B29ED29D000EE1FC9 /* LaunchScreen.storyboard */,
+				0707BDB82A75577C002D4744 /* SplashViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -369,11 +372,11 @@
 		77F073DF29EE170A00EE1FC9 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				0707BDB62A755665002D4744 /* SF-Pro-Text-Semibold.otf */,
+				0707BDB42A75565E002D4744 /* SF-Pro-Text-Regular.otf */,
+				0707BDB22A755657002D4744 /* SF-Pro-Text-Medium.otf */,
+				0707BDB02A75564B002D4744 /* SF-Pro-Text-Bold.otf */,
 				7743CB762A725D1300B837B2 /* Fraunces-Black.ttf */,
-				77F073E929EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf */,
-				77F073EB29EE1B1600EE1FC9 /* SF-Pro-Text-Regular.otf */,
-				77F073ED29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf */,
-				77F073EF29EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -770,13 +773,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F073EA29EE1B0E00EE1FC9 /* SF-Pro-Text-Semibold.otf in Resources */,
 				77F0739D29ED29D000EE1FC9 /* LaunchScreen.storyboard in Resources */,
-				77F073F029EE20A500EE1FC9 /* SF-Pro-Text-Bold.otf in Resources */,
-				77F073EC29EE1B1700EE1FC9 /* SF-Pro-Text-Regular.otf in Resources */,
-				77F073EE29EE1B2100EE1FC9 /* SF-Pro-Text-Medium.otf in Resources */,
+				0707BDB12A75564B002D4744 /* SF-Pro-Text-Bold.otf in Resources */,
+				0707BDB52A75565E002D4744 /* SF-Pro-Text-Regular.otf in Resources */,
 				77F0739A29ED29D000EE1FC9 /* Assets.xcassets in Resources */,
+				0707BDB72A755665002D4744 /* SF-Pro-Text-Semibold.otf in Resources */,
 				7743CB772A725D1300B837B2 /* Fraunces-Black.ttf in Resources */,
+				0707BDB32A755657002D4744 /* SF-Pro-Text-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,6 +793,7 @@
 				77F0740329EE89F100EE1FC9 /* QRCodeModel.swift in Sources */,
 				77F0739529ED29CF00EE1FC9 /* IntroViewController.swift in Sources */,
 				77F0741329EE8B2400EE1FC9 /* HomeFlow.swift in Sources */,
+				0707BDB92A75577C002D4744 /* SplashViewController.swift in Sources */,
 				77F0741C29EE8B8A00EE1FC9 /* GOMSTabBar.swift in Sources */,
 				77F074912A01761D00EE1FC9 /* GOMSRefreshToken.swift in Sources */,
 				77F073D829ED9A6000EE1FC9 /* AppFlow.swift in Sources */,
