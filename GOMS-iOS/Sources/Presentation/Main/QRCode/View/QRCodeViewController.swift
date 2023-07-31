@@ -13,8 +13,6 @@ import Then
 import RxFlow
 import RxCocoa
 import RxSwift
-import QRCode
-
 
 class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate {
     private let userIsBlackList = UserDefaults.standard.bool(forKey: "userIsBlackList")
