@@ -42,6 +42,7 @@
 		7743CB882A77D5F500B837B2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB872A77D5F500B837B2 /* Moya */; };
 		7743CB8B2A77D61900B837B2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB8A2A77D61900B837B2 /* Then */; };
 		7743CB8E2A77D62600B837B2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB8D2A77D62600B837B2 /* SnapKit */; };
+		7743CB912A77D64A00B837B2 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB902A77D64A00B837B2 /* GAuthSignin */; };
 		87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62934592A276D55D6D24B0 /* GOMSShadow.swift */; };
 		887741D4F59F52B1A7F51783 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */; };
 		8AEA943BDBCE5CDC0BBDDF40 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */; };
@@ -151,6 +152,7 @@
 				7743CB8B2A77D61900B837B2 /* Then in Frameworks */,
 				7743CB802A77D56200B837B2 /* RxFlow in Frameworks */,
 				7743CB8E2A77D62600B837B2 /* SnapKit in Frameworks */,
+				7743CB912A77D64A00B837B2 /* GAuthSignin in Frameworks */,
 				7743CB852A77D5B800B837B2 /* RxCocoa in Frameworks */,
 				7743CB882A77D5F500B837B2 /* Moya in Frameworks */,
 				7743CB7D2A77D53000B837B2 /* Kingfisher in Frameworks */,
@@ -759,6 +761,7 @@
 				7743CB872A77D5F500B837B2 /* Moya */,
 				7743CB8A2A77D61900B837B2 /* Then */,
 				7743CB8D2A77D62600B837B2 /* SnapKit */,
+				7743CB902A77D64A00B837B2 /* GAuthSignin */,
 			);
 			productName = GOMS_iOS;
 			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
@@ -788,6 +791,7 @@
 				7743CB862A77D5F400B837B2 /* XCRemoteSwiftPackageReference "Moya" */,
 				7743CB892A77D61900B837B2 /* XCRemoteSwiftPackageReference "Then" */,
 				7743CB8C2A77D62600B837B2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7743CB8F2A77D64A00B837B2 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
 			);
 			productRefGroup = 648BAF08E2848A87A88F0B47 /* Products */;
 			projectDirPath = "";
@@ -1104,6 +1108,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		7743CB8F2A77D64A00B837B2 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GSM-MSG/GAuthSignin-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1141,6 +1153,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7743CB8C2A77D62600B837B2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		7743CB902A77D64A00B837B2 /* GAuthSignin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7743CB8F2A77D64A00B837B2 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */;
+			productName = GAuthSignin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

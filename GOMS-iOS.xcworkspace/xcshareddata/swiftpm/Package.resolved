@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "gauthsignin-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GSM-MSG/GAuthSignin-Swift",
+      "state" : {
+        "revision" : "ce6e6f82462fa861b3b10ae05307ec63b73c6cc9",
+        "version" : "0.0.3"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher",
