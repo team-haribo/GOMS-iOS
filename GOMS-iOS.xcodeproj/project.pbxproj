@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,7 +31,6 @@
 		53EC2844FFCCBBDB4BCB1EA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA7E9CF4EB6A2520AB2D86 /* HomeViewController.swift */; };
 		5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */; };
 		59146D014C3ED51F631D7478 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457424C44ED3902460CF44D3 /* AuthServices.swift */; };
-		5931240923D88D5E8A8A7B40 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */; };
 		60EAF1A265451E7899876667 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */; };
 		6A6F960A5D95151F3FBC0F8E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40A2FE679E0118A486F06F /* ProfileViewController.swift */; };
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
@@ -99,7 +98,6 @@
 		457424C44ED3902460CF44D3 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		46453BBA10D94D166B2498C9 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		4856E21ACF480E5004AFAFDF /* AccountServices 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountServices 2.swift"; sourceTree = "<group>"; };
-		4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSQrCode.swift; sourceTree = "<group>"; };
 		5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		6428C1CD555E404837613330 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
 		64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
@@ -497,7 +495,6 @@
 				E61A4373B1E936D9213011BE /* Bundle.swift */,
 				F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */,
 				C26BC738406BAFEE640D2240 /* GOMSFont.swift */,
-				4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */,
 				25117C0BE38B6B07AA04ADE5 /* GOMSRefreshToken.swift */,
 				9C62934592A276D55D6D24B0 /* GOMSShadow.swift */,
 				C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */,
@@ -751,8 +748,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = HARIBO;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -791,7 +786,6 @@
 				3EFE78D654C4E3EA52D19E60 /* Bundle.swift in Sources */,
 				3C712424DDE4DA31065FE32C /* GOMSColor.swift in Sources */,
 				D91B89B2FA342DF438E99E2F /* GOMSFont.swift in Sources */,
-				5931240923D88D5E8A8A7B40 /* GOMSQrCode.swift in Sources */,
 				DEAB3329F0DBE01E23B8755D /* GOMSRefreshToken.swift in Sources */,
 				87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */,
 				8C9541A3B3B16F51A003B1A3 /* GOMSTextField.swift in Sources */,
