@@ -36,6 +36,9 @@
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
 		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
 		7743CB7D2A77D53000B837B2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB7C2A77D53000B837B2 /* Kingfisher */; };
+		7743CB802A77D56200B837B2 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB7F2A77D56200B837B2 /* RxFlow */; };
+		7743CB832A77D5B200B837B2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB822A77D5B200B837B2 /* RxSwift */; };
+		7743CB852A77D5B800B837B2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB842A77D5B800B837B2 /* RxCocoa */; };
 		87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62934592A276D55D6D24B0 /* GOMSShadow.swift */; };
 		887741D4F59F52B1A7F51783 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */; };
 		8AEA943BDBCE5CDC0BBDDF40 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */; };
@@ -141,6 +144,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7743CB832A77D5B200B837B2 /* RxSwift in Frameworks */,
+				7743CB802A77D56200B837B2 /* RxFlow in Frameworks */,
+				7743CB852A77D5B800B837B2 /* RxCocoa in Frameworks */,
 				7743CB7D2A77D53000B837B2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,6 +747,9 @@
 			name = "GOMS-iOS";
 			packageProductDependencies = (
 				7743CB7C2A77D53000B837B2 /* Kingfisher */,
+				7743CB7F2A77D56200B837B2 /* RxFlow */,
+				7743CB822A77D5B200B837B2 /* RxSwift */,
+				7743CB842A77D5B800B837B2 /* RxCocoa */,
 			);
 			productName = GOMS_iOS;
 			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
@@ -765,6 +774,8 @@
 			mainGroup = AED56A1DF2A785FA860E859D;
 			packageReferences = (
 				7743CB7B2A77D53000B837B2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7743CB7E2A77D56200B837B2 /* XCRemoteSwiftPackageReference "RxFlow" */,
+				7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 648BAF08E2848A87A88F0B47 /* Products */;
 			projectDirPath = "";
@@ -1041,6 +1052,22 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		7743CB7E2A77D56200B837B2 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1048,6 +1075,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7743CB7B2A77D53000B837B2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		7743CB7F2A77D56200B837B2 /* RxFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7743CB7E2A77D56200B837B2 /* XCRemoteSwiftPackageReference "RxFlow" */;
+			productName = RxFlow;
+		};
+		7743CB822A77D5B200B837B2 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		7743CB842A77D5B800B837B2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
