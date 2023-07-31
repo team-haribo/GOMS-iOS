@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,20 +30,10 @@
 		526E648A9EA922B192DF0736 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */; };
 		53EC2844FFCCBBDB4BCB1EA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA7E9CF4EB6A2520AB2D86 /* HomeViewController.swift */; };
 		5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */; };
-		59146D014C3ED51F631D7478 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457424C44ED3902460CF44D3 /* AuthServices.swift */; };
 		60EAF1A265451E7899876667 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */; };
 		6A6F960A5D95151F3FBC0F8E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40A2FE679E0118A486F06F /* ProfileViewController.swift */; };
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
 		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
-		7743CB7D2A77D53000B837B2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB7C2A77D53000B837B2 /* Kingfisher */; };
-		7743CB802A77D56200B837B2 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB7F2A77D56200B837B2 /* RxFlow */; };
-		7743CB832A77D5B200B837B2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB822A77D5B200B837B2 /* RxSwift */; };
-		7743CB852A77D5B800B837B2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB842A77D5B800B837B2 /* RxCocoa */; };
-		7743CB882A77D5F500B837B2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB872A77D5F500B837B2 /* Moya */; };
-		7743CB8B2A77D61900B837B2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB8A2A77D61900B837B2 /* Then */; };
-		7743CB8E2A77D62600B837B2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB8D2A77D62600B837B2 /* SnapKit */; };
-		7743CB912A77D64A00B837B2 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB902A77D64A00B837B2 /* GAuthSignin */; };
-		7743CB942A77D67600B837B2 /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 7743CB932A77D67600B837B2 /* QRCodeReader */; };
 		87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62934592A276D55D6D24B0 /* GOMSShadow.swift */; };
 		887741D4F59F52B1A7F51783 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */; };
 		8AEA943BDBCE5CDC0BBDDF40 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */; };
@@ -56,6 +46,7 @@
 		9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F53CB28B1A5311BF484B8E /* SignInRequest.swift */; };
 		B23C5A8F69B6CB7C9BFE292C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978264A050185C912349596A /* HomeCollectionViewCell.swift */; };
 		B63E657DEAC2370BA64B1F06 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */; };
+		B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CF79422AB13E1EE716100 /* AuthServices.swift */; };
 		C076B14F4653C3D1E78F3A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */; };
 		C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF56F29FFC248A39CA54F95 /* OutingServices.swift */; };
 		C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */; };
@@ -103,8 +94,8 @@
 		3E451230CE75A5B517AC7C0D /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
 		3EC474B134561AC16088E87B /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
 		4490FA17B9A929FDAEEA923C /* GOMSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTabBar.swift; sourceTree = "<group>"; };
-		457424C44ED3902460CF44D3 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		46453BBA10D94D166B2498C9 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		5C5CF79422AB13E1EE716100 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		6428C1CD555E404837613330 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
 		64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
@@ -136,7 +127,7 @@
 		E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		E48BCAF04F5F64366DA7FB3B /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
 		E61A4373B1E936D9213011BE /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		E7265F7E0FD355ACA97EB6C0 /* GOMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87F44DB0DCBE1F74B576907 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
 		F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSColor.swift; sourceTree = "<group>"; };
 		FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -147,15 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7743CB832A77D5B200B837B2 /* RxSwift in Frameworks */,
-				7743CB942A77D67600B837B2 /* QRCodeReader in Frameworks */,
-				7743CB8B2A77D61900B837B2 /* Then in Frameworks */,
-				7743CB802A77D56200B837B2 /* RxFlow in Frameworks */,
-				7743CB8E2A77D62600B837B2 /* SnapKit in Frameworks */,
-				7743CB912A77D64A00B837B2 /* GAuthSignin in Frameworks */,
-				7743CB852A77D5B800B837B2 /* RxCocoa in Frameworks */,
-				7743CB882A77D5F500B837B2 /* Moya in Frameworks */,
-				7743CB7D2A77D53000B837B2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +202,14 @@
 				8CE97E13DBFC259E99CD7D4F /* QRCodeViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1409A196070CCD43D9E058E8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5C5CF79422AB13E1EE716100 /* AuthServices.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		1A86A625066647A04D548EAF /* View */ = {
@@ -288,8 +278,8 @@
 		2F38A5C6231BD3DD6CBD0AB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D508BBFE2D5EAEC0DE8F9D34 /* Auth */,
 				2AE672F6EFD4B4B4C011AF72 /* Account */,
+				1409A196070CCD43D9E058E8 /* Auth */,
 				660F02A333B53D87F3D172D4 /* Late */,
 				C0BB95D9729D7FB96D8B3CD3 /* Outing */,
 			);
@@ -426,7 +416,7 @@
 		648BAF08E2848A87A88F0B47 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7265F7E0FD355ACA97EB6C0 /* GOMS.app */,
+				E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -673,14 +663,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D508BBFE2D5EAEC0DE8F9D34 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				457424C44ED3902460CF44D3 /* AuthServices.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
 		E1938EA295496D9315328F12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -752,19 +734,8 @@
 			dependencies = (
 			);
 			name = "GOMS-iOS";
-			packageProductDependencies = (
-				7743CB7C2A77D53000B837B2 /* Kingfisher */,
-				7743CB7F2A77D56200B837B2 /* RxFlow */,
-				7743CB822A77D5B200B837B2 /* RxSwift */,
-				7743CB842A77D5B800B837B2 /* RxCocoa */,
-				7743CB872A77D5F500B837B2 /* Moya */,
-				7743CB8A2A77D61900B837B2 /* Then */,
-				7743CB8D2A77D62600B837B2 /* SnapKit */,
-				7743CB902A77D64A00B837B2 /* GAuthSignin */,
-				7743CB932A77D67600B837B2 /* QRCodeReader */,
-			);
 			productName = GOMS_iOS;
-			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS.app */;
+			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -773,9 +744,9 @@
 		681508A39904DC3090579ACB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = HARIBO;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -786,16 +757,6 @@
 				en,
 			);
 			mainGroup = AED56A1DF2A785FA860E859D;
-			packageReferences = (
-				7743CB7B2A77D53000B837B2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				7743CB7E2A77D56200B837B2 /* XCRemoteSwiftPackageReference "RxFlow" */,
-				7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				7743CB862A77D5F400B837B2 /* XCRemoteSwiftPackageReference "Moya" */,
-				7743CB892A77D61900B837B2 /* XCRemoteSwiftPackageReference "Then" */,
-				7743CB8C2A77D62600B837B2 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				7743CB8F2A77D64A00B837B2 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
-				7743CB922A77D67600B837B2 /* XCRemoteSwiftPackageReference "QRCodeReader" */,
-			);
 			productRefGroup = 648BAF08E2848A87A88F0B47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -850,9 +811,9 @@
 				9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */,
 				5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */,
 				9251671FB767C6D2E48564E8 /* AccountServices.swift in Sources */,
+				B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */,
 				13BEAA05293FA4319A826530 /* LateServices.swift in Sources */,
 				C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */,
-				59146D014C3ED51F631D7478 /* AuthServices.swift in Sources */,
 				C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */,
 				00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */,
 				526E648A9EA922B192DF0736 /* LoginWithNumberViewController.swift in Sources */,
@@ -932,7 +893,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -986,7 +946,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
@@ -1006,7 +965,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Minjae.GOMS-iOS";
-				PRODUCT_NAME = GOMS;
+				PRODUCT_NAME = GOMS_iOS;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1030,7 +989,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Minjae.GOMS-iOS";
-				PRODUCT_NAME = GOMS;
+				PRODUCT_NAME = GOMS_iOS;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1062,121 +1021,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7743CB7B2A77D53000B837B2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		7743CB7E2A77D56200B837B2 /* XCRemoteSwiftPackageReference "RxFlow" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
-		7743CB862A77D5F400B837B2 /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
-			};
-		};
-		7743CB892A77D61900B837B2 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		7743CB8C2A77D62600B837B2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		7743CB8F2A77D64A00B837B2 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/GSM-MSG/GAuthSignin-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
-			};
-		};
-		7743CB922A77D67600B837B2 /* XCRemoteSwiftPackageReference "QRCodeReader" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/yannickl/QRCodeReader.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7743CB7C2A77D53000B837B2 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB7B2A77D53000B837B2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		7743CB7F2A77D56200B837B2 /* RxFlow */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB7E2A77D56200B837B2 /* XCRemoteSwiftPackageReference "RxFlow" */;
-			productName = RxFlow;
-		};
-		7743CB822A77D5B200B837B2 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		7743CB842A77D5B800B837B2 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB812A77D56B00B837B2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		7743CB872A77D5F500B837B2 /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB862A77D5F400B837B2 /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		7743CB8A2A77D61900B837B2 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB892A77D61900B837B2 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-		7743CB8D2A77D62600B837B2 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB8C2A77D62600B837B2 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		7743CB902A77D64A00B837B2 /* GAuthSignin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB8F2A77D64A00B837B2 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */;
-			productName = GAuthSignin;
-		};
-		7743CB932A77D67600B837B2 /* QRCodeReader */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7743CB922A77D67600B837B2 /* XCRemoteSwiftPackageReference "QRCodeReader" */;
-			productName = QRCodeReader;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 681508A39904DC3090579ACB /* Project object */;
 }
