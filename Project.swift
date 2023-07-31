@@ -37,7 +37,7 @@ let project = Project(
     ),
     .remote(
         url: "https://github.com/yannickl/QRCodeReader.swift.git",
-        requirement:.upToNextMajor(from: "10.1.0")
+        requirement: .upToNextMajor(from: "10.1.0")
     ),
     .remote(
         url: "https://github.com/GSM-MSG/GAuthSignin-Swift",
