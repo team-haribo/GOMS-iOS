@@ -50,14 +50,18 @@ let project = Project(
            platform: .iOS,
            product: .app, // unitTests, .appExtension, .framework, dynamicLibrary, staticFramework
            bundleId: bundleID,
-           deploymentTarget: .iOS(targetVersion: targetVersion, devices: [.iphone]),
-           infoPlist: .default,
+           deploymentTarget: .iOS(
+            targetVersion: targetVersion,
+            devices: [.iphone, .ipad]
+           ),
+           infoPlist: .file(path: "\(projectName)/Info.plist"),
            sources: ["\(projectName)/**"],
-           resources: [],
+           resources: ["\(projectName)/Resources/**"],
            dependencies: [
             .package(product: "RxFlow"),
             .package(product: "RxSwift"),
             .package(product: "RxCocoa"),
+            .package(product: "SnapKit"),
             .package(product: "Then"),
             .package(product: "Moya"),
             .package(product: "Kingfisher"),
