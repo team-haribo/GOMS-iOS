@@ -32,8 +32,8 @@ let project = Project(
         requirement: .upToNextMajor(from: "15.0.0")
     ),
     .remote(
-        url: "https://github.com/CocoaPods/Specs.git",
-        requirement: .upToNextMajor(from: "7.0")
+        url: "https://github.com/onevcat/Kingfisher.git",
+        requirement: .upToNextMajor(from: "7.0.0")
     ),
     .remote(
         url: "https://github.com/yannickl/QRCodeReader.swift.git",
