@@ -1,10 +1,6 @@
-//
-//  Bundle.swift
-//  GOMS-iOS
-//
-//  Created by 선민재 on 2023/04/25.
-//
-
+// swiftlint:disable all
+// swift-format-ignore-file
+// swiftformat:disable all
 import Foundation
 
 // MARK: - Swift Bundle Accessor
@@ -12,15 +8,17 @@ import Foundation
 private class BundleFinder {}
 
 extension Foundation.Bundle {
-    /// Since GCMS is a application, the bundle for classes within this module can be used directly.
+    /// Since GOMS-iOS is a application, the bundle for classes within this module can be used directly.
     static let module = Bundle(for: BundleFinder.self)
 }
 
 // MARK: - Objective-C Bundle Accessor
 
 @objc
-public class GCMSResources: NSObject {
+public class GOMSIOSResources: NSObject {
     @objc public class var bundle: Bundle {
         return .module
     }
 }
+// swiftlint:enable all
+// swiftformat:enable all
