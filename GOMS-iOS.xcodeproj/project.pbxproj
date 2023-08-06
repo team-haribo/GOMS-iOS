@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731D6D31347481DA366521B /* IntroViewModel.swift */; };
 		00C1EDD175C07AA22845430E /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */; };
+		137DCB3C45E5CE2B10CF1677 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EB99EDF37B441D92FE5A82CA /* Then */; };
 		13BEAA05293FA4319A826530 /* LateServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295397FAD951EB22776E0EA2 /* LateServices.swift */; };
 		13DC2925516B449FCC210747 /* OutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6428C1CD555E404837613330 /* OutingViewController.swift */; };
 		14267BD13559E0B6203CAFEA /* GOMSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490FA17B9A929FDAEEA923C /* GOMSTabBar.swift */; };
@@ -18,20 +19,21 @@
 		248B1FD13684D09BC1863DF9 /* GOMSStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E451230CE75A5B517AC7C0D /* GOMSStep.swift */; };
 		2790EF0FB564F8CB2C7A9307 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63889E2CE3DE6CECF9E50B /* SceneDelegate.swift */; };
 		281F5521BCF7E784E22419E8 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87F44DB0DCBE1F74B576907 /* AuthFlow.swift */; };
+		289D47649380CA7B80FD00E7 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = F813DF204217A8A8FA083193 /* GAuthSignin */; };
 		2E688212D716DFFBF49CAE79 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DD3B2162507EFE23B404 /* ProfileViewModel.swift */; };
 		31D5181F3E02660DC61E7534 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46453BBA10D94D166B2498C9 /* AccountModel.swift */; };
 		32FAB44A8574F1B2397B936F /* OutingCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1222865F763F7F78EB7F82B /* OutingCountModel.swift */; };
+		3677857998C796CF1F619EE2 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B5A5D4FDFFB3F435EF7F6B53 /* RxFlow */; };
 		39CDEA366D86ECCD3553F1E0 /* QRCodeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */; };
 		3C712424DDE4DA31065FE32C /* GOMSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */; };
 		3E6CD32E11DA46CEAFBC933B /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE97E13DBFC259E99CD7D4F /* QRCodeViewController.swift */; };
 		3EFE78D654C4E3EA52D19E60 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61A4373B1E936D9213011BE /* Bundle.swift */; };
 		493128A428A77484FDE0078A /* RoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F326E926997F82820F199 /* RoleCell.swift */; };
+		4A258C31A37F954D524852A6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 081F136A16B08657C2E5D58D /* RxSwift */; };
 		4F404B67DE5AF8F2F8E712A9 /* OutingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F2375EE5E4B6444926746 /* OutingFlow.swift */; };
 		526E648A9EA922B192DF0736 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */; };
 		53EC2844FFCCBBDB4BCB1EA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA7E9CF4EB6A2520AB2D86 /* HomeViewController.swift */; };
 		5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */; };
-		59146D014C3ED51F631D7478 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457424C44ED3902460CF44D3 /* AuthServices.swift */; };
-		5931240923D88D5E8A8A7B40 /* GOMSQrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */; };
 		60EAF1A265451E7899876667 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */; };
 		6A6F960A5D95151F3FBC0F8E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40A2FE679E0118A486F06F /* ProfileViewController.swift */; };
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
@@ -41,14 +43,17 @@
 		8AEA943BDBCE5CDC0BBDDF40 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */; };
 		8C3E388AC696BE1B4400758F /* OutingSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388FF33F3F763118675B3B5 /* OutingSearchModel.swift */; };
 		8C9541A3B3B16F51A003B1A3 /* GOMSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */; };
+		8D0B34FF3C060B87514A5C7B /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 05539138342D52593CC4A0B0 /* Moya */; };
 		90C0666B24341AF743D2A48E /* LateRankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5793E1FC9341527315B0A8 /* LateRankModel.swift */; };
+		912ED3DC54EFF91C9BD9A5B4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 98C1F1421CABED10E7FE1B75 /* Kingfisher */; };
 		9251671FB767C6D2E48564E8 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF5F78908D60700B4C935DF /* AccountServices.swift */; };
 		96CC4DEF30770C1F115658DA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297FAE6FE4A628F72E17B21 /* BaseViewController.swift */; };
 		9A33939DC41C18EB4059A600 /* OutingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED536E620F9BC99598EE54 /* OutingViewModel.swift */; };
 		9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F53CB28B1A5311BF484B8E /* SignInRequest.swift */; };
 		B23C5A8F69B6CB7C9BFE292C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978264A050185C912349596A /* HomeCollectionViewCell.swift */; };
 		B63E657DEAC2370BA64B1F06 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */; };
-		BFDFBA92A023471A581634F5 /* AccountServices 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4856E21ACF480E5004AFAFDF /* AccountServices 2.swift */; };
+		B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CF79422AB13E1EE716100 /* AuthServices.swift */; };
+		BF9A8A20D6867E104E442A70 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BFE9D9C4C243D7D5A3A968EC /* RxCocoa */; };
 		C076B14F4653C3D1E78F3A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */; };
 		C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF56F29FFC248A39CA54F95 /* OutingServices.swift */; };
 		C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */; };
@@ -60,6 +65,7 @@
 		DEAB3329F0DBE01E23B8755D /* GOMSRefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25117C0BE38B6B07AA04ADE5 /* GOMSRefreshToken.swift */; };
 		F489CC7B7ED7391181D47267 /* GOMSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BCAF04F5F64366DA7FB3B /* GOMSToken.swift */; };
 		F71E566CAB6CE41B32AE0BFB /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8897DBB2E89D9A3111F95E28 /* BaseURL.swift */; };
+		F874F498B452084D603227B5 /* QRCodeReader in Frameworks */ = {isa = PBXBuildFile; productRef = 27A09B85FF47C0AAF45A4281 /* QRCodeReader */; };
 		F9836FCE6394F772A14B06D4 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F81B1F96416CCEF789E952 /* BaseViewModel.swift */; };
 		F99CB0B4579C8BF18BD50FA5 /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BEA719AD89929E5D32B7E9 /* TabBarFlow.swift */; };
 /* End PBXBuildFile section */
@@ -96,10 +102,8 @@
 		3E451230CE75A5B517AC7C0D /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
 		3EC474B134561AC16088E87B /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
 		4490FA17B9A929FDAEEA923C /* GOMSTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTabBar.swift; sourceTree = "<group>"; };
-		457424C44ED3902460CF44D3 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		46453BBA10D94D166B2498C9 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		4856E21ACF480E5004AFAFDF /* AccountServices 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountServices 2.swift"; sourceTree = "<group>"; };
-		4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSQrCode.swift; sourceTree = "<group>"; };
+		5C5CF79422AB13E1EE716100 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		6428C1CD555E404837613330 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
 		64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3677857998C796CF1F619EE2 /* RxFlow in Frameworks */,
+				4A258C31A37F954D524852A6 /* RxSwift in Frameworks */,
+				BF9A8A20D6867E104E442A70 /* RxCocoa in Frameworks */,
+				137DCB3C45E5CE2B10CF1677 /* Then in Frameworks */,
+				8D0B34FF3C060B87514A5C7B /* Moya in Frameworks */,
+				912ED3DC54EFF91C9BD9A5B4 /* Kingfisher in Frameworks */,
+				F874F498B452084D603227B5 /* QRCodeReader in Frameworks */,
+				289D47649380CA7B80FD00E7 /* GAuthSignin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +220,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1409A196070CCD43D9E058E8 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5C5CF79422AB13E1EE716100 /* AuthServices.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		1A86A625066647A04D548EAF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +278,6 @@
 		2AE672F6EFD4B4B4C011AF72 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				4856E21ACF480E5004AFAFDF /* AccountServices 2.swift */,
 				0FF5F78908D60700B4C935DF /* AccountServices.swift */,
 			);
 			path = Account;
@@ -275,8 +294,8 @@
 		2F38A5C6231BD3DD6CBD0AB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D508BBFE2D5EAEC0DE8F9D34 /* 며소 */,
 				2AE672F6EFD4B4B4C011AF72 /* Account */,
+				1409A196070CCD43D9E058E8 /* Auth */,
 				660F02A333B53D87F3D172D4 /* Late */,
 				C0BB95D9729D7FB96D8B3CD3 /* Outing */,
 			);
@@ -497,7 +516,6 @@
 				E61A4373B1E936D9213011BE /* Bundle.swift */,
 				F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */,
 				C26BC738406BAFEE640D2240 /* GOMSFont.swift */,
-				4DF90BE858CF5735F2CE638D /* GOMSQrCode.swift */,
 				25117C0BE38B6B07AA04ADE5 /* GOMSRefreshToken.swift */,
 				9C62934592A276D55D6D24B0 /* GOMSShadow.swift */,
 				C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */,
@@ -661,14 +679,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D508BBFE2D5EAEC0DE8F9D34 /* 며소 */ = {
-			isa = PBXGroup;
-			children = (
-				457424C44ED3902460CF44D3 /* AuthServices.swift */,
-			);
-			path = "며소";
-			sourceTree = "<group>";
-		};
 		E1938EA295496D9315328F12 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,6 +750,16 @@
 			dependencies = (
 			);
 			name = "GOMS-iOS";
+			packageProductDependencies = (
+				B5A5D4FDFFB3F435EF7F6B53 /* RxFlow */,
+				081F136A16B08657C2E5D58D /* RxSwift */,
+				BFE9D9C4C243D7D5A3A968EC /* RxCocoa */,
+				EB99EDF37B441D92FE5A82CA /* Then */,
+				05539138342D52593CC4A0B0 /* Moya */,
+				98C1F1421CABED10E7FE1B75 /* Kingfisher */,
+				27A09B85FF47C0AAF45A4281 /* QRCodeReader */,
+				F813DF204217A8A8FA083193 /* GAuthSignin */,
+			);
 			productName = GOMS_iOS;
 			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -763,6 +783,16 @@
 				en,
 			);
 			mainGroup = AED56A1DF2A785FA860E859D;
+			packageReferences = (
+				22615A22CBAE36C4E05A46D1 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
+				1F4F6DCEB5D971B1D4220B72 /* XCRemoteSwiftPackageReference "Moya" */,
+				A8867077F776A854984B5978 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FFD5B6D4081A35622195590E /* XCRemoteSwiftPackageReference "RxFlow" */,
+				11A293E5CB1EDC0DF4832D2C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6E54C8325EBF75DC324828AD /* XCRemoteSwiftPackageReference "Then" */,
+				3A19482F0C32099983F713BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CC0E23A0C29B67569E5076AD /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */,
+			);
 			productRefGroup = 648BAF08E2848A87A88F0B47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -791,7 +821,6 @@
 				3EFE78D654C4E3EA52D19E60 /* Bundle.swift in Sources */,
 				3C712424DDE4DA31065FE32C /* GOMSColor.swift in Sources */,
 				D91B89B2FA342DF438E99E2F /* GOMSFont.swift in Sources */,
-				5931240923D88D5E8A8A7B40 /* GOMSQrCode.swift in Sources */,
 				DEAB3329F0DBE01E23B8755D /* GOMSRefreshToken.swift in Sources */,
 				87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */,
 				8C9541A3B3B16F51A003B1A3 /* GOMSTextField.swift in Sources */,
@@ -817,11 +846,10 @@
 				8C3E388AC696BE1B4400758F /* OutingSearchModel.swift in Sources */,
 				9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */,
 				5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */,
-				BFDFBA92A023471A581634F5 /* AccountServices 2.swift in Sources */,
 				9251671FB767C6D2E48564E8 /* AccountServices.swift in Sources */,
+				B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */,
 				13BEAA05293FA4319A826530 /* LateServices.swift in Sources */,
 				C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */,
-				59146D014C3ED51F631D7478 /* AuthServices.swift in Sources */,
 				C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */,
 				00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */,
 				526E648A9EA922B192DF0736 /* LoginWithNumberViewController.swift in Sources */,
@@ -1029,6 +1057,108 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11A293E5CB1EDC0DF4832D2C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		1F4F6DCEB5D971B1D4220B72 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		22615A22CBAE36C4E05A46D1 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GSM-MSG/GAuthSignin-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+		3A19482F0C32099983F713BE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		6E54C8325EBF75DC324828AD /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		A8867077F776A854984B5978 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+		CC0E23A0C29B67569E5076AD /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/QRCodeReader.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.1.0;
+			};
+		};
+		FFD5B6D4081A35622195590E /* XCRemoteSwiftPackageReference "RxFlow" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxFlow.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05539138342D52593CC4A0B0 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Moya;
+		};
+		081F136A16B08657C2E5D58D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxSwift;
+		};
+		27A09B85FF47C0AAF45A4281 /* QRCodeReader */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = QRCodeReader;
+		};
+		98C1F1421CABED10E7FE1B75 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Kingfisher;
+		};
+		B5A5D4FDFFB3F435EF7F6B53 /* RxFlow */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxFlow;
+		};
+		BFE9D9C4C243D7D5A3A968EC /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxCocoa;
+		};
+		EB99EDF37B441D92FE5A82CA /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Then;
+		};
+		F813DF204217A8A8FA083193 /* GAuthSignin */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GAuthSignin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 681508A39904DC3090579ACB /* Project object */;
 }
