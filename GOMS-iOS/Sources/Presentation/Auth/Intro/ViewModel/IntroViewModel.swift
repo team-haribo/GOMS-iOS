@@ -13,8 +13,7 @@ import Moya
 
 class IntroViewModel: BaseViewModel, Stepper{
     let authProvider = MoyaProvider<AuthServices>()
-    var authData: SignInResponse!
-    
+    var authData: SignInResponse?
 
     struct Input {
         let loginWithNumberButtonTap: Observable<Void>
@@ -70,15 +69,15 @@ extension IntroViewModel {
     func addKeychainToken() {
         self.keychain.create(
             key: Const.KeychainKey.accessToken,
-            token: self.authData.accessToken
+            token: self.authData?.accessToken ?? ""
         )
         self.keychain.create(
             key: Const.KeychainKey.refreshToken,
-            token: self.authData.refreshToken
+            token: self.authData?.refreshToken ?? ""
         )
         self.keychain.create(
             key: Const.KeychainKey.authority,
-            token: self.authData.authority
+            token: self.authData?.authority ?? ""
         )
     }
 }
