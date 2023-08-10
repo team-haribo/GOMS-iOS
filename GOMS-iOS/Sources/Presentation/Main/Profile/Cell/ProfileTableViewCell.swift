@@ -38,13 +38,10 @@ class ProfileTableViewCell: UITableViewCell {
     
     func setLayout() {
         cellName.snp.makeConstraints {
-//            $0.top.equalToSuperview().offset(24)
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(24)
         }
-        
         cellDetail.snp.makeConstraints {
-//            $0.top.equalToSuperview().offset(24)
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(24)
         }

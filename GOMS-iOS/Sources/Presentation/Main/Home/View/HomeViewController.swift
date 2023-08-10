@@ -277,21 +277,22 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
     
     override func setLayout() {
         homeMainImage.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 7.73)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset((bounds.height)/25.375)
             $0.trailing.equalToSuperview().offset(16)
+            $0.height.equalTo((bounds.height)/4.6666666667)
         }
         homeMainText.snp.makeConstraints {
-            $0.top.equalTo(view.snp.top).offset((bounds.height) / 6.94)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset((bounds.height)/18.4545454545)
             $0.leading.equalToSuperview().offset(26)
         }
         useQRCodeButton.snp.makeConstraints {
-            $0.top.equalTo(homeMainText.snp.bottom).offset(22)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset((bounds.height)/5.2051282051)
             $0.leading.equalToSuperview().offset(26)
             $0.height.equalTo((bounds.height) / 21.36)
             $0.trailing.equalTo(homeMainImage.snp.leading).inset(23)
         }
         outingButton.snp.makeConstraints {
-            $0.top.equalTo(homeMainImage.snp.bottom).offset(32)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset((bounds.height)/3.4117647059)
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo((bounds.height) / 11.6)
         }
@@ -300,28 +301,26 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
             $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
         outingStudentText.snp.makeConstraints {
-            $0.top.equalTo(totalStudentText.snp.bottom).offset(8)
+            $0.top.equalTo(totalStudentText.snp.bottom).offset(6)
             $0.leading.equalTo(outingButton.snp.leading).offset(16)
         }
-        
         outingNavigationButton.snp.makeConstraints {
             $0.centerY.equalTo(outingButton.snp.centerY).offset(0)
             $0.trailing.equalTo(profileButton.snp.trailing).inset(23)
         }
-        
         tardyText.snp.makeConstraints {
-            $0.top.equalTo(outingButton.snp.bottom).offset(32)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset((bounds.height)/2.3882352941)
             $0.leading.equalToSuperview().offset(26)
         }
         tardyCollectionView.snp.makeConstraints {
-            $0.top.equalTo(tardyText.snp.bottom).offset(17)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset((bounds.height)/2.1312335958)
             $0.leading.trailing.equalToSuperview().inset(26)
-            $0.bottom.equalTo(view.snp.bottom).inset((bounds.height) / 3.5)
+            $0.height.equalTo(bounds.height / 6.7)
         }
         profileButton.snp.makeConstraints {
-            $0.top.equalTo(tardyCollectionView.snp.bottom).offset(32)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset((bounds.height)/1.5234521576)
             $0.leading.trailing.equalToSuperview().inset(26)
-            $0.height.equalTo((bounds.height) / 11.6)
+            $0.height.equalTo(view.bounds.height / 11.6)
         }
         profileImg.snp.makeConstraints {
             $0.centerY.equalTo(profileButton.snp.centerY).offset(0)
@@ -329,11 +328,11 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
             $0.width.height.equalTo(40)
         }
         userNameText.snp.makeConstraints {
-            $0.top.equalTo(profileButton.snp.top).offset((bounds.height) / 45.11)
+            $0.top.equalTo(profileButton.snp.top).offset((bounds.height) / 42.7368421053)
             $0.leading.equalTo(profileImg.snp.trailing).offset(14)
         }
         userNumText.snp.makeConstraints {
-            $0.top.equalTo(userNameText.snp.bottom).offset(4)
+            $0.top.equalTo(userNameText.snp.bottom).offset((bounds.height) / 203)
             $0.leading.equalTo(profileImg.snp.trailing).offset(14)
         }
         profileNavigationButton.snp.makeConstraints {
