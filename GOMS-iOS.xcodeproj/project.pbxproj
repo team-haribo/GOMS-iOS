@@ -10,7 +10,8 @@
 		00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731D6D31347481DA366521B /* IntroViewModel.swift */; };
 		00376F6D7377122406E0BAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB6E2ADDC0ED6343FA96DB1 /* Assets.xcassets */; };
 		00C1EDD175C07AA22845430E /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */; };
-		07078F422A86122600157C07 /* SplashViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07078F412A86122600157C07 /* SplashViewContoller.swift */; };
+		07078F422A86122600157C07 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		0707A74D2A861CBB000F5C45 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707A74C2A861CBB000F5C45 /* SplashViewController.swift */; };
 		0BDE15E18ABC284B05837F62 /* GOMSTextField.swift in Resources */ = {isa = PBXBuildFile; fileRef = C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */; };
 		0BF7A04CD7B51FC80A4F6472 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */; };
 		137DCB3C45E5CE2B10CF1677 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C7C08E545C8AAE050C536B30 /* SnapKit */; };
@@ -102,7 +103,7 @@
 /* Begin PBXFileReference section */
 		0297FAE6FE4A628F72E17B21 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListModel.swift; sourceTree = "<group>"; };
-
+		0707A74C2A861CBB000F5C45 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
 		0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
@@ -223,7 +224,7 @@
 		07078F402A86121300157C07 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				07078F412A86122600157C07 /* SplashViewContoller.swift */,
+				0707A74C2A861CBB000F5C45 /* SplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -930,9 +931,10 @@
 				2E688212D716DFFBF49CAE79 /* ProfileViewModel.swift in Sources */,
 				3E6CD32E11DA46CEAFBC933B /* QRCodeViewController.swift in Sources */,
 				1815C764B5C149B5B9CC62DD /* QRCodeModel.swift in Sources */,
-				07078F422A86122600157C07 /* SplashViewContoller.swift in Sources */,
+				07078F422A86122600157C07 /* (null) in Sources */,
 				493128A428A77484FDE0078A /* RoleCell.swift in Sources */,
 				14267BD13559E0B6203CAFEA /* GOMSTabBar.swift in Sources */,
+				0707A74D2A861CBB000F5C45 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
