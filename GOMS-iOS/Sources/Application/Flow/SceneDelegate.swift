@@ -17,9 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let appFlow = AppFlow(window: window)
-        self.coordinator.coordinate(flow: appFlow, with: AppStepper())
+        let splashViewController = SplashViewController()
+        window.rootViewController = splashViewController
         window.makeKeyAndVisible()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) {
+            let appFlow = AppFlow(window: window)
+            self.coordinator.coordinate(flow: appFlow, with: AppStepper())
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
