@@ -12,6 +12,7 @@
 		00C1EDD175C07AA22845430E /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */; };
 		07078F422A86122600157C07 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0707A74D2A861CBB000F5C45 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707A74C2A861CBB000F5C45 /* SplashViewController.swift */; };
+		0707A7532A8912BF000F5C45 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 0707A7522A8912BF000F5C45 /* Siren */; };
 		0BDE15E18ABC284B05837F62 /* GOMSTextField.swift in Resources */ = {isa = PBXBuildFile; fileRef = C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */; };
 		0BF7A04CD7B51FC80A4F6472 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */; };
 		137DCB3C45E5CE2B10CF1677 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C7C08E545C8AAE050C536B30 /* SnapKit */; };
@@ -179,6 +180,7 @@
 				912ED3DC54EFF91C9BD9A5B4 /* Moya in Frameworks */,
 				F874F498B452084D603227B5 /* Kingfisher in Frameworks */,
 				289D47649380CA7B80FD00E7 /* QRCodeReader in Frameworks */,
+				0707A7532A8912BF000F5C45 /* Siren in Frameworks */,
 				B1132D06F70EF5C367D49E53 /* GAuthSignin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,6 +812,7 @@
 				98C1F1421CABED10E7FE1B75 /* Kingfisher */,
 				27A09B85FF47C0AAF45A4281 /* QRCodeReader */,
 				F813DF204217A8A8FA083193 /* GAuthSignin */,
+				0707A7522A8912BF000F5C45 /* Siren */,
 			);
 			productName = GOMS_iOS;
 			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
@@ -841,6 +844,7 @@
 				6E54C8325EBF75DC324828AD /* XCRemoteSwiftPackageReference "Then" */,
 				3A19482F0C32099983F713BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CC0E23A0C29B67569E5076AD /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */,
+				0707A7512A8912BF000F5C45 /* XCRemoteSwiftPackageReference "Siren" */,
 			);
 			productRefGroup = 648BAF08E2848A87A88F0B47 /* Products */;
 			projectDirPath = "";
@@ -1135,6 +1139,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0707A7512A8912BF000F5C45 /* XCRemoteSwiftPackageReference "Siren" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/Siren";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		11A293E5CB1EDC0DF4832D2C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1205,6 +1217,11 @@
 		05539138342D52593CC4A0B0 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Moya;
+		};
+		0707A7522A8912BF000F5C45 /* Siren */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0707A7512A8912BF000F5C45 /* XCRemoteSwiftPackageReference "Siren" */;
+			productName = Siren;
 		};
 		081F136A16B08657C2E5D58D /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;

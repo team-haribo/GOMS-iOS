@@ -8,6 +8,7 @@
 import UIKit
 import RxFlow
 import RxCocoa
+import Siren
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -25,6 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let appFlow = AppFlow(window: window)
             self.coordinator.coordinate(flow: appFlow, with: AppStepper())
         }
+        
+        let siren = Siren.shared
+        siren.apiManager = APIManager(country: .korea)
+        siren.presentationManager = PresentationManager(appName: "GOMS" ,forceLanguageLocalization: .korean)
+        siren.rulesManager = RulesManager(majorUpdateRules: .critical, minorUpdateRules: .critical, patchUpdateRules: .critical)
+        siren.wail()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
