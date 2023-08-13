@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731D6D31347481DA366521B /* IntroViewModel.swift */; };
 		00376F6D7377122406E0BAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB6E2ADDC0ED6343FA96DB1 /* Assets.xcassets */; };
 		00C1EDD175C07AA22845430E /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */; };
+		07078F422A86122600157C07 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		0707A74D2A861CBB000F5C45 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707A74C2A861CBB000F5C45 /* SplashViewController.swift */; };
 		0BDE15E18ABC284B05837F62 /* GOMSTextField.swift in Resources */ = {isa = PBXBuildFile; fileRef = C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */; };
 		0BF7A04CD7B51FC80A4F6472 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */; };
 		137DCB3C45E5CE2B10CF1677 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C7C08E545C8AAE050C536B30 /* SnapKit */; };
@@ -101,6 +103,7 @@
 /* Begin PBXFileReference section */
 		0297FAE6FE4A628F72E17B21 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListModel.swift; sourceTree = "<group>"; };
+		0707A74C2A861CBB000F5C45 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
 		0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
@@ -114,7 +117,7 @@
 		2A0F2375EE5E4B6444926746 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
 		2B5793E1FC9341527315B0A8 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
 		33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-Black.ttf"; sourceTree = "<group>"; };
-		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		3C40A2FE679E0118A486F06F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3E451230CE75A5B517AC7C0D /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
 		3EC474B134561AC16088E87B /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,7 +132,7 @@
 		71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
 		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
-		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		8230CCA82A130F052294DDB4 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		8897DBB2E89D9A3111F95E28 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		89BEA719AD89929E5D32B7E9 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
@@ -147,8 +150,8 @@
 		BC65C7C162624042253ABA86 /* TuistBundle+GOMSIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+GOMSIOS.swift"; sourceTree = "<group>"; };
 		C26BC738406BAFEE640D2240 /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
 		C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
-		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
 		CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D731D6D31347481DA366521B /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
@@ -218,6 +221,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		07078F402A86121300157C07 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0707A74C2A861CBB000F5C45 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		0F25B683BA9121AC236A5EAC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +281,7 @@
 		1C55A26C560F6E91B821D271 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				07078F402A86121300157C07 /* Splash */,
 				78F09023BC88D75D81A0F52B /* Home */,
 				65031E658783B8E6050D5845 /* Outing */,
 				01F499BA59DEA97DC40B4DE9 /* Profile */,
@@ -810,8 +822,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = HARIBO;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -921,8 +931,10 @@
 				2E688212D716DFFBF49CAE79 /* ProfileViewModel.swift in Sources */,
 				3E6CD32E11DA46CEAFBC933B /* QRCodeViewController.swift in Sources */,
 				1815C764B5C149B5B9CC62DD /* QRCodeModel.swift in Sources */,
+				07078F422A86122600157C07 /* (null) in Sources */,
 				493128A428A77484FDE0078A /* RoleCell.swift in Sources */,
 				14267BD13559E0B6203CAFEA /* GOMSTabBar.swift in Sources */,
+				0707A74D2A861CBB000F5C45 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
