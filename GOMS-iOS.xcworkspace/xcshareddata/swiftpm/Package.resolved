@@ -73,6 +73,15 @@
       }
     },
     {
+      "identity" : "siren",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ArtSabintsev/Siren",
+      "state" : {
+        "revision" : "dfee0e0e29ce3b1dcb138dd467a3580e3380f579",
+        "version" : "6.1.2"
+      }
+    },
+    {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SnapKit/SnapKit",
