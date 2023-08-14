@@ -10,6 +10,9 @@
 		00218B877F00F30482C3322C /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731D6D31347481DA366521B /* IntroViewModel.swift */; };
 		00376F6D7377122406E0BAAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABB6E2ADDC0ED6343FA96DB1 /* Assets.xcassets */; };
 		00C1EDD175C07AA22845430E /* OutingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */; };
+		07078F422A86122600157C07 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		0707A74D2A861CBB000F5C45 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707A74C2A861CBB000F5C45 /* SplashViewController.swift */; };
+		0707A7532A8912BF000F5C45 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 0707A7522A8912BF000F5C45 /* Siren */; };
 		0BDE15E18ABC284B05837F62 /* GOMSTextField.swift in Resources */ = {isa = PBXBuildFile; fileRef = C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */; };
 		0BF7A04CD7B51FC80A4F6472 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */; };
 		137DCB3C45E5CE2B10CF1677 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C7C08E545C8AAE050C536B30 /* SnapKit */; };
@@ -45,7 +48,6 @@
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
 		73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */; };
 		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
-		7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 28027DF5225FC73445281A5F /* Siren */; };
 		87B8974ACCE85519C4DEA55A /* GOMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C62934592A276D55D6D24B0 /* GOMSShadow.swift */; };
 		887741D4F59F52B1A7F51783 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */; };
 		8AEA943BDBCE5CDC0BBDDF40 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */; };
@@ -69,7 +71,6 @@
 		C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */; };
 		C3D92469937B2C988B64CF30 /* GOMSToken.swift in Resources */ = {isa = PBXBuildFile; fileRef = E48BCAF04F5F64366DA7FB3B /* GOMSToken.swift */; };
 		C636509B040AEBD7C7AA11B8 /* GOMSRefreshToken.swift in Resources */ = {isa = PBXBuildFile; fileRef = 25117C0BE38B6B07AA04ADE5 /* GOMSRefreshToken.swift */; };
-		C67C2A74C66A33E755F46043 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FE83833543F454C7F1C32C /* SplashViewController.swift */; };
 		C8CCAB7E00784089C11B8B3B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */; };
 		C991C75FBDD7E39A9B8C3A57 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */; };
 		CE1E10141B10276487A6AD65 /* UINavigationBar.swift in Resources */ = {isa = PBXBuildFile; fileRef = E472A3DA03F82ED7377CFC9A /* UINavigationBar.swift */; };
@@ -103,6 +104,7 @@
 /* Begin PBXFileReference section */
 		0297FAE6FE4A628F72E17B21 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0635F77C3B1C0CC85FAD2869 /* OutingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingListModel.swift; sourceTree = "<group>"; };
+		0707A74C2A861CBB000F5C45 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		0765E5A9EB9F6E48A0F28D93 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
 		0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlow.swift; sourceTree = "<group>"; };
@@ -116,7 +118,7 @@
 		2A0F2375EE5E4B6444926746 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
 		2B5793E1FC9341527315B0A8 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
 		33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-Black.ttf"; sourceTree = "<group>"; };
-		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		3C40A2FE679E0118A486F06F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3E451230CE75A5B517AC7C0D /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
 		3EC474B134561AC16088E87B /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 		71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
 		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
-		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		8230CCA82A130F052294DDB4 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		8897DBB2E89D9A3111F95E28 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		89BEA719AD89929E5D32B7E9 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
@@ -149,11 +151,10 @@
 		BC65C7C162624042253ABA86 /* TuistBundle+GOMSIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+GOMSIOS.swift"; sourceTree = "<group>"; };
 		C26BC738406BAFEE640D2240 /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
 		C271E80A87FCAB0AEDDEAA46 /* LoginWithNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberTextField.swift; sourceTree = "<group>"; };
-		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		C7D74551E5BD893AA3F8BE86 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
 		CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1FE83833543F454C7F1C32C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		D731D6D31347481DA366521B /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		DF5F326E926997F82820F199 /* RoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCell.swift; sourceTree = "<group>"; };
 		DF8A3BF1C61EFCBB1A314149 /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
@@ -179,8 +180,8 @@
 				912ED3DC54EFF91C9BD9A5B4 /* Moya in Frameworks */,
 				F874F498B452084D603227B5 /* Kingfisher in Frameworks */,
 				289D47649380CA7B80FD00E7 /* QRCodeReader in Frameworks */,
+				0707A7532A8912BF000F5C45 /* Siren in Frameworks */,
 				B1132D06F70EF5C367D49E53 /* GAuthSignin in Frameworks */,
-				7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +221,14 @@
 				978264A050185C912349596A /* HomeCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		07078F402A86121300157C07 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0707A74C2A861CBB000F5C45 /* SplashViewController.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		0F25B683BA9121AC236A5EAC /* Cell */ = {
@@ -274,12 +283,12 @@
 		1C55A26C560F6E91B821D271 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				07078F402A86121300157C07 /* Splash */,
 				78F09023BC88D75D81A0F52B /* Home */,
 				65031E658783B8E6050D5845 /* Outing */,
 				01F499BA59DEA97DC40B4DE9 /* Profile */,
 				B685C449D6207D7ED465C30E /* QRCode */,
 				BBE2F3F10692575B420EDF17 /* SearchModal */,
-				66B8D8946413CC85F4372CF6 /* Splash */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -493,14 +502,6 @@
 				295397FAD951EB22776E0EA2 /* LateServices.swift */,
 			);
 			path = Late;
-			sourceTree = "<group>";
-		};
-		66B8D8946413CC85F4372CF6 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				D1FE83833543F454C7F1C32C /* SplashViewController.swift */,
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		6D51ACBCE326B06C32D0A1A5 /* ViewModel */ = {
@@ -811,7 +812,7 @@
 				98C1F1421CABED10E7FE1B75 /* Kingfisher */,
 				27A09B85FF47C0AAF45A4281 /* QRCodeReader */,
 				F813DF204217A8A8FA083193 /* GAuthSignin */,
-				28027DF5225FC73445281A5F /* Siren */,
+				0707A7522A8912BF000F5C45 /* Siren */,
 			);
 			productName = GOMS_iOS;
 			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
@@ -823,10 +824,7 @@
 		681508A39904DC3090579ACB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = HARIBO;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -838,7 +836,6 @@
 			);
 			mainGroup = AED56A1DF2A785FA860E859D;
 			packageReferences = (
-				11D24DC36F4A956516852473 /* XCRemoteSwiftPackageReference "Siren" */,
 				22615A22CBAE36C4E05A46D1 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
 				1F4F6DCEB5D971B1D4220B72 /* XCRemoteSwiftPackageReference "Moya" */,
 				A8867077F776A854984B5978 /* XCRemoteSwiftPackageReference "RxSwift" */,
@@ -847,6 +844,7 @@
 				6E54C8325EBF75DC324828AD /* XCRemoteSwiftPackageReference "Then" */,
 				3A19482F0C32099983F713BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CC0E23A0C29B67569E5076AD /* XCRemoteSwiftPackageReference "QRCodeReader.swift" */,
+				0707A7512A8912BF000F5C45 /* XCRemoteSwiftPackageReference "Siren" */,
 			);
 			productRefGroup = 648BAF08E2848A87A88F0B47 /* Products */;
 			projectDirPath = "";
@@ -937,9 +935,10 @@
 				2E688212D716DFFBF49CAE79 /* ProfileViewModel.swift in Sources */,
 				3E6CD32E11DA46CEAFBC933B /* QRCodeViewController.swift in Sources */,
 				1815C764B5C149B5B9CC62DD /* QRCodeModel.swift in Sources */,
+				07078F422A86122600157C07 /* (null) in Sources */,
 				493128A428A77484FDE0078A /* RoleCell.swift in Sources */,
-				C67C2A74C66A33E755F46043 /* SplashViewController.swift in Sources */,
 				14267BD13559E0B6203CAFEA /* GOMSTabBar.swift in Sources */,
+				0707A74D2A861CBB000F5C45 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,7 +1084,6 @@
 				PRODUCT_NAME = GOMS_iOS;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1110,7 +1108,6 @@
 				PRODUCT_NAME = GOMS_iOS;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -1142,20 +1139,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0707A7512A8912BF000F5C45 /* XCRemoteSwiftPackageReference "Siren" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/Siren";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		11A293E5CB1EDC0DF4832D2C /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.1;
-			};
-		};
-		11D24DC36F4A956516852473 /* XCRemoteSwiftPackageReference "Siren" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ArtSabintsev/Siren.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.2;
 			};
 		};
 		1F4F6DCEB5D971B1D4220B72 /* XCRemoteSwiftPackageReference "Moya" */ = {
@@ -1221,6 +1218,11 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Moya;
 		};
+		0707A7522A8912BF000F5C45 /* Siren */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0707A7512A8912BF000F5C45 /* XCRemoteSwiftPackageReference "Siren" */;
+			productName = Siren;
+		};
 		081F136A16B08657C2E5D58D /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxSwift;
@@ -1228,10 +1230,6 @@
 		27A09B85FF47C0AAF45A4281 /* QRCodeReader */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = QRCodeReader;
-		};
-		28027DF5225FC73445281A5F /* Siren */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Siren;
 		};
 		98C1F1421CABED10E7FE1B75 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
