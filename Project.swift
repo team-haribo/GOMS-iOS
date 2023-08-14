@@ -42,6 +42,10 @@ let project = Project(
     .remote(
         url: "https://github.com/GSM-MSG/GAuthSignin-Swift",
         requirement: .upToNextMajor(from: "0.0.3")
+    ),
+    .remote(
+        url: "https://github.com/ArtSabintsev/Siren.git",
+        requirement: .upToNextMajor(from: "6.1.2")
     )
   ],
   settings: nil,
@@ -66,7 +70,8 @@ let project = Project(
             .package(product: "Moya"),
             .package(product: "Kingfisher"),
             .package(product: "QRCodeReader"),
-            .package(product: "GAuthSignin")
+            .package(product: "GAuthSignin"),
+            .package(product: "Siren")
            ] // tuist generate할 경우 pod install이 자동으로 실행
           )
   ],
