@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,6 +60,7 @@
 		9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F53CB28B1A5311BF484B8E /* SignInRequest.swift */; };
 		B1132D06F70EF5C367D49E53 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = F813DF204217A8A8FA083193 /* GAuthSignin */; };
 		B23C5A8F69B6CB7C9BFE292C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978264A050185C912349596A /* HomeCollectionViewCell.swift */; };
+		B53CAFA02101E7D7FF936C3D /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C88277923F2237A11F45C73 /* ReactorKit */; };
 		B63E657DEAC2370BA64B1F06 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */; };
 		B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CF79422AB13E1EE716100 /* AuthServices.swift */; };
 		BD3CDB05003EABE1A9898CCB /* GOMSColor.swift in Resources */ = {isa = PBXBuildFile; fileRef = F21E437EDBE796F3E3E0D2BE /* GOMSColor.swift */; };
@@ -181,6 +182,7 @@
 				289D47649380CA7B80FD00E7 /* QRCodeReader in Frameworks */,
 				B1132D06F70EF5C367D49E53 /* GAuthSignin in Frameworks */,
 				7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */,
+				B53CAFA02101E7D7FF936C3D /* ReactorKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,6 +814,7 @@
 				27A09B85FF47C0AAF45A4281 /* QRCodeReader */,
 				F813DF204217A8A8FA083193 /* GAuthSignin */,
 				28027DF5225FC73445281A5F /* Siren */,
+				3C88277923F2237A11F45C73 /* ReactorKit */,
 			);
 			productName = GOMS_iOS;
 			productReference = E7265F7E0FD355ACA97EB6C0 /* GOMS_iOS.app */;
@@ -823,7 +826,6 @@
 		681508A39904DC3090579ACB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = HARIBO;
 				TargetAttributes = {
 				};
@@ -842,6 +844,7 @@
 				22615A22CBAE36C4E05A46D1 /* XCRemoteSwiftPackageReference "GAuthSignin-Swift" */,
 				1F4F6DCEB5D971B1D4220B72 /* XCRemoteSwiftPackageReference "Moya" */,
 				A8867077F776A854984B5978 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				90AFD2E25EE9EA6D3A7CC13E /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				FFD5B6D4081A35622195590E /* XCRemoteSwiftPackageReference "RxFlow" */,
 				11A293E5CB1EDC0DF4832D2C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6E54C8325EBF75DC324828AD /* XCRemoteSwiftPackageReference "Then" */,
@@ -1085,7 +1088,6 @@
 				PRODUCT_NAME = GOMS_iOS;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1110,7 +1112,6 @@
 				PRODUCT_NAME = GOMS_iOS;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -1190,6 +1191,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		90AFD2E25EE9EA6D3A7CC13E /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
 		A8867077F776A854984B5978 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -1232,6 +1241,10 @@
 		28027DF5225FC73445281A5F /* Siren */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Siren;
+		};
+		3C88277923F2237A11F45C73 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ReactorKit;
 		};
 		98C1F1421CABED10E7FE1B75 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
