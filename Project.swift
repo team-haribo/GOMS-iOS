@@ -46,6 +46,10 @@ let project = Project(
     .remote(
         url: "https://github.com/ArtSabintsev/Siren.git",
         requirement: .upToNextMajor(from: "6.1.2")
+    ),
+    .remote(
+        url: "https://github.com/ReactorKit/ReactorKit.git",
+        requirement: .upToNextMajor(from: "3.2.0")
     )
   ],
   settings: nil,
@@ -71,7 +75,8 @@ let project = Project(
             .package(product: "Kingfisher"),
             .package(product: "QRCodeReader"),
             .package(product: "GAuthSignin"),
-            .package(product: "Siren")
+            .package(product: "Siren"),
+            .package(product: "ReactorKit")
            ] // tuist generate할 경우 pod install이 자동으로 실행
           )
   ],

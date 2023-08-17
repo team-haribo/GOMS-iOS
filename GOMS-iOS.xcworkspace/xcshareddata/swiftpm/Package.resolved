@@ -66,7 +66,7 @@
     {
       "identity" : "rxswift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
       "state" : {
         "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
         "version" : "6.6.0"
@@ -75,7 +75,7 @@
     {
       "identity" : "siren",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ArtSabintsev/Siren",
+      "location" : "https://github.com/ArtSabintsev/Siren.git",
       "state" : {
         "revision" : "dfee0e0e29ce3b1dcb138dd467a3580e3380f579",
         "version" : "6.1.2"
