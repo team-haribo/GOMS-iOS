@@ -49,7 +49,7 @@ let project = Project(
     ),
     .remote(
         url: "https://github.com/ReactorKit/ReactorKit.git",
-        requirement: .upToNextMajor(from: "3.2.0")
+        requirement: .upToNextMajor(from: "3.0.0")
     )
   ],
   settings: nil,
