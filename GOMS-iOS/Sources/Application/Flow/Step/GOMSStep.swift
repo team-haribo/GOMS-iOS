@@ -23,6 +23,12 @@ enum GOMSStep: Step {
     case homeIsRequired
     case profileIsRequired
     
+    case studentInfoIsRequired
+    case searchModalIsRequired
+    case searchModalDismiss
+    case editUserModalIsRequired(accountIdx: UUID)
+    case editModalDismiss
+    
     //MARK: Alert
     case alert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction])
     case failureAlert(title: String?, message: String?, action: [UIAlertAction] = [])

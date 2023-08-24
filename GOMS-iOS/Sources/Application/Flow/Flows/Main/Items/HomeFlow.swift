@@ -51,6 +51,21 @@ class HomeFlow: Flow {
         case .introIsRequired:
             return .end(forwardToParentFlowWithStep: GOMSStep.introIsRequired)
             
+        case .studentInfoIsRequired:
+            return coordinateToStudentInfo()
+            
+        case .searchModalIsRequired:
+            return coordinateToSearchModal()
+            
+        case let .editUserModalIsRequired(accountIdx):
+            return coordinateToEditUserModal(accountIdx: accountIdx)
+            
+        case .searchModalDismiss:
+            return dismissSearchModal()
+            
+        case .editModalDismiss:
+            return dismissEditModal()
+            
         case let .alert(title, message, style, actions):
             return presentToAlert(title: title, message: message, style: style, actions: actions)
             
@@ -76,6 +91,13 @@ class HomeFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
+    private func coordinateToStudentInfo() -> FlowContributors{
+        let vm = StudentInfoViewModel()
+        let vc = StudentInfoViewController(vm)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
     private func presentToAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) -> FlowContributors {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         actions.forEach { alert.addAction($0) }
@@ -92,5 +114,45 @@ class HomeFlow: Flow {
         }
         self.rootViewController.topViewController?.present(alert, animated: true)
         return .none
+    }
+    
+    private func coordinateToSearchModal() -> FlowContributors{
+        let vm = SearchModalViewModal.shared
+        let vc = SearchModalViewController(vm)
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.preferredCornerRadius = 20
+        }
+        self.rootViewController.topViewController?.present(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func dismissSearchModal() -> FlowContributors {
+        let vm = StudentInfoViewModel()
+        let vc = StudentInfoViewController(vm)
+        self.rootViewController.dismiss(animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func dismissEditModal() -> FlowContributors {
+        let vm = StudentInfoViewModel()
+        let vc = StudentInfoViewController(vm)
+        self.rootViewController.dismiss(animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+    }
+    
+    private func coordinateToEditUserModal(accountIdx: UUID) -> FlowContributors{
+        let vm = EditUserModalViewModel(accountIdx: accountIdx)
+        let vc = EditUserModalViewController(vm)
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersScrollingExpandsWhenScrolledToEdge = false
+            sheet.preferredCornerRadius = 20
+        }
+        self.rootViewController.present(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
 }
