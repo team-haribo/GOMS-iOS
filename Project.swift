@@ -61,6 +61,7 @@ let project = Project(
     Target(name: projectName,
            platform: .iOS,
            product: .app, // unitTests, .appExtension, .framework, dynamicLibrary, staticFramework
+           productName: "GOMS",
            bundleId: bundleID,
            deploymentTarget: .iOS(
             targetVersion: targetVersion,
