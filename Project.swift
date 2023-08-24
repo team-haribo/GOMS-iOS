@@ -50,6 +50,10 @@ let project = Project(
     .remote(
         url: "https://github.com/ReactorKit/ReactorKit.git",
         requirement: .upToNextMajor(from: "3.0.0")
+    ),
+    .remote(
+        url: "https://github.com/dmrschmidt/QRCode",
+        requirement: .upToNextMajor(from: "1.0.0")
     )
   ],
   settings: nil,
@@ -76,7 +80,8 @@ let project = Project(
             .package(product: "QRCodeReader"),
             .package(product: "GAuthSignin"),
             .package(product: "Siren"),
-            .package(product: "ReactorKit")
+            .package(product: "ReactorKit"),
+            .package(product: "QRCode")
            ] // tuist generate할 경우 pod install이 자동으로 실행
           )
   ],

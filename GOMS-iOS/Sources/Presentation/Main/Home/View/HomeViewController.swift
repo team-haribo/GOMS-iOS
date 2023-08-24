@@ -31,10 +31,12 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         super.viewWillAppear(animated)
         checkUserIsOuting()
         getData()
+        checkRole()
     }
     
     override func viewDidLoad() {
         checkUserIsOuting()
+        checkRole()
         super.viewDidLoad()
         viewModel.delegate = self
         self.navigationItem.rightBarButtonItem()
@@ -44,6 +46,26 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         refreshScrollView.refreshControl = refreshControl
         tardyCollectionView.collectionViewLayout = layout
         bindViewModel()
+    }
+    
+    private func checkRole() {
+        if userAuthority == "ROLE_STUDENT_COUNCIL" {
+            profileImg.isHidden = true
+            profileButton.isHidden = true
+            profileNavigationButton.isHidden = true
+            manageNavigationButton.isHidden = false
+            userNameText.isHidden = true
+            userNumText.isHidden = true
+            useQRCodeButton.setTitle("QR 생성하기", for: .normal)
+            useQRCodeButton.backgroundColor = .adminColor
+            outingNavigationButton.tintColor = .adminColor
+            manageNavigationButton.tintColor = .adminColor
+            homeMainText.text = "간편하게\n수요외출제를\n관리해보세요"
+            homeMainImage.image = UIImage(named: "adminHomeImage.svg")
+            manageStudnetText.isHidden = false
+            manageStudentButton.isHidden = false
+            manageStudnetSubText.isHidden = false
+        }
     }
     
     private func checkUserIsOuting() {
@@ -70,7 +92,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         let range = (fullText as NSString).range(of: "\(outingCount)")
         attribtuedString.addAttribute(
             .foregroundColor,
-            value: UIColor.mainColor!,
+            value: userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!,
             range: range
         )
         outingStudentText.attributedText = attribtuedString
@@ -103,7 +125,8 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
             navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
             outingButtonTap: outingButton.rx.tap.asObservable(),
             profileButtonTap: profileButton.rx.tap.asObservable(),
-            useQRCodeButtonTap: useQRCodeButton.rx.tap.asObservable()
+            useQRCodeButtonTap: useQRCodeButton.rx.tap.asObservable(),
+            manageStudentButtonTap: manageStudentButton.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
     }
@@ -117,7 +140,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
                 let fullText = self?.outingStudentText.text ?? ""
                 let attributedString = NSMutableAttributedString(string: fullText)
                 let range = (fullText as NSString).range(of: "\(count ?? 0)")
-                attributedString.addAttribute(.foregroundColor, value: UIColor.mainColor!, range: range)
+                attributedString.addAttribute(.foregroundColor, value: self?.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!, range: range)
                 self?.outingStudentText.attributedText = attributedString
             }
         }
@@ -185,7 +208,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         let range = (fullText as NSString).range(of: "0")
         attribtuedString.addAttribute(
             .foregroundColor,
-            value: UIColor.mainColor!,
+            value: userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!,
             range: range
         )
         $0.attributedText = attribtuedString
@@ -269,8 +292,41 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     
+    private let manageStudentButton = UIButton().then {
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(
+            color: UIColor.black,
+            alpha: 0.1,
+            x: 0,
+            y: 2,
+            blur: 8,
+            spread: 0
+        )
+        $0.layer.cornerRadius = 10
+        $0.isHidden = true
+    }
+    
+    private let manageStudnetSubText = UILabel().then {
+        $0.text = "모든 학생들의 역할을 관리해보세요!"
+        $0.textColor = UIColor.subColor
+        $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
+        $0.isHidden = true
+    }
+    
+    private let manageStudnetText = UILabel().then {
+        $0.text = "학생 관리하기"
+        $0.textColor = UIColor.black
+        $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
+        $0.isHidden = true
+    }
+    
+    private let manageNavigationButton = UIImageView().then {
+        $0.isHidden = true
+        $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
+    }
+    
     override func addView() {
-        [refreshScrollView,homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton].forEach {
+        [refreshScrollView,homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton, manageStudentButton, manageStudnetSubText,manageStudnetText, manageNavigationButton].forEach {
             view.addSubview($0)
         }
     }
@@ -338,6 +394,23 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         profileNavigationButton.snp.makeConstraints {
             $0.centerY.equalTo(profileButton.snp.centerY).offset(0)
             $0.trailing.equalTo(profileButton.snp.trailing).inset(23)
+        }
+        manageStudentButton.snp.makeConstraints {
+            $0.top.equalTo(tardyCollectionView.snp.bottom).offset(32)
+            $0.leading.trailing.equalToSuperview().inset(26)
+            $0.height.equalTo(70)
+        }
+        manageStudnetSubText.snp.makeConstraints {
+            $0.top.equalTo(manageStudentButton.snp.top).offset(14)
+            $0.leading.equalTo(manageStudentButton.snp.leading).offset(16)
+        }
+        manageStudnetText.snp.makeConstraints {
+            $0.top.equalTo(manageStudnetSubText.snp.bottom).offset(6)
+            $0.leading.equalTo(manageStudentButton.snp.leading).offset(16)
+        }
+        manageNavigationButton.snp.makeConstraints {
+            $0.centerY.equalTo(manageStudentButton.snp.centerY).offset(0)
+            $0.trailing.equalTo(manageStudentButton.snp.trailing).inset(23)
         }
     }
 }

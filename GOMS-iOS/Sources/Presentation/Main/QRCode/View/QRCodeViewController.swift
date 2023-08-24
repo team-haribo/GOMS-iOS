@@ -13,6 +13,7 @@ import Then
 import RxFlow
 import RxCocoa
 import RxSwift
+import QRCode
 
 class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderViewControllerDelegate {
     private let userIsBlackList = UserDefaults.standard.bool(forKey: "userIsBlackList")
@@ -20,7 +21,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
     
     override func viewDidLoad() {
         checkIsBlackList()
-        startQRCode()
+        checkUserIsAdmin()
         self.navigationItem.hidesBackButton = true
         self.navigationItem.rightBarButtonItem()
         self.navigationItem.leftLogoImage()
@@ -38,6 +39,29 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
                     self.viewModel.steps.accept(GOMSStep.introIsRequired)}
                 ]
             ))
+        }
+    }
+    
+    private func checkUserIsAdmin() {
+        if userAuthority == "ROLE_STUDENT_COUNCIL" {
+            qrCodeBackImg.isHidden = true
+            useQRCodeButton.isHidden = true
+            outingMainText.isHidden = false
+            outingSubText.isHidden = false
+            lastTimeText.isHidden = false
+            lastTimer.isHidden = false
+            createQrCode()
+            startTimer()
+            bindViewModel()
+        }
+        else {
+            if permissionNoArray.count > 0 && permissionNoArray.isEmpty == false {
+                showAlert(tittle: "[알림]", content: "카메라 권한이 비활성 상태입니다.", okBtb: "확인", noBtn: "취소")
+                permissionNoArray.removeAll()
+            }
+            else {
+                self.openCamera()
+            }
         }
     }
     
@@ -63,6 +87,45 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
             navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
         )
         viewModel.transVC(input: input)
+    }
+    
+    private func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (t) in
+            self.timerLeft -= 1
+            let minutes = self.timerLeft / 60
+            let seconds = self.timerLeft % 60
+            if self.timerLeft > 0 {
+                self.lastTimer.text = String(format: "%d분 %02d초", minutes, seconds)
+            }
+            else {
+                self.lastTimer.text = "0분 00초"
+                self.createQrCode()
+                self.timerLeft = 300
+            }
+        })
+    }
+    
+    private func createQrCode() {
+        viewModel.makeQRCode {
+            guard let urlUUID = self.viewModel.uuidData?.outingUUID else {return}
+            var qrCode = QRCode(
+                url: (
+                    URL(string: "\(BaseURL.baseURL)/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
+                )
+            )
+            qrCode?.color = UIColor.black
+            qrCode?.backgroundColor = .background ?? .white
+            qrCode?.size = CGSize(width: 200, height: 200)
+            qrCode?.scale = 1.0
+            qrCode?.inputCorrection = .quartile
+            
+            let qrImageView = UIImageView.init(qrCode: qrCode!)
+            self.view.addSubview(qrImageView)
+            qrImageView.snp.makeConstraints {
+                $0.height.width.equalTo(250)
+                $0.center.equalTo(self.view.snp.center).offset(0)
+            }
+        }
     }
     
     var permissionNoArray : Array<String> = []
@@ -244,8 +307,22 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
     
+    private let lastTimeText = UILabel().then {
+        $0.isHidden = true
+        $0.text = "남은시간"
+        $0.textColor = .black
+        $0.font = UIFont.GOMSFont(size: 16, family: .Bold)
+    }
+    
+    private let lastTimer = UILabel().then {
+        $0.isHidden = true
+        $0.text = "5분 00초"
+        $0.textColor = .adminColor
+        $0.font = UIFont.GOMSFont(size: 22, family: .Bold)
+    }
+    
     override func addView() {
-        [qrCodeBackImg, useQRCodeButton, outingMainText, outingSubText].forEach {
+        [qrCodeBackImg, useQRCodeButton, outingMainText, outingSubText, lastTimeText, lastTimer].forEach {
             view.addSubview($0)
         }
     }
@@ -267,6 +344,14 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel>, QRCodeReaderVie
         }
         outingSubText.snp.makeConstraints {
             $0.top.equalTo(outingMainText.snp.bottom).offset(18)
+            $0.centerX.equalToSuperview()
+        }
+        lastTimeText.snp.makeConstraints {
+            $0.bottom.equalTo(view.snp.bottom).inset((bounds.height) / 3.34)
+            $0.centerX.equalToSuperview()
+        }
+        lastTimer.snp.makeConstraints {
+            $0.top.equalTo(lastTimeText.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
         }
     }
