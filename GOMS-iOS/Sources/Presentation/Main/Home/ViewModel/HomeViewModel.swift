@@ -159,7 +159,7 @@ extension HomeViewModel {
         }
     }
     
-    func getUserData() {
+    func getUserData(completion: @escaping () -> Void) {
             accountProvider.request(.account(authorization: accessToken)) { response in
             switch response {
             case let .success(result):
@@ -179,6 +179,7 @@ extension HomeViewModel {
                 default:
                     print("ERROR")
                 }
+                completion()
             case .failure(let err):
                 print(String(describing: err))
             }
