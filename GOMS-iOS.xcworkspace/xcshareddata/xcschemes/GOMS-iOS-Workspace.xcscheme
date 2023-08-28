@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F66C9385E26BB33EE2931DFB"
-               BuildableName = "GOMS_iOS.app"
+               BuildableName = "GOMS.app"
                BlueprintName = "GOMS-iOS"
                ReferencedContainer = "container:GOMS-iOS.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F66C9385E26BB33EE2931DFB"
-            BuildableName = "GOMS_iOS.app"
+            BuildableName = "GOMS.app"
             BlueprintName = "GOMS-iOS"
             ReferencedContainer = "container:GOMS-iOS.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F66C9385E26BB33EE2931DFB"
-            BuildableName = "GOMS_iOS.app"
+            BuildableName = "GOMS.app"
             BlueprintName = "GOMS-iOS"
             ReferencedContainer = "container:GOMS-iOS.xcodeproj">
          </BuildableReference>

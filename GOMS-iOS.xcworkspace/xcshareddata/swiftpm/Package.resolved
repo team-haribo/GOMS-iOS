@@ -46,12 +46,12 @@
       }
     },
     {
-      "identity" : "qrcodereader.swift",
+      "identity" : "qrscanner",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/yannickl/QRCodeReader.swift",
+      "location" : "https://github.com/mercari/QRScanner.git",
       "state" : {
-        "revision" : "5020b5a47199d8ba80c83a4b4fafd70e9dc9dc7f",
-        "version" : "10.1.1"
+        "revision" : "b9bbcabf8ce54974b56a63f403abc43930684314",
+        "version" : "1.9.0"
       }
     },
     {

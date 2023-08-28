@@ -36,8 +36,8 @@ let project = Project(
         requirement: .upToNextMajor(from: "7.0.0")
     ),
     .remote(
-        url: "https://github.com/yannickl/QRCodeReader.swift.git",
-        requirement: .upToNextMajor(from: "10.1.0")
+        url: "https://github.com/mercari/QRScanner.git",
+        requirement: .upToNextMajor(from: "1.9.0")
     ),
     .remote(
         url: "https://github.com/GSM-MSG/GAuthSignin-Swift",
@@ -78,7 +78,7 @@ let project = Project(
             .package(product: "Then"),
             .package(product: "Moya"),
             .package(product: "Kingfisher"),
-            .package(product: "QRCodeReader"),
+            .package(product: "QRScanner"),
             .package(product: "GAuthSignin"),
             .package(product: "Siren"),
             .package(product: "ReactorKit"),

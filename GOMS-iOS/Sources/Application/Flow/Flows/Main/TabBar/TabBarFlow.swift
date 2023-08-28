@@ -37,6 +37,10 @@ final class TabBarFlow: Flow {
         case .tabBarIsRequired:
             return coordinateToTabbar()
             
+        case .homeIsRequired:
+            rootVC.selectedIndex = 0
+            return .none
+            
         case .qrocdeIsRequired:
             rootVC.selectedIndex = 1
             return .none

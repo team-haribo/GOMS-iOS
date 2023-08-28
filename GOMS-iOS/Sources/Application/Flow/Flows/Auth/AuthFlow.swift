@@ -56,7 +56,7 @@ private extension AuthFlow {
     func coordinateToLoginWithNumber() -> FlowContributors {
         let vm = LoginWithNumberViewModel()
         let vc = LoginWithNumberViewController(vm)
-        self.rootViewController.pushViewController(vc, animated: false)
+        self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
     }
     
