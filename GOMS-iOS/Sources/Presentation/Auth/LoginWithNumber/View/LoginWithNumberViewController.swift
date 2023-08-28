@@ -8,7 +8,6 @@ class LoginWithNumberViewController: BaseViewController<LoginWithNumberViewModel
 
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.navigationItem.backButton(title: "")
     }
     
     private let loginWithNumberText = UILabel().then {
