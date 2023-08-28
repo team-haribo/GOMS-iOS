@@ -48,26 +48,37 @@ extension QRCodeViewModel {
                 switch statusCode{
                 case 200..<300:
                     self.steps.accept(GOMSStep.alert(
-                        title: "",
-                        message: "QRCode 스캔이 완료되었습니다.",
+                        title: "스캔 완료",
+                        message: "QR코드 스캔이 완료되었습니다",
                         style: .alert,
                         actions: [
                             .init(title: "확인", style: .default) {_ in
-                                self.steps.accept(GOMSStep.tabBarIsRequired)
+                                self.steps.accept(GOMSStep.homeIsRequired)
                             }
                         ]
-                    )
-                    )
+                    ))
                 case 400:
-                    self.steps.accept(GOMSStep.failureAlert(
+                    self.steps.accept(GOMSStep.alert(
                         title: "오류",
-                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다."
+                        message: "블랙리스트이거나 올바르지 않은 QRCode입니다.",
+                        style: .alert,
+                        actions: [
+                            .init(title: "확인", style: .default) {_ in
+                                self.steps.accept(GOMSStep.homeIsRequired)
+                            }
+                        ]
                     ))
                 case 401:
                     self.gomsRefreshToken.tokenReissuance()
-                    self.steps.accept(GOMSStep.failureAlert(
+                    self.steps.accept(GOMSStep.alert(
                         title: "오류",
-                        message: "다시 한 번 작업을 실행해주세요"
+                        message: "다시 한 번 작업을 실행해주세요",
+                        style: .alert,
+                        actions: [
+                            .init(title: "확인", style: .default) {_ in
+                                self.steps.accept(GOMSStep.homeIsRequired)
+                            }
+                        ]
                     ))
                 default: break
                 }
