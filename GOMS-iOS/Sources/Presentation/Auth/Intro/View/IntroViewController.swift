@@ -17,15 +17,15 @@ class IntroViewController: BaseViewController<IntroViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         gauthButtonSetUp()
-        bindViewModel()
+//        bindViewModel()
     }
     
-    private func bindViewModel() {
-        let input = IntroViewModel.Input(
-            loginWithNumberButtonTap: loginWithNumberButton.rx.tap.asObservable()
-        )
-        viewModel.transVC(input: input)
-    }
+//    private func bindViewModel() {
+//        let input = IntroViewModel.Input(
+//            loginWithNumberButtonTap: loginWithNumberButton.rx.tap.asObservable()
+//        )
+//        viewModel.transVC(input: input)
+//    }
     
     private let logoImage = UIImageView().then {
         $0.image = UIImage(named: "colorLogo.svg")
@@ -110,9 +110,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
             logoImage,
             explainText,
             subExplainText,
-            gauthSignInButton,
-            cannotLoginText,
-            loginWithNumberButton
+            gauthSignInButton
         ].forEach{
             view.addSubview($0)
         }
@@ -137,15 +135,15 @@ class IntroViewController: BaseViewController<IntroViewModel> {
             $0.leading.trailing.equalToSuperview().inset(26)
             $0.height.equalTo(60)
         }
-        cannotLoginText.snp.makeConstraints {
-            $0.top.equalTo(gauthSignInButton.snp.bottom).offset(14)
-            $0.leading.equalToSuperview().offset((bounds.width) / 4)
-        }
-        loginWithNumberButton.snp.makeConstraints {
-            $0.top.equalTo(gauthSignInButton.snp.bottom).offset(14)
-            $0.leading.equalTo(cannotLoginText.snp.trailing).offset(8)
-            $0.height.equalTo(cannotLoginText.snp.height)
-        }
+//        cannotLoginText.snp.makeConstraints {
+//            $0.top.equalTo(gauthSignInButton.snp.bottom).offset(14)
+//            $0.leading.equalToSuperview().offset((bounds.width) / 4)
+//        }
+//        loginWithNumberButton.snp.makeConstraints {
+//            $0.top.equalTo(gauthSignInButton.snp.bottom).offset(14)
+//            $0.leading.equalTo(cannotLoginText.snp.trailing).offset(8)
+//            $0.height.equalTo(cannotLoginText.snp.height)
+//        }
     }
 }
 
