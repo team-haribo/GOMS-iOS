@@ -42,4 +42,12 @@ extension UINavigationItem {
         backBarButtonItem.tintColor = UIColor.black
         self.backBarButtonItem = backBarButtonItem
     }
+    
+    func addXMarkButton() {
+        let xButton = UIBarButtonItem().then {
+            $0.image = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)
+            $0.tintColor = .black
+        }
+        self.setRightBarButton(xButton, animated: true)
+    }
 }

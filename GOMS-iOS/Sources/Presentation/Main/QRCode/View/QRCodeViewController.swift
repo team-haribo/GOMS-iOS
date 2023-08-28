@@ -17,8 +17,6 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
     
     override func viewDidLoad() {
         self.navigationItem.hidesBackButton = true
-        self.navigationItem.rightBarButtonItem()
-        self.navigationItem.leftLogoImage()
         super.viewDidLoad()
         startTimer()
     }
@@ -30,7 +28,16 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
         qrScannerView.stopRunning()
+    }
+    
+    private func bindViewModel() {
+        let input = QRCodeViewModel.Input(
+            logoDidTap: navigationItem.leftBarButtonItem!.rx.tap.asObservable(),
+            backButtonDidTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable()
+        )
+        viewModel.transVC(input: input)
     }
     
     private func checkIsBlackList() {
@@ -47,6 +54,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
     
     private func checkUserIsAdmin() {
         if userAuthority == "ROLE_STUDENT_COUNCIL" {
+            self.navigationItem.rightBarButtonItem()
+            self.navigationItem.leftLogoImage()
             qrScannerView.isHidden = true
             outingMainText.isHidden = false
             outingSubText.isHidden = false
@@ -55,7 +64,11 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
             createQrCode()
         }
         else {
-           setupQRScanner()
+            self.navigationItem.leftLogoImage()
+            self.tabBarController?.tabBar.isHidden = true
+            self.navigationItem.addXMarkButton()
+            setupQRScanner()
+            bindViewModel()
         }
     }
     
