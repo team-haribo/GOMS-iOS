@@ -29,13 +29,11 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkUserIsOuting()
         getData()
         checkRole()
     }
     
     override func viewDidLoad() {
-        checkUserIsOuting()
         checkRole()
         super.viewDidLoad()
         viewModel.delegate = self
@@ -69,19 +67,24 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
     }
     
     private func checkUserIsOuting() {
-        if userIsOuting == true {
+        if viewModel.userData?.isOuting == true {
             useQRCodeButton.setTitle("복귀하기", for: .normal)
+        }
+        else if viewModel.userData?.isOuting == false {
+            useQRCodeButton.setTitle("외출하기", for: .normal)
         }
     }
     
     private func getData() {
-        viewModel.getLateRank { [weak self] in
-            self?.bindLateRank()
+        viewModel.getUserData { [weak self] in
+            self?.checkUserIsOuting()
         }
         viewModel.getOutingCount{ [weak self] in
             self?.setOuting()
         }
-        viewModel.getUserData()
+        viewModel.getLateRank { [weak self] in
+            self?.bindLateRank()
+        }
     }
     
     private func setOuting() {
@@ -172,7 +175,16 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
     }
     
     private lazy var useQRCodeButton = UIButton().then {
-        let text = userIsBlackList == true ? "외출금지" : "외출하기"
+        var text = userIsBlackList == true ? "외출금지" : "외출하기"
+        if userIsBlackList == true {
+            text = "외출금지"
+        }
+        else if userIsOuting == true {
+            text = "복귀하기"
+        }
+        else {
+            text = "외출하기"
+        }
         $0.setTitle(text, for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
