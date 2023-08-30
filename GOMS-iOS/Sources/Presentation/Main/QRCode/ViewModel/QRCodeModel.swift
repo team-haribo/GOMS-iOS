@@ -88,7 +88,17 @@ extension QRCodeViewModel {
                             }
                         ]
                     ))
-                default: break
+                default:
+                    self.steps.accept(GOMSStep.alert(
+                        title: "오류",
+                        message: "올바르지 않은 QRCode입니다.",
+                        style: .alert,
+                        actions: [
+                            .init(title: "확인", style: .default) {_ in
+                                self.steps.accept(GOMSStep.homeIsRequired)
+                            }
+                        ]
+                    ))
                 }
             case .failure(let err):
                 print(String(describing: err))

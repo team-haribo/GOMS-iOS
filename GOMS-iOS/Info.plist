@@ -2,20 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>QR코드 스캔을 위해 카메라 권한을 허용해주세요</string>
-	<key>CLIENT_ID</key>
-	<string>c6731e83059f4decaaa5b6a79c75320c306471f896da4284811f02bdcfeb7f94</string>
-	<key>REDIREDCT_URI</key>
-	<string>https://port-0-goms-backend-nx562olfamh7iw.sel3.cloudtype.app/</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SF-Pro-Text-Medium.otf</string>
-		<string>SF-Pro-Text-Regular.otf</string>
-		<string>SF-Pro-Text-Semibold.otf</string>
-		<string>SF-Pro-Text-Bold.otf</string>
-		<string>Fraunces-Black.ttf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -29,11 +15,25 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.5</string>
+	<string>1.3.5</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CLIENT_ID</key>
+	<string>c6731e83059f4decaaa5b6a79c75320c306471f896da4284811f02bdcfeb7f94</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>QR코드 스캔을 위해 카메라 권한을 허용해주세요</string>
+	<key>REDIREDCT_URI</key>
+	<string>https://port-0-goms-backend-nx562olfamh7iw.sel3.cloudtype.app/</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Pro-Text-Medium.otf</string>
+		<string>SF-Pro-Text-Regular.otf</string>
+		<string>SF-Pro-Text-Semibold.otf</string>
+		<string>SF-Pro-Text-Bold.otf</string>
+		<string>Fraunces-Black.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
