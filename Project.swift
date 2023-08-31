@@ -25,7 +25,7 @@ let project = Project(
     ),
     .remote(
         url: "https://github.com/devxoul/Then",
-        requirement: .upToNextMajor(from: "2")
+        requirement: .upToNextMajor(from: "2.0.0")
     ),
     .remote(
         url: "https://github.com/Moya/Moya.git",
@@ -54,6 +54,10 @@ let project = Project(
     .remote(
         url: "https://github.com/dmrschmidt/QRCode",
         requirement: .upToNextMajor(from: "1.0.0")
+    ),
+    .remote(
+        url: "https://github.com/firebase/firebase-ios-sdk",
+        requirement: .upToNextMajor(from: "10.0.0")
     )
   ],
   settings: nil,
@@ -82,7 +86,9 @@ let project = Project(
             .package(product: "GAuthSignin"),
             .package(product: "Siren"),
             .package(product: "ReactorKit"),
-            .package(product: "QRCode")
+            .package(product: "QRCode"),
+            .package(product: "FirebaseMessaging"),
+            .package(product: "FirebaseAnalytics")
            ] // tuist generate할 경우 pod install이 자동으로 실행
           )
   ],

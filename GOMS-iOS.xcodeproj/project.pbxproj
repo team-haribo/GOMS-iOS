@@ -68,6 +68,7 @@
 		9A33939DC41C18EB4059A600 /* OutingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ED536E620F9BC99598EE54 /* OutingViewModel.swift */; };
 		9F913DF033454D55F1037F75 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F53CB28B1A5311BF484B8E /* SignInRequest.swift */; };
 		A01752B27C66A70F6F12FA69 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CD8887FBFB8B9ED53423B3 /* StudentInfoViewController.swift */; };
+		ABB6F591AFDAA19F6EF2E0C5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7D244E1453707818C962596D /* FirebaseAnalytics */; };
 		AC3AC29F0F6516A844F86B75 /* SearchModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC580F9AA155D6ACED87E4F /* SearchModalViewModel.swift */; };
 		B1132D06F70EF5C367D49E53 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = F813DF204217A8A8FA083193 /* GAuthSignin */; };
 		B23C5A8F69B6CB7C9BFE292C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978264A050185C912349596A /* HomeCollectionViewCell.swift */; };
@@ -79,6 +80,7 @@
 		C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF56F29FFC248A39CA54F95 /* OutingServices.swift */; };
 		C295C3CB1AB4289264FEB1E3 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */; };
 		C30791725E2E7E8D21B7CA65 /* EditUserModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2BAD598216A8239D214E8C /* EditUserModalViewModel.swift */; };
+		C60E1BEBC649786E7EBFE5B6 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BC6304B918F94843C21D40DF /* FirebaseMessaging */; };
 		C67C2A74C66A33E755F46043 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FE83833543F454C7F1C32C /* SplashViewController.swift */; };
 		C8CCAB7E00784089C11B8B3B /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */; };
 		C991C75FBDD7E39A9B8C3A57 /* HomeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC44172A0E10154B5B8F4D /* HomeFlow.swift */; };
@@ -206,6 +208,8 @@
 				7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */,
 				B53CAFA02101E7D7FF936C3D /* ReactorKit in Frameworks */,
 				7AAF0E0FB49FD12113D2A6FB /* QRCode in Frameworks */,
+				C60E1BEBC649786E7EBFE5B6 /* FirebaseMessaging in Frameworks */,
+				ABB6F591AFDAA19F6EF2E0C5 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +953,8 @@
 				28027DF5225FC73445281A5F /* Siren */,
 				3C88277923F2237A11F45C73 /* ReactorKit */,
 				FDDF27BAA27DB80FFA7E1BF2 /* QRCode */,
+				BC6304B918F94843C21D40DF /* FirebaseMessaging */,
+				7D244E1453707818C962596D /* FirebaseAnalytics */,
 			);
 			productName = GOMS;
 			productReference = D3A56D0F2A6BF9775902773D /* GOMS.app */;
@@ -983,6 +989,7 @@
 				11A293E5CB1EDC0DF4832D2C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				6E54C8325EBF75DC324828AD /* XCRemoteSwiftPackageReference "Then" */,
 				64CA448C5F3B7B9E14D639BE /* XCRemoteSwiftPackageReference "QRCode" */,
+				3F44892F27F1A72C6B7EA2AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BEBF9F1645C5AE67F1F0E723 /* XCRemoteSwiftPackageReference "QRScanner" */,
 				3A19482F0C32099983F713BE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
@@ -1325,6 +1332,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		3F44892F27F1A72C6B7EA2AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		64CA448C5F3B7B9E14D639BE /* XCRemoteSwiftPackageReference "QRCode" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmrschmidt/QRCode";
@@ -1396,6 +1411,10 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = QRScanner;
 		};
+		7D244E1453707818C962596D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalytics;
+		};
 		98C1F1421CABED10E7FE1B75 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Kingfisher;
@@ -1403,6 +1422,10 @@
 		B5A5D4FDFFB3F435EF7F6B53 /* RxFlow */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxFlow;
+		};
+		BC6304B918F94843C21D40DF /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseMessaging;
 		};
 		BFE9D9C4C243D7D5A3A968EC /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
