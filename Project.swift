@@ -68,7 +68,7 @@ let project = Project(
             devices: [.iphone, .ipad]
            ),
            infoPlist: .file(path: "\(projectName)/Info.plist"),
-           sources: ["\(projectName)/**"],
+           sources: ["\(projectName)/Sources/**"],
            resources: ["\(projectName)/Resources/**"],
            dependencies: [
             .package(product: "RxFlow"),
