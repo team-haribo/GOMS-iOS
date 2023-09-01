@@ -53,6 +53,7 @@
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
 		73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */; };
 		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
+		774DEE2C2AA1738D00F1C8EC /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774DEE2B2AA1738D00F1C8EC /* NotificationServices.swift */; };
 		7AAF0E0FB49FD12113D2A6FB /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = FDDF27BAA27DB80FFA7E1BF2 /* QRCode */; };
 		7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 28027DF5225FC73445281A5F /* Siren */; };
 		81C846E7B6C1B3377D89F2E1 /* MakeQRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730E97BADBC88DB876C1393 /* MakeQRModel.swift */; };
@@ -151,6 +152,7 @@
 		71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
 		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
+		774DEE2B2AA1738D00F1C8EC /* NotificationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
 		778F98082AA0D3B100FED3E6 /* GOMS-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "GOMS-iOS.entitlements"; path = "GOMS-iOS/GOMS-iOS.entitlements"; sourceTree = "<group>"; };
 		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		7EF5435A5D9016B119A4573D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 		2F38A5C6231BD3DD6CBD0AB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				774DEE2A2AA1737A00F1C8EC /* Notification */,
 				2AE672F6EFD4B4B4C011AF72 /* Account */,
 				1409A196070CCD43D9E058E8 /* Auth */,
 				660F02A333B53D87F3D172D4 /* Late */,
@@ -604,6 +607,14 @@
 				4490FA17B9A929FDAEEA923C /* GOMSTabBar.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		774DEE2A2AA1737A00F1C8EC /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				774DEE2B2AA1738D00F1C8EC /* NotificationServices.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		78F09023BC88D75D81A0F52B /* Home */ = {
@@ -1053,6 +1064,7 @@
 				9251671FB767C6D2E48564E8 /* AccountServices.swift in Sources */,
 				B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */,
 				13BEAA05293FA4319A826530 /* LateServices.swift in Sources */,
+				774DEE2C2AA1738D00F1C8EC /* NotificationServices.swift in Sources */,
 				C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */,
 				64376B716865B84D9A20B5EC /* StudentCouncilServices.swift .swift in Sources */,
 				FAF8AA3F1722F90CB276E917 /* LoginWithNumberTextField.swift in Sources */,
