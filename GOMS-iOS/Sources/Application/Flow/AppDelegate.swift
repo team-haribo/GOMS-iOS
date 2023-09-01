@@ -3,6 +3,7 @@ import Firebase
 import UserNotifications
 
 @main class AppDelegate: UIResponder, UIApplicationDelegate {
+    let keychain = Keychain()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -38,6 +39,15 @@ import UserNotifications
     }
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    }
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
+        self.keychain.create(
+            key: Const.KeychainKey.accessToken,
+            token: deviceTokenString
+        )
     }
 }
 
