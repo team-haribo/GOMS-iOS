@@ -6,6 +6,7 @@ struct Const {
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
         static let authority = "authority"
+        static let deviceToken = "deviceToken"
     }
 }
 

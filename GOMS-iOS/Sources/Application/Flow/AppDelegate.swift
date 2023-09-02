@@ -44,8 +44,11 @@ import UserNotifications
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let deviceTokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
+        print("============")
+        print(deviceTokenString)
+        print("-=========")
         self.keychain.create(
-            key: Const.KeychainKey.accessToken,
+            key: Const.KeychainKey.deviceToken,
             token: deviceTokenString
         )
     }

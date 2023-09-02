@@ -12,8 +12,13 @@ import RxSwift
 import Moya
 
 class IntroViewModel: BaseViewModel, Stepper{
-    let authProvider = MoyaProvider<AuthServices>()
+    let authProvider = MoyaProvider<AuthServices>(plugins: [NetworkLoggerPlugin()])
+    
+    let notificationProvider = MoyaProvider<NotificationServices>(plugins: [NetworkLoggerPlugin()])
+    
     var authData: SignInResponse?
+    
+    lazy var deviceToken = keychain.read(key: Const.KeychainKey.deviceToken)
 
     struct Input {
         let loginWithNumberButtonTap: Observable<Void>
@@ -51,7 +56,7 @@ extension IntroViewModel {
                 switch statusCode{
                 case 200..<300:
                     self.addKeychainToken()
-                    self.steps.accept(GOMSStep.tabBarIsRequired)
+                    self.postDeviceToken()
                 case 400:
                     self.steps.accept(GOMSStep.failureAlert(
                         title: "오류",
@@ -79,5 +84,28 @@ extension IntroViewModel {
             key: Const.KeychainKey.authority,
             token: self.authData?.authority ?? ""
         )
+    }
+    
+    func postDeviceToken() {
+        notificationProvider.request(.postDeviceToken(
+            authorization: self.authData?.accessToken ?? "",
+            deviceToken: deviceToken ?? ""
+        )) { response in
+            switch response {
+            case .success(let result):
+                let statusCode = result.statusCode
+                switch statusCode{
+                case 200..<300:
+                    self.steps.accept(GOMSStep.tabBarIsRequired)
+                default:
+                    self.steps.accept(GOMSStep.failureAlert(
+                        title: "오류",
+                        message: "로그인 할 수 없습니다. 나중에 다시 시도해주세요."
+                    ))
+                }
+            case .failure(let err):
+                print(String(describing: err))
+            }
+        }
     }
 }
