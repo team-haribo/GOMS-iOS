@@ -78,6 +78,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
     private func getData() {
         viewModel.getUserData { [weak self] in
             self?.checkUserIsOuting()
+            self?.checkRole()
         }
         viewModel.getOutingCount{ [weak self] in
             self?.setOuting()
