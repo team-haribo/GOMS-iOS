@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		17EFEB02E598A042C1191B07 /* LoginWithNumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6846BEC8229D59DE6E0BC868 /* LoginWithNumberViewModel.swift */; };
 		1815C764B5C149B5B9CC62DD /* QRCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8A3BF1C61EFCBB1A314149 /* QRCodeModel.swift */; };
 		197141CE26653C403692AEA9 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B077D499D3BF1E566F0E52 /* SignInModel.swift */; };
+		1C3ADC7783E4800634E86B02 /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B13CB7B98A03E74C3C13FF5 /* NotificationServices.swift */; };
 		248B1FD13684D09BC1863DF9 /* GOMSStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E451230CE75A5B517AC7C0D /* GOMSStep.swift */; };
 		25B44A02412E18EC2DD622B6 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */; };
 		26C0BD076523CA3C33E2AFCF /* GOMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE3CD27B429653B4AE1EAB /* GOMSFont.swift */; };
@@ -53,7 +54,6 @@
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
 		73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */; };
 		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
-		774DEE2C2AA1738D00F1C8EC /* NotificationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774DEE2B2AA1738D00F1C8EC /* NotificationServices.swift */; };
 		7AAF0E0FB49FD12113D2A6FB /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = FDDF27BAA27DB80FFA7E1BF2 /* QRCode */; };
 		7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 28027DF5225FC73445281A5F /* Siren */; };
 		81C846E7B6C1B3377D89F2E1 /* MakeQRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730E97BADBC88DB876C1393 /* MakeQRModel.swift */; };
@@ -132,7 +132,7 @@
 		2B5793E1FC9341527315B0A8 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
 		31CD8887FBFB8B9ED53423B3 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-Black.ttf"; sourceTree = "<group>"; };
-		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		3BD89D8062517C54D755C6FC /* GOMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSColor.swift; sourceTree = "<group>"; };
 		3C40A2FE679E0118A486F06F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3E451230CE75A5B517AC7C0D /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
@@ -148,13 +148,12 @@
 		64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
 		6846BEC8229D59DE6E0BC868 /* LoginWithNumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewModel.swift; sourceTree = "<group>"; };
 		6926EC30A2F12B3D50F4D879 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
+		6B13CB7B98A03E74C3C13FF5 /* NotificationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
 		6BC580F9AA155D6ACED87E4F /* SearchModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModalViewModel.swift; sourceTree = "<group>"; };
 		71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
 		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
-		774DEE2B2AA1738D00F1C8EC /* NotificationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
-		778F98082AA0D3B100FED3E6 /* GOMS-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "GOMS-iOS.entitlements"; path = "GOMS-iOS/GOMS-iOS.entitlements"; sourceTree = "<group>"; };
-		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		7EF5435A5D9016B119A4573D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		8230CCA82A130F052294DDB4 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		8897DBB2E89D9A3111F95E28 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
@@ -175,8 +174,8 @@
 		B6DE3CD27B429653B4AE1EAB /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
 		B82FB852DFBD8264D85CDE12 /* EditModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModalViewController.swift; sourceTree = "<group>"; };
 		BC65C7C162624042253ABA86 /* TuistBundle+GOMSIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+GOMSIOS.swift"; sourceTree = "<group>"; };
-		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
-		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1FE83833543F454C7F1C32C /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		D3A56D0F2A6BF9775902773D /* GOMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,14 +373,22 @@
 		2F38A5C6231BD3DD6CBD0AB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				774DEE2A2AA1737A00F1C8EC /* Notification */,
 				2AE672F6EFD4B4B4C011AF72 /* Account */,
 				1409A196070CCD43D9E058E8 /* Auth */,
 				660F02A333B53D87F3D172D4 /* Late */,
+				309F8A7030BC39316CE288BE /* Notification */,
 				C0BB95D9729D7FB96D8B3CD3 /* Outing */,
 				938DC9DD73A21D6CFCA051E5 /* StudentCouncil */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		309F8A7030BC39316CE288BE /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6B13CB7B98A03E74C3C13FF5 /* NotificationServices.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		345371DEF1E982230E03F99F /* ViewModel */ = {
@@ -609,14 +616,6 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		774DEE2A2AA1737A00F1C8EC /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				774DEE2B2AA1738D00F1C8EC /* NotificationServices.swift */,
-			);
-			path = Notification;
-			sourceTree = "<group>";
-		};
 		78F09023BC88D75D81A0F52B /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,7 +773,6 @@
 		AED56A1DF2A785FA860E859D = {
 			isa = PBXGroup;
 			children = (
-				778F98082AA0D3B100FED3E6 /* GOMS-iOS.entitlements */,
 				91B2C3E344F2AFAB4DC6E044 /* Project */,
 				81B349B2A17DA59FF5FDC903 /* Frameworks */,
 				648BAF08E2848A87A88F0B47 /* Products */,
@@ -980,6 +978,8 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = HARIBO;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -1064,7 +1064,7 @@
 				9251671FB767C6D2E48564E8 /* AccountServices.swift in Sources */,
 				B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */,
 				13BEAA05293FA4319A826530 /* LateServices.swift in Sources */,
-				774DEE2C2AA1738D00F1C8EC /* NotificationServices.swift in Sources */,
+				1C3ADC7783E4800634E86B02 /* NotificationServices.swift in Sources */,
 				C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */,
 				64376B716865B84D9A20B5EC /* StudentCouncilServices.swift .swift in Sources */,
 				FAF8AA3F1722F90CB276E917 /* LoginWithNumberTextField.swift in Sources */,
@@ -1237,9 +1237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "GOMS-iOS/GOMS-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5GD5Q99952;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1263,9 +1261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "GOMS-iOS/GOMS-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5GD5Q99952;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
