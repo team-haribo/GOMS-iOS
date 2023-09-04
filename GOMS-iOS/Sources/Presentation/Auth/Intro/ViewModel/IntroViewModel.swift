@@ -56,7 +56,9 @@ extension IntroViewModel {
                 switch statusCode{
                 case 200..<300:
                     self.addKeychainToken()
-                    self.postDeviceToken()
+                    self.postDeviceToken {
+                        self.steps.accept(GOMSStep.tabBarIsRequired)
+                    }
                 case 400:
                     self.steps.accept(GOMSStep.failureAlert(
                         title: "오류",
@@ -86,7 +88,7 @@ extension IntroViewModel {
         )
     }
     
-    func postDeviceToken() {
+    func postDeviceToken(completion: @escaping () -> Void) {
         notificationProvider.request(.postDeviceToken(
             baseURL: "https://port-0-goms-backend-1xxfe2blm21rch9.sel5.cloudtype.app/api/v1/notification/outing/before",
             authorization: "Bearer \(self.authData?.accessToken ?? "")" ,
@@ -97,16 +99,14 @@ extension IntroViewModel {
                 let statusCode = result.statusCode
                 switch statusCode{
                 case 200..<300:
-                    self.steps.accept(GOMSStep.tabBarIsRequired)
+                    print("Success")
                 default:
-                    self.steps.accept(GOMSStep.failureAlert(
-                        title: "오류",
-                        message: "로그인 할 수 없습니다. 나중에 다시 시도해주세요."
-                    ))
+                   print("Failure")
                 }
             case .failure(let err):
                 print(String(describing: err))
             }
+            completion()
         }
     }
 }

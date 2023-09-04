@@ -13,8 +13,8 @@ extension NotificationServices: TargetType {
 
     var path: String {
         switch self {
-        case let .postDeviceToken(baseURL,_,_):
-            return "\(baseURL)"
+        case let .postDeviceToken(baseURL, _, deviceToken):
+            return "\(baseURL)/\(deviceToken)"
         }
     }
 

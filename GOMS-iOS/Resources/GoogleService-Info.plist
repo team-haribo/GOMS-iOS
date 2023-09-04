@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>831547800563-dn2286hb1rstqpo2f9o3ln8i5ams46bo.apps.googleusercontent.com</string>
+	<string>708470626213-cb5t64546bmps5ddr766b2r2ufrrg8lg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.831547800563-dn2286hb1rstqpo2f9o3ln8i5ams46bo</string>
+	<string>com.googleusercontent.apps.708470626213-cb5t64546bmps5ddr766b2r2ufrrg8lg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCyx8mP2a8sg9XTkSUoMpfrmtGtbL3OSa0</string>
+	<string>AIzaSyBrr1O26jrH2R_hhrxVzGY7wr57WW5HPac</string>
 	<key>GCM_SENDER_ID</key>
-	<string>831547800563</string>
+	<string>708470626213</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>Minjae.GOMS-iOS</string>
 	<key>PROJECT_ID</key>
-	<string>goms-7f0cd</string>
+	<string>goms-b87ec</string>
 	<key>STORAGE_BUCKET</key>
-	<string>goms-7f0cd.appspot.com</string>
+	<string>goms-b87ec.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:831547800563:ios:f8568fd9ac9c7d45d3f086</string>
+	<string>1:708470626213:ios:82abecc6a280b5a763ba4c</string>
 </dict>
 </plist>

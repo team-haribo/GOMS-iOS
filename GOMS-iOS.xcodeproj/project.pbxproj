@@ -38,7 +38,6 @@
 		493128A428A77484FDE0078A /* RoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5F326E926997F82820F199 /* RoleCell.swift */; };
 		4A258C31A37F954D524852A6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 081F136A16B08657C2E5D58D /* RxSwift */; };
 		4F404B67DE5AF8F2F8E712A9 /* OutingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0F2375EE5E4B6444926746 /* OutingFlow.swift */; };
-		52118FF2D917294507DF4F27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8926A38BD09D59151CDC98D /* GoogleService-Info.plist */; };
 		526E648A9EA922B192DF0736 /* LoginWithNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088A97C0C33E5021A5131591 /* LoginWithNumberViewController.swift */; };
 		53EC2844FFCCBBDB4BCB1EA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EA7E9CF4EB6A2520AB2D86 /* HomeViewController.swift */; };
 		5769086A0AEF802A1D6083F9 /* LateRankRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */; };
@@ -54,6 +53,7 @@
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
 		73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */; };
 		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
+		772FA0702AA5A79E00A85275 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 772FA06F2AA5A79E00A85275 /* GoogleService-Info.plist */; };
 		7AAF0E0FB49FD12113D2A6FB /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = FDDF27BAA27DB80FFA7E1BF2 /* QRCode */; };
 		7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 28027DF5225FC73445281A5F /* Siren */; };
 		81C846E7B6C1B3377D89F2E1 /* MakeQRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730E97BADBC88DB876C1393 /* MakeQRModel.swift */; };
@@ -154,6 +154,7 @@
 		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		772FA06E2AA57C8300A85275 /* GOMS-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "GOMS-iOS.entitlements"; path = "GOMS-iOS/GOMS-iOS.entitlements"; sourceTree = "<group>"; };
+		772FA06F2AA5A79E00A85275 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		7EF5435A5D9016B119A4573D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		8230CCA82A130F052294DDB4 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -189,7 +190,6 @@
 		DF8A3BF1C61EFCBB1A314149 /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
 		E3D8DD3B2162507EFE23B404 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E87F44DB0DCBE1F74B576907 /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
-		E8926A38BD09D59151CDC98D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F0CB27F8DFB3B74247721004 /* GOMSToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSToken.swift; sourceTree = "<group>"; };
 		FA439C37C96040C4FE5E37A6 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -654,7 +654,7 @@
 				3797F06D332BC2907C32555B /* Font */,
 				7813475D446B5FD839D6445B /* LaunchScreen.storyboard */,
 				ABB6E2ADDC0ED6343FA96DB1 /* Assets.xcassets */,
-				E8926A38BD09D59151CDC98D /* GoogleService-Info.plist */,
+				772FA06F2AA5A79E00A85275 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1018,6 +1018,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772FA0702AA5A79E00A85275 /* GoogleService-Info.plist in Resources */,
 				00376F6D7377122406E0BAAD /* Assets.xcassets in Resources */,
 				E6A35DF17F2B41EAD774B72B /* LaunchScreen.storyboard in Resources */,
 				73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */,
@@ -1025,7 +1026,6 @@
 				0BF7A04CD7B51FC80A4F6472 /* SF-Pro-Text-Medium.otf in Resources */,
 				65AD2A08A00E8B4E4A343E58 /* SF-Pro-Text-Regular.otf in Resources */,
 				25B44A02412E18EC2DD622B6 /* SF-Pro-Text-Semibold.otf in Resources */,
-				52118FF2D917294507DF4F27 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,6 +1239,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "GOMS-iOS/GOMS-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5GD5Q99952;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1264,6 +1265,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "GOMS-iOS/GOMS-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5GD5Q99952;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
