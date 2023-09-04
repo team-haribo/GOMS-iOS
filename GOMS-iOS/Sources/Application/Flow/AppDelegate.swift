@@ -1,75 +1,54 @@
 import UIKit
 import Firebase
 import UserNotifications
+import FirebaseMessaging
 
-@main class AppDelegate: UIResponder, UIApplicationDelegate {
-    let keychain = Keychain()
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+@main class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
-        if #available(iOS 10.0, *) {
-            // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self
-            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-            UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
-        }
-        else {
-            let settings: UIUserNotificationSettings = UIUserNotificationSettings(
-                types: [.alert, .badge, .sound],
-                categories: nil)
-            application.registerUserNotificationSettings(settings)
-        }
-        application.registerForRemoteNotifications()
-        
-        Messaging.messaging().delegate = self
-        Messaging.messaging().token { token, error in
-            if let error = error {
-                print("Error fetching FCM registration token: \(error)")
-            }
-            else if let token = token {
-                print("FCM registration token: \(token)")
-            }
-        }
+        setupFCM(application)
         return true
     }
     
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-    
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-    }
-    
-    func application(_ application: UIApplication,
-                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let deviceTokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
-        print("============")
-        print(deviceTokenString)
-        print("-=========")
-        self.keychain.create(
-            key: Const.KeychainKey.deviceToken,
-            token: deviceTokenString
-        )
+    private func setupFCM(_ application: UIApplication) {
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge]) { isAgree, error in
+            if isAgree {
+                print("알림허용")
+            }
+        }
+        application.registerForRemoteNotifications()
     }
 }
 
-extension AppDelegate : MessagingDelegate {
+extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
+    /// 푸시클릭시
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        print("🟢1", #function)
+    }
+    
+    /// 앱화면 보고있는중에 푸시올 때
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        print("🟢2", #function)
+        return [.sound, .banner, .list]
+    }
+    
+    /// FCMToken 업데이트시
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("파이어베이스 토큰: \(fcmToken)")
-    }
-}
-
-extension AppDelegate : UNUserNotificationCenterDelegate {
-    
-    // 푸시알림이 수신되었을 때 수행되는 메소드
-    func userNotificationCenter(_ center: UNUserNotificationCenter,willPresent notification: UNNotification,withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("메시지 수신")
-        completionHandler([.alert, .badge, .sound])
+        print("🟢3", #function, fcmToken)
     }
     
-    func userNotificationCenter(_ center: UNUserNotificationCenter,didReceive response: UNNotificationResponse,withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        completionHandler()
+    /// 스위즐링 NO시, APNs등록, 토큰값가져옴
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("🟢4", #function, deviceTokenString)
+    }
+    
+    /// error발생시
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("🟢5", error)
     }
 }
