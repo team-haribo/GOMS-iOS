@@ -107,10 +107,11 @@ FrameWork
 
 ## :rocket: Tech Skills
 - Language: Swift
+- Reactive Programming: RxSwift
 - Layout: Snapkit
 - Design Pattern: MVVM
 - Network: Moya
 - Navigation Logic: RxFlow
 - Cooperation: Git, Github
 - Auth: GauthSignIn
-- Etc: : RxSwift, KingFisher, Then, QRCodeReader, QRCode
+- Etc: KingFisher, Then, QRCodeReader, QRCode
