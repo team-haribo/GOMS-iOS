@@ -90,7 +90,6 @@ extension IntroViewModel {
     
     func postDeviceToken(completion: @escaping () -> Void) {
         notificationProvider.request(.postDeviceToken(
-            baseURL: "https://port-0-goms-backend-1xxfe2blm21rch9.sel5.cloudtype.app/api/v1/notification/outing/before",
             authorization: "Bearer \(self.authData?.accessToken ?? "")" ,
             deviceToken: deviceToken ?? ""
         )) { response in

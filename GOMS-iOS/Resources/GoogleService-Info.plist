@@ -2,22 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>708470626213-cb5t64546bmps5ddr766b2r2ufrrg8lg.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.708470626213-cb5t64546bmps5ddr766b2r2ufrrg8lg</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBrr1O26jrH2R_hhrxVzGY7wr57WW5HPac</string>
+	<string>AIzaSyB8DJSbHZRSancLlaBRnpBG8uvMRhmm-Kw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>708470626213</string>
+	<string>236133681680</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>Minjae.GOMS-iOS</string>
 	<key>PROJECT_ID</key>
-	<string>goms-b87ec</string>
+	<string>goms-6e639</string>
 	<key>STORAGE_BUCKET</key>
-	<string>goms-b87ec.appspot.com</string>
+	<string>goms-6e639.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:708470626213:ios:82abecc6a280b5a763ba4c</string>
+	<string>1:236133681680:ios:bc01caccdffe362462d895</string>
 </dict>
 </plist>

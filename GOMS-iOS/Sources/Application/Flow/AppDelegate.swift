@@ -1,7 +1,6 @@
 import UIKit
 import Firebase
 import UserNotifications
-import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -73,7 +72,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
         let keychain = Keychain()
         keychain.create(
             key: Const.KeychainKey.deviceToken,
-            token: deviceTokenString 
+            token: deviceTokenString
         )
     }
     

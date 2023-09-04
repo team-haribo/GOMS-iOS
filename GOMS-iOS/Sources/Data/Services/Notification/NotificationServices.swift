@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 enum NotificationServices {
-    case postDeviceToken(baseURL: String, authorization: String, deviceToken: String)
+    case postDeviceToken(authorization: String, deviceToken: String)
 }
 
 
@@ -13,8 +13,8 @@ extension NotificationServices: TargetType {
 
     var path: String {
         switch self {
-        case let .postDeviceToken(baseURL, _, deviceToken):
-            return "\(baseURL)/\(deviceToken)"
+        case let .postDeviceToken(_, deviceToken):
+            return "notification/token/\(deviceToken)"
         }
     }
 
@@ -38,7 +38,7 @@ extension NotificationServices: TargetType {
 
     var headers: [String : String]? {
         switch self {
-        case let .postDeviceToken(_,authorization, _):
+        case let .postDeviceToken(authorization, _):
             return["Content-Type" :"application/json","Authorization" : authorization]
         }
     }

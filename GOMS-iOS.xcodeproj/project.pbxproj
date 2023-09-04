@@ -53,7 +53,7 @@
 		72028F0A66B9312FD563AB7E /* OutingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC474B134561AC16088E87B /* OutingTableViewCell.swift */; };
 		73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */; };
 		7660552A9BFFE52FBCFEBBB9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D6510F4883CE9AD796FD8F /* HomeViewModel.swift */; };
-		772FA0702AA5A79E00A85275 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 772FA06F2AA5A79E00A85275 /* GoogleService-Info.plist */; };
+		772FA0782AA5F22500A85275 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 772FA0772AA5F22500A85275 /* GoogleService-Info.plist */; };
 		7AAF0E0FB49FD12113D2A6FB /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = FDDF27BAA27DB80FFA7E1BF2 /* QRCode */; };
 		7AAFB23D3C59E17B95BD2657 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 28027DF5225FC73445281A5F /* Siren */; };
 		81C846E7B6C1B3377D89F2E1 /* MakeQRModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0730E97BADBC88DB876C1393 /* MakeQRModel.swift */; };
@@ -153,8 +153,8 @@
 		71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
 		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
-		772FA06E2AA57C8300A85275 /* GOMS-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "GOMS-iOS.entitlements"; path = "GOMS-iOS/GOMS-iOS.entitlements"; sourceTree = "<group>"; };
-		772FA06F2AA5A79E00A85275 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		772FA0762AA5EC4E00A85275 /* GOMS-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "GOMS-iOS.entitlements"; path = "GOMS-iOS/GOMS-iOS.entitlements"; sourceTree = "<group>"; };
+		772FA0772AA5F22500A85275 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		7EF5435A5D9016B119A4573D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		8230CCA82A130F052294DDB4 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -654,7 +654,7 @@
 				3797F06D332BC2907C32555B /* Font */,
 				7813475D446B5FD839D6445B /* LaunchScreen.storyboard */,
 				ABB6E2ADDC0ED6343FA96DB1 /* Assets.xcassets */,
-				772FA06F2AA5A79E00A85275 /* GoogleService-Info.plist */,
+				772FA0772AA5F22500A85275 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -774,7 +774,7 @@
 		AED56A1DF2A785FA860E859D = {
 			isa = PBXGroup;
 			children = (
-				772FA06E2AA57C8300A85275 /* GOMS-iOS.entitlements */,
+				772FA0762AA5EC4E00A85275 /* GOMS-iOS.entitlements */,
 				91B2C3E344F2AFAB4DC6E044 /* Project */,
 				81B349B2A17DA59FF5FDC903 /* Frameworks */,
 				648BAF08E2848A87A88F0B47 /* Products */,
@@ -1018,11 +1018,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772FA0702AA5A79E00A85275 /* GoogleService-Info.plist in Resources */,
 				00376F6D7377122406E0BAAD /* Assets.xcassets in Resources */,
 				E6A35DF17F2B41EAD774B72B /* LaunchScreen.storyboard in Resources */,
 				73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */,
 				5A990392C21F5FEB947B6769 /* SF-Pro-Text-Bold.otf in Resources */,
+				772FA0782AA5F22500A85275 /* GoogleService-Info.plist in Resources */,
 				0BF7A04CD7B51FC80A4F6472 /* SF-Pro-Text-Medium.otf in Resources */,
 				65AD2A08A00E8B4E4A343E58 /* SF-Pro-Text-Regular.otf in Resources */,
 				25B44A02412E18EC2DD622B6 /* SF-Pro-Text-Semibold.otf in Resources */,
