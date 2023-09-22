@@ -47,10 +47,10 @@ class AuthFlow: Flow {
 
 private extension AuthFlow {
     func coordinateToIntro() -> FlowContributors {
-        let vm = IntroViewModel()
-        let vc = IntroViewController(vm)
+        let reactor = IntroReactor()
+        let vc = IntroViewController(reactor)
         self.rootViewController.setViewControllers([vc], animated: false)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
     }
     
     func coordinateToLoginWithNumber() -> FlowContributors {

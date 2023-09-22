@@ -1,44 +1,66 @@
-//
-//  IntroViewModel.swift
-//  GOMS-iOS
-//
-//  Created by 선민재 on 2023/04/17.
-//
-
 import Foundation
 import RxFlow
 import RxCocoa
 import RxSwift
 import Moya
+import ReactorKit
 
-class IntroViewModel: BaseViewModel, Stepper{
-    let authProvider = MoyaProvider<AuthServices>()
+class IntroReactor: Reactor, Stepper{
+    // MARK: - Properties
+    
+    let keychain = Keychain()
+    
+    let provider = MoyaProvider<AuthServices>(plugins: [NetworkLoggerPlugin()])
+    
+    var initialState: State
+    
     var authData: SignInResponse?
-
-    struct Input {
-        let loginWithNumberButtonTap: Observable<Void>
+    
+    var steps: PublishRelay<Step> = .init()
+    
+    // MARK: - Reactor
+    
+    enum Action {
+        case loginWithNumberButtonTap
+        case gauthSigninCompleted(code: String)
     }
     
-    struct Output {
+    enum Mutation {
         
     }
     
-    func transVC(input: Input) {
-        input.loginWithNumberButtonTap.subscribe(
-            onNext: pushLoginWithNumberVC
-        ) .disposed(by: disposeBag)
+    struct State {
+        
     }
     
-    private func pushLoginWithNumberVC() {
-        self.steps.accept(GOMSStep.loginWithNumberIsRequired)
+    // MARK: - Init
+    init() {
+        self.initialState = State()
     }
-
 }
 
-extension IntroViewModel {
-    func gauthSignInCompleted(code: String) {
+// MARK: - Mutate
+extension IntroReactor {
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action {
+        case .loginWithNumberButtonTap:
+            return pushLoginWithNumberVC()
+        case let .gauthSigninCompleted(code):
+            return gauthSigninCompleted(code: code)
+        }
+    }
+}
+
+// MARK: - Method
+private extension IntroReactor {
+    private func pushLoginWithNumberVC() -> Observable<Mutation> {
+        self.steps.accept(GOMSStep.loginWithNumberIsRequired)
+        return .empty()
+    }
+    
+    private func gauthSigninCompleted(code: String) -> Observable<Mutation> {
         let param = SignInRequest(code: code)
-        authProvider.request(.signIn(param: param)) { response in
+        provider.request(.signIn(param: param)) { response in
             switch response {
             case .success(let result):
                 print(String(data: result.data, encoding: .utf8))
@@ -52,18 +74,21 @@ extension IntroViewModel {
                 case 200..<300:
                     self.addKeychainToken()
                     self.steps.accept(GOMSStep.tabBarIsRequired)
-                case 400:
+                default:
                     self.steps.accept(GOMSStep.failureAlert(
                         title: "오류",
                         message: "로그인 할 수 없습니다. 나중에 다시 시도해주세요."
                     ))
-                default:
-                    print("ERROR")
                 }
             case .failure(let err):
                 print(String(describing: err))
+                self.steps.accept(GOMSStep.failureAlert(
+                    title: "오류",
+                    message: "로그인 할 수 없습니다. 나중에 다시 시도해주세요."
+                ))
             }
         }
+        return .empty()
     }
     
     func addKeychainToken() {

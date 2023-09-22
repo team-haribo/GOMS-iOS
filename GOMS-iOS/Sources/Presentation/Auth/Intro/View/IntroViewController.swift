@@ -1,10 +1,3 @@
-//
-//  IntroViewController.swift
-//  GOMS-iOS
-//
-//  Created by 선민재 on 2023/04/17.
-//
-
 import UIKit
 import Then
 import SnapKit
@@ -12,21 +5,13 @@ import GAuthSignin
 import RxCocoa
 import RxSwift
 
-class IntroViewController: BaseViewController<IntroViewModel> {
+class IntroViewController: BaseViewController<IntroReactor> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gauthButtonSetUp()
-//        bindViewModel()
     }
-    
-//    private func bindViewModel() {
-//        let input = IntroViewModel.Input(
-//            loginWithNumberButtonTap: loginWithNumberButton.rx.tap.asObservable()
-//        )
-//        viewModel.transVC(input: input)
-//    }
-    
+
     private let logoImage = UIImageView().then {
         $0.image = UIImage(named: "colorLogo.svg")
     }
@@ -101,7 +86,7 @@ class IntroViewController: BaseViewController<IntroViewModel> {
             redirectURI: Bundle.module.object(forInfoDictionaryKey: "REDIREDCT_URI") as? String ?? "",
             presenting: self
         ) { code in
-            self.viewModel.gauthSignInCompleted(code: code)
+            self.viewModel.action.onNext(.gauthSigninCompleted(code: code))
         }
     }
     
