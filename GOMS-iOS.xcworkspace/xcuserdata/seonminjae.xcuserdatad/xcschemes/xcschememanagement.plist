@@ -24,6 +24,8 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>15</integer>
+<<<<<<< HEAD
+=======
 		</dict>
 		<key>Promises (Playground) 3.xcscheme</key>
 		<dict>
@@ -45,6 +47,7 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>21</integer>
+>>>>>>> 1282410a68e046b008001af430288b61666d2bb0
 		</dict>
 		<key>Promises (Playground).xcscheme</key>
 		<dict>
@@ -66,6 +69,8 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
+<<<<<<< HEAD
+=======
 		</dict>
 		<key>ReactiveSwift (Playground) 3.xcscheme</key>
 		<dict>
@@ -87,6 +92,7 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>33</integer>
+>>>>>>> 1282410a68e046b008001af430288b61666d2bb0
 		</dict>
 		<key>ReactiveSwift (Playground).xcscheme</key>
 		<dict>
@@ -108,6 +114,8 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>9</integer>
+<<<<<<< HEAD
+=======
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground) 3.xcscheme</key>
 		<dict>
@@ -129,6 +137,7 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>30</integer>
+>>>>>>> 1282410a68e046b008001af430288b61666d2bb0
 		</dict>
 		<key>ReactiveSwift-UIExamples (Playground).xcscheme</key>
 		<dict>
