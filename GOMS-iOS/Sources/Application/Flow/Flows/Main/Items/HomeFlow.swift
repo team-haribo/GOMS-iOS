@@ -78,10 +78,10 @@ class HomeFlow: Flow {
     }
     
     private func coordinateToHome() -> FlowContributors {
-        let vm = HomeViewModel()
-        let vc = HomeViewController(vm)
+        let reactor = HomeReactor()
+        let vc = HomeViewController(reactor)
         self.rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
     }
     
     private func coordinateToProfile() -> FlowContributors {

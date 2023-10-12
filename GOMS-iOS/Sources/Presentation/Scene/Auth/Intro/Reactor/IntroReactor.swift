@@ -72,6 +72,9 @@ private extension IntroReactor {
                 let statusCode = result.statusCode
                 switch statusCode{
                 case 200..<300:
+                    print("=================================")
+                    print(code)
+                    print("=================================")
                     self.addKeychainToken()
                     self.steps.accept(GOMSStep.tabBarIsRequired)
                 default:
