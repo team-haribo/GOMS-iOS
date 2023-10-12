@@ -29,6 +29,9 @@ class HomeViewController: BaseViewController<HomeReactor> {
             profileButton.isHidden = true
             userNumText.isHidden = true
             userNameText.isHidden = true
+            homeMainText.text = "간편하게\n수요외출제를\n관리해보세요"
+            useQRCodeButton.backgroundColor = .adminColor
+            useQRCodeButton.setTitle("생성하기", for: .normal)
         }
     }
     
@@ -324,6 +327,10 @@ class HomeViewController: BaseViewController<HomeReactor> {
             .disposed(by: disposeBag)
         profileButton.rx.tap
             .map { HomeReactor.Action.profileButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        manageStudentButton.rx.tap
+            .map { HomeReactor.Action.manageButtonDidTap }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
     }
