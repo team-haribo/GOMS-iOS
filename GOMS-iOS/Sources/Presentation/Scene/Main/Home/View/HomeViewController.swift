@@ -1,10 +1,3 @@
-//
-//  HomeViewController.swift
-//  GOMS-iOS
-//
-//  Created by 선민재 on 2023/04/18.
-//
-
 import Foundation
 import UIKit
 import Then
@@ -12,160 +5,38 @@ import SnapKit
 import RxSwift
 import Kingfisher
 
-class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelegate {
+class HomeViewController: BaseViewController<HomeReactor> {
     
-    private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
-    private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
-    private let userNum = UserDefaults.standard.integer(forKey: "userNum")
-    private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
-    private let userIsBlackList = UserDefaults.standard.bool(forKey: "userIsBlackList")
-    private let userIsOuting = UserDefaults.standard.bool(forKey: "userIsOuting")
-    private var userNameList = [String]()
-    private var userGradeList = [Int]()
-    private var userClassNumList = [Int]()
-    private var userNumList = [Int]()
-    private var userProfile = [String]()
-    private var outingCount:Int = 0
+    override func viewDidLoad() {
+        self.navigationItem.rightBarButtonItem()
+        self.navigationItem.leftLogoImage()
+        super.viewDidLoad()
+        tardyCollectionView.collectionViewLayout = layout
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getData()
         checkRole()
     }
     
-    override func viewDidLoad() {
-        checkRole()
-        super.viewDidLoad()
-        viewModel.delegate = self
-        self.navigationItem.rightBarButtonItem()
-        self.navigationItem.leftLogoImage()
-        refreshScrollView.frame = view.bounds
-        refreshScrollView.alwaysBounceVertical = true
-        refreshScrollView.refreshControl = refreshControl
-        tardyCollectionView.collectionViewLayout = layout
-        bindViewModel()
-    }
-    
-    private func checkRole() {
+    func checkRole() {
         if userAuthority == "ROLE_STUDENT_COUNCIL" {
+            manageStudentButton.isHidden = false
+            manageStudnetText.isHidden = false
+            manageStudnetSubText.isHidden = false
+            profileNavigationButton.tintColor = .adminColor
             profileImg.isHidden = true
             profileButton.isHidden = true
-            profileNavigationButton.isHidden = true
-            manageNavigationButton.isHidden = false
-            userNameText.isHidden = true
             userNumText.isHidden = true
-            useQRCodeButton.setTitle("QR 생성하기", for: .normal)
-            useQRCodeButton.backgroundColor = .adminColor
-            outingNavigationButton.tintColor = .adminColor
-            manageNavigationButton.tintColor = .adminColor
-            homeMainText.text = "간편하게\n수요외출제를\n관리해보세요"
-            homeMainImage.image = UIImage(named: "adminHomeImage.svg")
-            manageStudnetText.isHidden = false
-            manageStudentButton.isHidden = false
-            manageStudnetSubText.isHidden = false
+            userNameText.isHidden = true
         }
     }
     
-    private func checkUserIsOuting() {
-        if viewModel.userData?.isOuting == true {
-            useQRCodeButton.setTitle("복귀하기", for: .normal)
-        }
-        else if viewModel.userData?.isOuting == false {
-            useQRCodeButton.setTitle("외출하기", for: .normal)
-        }
-    }
-    
-    private func getData() {
-        viewModel.getUserData { [weak self] in
-            self?.checkUserIsOuting()
-            self?.checkRole()
-        }
-        viewModel.getOutingCount{ [weak self] in
-            self?.setOuting()
-        }
-        viewModel.getLateRank { [weak self] in
-            self?.bindLateRank()
-        }
-    }
-    
-    private func setOuting() {
-        let outingCount = viewModel.outingCount?.outingCount ?? 0
-        outingStudentText.text = "\(outingCount) 명이 외출중이에요!"
-        let fullText = outingStudentText.text ?? ""
-        let attribtuedString = NSMutableAttributedString(string: fullText)
-        let range = (fullText as NSString).range(of: "\(outingCount)")
-        attribtuedString.addAttribute(
-            .foregroundColor,
-            value: userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!,
-            range: range
-        )
-        outingStudentText.attributedText = attribtuedString
-    }
-    
-    private func bindLateRank() {
-        if viewModel.lateRank.isEmpty {
-            print("empty")
-        }
-        else {
-            for index in 0...viewModel.lateRank.endIndex - 1 {
-                userNameList.insert(viewModel.lateRank[index].name, at: index)
-                userGradeList.insert(viewModel.lateRank[index].studentNum.grade, at: index)
-                userClassNumList.insert(viewModel.lateRank[index].studentNum.classNum, at: index)
-                userNumList.insert(viewModel.lateRank[index].studentNum.number, at: index)
-                userProfile.insert(viewModel.lateRank[index].profileUrl ?? "", at: index)
-            }
-            tardyCollectionView.dataSource = self
-            tardyCollectionView.delegate = self
-            tardyCollectionView.register(
-                HomeCollectionViewCell.self,
-                forCellWithReuseIdentifier: HomeCollectionViewCell.identifier
-            )
-        }
-    }
-    
-    private func bindViewModel() {
-        let input = HomeViewModel.Input(
-            refreshAction: refreshControl.rx.controlEvent(.valueChanged).map { _ in }.asObservable(),
-            navProfileButtonTap: navigationItem.rightBarButtonItem!.rx.tap.asObservable(),
-            outingButtonTap: outingButton.rx.tap.asObservable(),
-            profileButtonTap: profileButton.rx.tap.asObservable(),
-            useQRCodeButtonTap: useQRCodeButton.rx.tap.asObservable(),
-            manageStudentButtonTap: manageStudentButton.rx.tap.asObservable()
-        )
-        viewModel.transVC(input: input)
-    }
-    
-    private func updateOutingStudentText() {
-        let viewModel = HomeViewModel()
-        viewModel.getOutingCount { [weak self] in
-            DispatchQueue.main.async {
-                let count = viewModel.outingCount?.outingCount
-                self?.outingStudentText.text = "\(count ?? 0) 명이 외출중이에요!"
-                let fullText = self?.outingStudentText.text ?? ""
-                let attributedString = NSMutableAttributedString(string: fullText)
-                let range = (fullText as NSString).range(of: "\(count ?? 0)")
-                attributedString.addAttribute(.foregroundColor, value: self?.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!, range: range)
-                self?.outingStudentText.attributedText = attributedString
-            }
-        }
-    }
-    
-    func refreshMain() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.refreshControl.endRefreshing()
-            self.updateOutingStudentText()
-        }
-    }
-    
-    private let refreshScrollView = UIScrollView()
-    
-    private let refreshControl = UIRefreshControl()
-    
-    private let homeMainImage = UIImageView().then {
+    let homeMainImage = UIImageView().then {
         $0.image = UIImage(named: "homeUndraw.svg")
     }
     
-    private let homeMainText = UILabel().then {
+    let homeMainText = UILabel().then {
         $0.text = "간편하게\n수요외출제를\n이용해보세요"
         $0.numberOfLines = 3
         $0.font = UIFont.GOMSFont(
@@ -175,18 +46,8 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         $0.textColor = .black
     }
     
-    private lazy var useQRCodeButton = UIButton().then {
-        var text = userIsBlackList == true ? "외출금지" : "외출하기"
-        if userIsBlackList == true {
-            text = "외출금지"
-        }
-        else if userIsOuting == true {
-            text = "복귀하기"
-        }
-        else {
-            text = "외출하기"
-        }
-        $0.setTitle(text, for: .normal)
+    var useQRCodeButton = UIButton().then {
+        $0.setTitle("외출하기", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
         $0.layer.cornerRadius = 10
@@ -212,7 +73,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     
-    private lazy var outingStudentText = UILabel().then {
+   let outingStudentText = UILabel().then {
         $0.text = "0 명이 외출중이에요!"
         $0.textColor = UIColor.black
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
@@ -221,7 +82,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         let range = (fullText as NSString).range(of: "0")
         attribtuedString.addAttribute(
             .foregroundColor,
-            value: userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor! : UIColor.mainColor!,
+            value: UIColor.mainColor!,
             range: range
         )
         $0.attributedText = attribtuedString
@@ -261,6 +122,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
     ).then {
         $0.isScrollEnabled = false
         $0.backgroundColor = .background
+        $0.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "homeCell")
     }
     
     private let profileButton = UIButton().then {
@@ -276,20 +138,14 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         $0.layer.cornerRadius = 10
     }
     
-    private lazy var profileImg = UIImageView().then {
-        let url = URL(string: userProfileURL ?? "")
-        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 20)
+    var profileImg = UIImageView().then {
+        $0.image = UIImage(named: "dummyImage.svg")
         $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = true
-        $0.kf.setImage(
-            with: url,
-            placeholder:UIImage(named: "dummyImage.svg"),
-            options: [.processor(imageCornerRadius)]
-        )
     }
     
-    private lazy var userNameText = UILabel().then {
-        $0.text = UserDefaults.standard.string(forKey: "userName")
+    var userNameText = UILabel().then {
+        $0.text = "로딩중입니다..."
         $0.textColor = UIColor.black
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
@@ -299,8 +155,8 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         $0.tintColor = .mainColor
     }
     
-    private lazy var userNumText = UILabel().then {
-        $0.text = "\(self.userGrade)학년 \(self.userClassNum)반 \(self.userNum)번"
+    var userNumText = UILabel().then {
+        $0.text = "로딩중입니다..."
         $0.textColor = UIColor.subColor
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
@@ -333,13 +189,26 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
         $0.isHidden = true
     }
     
-    private let manageNavigationButton = UIImageView().then {
-        $0.isHidden = true
-        $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
-    }
-    
     override func addView() {
-        [refreshScrollView,homeMainImage, homeMainText, useQRCodeButton, outingButton, totalStudentText, outingStudentText, outingNavigationButton, tardyText, tardyCollectionView, profileButton, profileImg ,userNameText, userNumText, profileNavigationButton, manageStudentButton, manageStudnetSubText,manageStudnetText, manageNavigationButton].forEach {
+        [
+            homeMainImage,
+            homeMainText,
+            useQRCodeButton,
+            outingButton,
+            totalStudentText,
+            outingStudentText,
+            outingNavigationButton,
+            tardyText,
+            tardyCollectionView,
+            profileButton,
+            profileImg,
+            userNameText,
+            userNumText,
+            profileNavigationButton,
+            manageStudentButton,
+            manageStudnetSubText,
+            manageStudnetText
+        ].forEach {
             view.addSubview($0)
         }
     }
@@ -421,54 +290,78 @@ class HomeViewController: BaseViewController<HomeViewModel>, HomeViewModelDelega
             $0.top.equalTo(manageStudnetSubText.snp.bottom).offset(6)
             $0.leading.equalTo(manageStudentButton.snp.leading).offset(16)
         }
-        manageNavigationButton.snp.makeConstraints {
-            $0.centerY.equalTo(manageStudentButton.snp.centerY).offset(0)
-            $0.trailing.equalTo(manageStudentButton.snp.trailing).inset(23)
-        }
-    }
-}
-
-extension HomeViewController :
-    UICollectionViewDelegate,
-    UICollectionViewDelegateFlowLayout,
-    UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userNameList.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 10
-        cell.layer.applySketchShadow(
-            color: UIColor.black,
-            alpha: 0.1,
-            x: 0,
-            y: 2,
-            blur: 8,
-            spread: 0
-        )
-        cell.studentName.text = "\(userNameList[indexPath.row])"
-        if userNumList[indexPath.row] < 10 {
-            cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])0\(userNumList[indexPath.row])"
-        }
-        else {
-            cell.studentNum.text = "\(userGradeList[indexPath.row])\(userClassNumList[indexPath.row])\(userNumList[indexPath.row])"
-        }
-        let url = URL(string: userProfile[indexPath.row])
-        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 40)
-        cell.userProfileImage.kf.setImage(
-            with: url,
-            placeholder:UIImage(named: "dummyImage.svg"),
-            options: [.processor(imageCornerRadius)]
-        )
-        return cell
+    // MARK: - Reactor
+    
+    override func bindAction(reactor: HomeReactor) {
+        self.rx.methodInvoked(#selector(viewWillAppear))
+            .map { _ in HomeReactor.Action.fetchOutingCount }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        self.rx.methodInvoked(#selector(viewWillAppear))
+            .map { _ in HomeReactor.Action.fetchLateRank }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        self.rx.methodInvoked(#selector(viewWillAppear))
+            .map { _ in HomeReactor.Action.fetchProfile }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((bounds.width) / 3.87), height: ((bounds.height) / 6.76))
+    override func bindView(reactor: HomeReactor) {
+        navigationItem.rightBarButtonItem?.rx.tap
+            .map { HomeReactor.Action.profileButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        useQRCodeButton.rx.tap
+            .map { HomeReactor.Action.createQRCodeButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        outingButton.rx.tap
+            .map { HomeReactor.Action.outingButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        profileButton.rx.tap
+            .map { HomeReactor.Action.profileButtonDidTap }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    
+    override func bindState(reactor: HomeReactor) {
+        reactor.state
+            .map{ $0.count }
+            .distinctUntilChanged()
+            .bind(to: outingStudentText.rx.outingCount)
+            .disposed(by: disposeBag)
+        reactor.state
+            .map { $0.lateRank }
+            .bind(
+                to: tardyCollectionView.rx.items(cellIdentifier: "homeCell", cellType: HomeCollectionViewCell.self)
+            ) { ip, item, cell in
+                cell.backgroundColor = .white
+                cell.layer.cornerRadius = 10
+                cell.layer.applySketchShadow(
+                    color: UIColor.black,
+                    alpha: 0.1,
+                    x: 0,
+                    y: 2,
+                    blur: 8,
+                    spread: 0
+                )
+                let url = URL(string: item.profileUrl ?? "")
+                cell.userProfileImage.kf.setImage(
+                    with: url,
+                    placeholder: UIImage(named: "dummyImage.svg")
+                )
+                cell.studentName.text = item.name
+                cell.studentNum.text = "\(item.studentNum.grade)\(item.studentNum.classNum)\(item.studentNum.number)"
+            }.disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.userData }
+            .bind(to: self.rx.fetchUserData)
+            .disposed(by: disposeBag)
+        
     }
 }
