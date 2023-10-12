@@ -69,7 +69,6 @@
 		B0223F045DF8F744FE811261 /* GOMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2718172E532227E0567CB2 /* GOMSFont.swift */; };
 		B08B5A267DC5D26A20E7A221 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5412482055549E0AC7F524 /* StudentInfoViewModel.swift */; };
 		B1132D06F70EF5C367D49E53 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = F813DF204217A8A8FA083193 /* GAuthSignin */; };
-		B4661A84EB2087F0519EF0C9 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DFC6397E1055A1D1D63156 /* Cell.swift */; };
 		B53CAFA02101E7D7FF936C3D /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C88277923F2237A11F45C73 /* ReactorKit */; };
 		B570A043B14A8D3E1FCC3E2C /* GOMSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F42A240FC24790A52E68D /* GOMSImageView.swift */; };
 		B63E657DEAC2370BA64B1F06 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */; };
@@ -181,7 +180,6 @@
 		CE5412482055549E0AC7F524 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		CF1D1497514F0C2F7F8EFE43 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
 		D3A56D0F2A6BF9775902773D /* GOMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5DFC6397E1055A1D1D63156 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		D87FBF56FF18F068A62D2666 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
 		DAB9A79A4E8F1C1B180987C1 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
 		DCFA9F6D7646E771A7EDC15C /* GOMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSColor.swift; sourceTree = "<group>"; };
@@ -483,7 +481,6 @@
 				12E64BD15F29981B97C20AE7 /* Cell */,
 				31196F37CDF4F9CD903A04A8 /* View */,
 				1CEC8527AAAEC7481DFCDDD2 /* Reactor */,
-				D5DFC6397E1055A1D1D63156 /* Cell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1106,7 +1103,6 @@
 				EEA584257EDD64DD6BA4EA6C /* EditModalViewController.swift in Sources */,
 				9C7D8A4250E2CD030BA2905D /* EditUserModalViewModel.swift in Sources */,
 				772DA8452AD666E60006B800 /* UILabel+Rx.swift in Sources */,
-				B4661A84EB2087F0519EF0C9 /* Cell.swift in Sources */,
 				7556BB230BD77AA3F6C5D5A7 /* HomeCollectionViewCell.swift in Sources */,
 				A7381B3B0E16928BF92368EB /* HomeViewController.swift in Sources */,
 				D7EC915646A97E3AFBED5E0C /* HomeViewModel.swift in Sources */,
