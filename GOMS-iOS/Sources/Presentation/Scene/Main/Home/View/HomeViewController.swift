@@ -207,10 +207,10 @@ class HomeViewController: BaseViewController<HomeReactor> {
             profileImg,
             userNameText,
             userNumText,
-            profileNavigationButton,
             manageStudentButton,
             manageStudnetSubText,
-            manageStudnetText
+            manageStudnetText,
+            profileNavigationButton
         ].forEach {
             view.addSubview($0)
         }

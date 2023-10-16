@@ -1,10 +1,3 @@
-//
-//  ProfileViewController.swift
-//  GOMS-iOS
-//
-//  Created by 선민재 on 2023/04/21.
-//
-
 import UIKit
 import Then
 import SnapKit
@@ -13,72 +6,38 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 
-class ProfileViewController: BaseViewController<ProfileViewModel> {
-    
-    private let userName = UserDefaults.standard.string(forKey: "userName")
-    private let userGrade = UserDefaults.standard.integer(forKey: "userGrade")
-    private let userClassNum = UserDefaults.standard.integer(forKey: "userClassNum")
-    private let userNum = UserDefaults.standard.integer(forKey: "userNum")
-    private let userProfileURL = UserDefaults.standard.string(forKey: "userProfileURL")
-    private let userLateCount = UserDefaults.standard.integer(forKey: "userLateCount")
+class ProfileViewController: BaseViewController<ProfileReactor> {
     
     private let cellName = ["이름","학년","반","번호","지각횟수"]
     
-    private lazy var cellDetail = [
-        self.userName ?? "",
-        self.userGrade,
-        self.userClassNum,
-        self.userNum,
-        self.userLateCount
-    ] as [Any]
+    var cellDetail = ["로딩중..","로딩중..","로딩중..","로딩중..","로딩중.."]
     
     override func viewDidLoad() {
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
-        userInfoTableView.delegate = self
-        userInfoTableView.dataSource = self
         userInfoTableView.layer.cornerRadius = 20
         userInfoTableView.layer.masksToBounds = true
-        bindViewModel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    private func bindViewModel() {
-        let input = ProfileViewModel.Input(
-            logoutButtonDidTap: logoutButton.rx.tap.asObservable()
-        )
-        viewModel.transVC(input: input)
-    }
-    
-    private lazy var profileImage = UIImageView().then {
-        let url = URL(string: self.userProfileURL ?? "")
-        let imageCornerRadius = RoundCornerImageProcessor(cornerRadius: 50)
+    var profileImage = UIImageView().then {
+        $0.image = UIImage(named: "DummyProfile.svg")
         $0.layer.cornerRadius = 50
         $0.layer.masksToBounds = true
-        $0.kf.setImage(
-            with: url,
-            placeholder:UIImage(named: "profileImg"),
-            options: [.processor(imageCornerRadius)]
-        )
     }
     
-    private lazy var userNameText = UILabel().then {
-        $0.text = "\(self.userName ?? "")"
-        $0.font = UIFont.GOMSFont(size: 18,family: .Medium)
+    var userNameText = UILabel().then {
+        $0.text = "로딩중..."
+        $0.font = UIFont.GOMSFont(size: 18,family:.Medium)
         $0.textColor = .black
     }
     
-    private lazy var userNumText = UILabel().then {
-        if self.userNum < 10 {
-            $0.text = "\(self.userGrade)" + "\(self.userClassNum)" + "0\(self.userNum)"
-        }
-        else {
-            $0.text = "\(self.userGrade)" + "\(self.userClassNum)" + "\(self.userNum)"
-        }
-        $0.font = UIFont.GOMSFont(size: 14,family: .Regular)
+    var userNumText = UILabel().then {
+        $0.text = "로딩중..."
+        $0.font = UIFont.GOMSFont(size: 14,family:.Regular)
         $0.textColor = .subColor
     }
     
@@ -97,7 +56,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
     
     private let logoutText = UILabel().then {
         $0.text = "로그아웃"
-        $0.font = UIFont.GOMSFont(size: 14, family: .Medium)
+        $0.font = UIFont.GOMSFont(size: 14,family: .Medium)
         $0.textColor = UIColor(
             red: 255 / 255,
             green: 126 / 255,
@@ -110,8 +69,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
         $0.image = UIImage(named: "logoutIcon.svg")
     }
     
-    private let userInfoTableView = UITableView().then {
-        $0.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileTableViewCell")
+    let userInfoTableView = UITableView().then {
         $0.separatorStyle = .singleLine
         $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         $0.isScrollEnabled = false
@@ -127,13 +85,22 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
             blur: 8,
             spread: 0
         )
-        $0.backgroundColor = UIColor.background
+        $0.backgroundColor = .background
         $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = false
     }
     
     override func addView() {
-        [profileImage, userNameText, userNumText, backgroundShadow, userInfoTableView, logoutButton, logoutText, logoutIcon].forEach {
+        [
+            profileImage,
+            userNameText,
+            userNumText,
+            backgroundShadow,
+            userInfoTableView,
+            logoutButton,
+            logoutText,
+            logoutIcon
+        ].forEach {
             view.addSubview($0)
         }
     }
@@ -177,6 +144,27 @@ class ProfileViewController: BaseViewController<ProfileViewModel> {
             $0.centerY.equalTo(logoutButton.snp.centerY).offset(0)
             $0.trailing.equalTo(logoutButton.snp.trailing).inset(24)
         }
+    }
+    
+    override func bindView(reactor: ProfileReactor) {
+        logoutButton.rx.tap
+            .map {ProfileReactor.Action.logoutButtonDidTap}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    
+    override func bindAction(reactor: ProfileReactor) {
+        self.rx.methodInvoked(#selector(viewWillAppear))
+            .map { _ in ProfileReactor.Action.viewWillAppear }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+    }
+    
+    override func bindState(reactor: ProfileReactor) {
+        reactor.state
+            .map { $0.userData }
+            .bind(to: self.rx.cellDetail)
+            .disposed(by: disposeBag)
     }
 }
 

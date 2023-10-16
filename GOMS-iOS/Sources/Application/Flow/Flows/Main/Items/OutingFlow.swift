@@ -65,10 +65,10 @@ class OutingFlow: Flow {
     }
     
     private func coordinateToProfile() -> FlowContributors {
-        let vm = ProfileViewModel()
-        let vc = ProfileViewController(vm)
+        let reactor = ProfileReactor()
+        let vc = ProfileViewController(reactor)
         self.rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: vm))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: reactor))
     }
     
     private func presentToAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) -> FlowContributors {
