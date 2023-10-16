@@ -5,6 +5,8 @@ import UIKit
 extension Reactive where Base: UILabel {
     var outingCount: Binder<Int> {
         Binder(base) { label, outingCount in
+            let keychain = Keychain()
+            lazy var userAuthority = keychain.read(key: Const.KeychainKey.authority)
             label.text = "\(outingCount) 명이 외출중이에요!"
             label.textColor = UIColor.black
             label.font = UIFont.GOMSFont(size: 16,family: .Medium)
@@ -13,7 +15,7 @@ extension Reactive where Base: UILabel {
             let range = (fullText as NSString).range(of: "\(outingCount)")
             attribtuedString.addAttribute(
                 .foregroundColor,
-                value: UIColor.mainColor?.cgColor ?? UIColor.black,
+                value: userAuthority == "ROLE_STUDENT" ? UIColor.mainColor?.cgColor: UIColor.adminColor?.cgColor,
                 range: range
             )
             label.attributedText = attribtuedString

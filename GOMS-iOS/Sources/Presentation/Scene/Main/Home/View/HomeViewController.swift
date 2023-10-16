@@ -24,12 +24,12 @@ class HomeViewController: BaseViewController<HomeReactor> {
             manageStudentButton.isHidden = false
             manageStudnetText.isHidden = false
             manageStudnetSubText.isHidden = false
-            profileNavigationButton.tintColor = .adminColor
             profileImg.isHidden = true
             profileButton.isHidden = true
             userNumText.isHidden = true
             userNameText.isHidden = true
             homeMainText.text = "간편하게\n수요외출제를\n관리해보세요"
+            homeMainImage.image = UIImage(named: "adminHomeImage.svg")
             useQRCodeButton.backgroundColor = .adminColor
             useQRCodeButton.setTitle("생성하기", for: .normal)
         }
@@ -91,9 +91,9 @@ class HomeViewController: BaseViewController<HomeReactor> {
         $0.attributedText = attribtuedString
     }
     
-    private let outingNavigationButton = UIImageView().then {
+    lazy var outingNavigationButton = UIImageView().then {
         $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
-        $0.tintColor = .mainColor
+        $0.tintColor = userAuthority == "ROLE_STUDENT" ? .mainColor : .adminColor
     }
     
     private let tardyText = UILabel().then {
@@ -153,9 +153,9 @@ class HomeViewController: BaseViewController<HomeReactor> {
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
     
-    private let profileNavigationButton = UIImageView().then {
+    lazy var profileNavigationButton = UIImageView().then {
         $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
-        $0.tintColor = .mainColor
+        $0.tintColor = userAuthority == "ROLE_STUDENT" ? .mainColor : .adminColor
     }
     
     var userNumText = UILabel().then {
