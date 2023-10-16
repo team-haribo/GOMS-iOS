@@ -1,10 +1,3 @@
-//
-//  BaseViewController.swift
-//  GOMS-iOS
-//
-//  Created by 선민재 on 2023/04/17.
-//
-
 import UIKit
 import RxCocoa
 import RxSwift
@@ -33,6 +26,7 @@ class BaseViewController<T>: UIViewController {
         self.navigationItem.backButtonTitle = ""
         addView()
         setLayout()
+        bind(reactor: viewModel)
     }
     
     func addView() {
@@ -42,6 +36,16 @@ class BaseViewController<T>: UIViewController {
     func setLayout() {
         
     }
+    
+    func bind(reactor: T) {
+        bindView(reactor: reactor)
+        bindAction(reactor: reactor)
+        bindState(reactor: reactor)
+    }
+    
+    func bindView(reactor: T) {}
+    func bindAction(reactor: T) {}
+    func bindState(reactor: T) {}
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
