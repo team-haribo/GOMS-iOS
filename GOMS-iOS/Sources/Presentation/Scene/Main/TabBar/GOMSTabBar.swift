@@ -25,6 +25,6 @@ private extension GOMSTabBarViewController {
     func configureVC() {
         tabBar.tintColor = userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.p20 : UIColor.p10
         tabBar.unselectedItemTintColor = UIColor.n20
-        tabBar.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.98)
+        tabBar.backgroundColor = .gomsWhite
     }
 }
