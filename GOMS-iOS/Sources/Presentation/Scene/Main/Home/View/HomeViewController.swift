@@ -60,7 +60,7 @@ class HomeViewController: BaseViewController<HomeReactor> {
     private let outingButton = UIButton().then {
         $0.backgroundColor = .gomsWhite
         $0.layer.applySketchShadow(
-            color: UIColor.gomsBlack ?? .black,
+            color: UIColor.black,
             alpha: 0.1,
             x: 0,
             y: 2,

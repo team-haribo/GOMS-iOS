@@ -59,7 +59,7 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
             for: .normal
         )
         $0.setTitleTextAttributes(
-            [NSAttributedString.Key.foregroundColor: UIColor.gomsBlack as Any],
+            [NSAttributedString.Key.foregroundColor: UIColor.black as Any],
             for: .selected
         )
         $0.selectedSegmentTintColor = .white
