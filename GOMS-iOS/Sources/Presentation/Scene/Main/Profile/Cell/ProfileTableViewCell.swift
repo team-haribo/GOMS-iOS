@@ -21,12 +21,12 @@ class ProfileTableViewCell: UITableViewCell {
     }
     
     let cellName = UILabel().then {
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
         $0.font = UIFont.GOMSFont(size: 16,family: .Medium)
     }
     
     let cellDetail = UILabel().then {
-        $0.textColor = .subColor
+        $0.textColor = .n20
         $0.font = UIFont.GOMSFont(size: 14,family: .Regular)
     }
     

@@ -16,7 +16,7 @@ class LoginWithNumberViewController: BaseViewController<LoginWithNumberViewModel
             size: 32,
             family: .Bold
         )
-        $0.textColor = UIColor.black
+        $0.textColor = UIColor.gomsBlack
     }
     
     private let subText = UILabel().then {
@@ -25,7 +25,7 @@ class LoginWithNumberViewController: BaseViewController<LoginWithNumberViewModel
             size: 16,
             family: .Regular
         )
-        $0.textColor = UIColor.subColor
+        $0.textColor = UIColor.n20
     }
     
     private var emailTextField = LoginWithNumberTextField(
@@ -38,9 +38,9 @@ class LoginWithNumberViewController: BaseViewController<LoginWithNumberViewModel
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Medium)
         $0.layer.cornerRadius = 10
-        $0.backgroundColor = .mainColor
+        $0.backgroundColor = .p10
         $0.layer.applySketchShadow(
-            color: UIColor.black,
+            color: UIColor.gomsBlack ?? .black,
             alpha: 0.1,
             x: 0,
             y: 2,

@@ -7,12 +7,12 @@ class RoleCell: UICollectionViewCell {
     static let identifier = "roleCell"
     
     let roleText = UILabel().then {
-        $0.textColor = .subColor
+        $0.textColor = .n20
         $0.font = UIFont.GOMSFont(size: 14, family: .Medium)
     }
     
     var backgroundButton = UIButton().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.cornerRadius = 8
     }
     

@@ -14,7 +14,7 @@ extension UINavigationItem {
         lazy var userAuthority = keychain.read(key: Const.KeychainKey.authority)
         let profileButton = UIBarButtonItem().then {
             $0.image = UIImage(named: "profileIcon.svg")?.withRenderingMode(.alwaysTemplate)
-            $0.tintColor = userAuthority == "ROLE_STUDENT_COUNCIL" ? .adminColor : .mainColor
+            $0.tintColor = userAuthority == "ROLE_STUDENT_COUNCIL" ? .p20 : .p10
         }
         self.setRightBarButton(profileButton, animated: true)
     }
@@ -29,7 +29,7 @@ extension UINavigationItem {
             target: nil,
             action: nil
         ).then {
-            $0.tintColor = userAuthority == "ROLE_STUDENT_COUNCIL" ? .adminColor : .mainColor
+            $0.tintColor = userAuthority == "ROLE_STUDENT_COUNCIL" ? .p20 : .p10
             $0.setTitleTextAttributes(
                 [NSAttributedString.Key.font: customFont],
                 for: .normal
@@ -46,7 +46,7 @@ extension UINavigationItem {
     func addXMarkButton() {
         let xButton = UIBarButtonItem().then {
             $0.image = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)
-            $0.tintColor = .black
+            $0.tintColor = .gomsBlack
         }
         self.setRightBarButton(xButton, animated: true)
     }

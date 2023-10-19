@@ -15,7 +15,7 @@ class SplashViewController: UIViewController {
     private let textLogo = UILabel().then {
         $0.text = "GOMS"
         $0.font = UIFont.LogoFont(size: 30,family: .Black)
-        $0.textColor = .mainColor
+        $0.textColor = .p10
     }
     
     private let iconImage = UIImageView().then {
@@ -26,7 +26,7 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .background
+        view.backgroundColor = .bg
         addView()
         setLayout()
         startAnimation()

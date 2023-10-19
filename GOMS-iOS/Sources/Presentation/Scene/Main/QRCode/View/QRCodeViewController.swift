@@ -96,8 +96,8 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
                     URL(string: "\(BaseURL.baseURL)/outing/\(urlUUID)") ?? .init(string: "https://naver.com")!
                 )
             )
-            qrCode?.color = UIColor.black
-            qrCode?.backgroundColor = .background ?? .white
+            qrCode?.color = UIColor.gomsBlack ?? .black
+            qrCode?.backgroundColor = .bg ?? .white
             qrCode?.size = CGSize(width: 200, height: 200)
             qrCode?.scale = 1.0
             qrCode?.inputCorrection = .quartile
@@ -149,7 +149,7 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
     private let outingMainText = UILabel().then {
         $0.isHidden = true
         $0.text = "외출하기"
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
         $0.font = UIFont.GOMSFont(size: 22, family: .Bold)
     }
     
@@ -158,21 +158,21 @@ class QRCodeViewController: BaseViewController<QRCodeViewModel> {
         $0.text = "모바일 기기로\nQRCode를 스캔한 후 외출해주세요!"
         $0.numberOfLines = 2
         $0.textAlignment = .center
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
     
     private let lastTimeText = UILabel().then {
         $0.isHidden = true
         $0.text = "남은시간"
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
         $0.font = UIFont.GOMSFont(size: 16, family: .Bold)
     }
     
     private let lastTimer = UILabel().then {
         $0.isHidden = true
         $0.text = "5분 00초"
-        $0.textColor = .adminColor
+        $0.textColor = .p20
         $0.font = UIFont.GOMSFont(size: 22, family: .Bold)
     }
     

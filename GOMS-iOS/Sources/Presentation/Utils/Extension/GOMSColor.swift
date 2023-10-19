@@ -1,16 +1,13 @@
-//
-//  GOMSColor.swift
-//  GOMS-iOS
-//
-//  Created by 선민재 on 2023/04/17.
-//
-
 import UIKit
 
 extension UIColor {
-    static var background = UIColor(named: "background")
-    static var mainColor = UIColor(named: "mainColor")
-    static var subColor = UIColor(named: "subColor")
-    static var adminColor = UIColor(named: "adminColor")
-    static var blackListColor = UIColor(named: "blackListColor")
+    static var bg = UIColor(named: "BG")
+    static var error = UIColor(named: "ERROR")
+    static var p10 = UIColor(named: "P10")
+    static var p20 = UIColor(named: "P20")
+    static var n10 = UIColor(named: "N10")
+    static var n20 = UIColor(named: "N20")
+    static var n30 = UIColor(named: "N30")
+    static var gomsWhite = UIColor(named: "White")
+    static var gomsBlack = UIColor(named: "Black")
 }
