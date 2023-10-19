@@ -19,37 +19,37 @@ class StudentInfoCell: UICollectionViewCell {
 
     let userName = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 16, family:.Regular)
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
     }
 
     let userNum = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 14, family:.Regular)
-        $0.textColor = .subColor
+        $0.textColor = .n20
     }
 
     var editUserAuthorityButton = UIButton().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.setImage(UIImage(named:"editStudent.svg"), for: .normal)
     }
 
     var deleteBlackListButton = UIButton().then {
         $0.isHidden = true
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.setImage(UIImage(named:"deleteBlackList.svg"), for: .normal)
     }
 
     var roleView = UIView().then {
         $0.isHidden = true
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.adminColor?.cgColor
+        $0.layer.borderColor = UIColor.p20?.cgColor
         $0.layer.cornerRadius = 8
     }
 
     var roleText = UILabel().then {
         $0.isHidden = true
         $0.text = "학생회"
-        $0.textColor = .adminColor
+        $0.textColor = .p20
         $0.font = UIFont.GOMSFont(size: 9, family: .Regular)
     }
 

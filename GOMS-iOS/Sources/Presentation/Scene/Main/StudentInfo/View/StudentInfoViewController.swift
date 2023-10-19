@@ -147,13 +147,13 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
 
     private let noResultText = UILabel().then {
         $0.text = "검색 결과를 찾을 수 없어요!"
-        $0.textColor = .subColor
+        $0.textColor = .n20
         $0.font = UIFont.GOMSFont(size: 16,family: .Medium)
         $0.isHidden = true
     }
 
     private var searchBarButton = UIButton().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.applySketchShadow(
             color: UIColor.black,
             alpha: 0.1,
@@ -182,12 +182,12 @@ class StudentInfoViewController: BaseViewController<StudentInfoViewModel> {
         collectionViewLayout: UICollectionViewFlowLayout()
     ).then {
         $0.isScrollEnabled = true
-        $0.backgroundColor = .background
+        $0.backgroundColor = .bg
     }
 
     private let searchBarText = UILabel().then {
         $0.text = "찾으시는 학생이 있으신가요?"
-        $0.textColor = UIColor.subColor
+        $0.textColor = UIColor.n20
         $0.font = UIFont.GOMSFont(size: 14, family: .Regular)
     }
 
@@ -244,7 +244,7 @@ extension StudentInfoViewController:
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StudentInfoCell.identifier, for: indexPath) as? StudentInfoCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .white
+        cell.backgroundColor = .gomsWhite
         cell.layer.cornerRadius = 10
         cell.layer.applySketchShadow(
             color: UIColor.black,
@@ -270,8 +270,8 @@ extension StudentInfoViewController:
             cell.deleteBlackListButton.isHidden = false
             cell.editUserAuthorityButton.isHidden = true
             cell.roleText.text = "외출금지"
-            cell.roleText.textColor = .blackListColor
-            cell.roleView.layer.borderColor = UIColor.blackListColor?.cgColor
+            cell.roleText.textColor = .error
+            cell.roleView.layer.borderColor = UIColor.error?.cgColor
         }
         cell.editUserAuthorityButtonAction = { [unowned self] in
             viewModel.steps.accept(

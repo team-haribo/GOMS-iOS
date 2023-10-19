@@ -30,7 +30,7 @@ class HomeViewController: BaseViewController<HomeReactor> {
             userNameText.isHidden = true
             homeMainText.text = "간편하게\n수요외출제를\n관리해보세요"
             homeMainImage.image = UIImage(named: "adminHomeImage.svg")
-            useQRCodeButton.backgroundColor = .adminColor
+            useQRCodeButton.backgroundColor = .p20
             useQRCodeButton.setTitle("생성하기", for: .normal)
         }
     }
@@ -46,7 +46,7 @@ class HomeViewController: BaseViewController<HomeReactor> {
             size: 24,
             family: .Bold
         )
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
     }
     
     var useQRCodeButton = UIButton().then {
@@ -54,13 +54,13 @@ class HomeViewController: BaseViewController<HomeReactor> {
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)
         $0.layer.cornerRadius = 10
-        $0.backgroundColor = .mainColor
+        $0.backgroundColor = .p10
     }
     
     private let outingButton = UIButton().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.applySketchShadow(
-            color: UIColor.black,
+            color: UIColor.gomsBlack ?? .black,
             alpha: 0.1,
             x: 0,
             y: 2,
@@ -72,20 +72,20 @@ class HomeViewController: BaseViewController<HomeReactor> {
     
     private let totalStudentText = UILabel().then {
         $0.text = "현재 183명의 학생 중에서"
-        $0.textColor = UIColor.subColor
+        $0.textColor = UIColor.n20
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     
    let outingStudentText = UILabel().then {
         $0.text = "0 명이 외출중이에요!"
-        $0.textColor = UIColor.black
+        $0.textColor = UIColor.gomsBlack
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
         let fullText = $0.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
         let range = (fullText as NSString).range(of: "0")
         attribtuedString.addAttribute(
             .foregroundColor,
-            value: UIColor.mainColor!,
+            value: UIColor.p10!,
             range: range
         )
         $0.attributedText = attribtuedString
@@ -93,7 +93,7 @@ class HomeViewController: BaseViewController<HomeReactor> {
     
     lazy var outingNavigationButton = UIImageView().then {
         $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
-        $0.tintColor = userAuthority == "ROLE_STUDENT" ? .mainColor : .adminColor
+        $0.tintColor = userAuthority == "ROLE_STUDENT" ? .p10 : .p20
     }
     
     private let tardyText = UILabel().then {
@@ -124,14 +124,14 @@ class HomeViewController: BaseViewController<HomeReactor> {
         collectionViewLayout: UICollectionViewFlowLayout()
     ).then {
         $0.isScrollEnabled = false
-        $0.backgroundColor = .background
+        $0.backgroundColor = .bg
         $0.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "homeCell")
     }
     
     private let profileButton = UIButton().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.applySketchShadow(
-            color: UIColor.black,
+            color: .black,
             alpha: 0.1,
             x: 0,
             y: 2,
@@ -149,25 +149,25 @@ class HomeViewController: BaseViewController<HomeReactor> {
     
     var userNameText = UILabel().then {
         $0.text = "로딩중입니다..."
-        $0.textColor = UIColor.black
+        $0.textColor = UIColor.gomsBlack
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
     }
     
     lazy var profileNavigationButton = UIImageView().then {
         $0.image = UIImage(named: "navigationButton.svg")?.withRenderingMode(.alwaysTemplate)
-        $0.tintColor = userAuthority == "ROLE_STUDENT" ? .mainColor : .adminColor
+        $0.tintColor = userAuthority == "ROLE_STUDENT" ? .p10 : .p20
     }
     
     var userNumText = UILabel().then {
         $0.text = "로딩중입니다..."
-        $0.textColor = UIColor.subColor
+        $0.textColor = UIColor.n20
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     
     private let manageStudentButton = UIButton().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.applySketchShadow(
-            color: UIColor.black,
+            color: .black,
             alpha: 0.1,
             x: 0,
             y: 2,
@@ -180,14 +180,14 @@ class HomeViewController: BaseViewController<HomeReactor> {
     
     private let manageStudnetSubText = UILabel().then {
         $0.text = "모든 학생들의 역할을 관리해보세요!"
-        $0.textColor = UIColor.subColor
+        $0.textColor = UIColor.n20
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
         $0.isHidden = true
     }
     
     private let manageStudnetText = UILabel().then {
         $0.text = "학생 관리하기"
-        $0.textColor = UIColor.black
+        $0.textColor = UIColor.gomsBlack
         $0.font = UIFont.GOMSFont(size: 16, family: .Medium)
         $0.isHidden = true
     }
@@ -346,7 +346,7 @@ class HomeViewController: BaseViewController<HomeReactor> {
             .bind(
                 to: tardyCollectionView.rx.items(cellIdentifier: "homeCell", cellType: HomeCollectionViewCell.self)
             ) { ip, item, cell in
-                cell.backgroundColor = .white
+                cell.backgroundColor = .gomsWhite
                 cell.layer.cornerRadius = 10
                 cell.layer.applySketchShadow(
                     color: UIColor.black,

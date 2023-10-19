@@ -48,23 +48,23 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     private let roleText = UILabel().then {
         $0.text = "역할"
         $0.font = UIFont.GOMSFont(size: 20, family: .Regular)
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
     }
 
     private var roleSeg = UISegmentedControl(items: ["학생","학생회","외출금지"]).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = UIColor.white
+        $0.backgroundColor = UIColor.gomsWhite
         $0.setTitleTextAttributes(
-            [NSAttributedString.Key.foregroundColor: UIColor.subColor as Any],
+            [NSAttributedString.Key.foregroundColor: UIColor.n20 as Any],
             for: .normal
         )
         $0.setTitleTextAttributes(
-            [NSAttributedString.Key.foregroundColor: UIColor.black as Any],
+            [NSAttributedString.Key.foregroundColor: UIColor.gomsBlack as Any],
             for: .selected
         )
         $0.selectedSegmentTintColor = .white
         $0.layer.applySketchShadow(
-            color: UIColor.black,
+            color: UIColor.gomsBlack ?? .black,
             alpha: 0.1,
             x: 0,
             y: 2,
@@ -86,7 +86,7 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
             alpha: 0
         )
         $0.setTitle("선택해제", for: .normal)
-        $0.setTitleColor(UIColor.subColor, for: .normal)
+        $0.setTitleColor(UIColor.n20, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Regular)
     }
 
@@ -107,7 +107,7 @@ class EditUserModalViewController: BaseViewController<EditUserModalViewModel> {
     }
 
     private var editButton = UIButton().then {
-        $0.backgroundColor = .adminColor
+        $0.backgroundColor = .p20
         $0.setTitle("수정하기", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
         $0.titleLabel?.font = UIFont.GOMSFont(size: 14, family: .Bold)

@@ -19,13 +19,13 @@ class IntroViewController: BaseViewController<IntroReactor> {
     private let explainText = UILabel().then {
         $0.text = "간편한 수요 외출제 서비스"
         $0.font = UIFont.GOMSFont(size: 20, family: .Bold)
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
         let fullText = $0.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
         let range = (fullText as NSString).range(of: "수요 외출제")
         attribtuedString.addAttribute(
             .foregroundColor,
-            value: UIColor.mainColor!,
+            value: UIColor.p10!,
             range: range
         )
         $0.attributedText = attribtuedString
@@ -39,12 +39,7 @@ class IntroViewController: BaseViewController<IntroReactor> {
             size: 16,
             family: .Medium
         )
-        $0.textColor = UIColor(
-            red: 121/255,
-            green: 121/255,
-            blue: 121/255,
-            alpha: 1
-        )
+        $0.textColor = .n20
     }
     
     private let gauthSignInButton = GAuthButton(auth: .signin, color: .colored, rounded: .default)
@@ -55,12 +50,7 @@ class IntroViewController: BaseViewController<IntroReactor> {
             size: 12,
             family: .Medium
         )
-        $0.textColor = UIColor(
-            red: 0,
-            green: 0,
-            blue: 0,
-            alpha: 0.6
-        )
+        $0.textColor = .n10
     }
     
     private let loginWithNumberButton = UIButton().then {

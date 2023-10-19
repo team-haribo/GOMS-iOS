@@ -32,17 +32,17 @@ class ProfileViewController: BaseViewController<ProfileReactor> {
     var userNameText = UILabel().then {
         $0.text = "로딩중..."
         $0.font = UIFont.GOMSFont(size: 18,family:.Medium)
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
     }
     
     var userNumText = UILabel().then {
         $0.text = "로딩중..."
         $0.font = UIFont.GOMSFont(size: 14,family:.Regular)
-        $0.textColor = .subColor
+        $0.textColor = .n20
     }
     
     private var logoutButton = UIButton().then {
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.applySketchShadow(
             color: UIColor.black,
             alpha: 0.1,
@@ -85,7 +85,7 @@ class ProfileViewController: BaseViewController<ProfileReactor> {
             blur: 8,
             spread: 0
         )
-        $0.backgroundColor = .background
+        $0.backgroundColor = .bg
         $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = false
     }
@@ -178,7 +178,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = userInfoTableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
         cell.cellName.text = cellName[indexPath.row]
         cell.cellDetail.text = "\(cellDetail[indexPath.row])"
-        cell.backgroundColor = .white
+        cell.backgroundColor = .gomsWhite
         cell.selectionStyle = .none
         return cell
     }

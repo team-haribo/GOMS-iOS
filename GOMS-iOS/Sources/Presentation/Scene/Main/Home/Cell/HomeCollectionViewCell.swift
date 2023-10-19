@@ -29,13 +29,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     var studentName = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.textColor = UIColor.black
+        $0.textColor = UIColor.gomsBlack
         $0.font = UIFont.GOMSFont(size: 14, family: .Medium)
     }
     
     var studentNum = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.textColor = UIColor.subColor
+        $0.textColor = UIColor.n20
         $0.font = UIFont.GOMSFont(size: 12, family: .Regular)
     }
     

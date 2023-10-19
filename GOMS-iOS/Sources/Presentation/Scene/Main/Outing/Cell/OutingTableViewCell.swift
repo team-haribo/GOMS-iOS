@@ -24,12 +24,12 @@ class OutingCollectionViewCell: UICollectionViewCell {
     
     let userName = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 16, family:.Regular)
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
     }
     
     let userNum = UILabel().then {
         $0.font = UIFont.GOMSFont(size: 14, family:.Regular)
-        $0.textColor = .subColor
+        $0.textColor = .n20
     }
     
     let createTime = UILabel().then {

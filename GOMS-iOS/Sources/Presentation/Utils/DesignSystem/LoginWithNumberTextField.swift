@@ -17,9 +17,9 @@ public final class LoginWithNumberTextField: UITextField {
         self.init()
         self.placeholder = placeholder
         self.leftPadding(width: width)
-        self.backgroundColor = .white
+        self.backgroundColor = .gomsWhite
         self.layer.cornerRadius = 10
-        self.textColor = .black
+        self.textColor = .gomsBlack
         self.layer.applySketchShadow(
             color: UIColor.black,
             alpha: 0.1,
@@ -38,7 +38,7 @@ public final class LoginWithNumberTextField: UITextField {
         let didBecomeFirstResponder = super.becomeFirstResponder()
         if didBecomeFirstResponder {
             self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor.mainColor?.cgColor
+            self.layer.borderColor = UIColor.p10?.cgColor
         }
         return didBecomeFirstResponder
     }

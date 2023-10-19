@@ -164,7 +164,7 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
             size: 24,
             family: .Bold
         )
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
     }
     
     private let searchTextField = UITextField().then {
@@ -174,9 +174,9 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
         ]
         $0.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
         $0.leftPadding(width: 20)
-        $0.textColor = .black
+        $0.textColor = .gomsBlack
         $0.layer.cornerRadius = 10
-        $0.backgroundColor = .white
+        $0.backgroundColor = .gomsWhite
         $0.layer.applySketchShadow(
             color: UIColor.black,
             alpha: 0.1,
@@ -189,7 +189,7 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     
     private lazy var searchButton = UIButton().then {
         $0.isEnabled = true
-        $0.backgroundColor = self.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.adminColor : UIColor.mainColor
+        $0.backgroundColor = self.userAuthority == "ROLE_STUDENT_COUNCIL" ? UIColor.p20 : UIColor.p10
         $0.layer.cornerRadius = 10
         $0.setTitle("검색", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
@@ -210,7 +210,7 @@ class OutingViewController: BaseViewController<OutingViewModel>, OutingViewModel
     
     private let outingCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.isScrollEnabled = true
-        $0.backgroundColor = .background
+        $0.backgroundColor = .bg
     }
     
     private lazy var outingIsNilImage = UIImageView().then {
@@ -287,7 +287,7 @@ extension OutingViewController:
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OutingCollectionViewCell.identifier, for: indexPath) as? OutingCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .white
+        cell.backgroundColor = .gomsWhite
         cell.layer.cornerRadius = 10
         cell.layer.applySketchShadow(
             color: UIColor.black,
