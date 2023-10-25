@@ -97,6 +97,5 @@ let project = Project(
     Scheme(name: "\(projectName)-Release")
   ],
   fileHeaderTemplate: nil,
-  additionalFiles: [],
-  resourceSynthesizers: []
+  additionalFiles: []
 )

@@ -26,6 +26,7 @@
 		281F5521BCF7E784E22419E8 /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87F44DB0DCBE1F74B576907 /* AuthFlow.swift */; };
 		287849E7425977ED3632F623 /* OutingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE5CF2248206735F8CAB45 /* OutingViewController.swift */; };
 		289D47649380CA7B80FD00E7 /* QRScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 4FE8C28B467C9CE652486900 /* QRScanner */; };
+		2EBC0B3EE6E17FDA5908F426 /* GAuthInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7250C0074FB9D2B786FEE77 /* GAuthInfo.plist */; };
 		31D5181F3E02660DC61E7534 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46453BBA10D94D166B2498C9 /* AccountModel.swift */; };
 		32FAB44A8574F1B2397B936F /* OutingCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1222865F763F7F78EB7F82B /* OutingCountModel.swift */; };
 		3677857998C796CF1F619EE2 /* RxFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B5A5D4FDFFB3F435EF7F6B53 /* RxFlow */; };
@@ -70,10 +71,13 @@
 		B0223F045DF8F744FE811261 /* GOMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2718172E532227E0567CB2 /* GOMSFont.swift */; };
 		B08B5A267DC5D26A20E7A221 /* StudentInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5412482055549E0AC7F524 /* StudentInfoViewModel.swift */; };
 		B1132D06F70EF5C367D49E53 /* GAuthSignin in Frameworks */ = {isa = PBXBuildFile; productRef = F813DF204217A8A8FA083193 /* GAuthSignin */; };
+		B3A33009363AAB63103461FF /* BaseURLInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FDA491A78B610E0D46682 /* BaseURLInfo.plist */; };
 		B53CAFA02101E7D7FF936C3D /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C88277923F2237A11F45C73 /* ReactorKit */; };
 		B570A043B14A8D3E1FCC3E2C /* GOMSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F42A240FC24790A52E68D /* GOMSImageView.swift */; };
 		B63E657DEAC2370BA64B1F06 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */; };
 		B6F7B3CDE8A55413DD14BCE9 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CF79422AB13E1EE716100 /* AuthServices.swift */; };
+		BA280348B84AC288F587FFC1 /* TuistFonts+GOMSIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89662C1ACFC262A6335F504 /* TuistFonts+GOMSIOS.swift */; };
+		BC8F850B234C372FDB24E996 /* TuistAssets+GOMSIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E58B93502302C374F04561A /* TuistAssets+GOMSIOS.swift */; };
 		BF9A8A20D6867E104E442A70 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BFE9D9C4C243D7D5A3A968EC /* RxCocoa */; };
 		C076B14F4653C3D1E78F3A3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */; };
 		C166BB3EDDB3A8442A897F1E /* OutingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF56F29FFC248A39CA54F95 /* OutingServices.swift */; };
@@ -92,6 +96,7 @@
 		E6A35DF17F2B41EAD774B72B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7813475D446B5FD839D6445B /* LaunchScreen.storyboard */; };
 		E6FF1B54DBE484AE020BEBF7 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334347F2BA67DC70606FE1F5 /* IntroViewController.swift */; };
 		E735EA4F0F94997438A2B045 /* LoginWithNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FDDB8DDDB7FC4D688117EE /* LoginWithNumberTextField.swift */; };
+		E8D1C526B5055082367F03DB /* TuistPlists+GOMSIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7088795916B3246E77E6E4 /* TuistPlists+GOMSIOS.swift */; };
 		EE05594B76800E02A3351743 /* GOMSToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CB02EF771C5C28BF090526 /* GOMSToken.swift */; };
 		EEA584257EDD64DD6BA4EA6C /* EditModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2117C3E8786E46CF611298AC /* EditModalViewController.swift */; };
 		F2DBC6C2F33612834713EA1F /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D767CB7BAADE1FF8592B1A3 /* StudentInfoViewController.swift */; };
@@ -134,10 +139,11 @@
 		2A0F2375EE5E4B6444926746 /* OutingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingFlow.swift; sourceTree = "<group>"; };
 		2A2E9184132125A534E95C58 /* EditUserModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserModalViewModel.swift; sourceTree = "<group>"; };
 		2B5793E1FC9341527315B0A8 /* LateRankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankModel.swift; sourceTree = "<group>"; };
+		2E58B93502302C374F04561A /* TuistAssets+GOMSIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+GOMSIOS.swift"; sourceTree = "<group>"; };
 		334347F2BA67DC70606FE1F5 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		33E5C8631C7546F34AC5A330 /* GOMSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSTextField.swift; sourceTree = "<group>"; };
 		33EEE569891C3731AE11B3DB /* Fraunces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fraunces-Black.ttf"; sourceTree = "<group>"; };
-		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		39313DE12E85BD2C48238CCC /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		3C2718172E532227E0567CB2 /* GOMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSFont.swift; sourceTree = "<group>"; };
 		3E18C173AB8C2EA6A7D03EB4 /* SearchModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModalViewModel.swift; sourceTree = "<group>"; };
 		3E451230CE75A5B517AC7C0D /* GOMSStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSStep.swift; sourceTree = "<group>"; };
@@ -150,14 +156,16 @@
 		5C5CF79422AB13E1EE716100 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		5CFE1BED4EFEAAF1A4F6C847 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		5E1FCEBD6BF1F71E84CF786A /* OutingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingTableViewCell.swift; sourceTree = "<group>"; };
+		5E7088795916B3246E77E6E4 /* TuistPlists+GOMSIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistPlists+GOMSIOS.swift"; sourceTree = "<group>"; };
 		64EC7ADD2EB48F6A89009F7E /* QRCodeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFlow.swift; sourceTree = "<group>"; };
 		6B13CB7B98A03E74C3C13FF5 /* NotificationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServices.swift; sourceTree = "<group>"; };
 		6DCE5CF2248206735F8CAB45 /* OutingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutingViewController.swift; sourceTree = "<group>"; };
+		6E3FDA491A78B610E0D46682 /* BaseURLInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = BaseURLInfo.plist; sourceTree = "<group>"; };
 		71DC10833DB2918D0B5D7051 /* LateRankRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateRankRequest.swift; sourceTree = "<group>"; };
 		71F53CB28B1A5311BF484B8E /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
 		73B05B3CB63AA72F32F58F52 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		7437341EFEA3E854A3631BEE /* HomeView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Rx.swift"; sourceTree = "<group>"; };
-		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		7E14EAC00E2627CE96CDAF3F /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		873B7243A904733DBEA32FB0 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		8897DBB2E89D9A3111F95E28 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		89BEA719AD89929E5D32B7E9 /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
@@ -172,14 +180,16 @@
 		AF77FDD4DC5F66C33B8C0B9C /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		BB9FF3AECBF52EC2882A894E /* HomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReactor.swift; sourceTree = "<group>"; };
 		BC65C7C162624042253ABA86 /* TuistBundle+GOMSIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+GOMSIOS.swift"; sourceTree = "<group>"; };
-		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		C35DA823CB515BD7427792FD /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		C6139030D5496996615900CF /* QRCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeModel.swift; sourceTree = "<group>"; };
-		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		C66C990BFA4E2308FAC7371C /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		C89662C1ACFC262A6335F504 /* TuistFonts+GOMSIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+GOMSIOS.swift"; sourceTree = "<group>"; };
 		CB3563359E3ED6D763DCB143 /* RoleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCell.swift; sourceTree = "<group>"; };
 		CC1EB3C71F7FA78C9663D371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5412482055549E0AC7F524 /* StudentInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewModel.swift; sourceTree = "<group>"; };
 		CF1D1497514F0C2F7F8EFE43 /* GOMSRefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSRefreshToken.swift; sourceTree = "<group>"; };
 		D3A56D0F2A6BF9775902773D /* GOMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7250C0074FB9D2B786FEE77 /* GAuthInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = GAuthInfo.plist; sourceTree = "<group>"; };
 		D87FBF56FF18F068A62D2666 /* EditAuthorityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthorityRequest.swift; sourceTree = "<group>"; };
 		DAB9A79A4E8F1C1B180987C1 /* LoginWithNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithNumberViewController.swift; sourceTree = "<group>"; };
 		DCFA9F6D7646E771A7EDC15C /* GOMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOMSColor.swift; sourceTree = "<group>"; };
@@ -635,6 +645,8 @@
 				3797F06D332BC2907C32555B /* Font */,
 				7813475D446B5FD839D6445B /* LaunchScreen.storyboard */,
 				ABB6E2ADDC0ED6343FA96DB1 /* Assets.xcassets */,
+				6E3FDA491A78B610E0D46682 /* BaseURLInfo.plist */,
+				D7250C0074FB9D2B786FEE77 /* GAuthInfo.plist */,
 				E8926A38BD09D59151CDC98D /* GoogleService-Info.plist */,
 			);
 			path = Resources;
@@ -680,7 +692,10 @@
 		83AC1697873ADD5A8784867B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2E58B93502302C374F04561A /* TuistAssets+GOMSIOS.swift */,
 				BC65C7C162624042253ABA86 /* TuistBundle+GOMSIOS.swift */,
+				C89662C1ACFC262A6335F504 /* TuistFonts+GOMSIOS.swift */,
+				5E7088795916B3246E77E6E4 /* TuistPlists+GOMSIOS.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1009,6 +1024,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				ORGANIZATIONNAME = HARIBO;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = DA7408DB5218F4061454ACF0 /* Build configuration list for PBXProject "GOMS-iOS" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -1049,11 +1066,13 @@
 			files = (
 				00376F6D7377122406E0BAAD /* Assets.xcassets in Resources */,
 				E6A35DF17F2B41EAD774B72B /* LaunchScreen.storyboard in Resources */,
+				B3A33009363AAB63103461FF /* BaseURLInfo.plist in Resources */,
 				73F4534655B41782CE790A4C /* Fraunces-Black.ttf in Resources */,
 				5A990392C21F5FEB947B6769 /* SF-Pro-Text-Bold.otf in Resources */,
 				0BF7A04CD7B51FC80A4F6472 /* SF-Pro-Text-Medium.otf in Resources */,
 				65AD2A08A00E8B4E4A343E58 /* SF-Pro-Text-Regular.otf in Resources */,
 				25B44A02412E18EC2DD622B6 /* SF-Pro-Text-Semibold.otf in Resources */,
+				2EBC0B3EE6E17FDA5908F426 /* GAuthInfo.plist in Resources */,
 				52118FF2D917294507DF4F27 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1065,7 +1084,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8F850B234C372FDB24E996 /* TuistAssets+GOMSIOS.swift in Sources */,
 				E6229E4983AD0ED4DF7CB7F5 /* TuistBundle+GOMSIOS.swift in Sources */,
+				BA280348B84AC288F587FFC1 /* TuistFonts+GOMSIOS.swift in Sources */,
+				E8D1C526B5055082367F03DB /* TuistPlists+GOMSIOS.swift in Sources */,
 				C076B14F4653C3D1E78F3A3E /* AppDelegate.swift in Sources */,
 				C8CCAB7E00784089C11B8B3B /* AppFlow.swift in Sources */,
 				281F5521BCF7E784E22419E8 /* AuthFlow.swift in Sources */,
@@ -1269,7 +1291,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5GD5Q99952;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1296,7 +1317,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5GD5Q99952;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "GOMS-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
