@@ -72,8 +72,8 @@ class IntroViewController: BaseViewController<IntroReactor> {
     
     private func gauthButtonSetUp() {
         gauthSignInButton.prepare(
-            clientID: Bundle.module.object(forInfoDictionaryKey: "CLIENT_ID") as? String ?? "",
-            redirectURI: Bundle.module.object(forInfoDictionaryKey: "REDIREDCT_URI") as? String ?? "",
+            clientID: GAuthInfo.clientID,
+            redirectURI: GAuthInfo.redirectURI,
             presenting: self
         ) { code in
             self.viewModel.action.onNext(.gauthSigninCompleted(code: code))
