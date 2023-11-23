@@ -1,0 +1,7 @@
+Derived/
+GAuthInfo.plist
+BaseURLInfo.plist
+*.xcodeproj
+*.xcworkspace
+.package.resolved
+.DS_Store
